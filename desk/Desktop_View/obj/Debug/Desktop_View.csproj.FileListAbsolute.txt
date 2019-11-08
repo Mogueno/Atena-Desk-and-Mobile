@@ -1,0 +1,14 @@
+C:\Users\odasf\Desktop\tcc\TCC-to_do_app\desk\Desktop_View\bin\Debug\Desktop_View.exe.config
+C:\Users\odasf\Desktop\tcc\TCC-to_do_app\desk\Desktop_View\bin\Debug\Desktop_View.exe
+C:\Users\odasf\Desktop\tcc\TCC-to_do_app\desk\Desktop_View\bin\Debug\Desktop_View.pdb
+C:\Users\odasf\Desktop\tcc\TCC-to_do_app\desk\Desktop_View\bin\Debug\MaterialSkin.dll
+C:\Users\odasf\Desktop\tcc\TCC-to_do_app\desk\Desktop_View\obj\Debug\Desktop_View.csprojAssemblyReference.cache
+C:\Users\odasf\Desktop\tcc\TCC-to_do_app\desk\Desktop_View\obj\Debug\Desktop_View.Configurações.resources
+C:\Users\odasf\Desktop\tcc\TCC-to_do_app\desk\Desktop_View\obj\Debug\Desktop_View.Properties.Resources.resources
+C:\Users\odasf\Desktop\tcc\TCC-to_do_app\desk\Desktop_View\obj\Debug\Desktop_View.TCadastroDadosAluno.resources
+C:\Users\odasf\Desktop\tcc\TCC-to_do_app\desk\Desktop_View\obj\Debug\Desktop_View.TLogin.resources
+C:\Users\odasf\Desktop\tcc\TCC-to_do_app\desk\Desktop_View\obj\Debug\Desktop_View.TTelaInicial.resources
+C:\Users\odasf\Desktop\tcc\TCC-to_do_app\desk\Desktop_View\obj\Debug\Desktop_View.csproj.GenerateResource.cache
+C:\Users\odasf\Desktop\tcc\TCC-to_do_app\desk\Desktop_View\obj\Debug\Desktop_View.csproj.CopyComplete
+C:\Users\odasf\Desktop\tcc\TCC-to_do_app\desk\Desktop_View\obj\Debug\Desktop_View.exe
+C:\Users\odasf\Desktop\tcc\TCC-to_do_app\desk\Desktop_View\obj\Debug\Desktop_View.pdb
