@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3AAE4AD7-9808-4B60-B9F1-6CC2588B97A3}</ProjectGuid>
+    <ProjectGuid>{1188F1CF-3637-4FA3-8CBF-B2E1C50F416C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Desktop_View</RootNamespace>
-    <AssemblyName>Desktop_View</AssemblyName>
+    <RootNamespace>Menus</RootNamespace>
+    <AssemblyName>Menus</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -49,49 +49,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfiguracoesCadastro.cs">
+    <Compile Include="Cadastro.cs" />
+    <Compile Include="TelaConfiguracao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConfiguracoesCadastro.Designer.cs">
-      <DependentUpon>ConfiguracoesCadastro.cs</DependentUpon>
+    <Compile Include="TelaConfiguracao.Designer.cs">
+      <DependentUpon>TelaConfiguracao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Configurações.cs">
+    <Compile Include="TelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Configurações.Designer.cs">
-      <DependentUpon>Configurações.cs</DependentUpon>
+    <Compile Include="TelaLogin.Designer.cs">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="TCadastroDadosAluno.cs">
+    <Compile Include="Login.cs" />
+    <Compile Include="Menuprinc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TCadastroDadosAluno.Designer.cs">
-      <DependentUpon>TCadastroDadosAluno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TLogin.Designer.cs">
-      <DependentUpon>TLogin.cs</DependentUpon>
+    <Compile Include="Menuprinc.Designer.cs">
+      <DependentUpon>Menuprinc.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TNovaNota.cs">
+    <Compile Include="TelaCadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TNovaNota.Designer.cs">
-      <DependentUpon>TNovaNota.cs</DependentUpon>
+    <Compile Include="TelaCadastrar.Designer.cs">
+      <DependentUpon>TelaCadastrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="TTelaInicial.cs">
+    <Compile Include="Telamfc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TTelaInicial.Designer.cs">
-      <DependentUpon>TTelaInicial.cs</DependentUpon>
+    <Compile Include="Telamfc.Designer.cs">
+      <DependentUpon>Telamfc.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ConfiguracoesCadastro.resx">
-      <DependentUpon>ConfiguracoesCadastro.cs</DependentUpon>
+    <Compile Include="TelaNovaNota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaNovaNota.Designer.cs">
+      <DependentUpon>TelaNovaNota.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TelaConfiguracao.resx">
+      <DependentUpon>TelaConfiguracao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Configurações.resx">
-      <DependentUpon>Configurações.cs</DependentUpon>
+    <EmbeddedResource Include="TelaLogin.resx">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menuprinc.resx">
+      <DependentUpon>Menuprinc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -102,17 +107,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TCadastroDadosAluno.resx">
-      <DependentUpon>TCadastroDadosAluno.cs</DependentUpon>
+    <EmbeddedResource Include="TelaCadastrar.resx">
+      <DependentUpon>TelaCadastrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TLogin.resx">
-      <DependentUpon>TLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Telamfc.resx">
+      <DependentUpon>Telamfc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TNovaNota.resx">
-      <DependentUpon>TNovaNota.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TTelaInicial.resx">
-      <DependentUpon>TTelaInicial.cs</DependentUpon>
+    <EmbeddedResource Include="TelaNovaNota.resx">
+      <DependentUpon>TelaNovaNota.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

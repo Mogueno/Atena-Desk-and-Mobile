@@ -16,6 +16,10 @@ namespace Desktop_View
         {
             InitializeComponent();
         }
-        
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+
+        }
     }
 }
