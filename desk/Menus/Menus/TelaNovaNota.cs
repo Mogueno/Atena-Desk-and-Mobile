@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
 
 namespace Menus
 {
-	public partial class TelaNovaNota : MaterialSkin.Controls.MaterialForm
+	public partial class TelaNovaNota : MaterialForm
 	{
 		public TelaNovaNota()
 		{
