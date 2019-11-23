@@ -11,7 +11,7 @@ using MaterialSkin.Controls;
 
 namespace Menus
 {
-	public partial class TelaConfiguracao : MaterialSkin.Controls.MaterialForm
+	public partial class TelaConfiguracao : MaterialForm
 	{
 		public TelaConfiguracao()
 		{
