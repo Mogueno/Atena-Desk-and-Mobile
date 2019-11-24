@@ -30,20 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telamfc));
             this.btnfinalizar = new System.Windows.Forms.Button();
-            this.txthora3 = new System.Windows.Forms.TextBox();
             this.txthora1 = new System.Windows.Forms.TextBox();
-            this.txthora2 = new System.Windows.Forms.TextBox();
-            this.txtmateria3 = new System.Windows.Forms.TextBox();
             this.txtmateria1 = new System.Windows.Forms.TextBox();
-            this.txtmateria2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtcurso = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtuniversidade = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbhora = new System.Windows.Forms.Label();
-            this.lbmateria = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbcurso = new System.Windows.Forms.Label();
@@ -52,6 +44,7 @@
             this.lblogo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nome = new System.Windows.Forms.Label();
+            this.lbEmailLogin = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,18 +61,6 @@
             this.btnfinalizar.UseVisualStyleBackColor = false;
             this.btnfinalizar.Click += new System.EventHandler(this.btnfinalizar_Click);
             // 
-            // txthora3
-            // 
-            this.txthora3.BackColor = System.Drawing.SystemColors.Control;
-            this.txthora3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txthora3.ForeColor = System.Drawing.Color.Gray;
-            this.txthora3.Location = new System.Drawing.Point(461, 368);
-            this.txthora3.Name = "txthora3";
-            this.txthora3.Size = new System.Drawing.Size(208, 29);
-            this.txthora3.TabIndex = 24;
-            this.txthora3.Text = "Ex: 19:20";
-            this.txthora3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txthora1
             // 
             this.txthora1.BackColor = System.Drawing.SystemColors.Control;
@@ -92,30 +73,6 @@
             this.txthora1.Text = "Ex: 19:20";
             this.txthora1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txthora2
-            // 
-            this.txthora2.BackColor = System.Drawing.SystemColors.Control;
-            this.txthora2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txthora2.ForeColor = System.Drawing.Color.Gray;
-            this.txthora2.Location = new System.Drawing.Point(461, 333);
-            this.txthora2.Name = "txthora2";
-            this.txthora2.Size = new System.Drawing.Size(208, 29);
-            this.txthora2.TabIndex = 22;
-            this.txthora2.Text = "Ex: 19:20";
-            this.txthora2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtmateria3
-            // 
-            this.txtmateria3.BackColor = System.Drawing.SystemColors.Control;
-            this.txtmateria3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmateria3.ForeColor = System.Drawing.Color.Gray;
-            this.txtmateria3.Location = new System.Drawing.Point(167, 368);
-            this.txtmateria3.Name = "txtmateria3";
-            this.txtmateria3.Size = new System.Drawing.Size(230, 29);
-            this.txtmateria3.TabIndex = 21;
-            this.txtmateria3.Text = "Ex: Matematica";
-            this.txtmateria3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txtmateria1
             // 
             this.txtmateria1.BackColor = System.Drawing.SystemColors.Control;
@@ -127,28 +84,6 @@
             this.txtmateria1.TabIndex = 19;
             this.txtmateria1.Text = "Ex: Matematica";
             this.txtmateria1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtmateria2
-            // 
-            this.txtmateria2.BackColor = System.Drawing.SystemColors.Control;
-            this.txtmateria2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmateria2.ForeColor = System.Drawing.Color.Gray;
-            this.txtmateria2.Location = new System.Drawing.Point(167, 333);
-            this.txtmateria2.Name = "txtmateria2";
-            this.txtmateria2.Size = new System.Drawing.Size(230, 29);
-            this.txtmateria2.TabIndex = 18;
-            this.txtmateria2.Text = "Ex: Matematica";
-            this.txtmateria2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(403, 372);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 25);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Hora";
             // 
             // txtcurso
             // 
@@ -172,16 +107,6 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Hora";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(86, 372);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 25);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Matéria";
-            // 
             // txtuniversidade
             // 
             this.txtuniversidade.BackColor = System.Drawing.SystemColors.Control;
@@ -203,26 +128,6 @@
             this.label2.Size = new System.Drawing.Size(75, 25);
             this.label2.TabIndex = 10;
             this.label2.Text = "Matéria";
-            // 
-            // lbhora
-            // 
-            this.lbhora.AutoSize = true;
-            this.lbhora.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbhora.Location = new System.Drawing.Point(403, 337);
-            this.lbhora.Name = "lbhora";
-            this.lbhora.Size = new System.Drawing.Size(52, 25);
-            this.lbhora.TabIndex = 9;
-            this.lbhora.Text = "Hora";
-            // 
-            // lbmateria
-            // 
-            this.lbmateria.AutoSize = true;
-            this.lbmateria.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbmateria.Location = new System.Drawing.Point(86, 337);
-            this.lbmateria.Name = "lbmateria";
-            this.lbmateria.Size = new System.Drawing.Size(75, 25);
-            this.lbmateria.TabIndex = 8;
-            this.lbmateria.Text = "Matéria";
             // 
             // label3
             // 
@@ -311,26 +216,28 @@
             this.nome.TabIndex = 0;
             this.nome.Text = "Menu MFC";
             // 
+            // lbEmailLogin
+            // 
+            this.lbEmailLogin.AutoSize = true;
+            this.lbEmailLogin.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbEmailLogin.Location = new System.Drawing.Point(33, 82);
+            this.lbEmailLogin.Name = "lbEmailLogin";
+            this.lbEmailLogin.Size = new System.Drawing.Size(0, 13);
+            this.lbEmailLogin.TabIndex = 26;
+            // 
             // Telamfc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbEmailLogin);
             this.Controls.Add(this.btnfinalizar);
-            this.Controls.Add(this.txthora3);
             this.Controls.Add(this.txthora1);
-            this.Controls.Add(this.txthora2);
-            this.Controls.Add(this.txtmateria3);
             this.Controls.Add(this.txtmateria1);
-            this.Controls.Add(this.txtmateria2);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtcurso);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtuniversidade);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lbhora);
-            this.Controls.Add(this.lbmateria);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbcurso);
@@ -338,6 +245,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Telamfc";
             this.Text = "Telamfc";
+            this.Load += new System.EventHandler(this.Telamfc_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -349,20 +257,12 @@
         #endregion
 
         private System.Windows.Forms.Button btnfinalizar;
-        private System.Windows.Forms.TextBox txthora3;
         private System.Windows.Forms.TextBox txthora1;
-        private System.Windows.Forms.TextBox txthora2;
-        private System.Windows.Forms.TextBox txtmateria3;
         private System.Windows.Forms.TextBox txtmateria1;
-        private System.Windows.Forms.TextBox txtmateria2;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtcurso;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtuniversidade;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbhora;
-        private System.Windows.Forms.Label lbmateria;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbcurso;
@@ -371,5 +271,6 @@
         private System.Windows.Forms.Label lblogo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label nome;
+        private System.Windows.Forms.Label lbEmailLogin;
     }
 }

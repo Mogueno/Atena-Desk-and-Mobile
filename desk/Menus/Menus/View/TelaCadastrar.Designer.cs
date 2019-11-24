@@ -89,7 +89,6 @@
             this.lbsobrenome.Size = new System.Drawing.Size(140, 29);
             this.lbsobrenome.TabIndex = 3;
             this.lbsobrenome.Text = "Sobrenome";
-            this.lbsobrenome.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtsobrenome
             // 
@@ -98,7 +97,6 @@
             this.txtsobrenome.Name = "txtsobrenome";
             this.txtsobrenome.Size = new System.Drawing.Size(261, 35);
             this.txtsobrenome.TabIndex = 5;
-            this.txtsobrenome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtidade
             // 
@@ -185,7 +183,6 @@
             this.Controls.Add(this.lbnome);
             this.Name = "TelaCadastrar";
             this.Text = "Tela de Cadastro";
-            this.Load += new System.EventHandler(this.TelaCadastrar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,8 +200,8 @@
         private System.Windows.Forms.Label lbidade;
         private System.Windows.Forms.TextBox txtsexo;
         private System.Windows.Forms.Label lbsexo;
-        private System.Windows.Forms.TextBox txtlogin2;
         private System.Windows.Forms.Label lblogin2;
         private System.Windows.Forms.Button btnconcluir;
+        public System.Windows.Forms.TextBox txtlogin2;
     }
 }

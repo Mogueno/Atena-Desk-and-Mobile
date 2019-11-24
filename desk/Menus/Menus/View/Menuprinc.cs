@@ -49,5 +49,10 @@ namespace Menus
 		{
 			Application.Run(new TelaConfiguracao());
 		}
-	}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://scholar.google.com.br/");
+        }
+    }
 }

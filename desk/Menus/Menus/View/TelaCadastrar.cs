@@ -16,23 +16,20 @@ namespace Menus
     {
         Thread nf;
 
+
+
+        public string retorna()
+        {
+            string emailLogin = txtlogin2.Text;
+
+            return emailLogin;
+        }
+
+        public string emailMain;
+
         public TelaCadastrar()
         {
             InitializeComponent();
-        }
-
-        private void TelaCadastrar_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -46,7 +43,23 @@ namespace Menus
                 objDados.GravarUser(Nome, Idade, Sexo, Email, Senha, Facebook, Google);
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
+            {
+                MessageBox.Show("Deu ruim" + ex.Message);
+            }
+        }
+
+        private void SelectUser(string EmailVar)
+        {
+
+            try
+            {
+                Dados objDados = new Dados();
+
+                objDados.SelectUser(EmailVar);
+            }
+
+            catch (Exception ex)
             {
                 MessageBox.Show("Deu ruim" + ex.Message);
             }
@@ -55,14 +68,23 @@ namespace Menus
         private void btnconcluir_Click(object sender, EventArgs e)
         {
 
+
             if (!String.IsNullOrEmpty(txtnome.Text) && !String.IsNullOrEmpty(txtidade.Text) && !String.IsNullOrEmpty(txtsexo.Text) && !String.IsNullOrEmpty(txtlogin2.Text) && !String.IsNullOrEmpty(txtsenha2.Text))
             {
                 GravarUser(txtnome.Text, txtidade.Text, txtsexo.Text, txtlogin2.Text, txtsenha2.Text, "0", "0");
 
-                this.Close();
-                nf = new Thread(novoform2);
-                nf.SetApartmentState(ApartmentState.STA);
-                nf.Start();
+                emailMain = retorna();
+
+                SelectUser(retorna());
+
+                var telaAtual = new TelaCadastrar();
+
+                var telaMFC = new Telamfc(txtlogin2.Text);
+
+                telaMFC.Show();
+
+
+                this.Hide();
             }
 
             else
@@ -70,11 +92,6 @@ namespace Menus
                 MessageBox.Show("Um ou mais campos estão em branco");
             }
 
-        }
-
-        private void novoform2()
-        {
-            Application.Run(new Telamfc());
         }
     }
 }
