@@ -18,13 +18,13 @@ namespace Menus
 		{
 			InitializeComponent();
 		}
-        private void GravarNota(string NotaContent)
+        private void GravarNota(string EmailVar, string NotaContent)
         {
             try
             {
                 Dados objDados = new Dados();
 
-                objDados.GravarNota(NotaContent);
+                objDados.SelectNota(EmailVar,NotaContent);
             }
             catch (Exception ex)
             {
@@ -33,7 +33,10 @@ namespace Menus
         }
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-
+            if (!String.IsNullOrEmpty(txtNota.Text))
+            {
+                GravarNota(txtNota)
+            }
         }
     }
 }

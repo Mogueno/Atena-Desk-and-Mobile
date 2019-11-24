@@ -26,6 +26,7 @@ namespace Menus.Model
         public const string strUpdateCurso = "UPDATE TB_CURSO SET = CUR_STR_NOME = @CUR_STR_NOME WHERE USER_INT_ID = @USER_INT_ID";
         public const string strInsertCurso = "INSERT INTO TB_CURSO VALUES (@CUR_STR_NOME, @USER_INT_ID)";
 
+        public const string strSelectNota = "SELECT NOTA_INT_ID FROM TB_NOTA WHERE USER_STR_ID = @USER_STR_ID";
 
         public const string strSelectID = "SELECT USER_INT_ID FROM TB_USER WHERE USER_STR_EMAIL = @USER_STR_EMAIL_VAR";
 
@@ -35,8 +36,10 @@ namespace Menus.Model
 
         public const string strInsertMateria = "INSERT INTO TB_MATERIA VALUES (@MAT_STR_NOME, @USER_INT_ID, @MAT_DATE_HORA)";
 
+        //MUDAR OS VALORES DE INSERÇÃO DEPOIS
+        public const string strInsertNota1 = "INSERT INTO TB_NOTA VALUES (1, 1, 1, @USER_INT_ID)";
 
-        public const string strInsertNota = "INSERT INTO TB_NOTA VALUES ();INSERT INTO TB_NOTA_STR VALUES (@STR_STR_PATH)";
+        public const string strInsertNota2 = "INSERT INTO TB_NOTA_STR VALUES (@STR_STR_PATH, @NOTA_INT_ID)";
 
         public void GravarUser(string Nome, string Idade,  string Sexo, string Email, string Senha, string Facebook, string Google)
         {
@@ -164,6 +167,54 @@ namespace Menus.Model
                         objCommand2.Parameters.AddWithValue("@MAT_DATE_HORA", HoraMateria);
 
                         objCommand2.ExecuteNonQuery();
+
+                    }
+
+                    objConexao.Close();
+                }
+            }
+        }
+
+        public void SelectNota(string EmailVar, string NotaContent)
+        {
+            using (SqlConnection objConexao = new SqlConnection(strConexao))
+            {
+                using (SqlCommand objCommand = new SqlCommand(strSelectUser, objConexao))
+                {
+                    objCommand.Parameters.AddWithValue("@USER_STR_EMAIL_VAR", EmailVar);
+
+                    objConexao.Open();
+
+
+
+                    user.UserId = (Int32)objCommand.ExecuteScalar();
+
+                    using (SqlCommand objCommand2 = new SqlCommand(strInsertNota1, objConexao))
+                    {
+                        objCommand2.Parameters.AddWithValue("@USER_INT_ID", user.UserId);
+
+                        objCommand2.ExecuteNonQuery();
+
+                    }
+
+                    using (SqlCommand objCommand2 = new SqlCommand(strSelectNota, objConexao))
+                    {
+                        objCommand2.Parameters.AddWithValue("@USER_INT_ID", user.UserId);
+
+                        user.NotaId = (Int32)objCommand2.ExecuteScalar();
+
+                        using (SqlCommand objCommand3 = new SqlCommand(strInsertNota1, objConexao))
+                        {
+                            objCommand3.Parameters.AddWithValue("@NOTA_INT_ID",         user.NotaId);
+                            objCommand3.Parameters.AddWithValue("@STR_STR_PATH", NotaContent);
+
+
+
+
+
+                            objCommand3.ExecuteNonQuery();
+
+                        }
 
                     }
 

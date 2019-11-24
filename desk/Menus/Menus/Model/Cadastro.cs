@@ -14,6 +14,7 @@ namespace Menus
         private string sexo;
         private string email;
         private int userId;
+        private int notaId;
 
         public string Nome { get => nome; set => nome = value; }
         public string Sobrenome { get => sobrenome; set => sobrenome = value; }
@@ -21,5 +22,6 @@ namespace Menus
         public string Sexo { get => sexo; set => sexo = value; }
         public string Email { get => email; set => email = value; }
         public int UserId { get => userId; set => userId = value; }
+        public int NotaId { get => notaId; set => notaId = value; }
     }
 }

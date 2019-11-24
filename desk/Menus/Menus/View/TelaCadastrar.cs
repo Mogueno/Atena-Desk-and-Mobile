@@ -49,7 +49,8 @@ namespace Menus
             }
         }
 
-        private void SelectUser(string EmailVar)
+        pri
+            vate void SelectUser(string EmailVar)
         {
 
             try
