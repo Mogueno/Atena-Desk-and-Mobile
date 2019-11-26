@@ -57,7 +57,7 @@ namespace Menus
 
 
 
-
+                    da.Close();
                     objConexao.Close();
 
                 }
@@ -127,12 +127,25 @@ namespace Menus
 
             GetUser(lbRecebeEmailConfig.Text);
 
+            lbMateriaShow.Text = Login.Materia;
+            lbFaculShow.Text = Login.Facul;
+            lbCursoShow.Text = Login.Curso;
 
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             UpdateUser(lbRecebeEmailConfig.Text, txtNome.Text, txtIdade.Text, txtSexo.Text);
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnVoltar2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Menuprinc(lbRecebeEmailConfig.Text).Show();
         }
     }
 }

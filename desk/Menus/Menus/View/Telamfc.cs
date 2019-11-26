@@ -66,6 +66,12 @@ namespace Menus
 
             if (!String.IsNullOrEmpty(txtuniversidade.Text))
             {
+                Login.Materia = txtmateria1.Text;
+                Login.Curso = txtcurso.Text;
+                Login.Facul = txtuniversidade.Text;
+
+
+
                 GravarFacul(lbEmailLogin.Text,txtuniversidade.Text,txtcurso.Text, txtmateria1.Text, txthora1.Text);
 
                 this.Hide();

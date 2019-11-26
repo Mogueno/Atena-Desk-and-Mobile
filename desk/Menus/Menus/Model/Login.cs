@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace Menus
 {
-    class Login
+    public static class Login
     {
-        private string usuario;
-        private string senha;
+        private static string usuario;
+        private static string senha;
+        private static string facul;
+        private static string curso;
+        private static string materia;
 
-        public string Usuario { get => usuario; set => usuario = value; }
-        public string Senha { get => senha; set => senha = value; }
+
+        public static string Usuario { get => usuario; set => usuario = value; }
+        public static string Senha { get => senha; set => senha = value; }
+        public static string Facul { get => facul; set => facul = value; }
+        public static string Curso { get => curso; set => curso = value; }
+        public static string Materia { get => materia; set => materia = value; }
     }
 }

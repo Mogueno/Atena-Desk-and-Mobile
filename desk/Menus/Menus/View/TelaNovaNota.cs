@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Menus.Model;
 using MaterialSkin.Controls;
-
+using System.Data.SqlClient;
+using System.Configuration;
 namespace Menus
 {
 	public partial class TelaNovaNota : MaterialForm
@@ -21,20 +22,90 @@ namespace Menus
             lbRecebeEmailNovaNota.Text = texto;
 		}
 
+        public string strConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-        public const string strSelectUser = "SELECT USER_INT_ID FROM TB_USER WHERE USER_STR_EMAIL = @USER_STR_EMAIL_VAR";
+        public const string strSelectUser = "SELECT U.USER_INT_ID, F.FAC_INT_ID, C.CUR_INT_ID, M.MAT_INT_ID FROM TB_USER AS U JOIN TB_FACULDADE AS F ON U.USER_INT_ID = F.USER_INT_ID JOIN TB_CURSO AS C ON U.USER_INT_ID = C.USER_INT_ID JOIN TB_MATERIA AS M ON U.USER_INT_ID = M.USER_INT_ID WHERE U.USER_STR_EMAIL = @USER_STR_EMAIL";
 
-        private void GravarNota(string EmailVar, string NotaContent)
+        public const string strSelectNota = "SELECT NOTA_INT_ID FROM ";
+
+
+        public const string strInsertNota1 = "INSERT INTO TB_NOTA OUTPUT INSERTED.NOTA_INT_ID VALUES (@FAC_INT_ID, @CUR_INT_ID, @MAT_INT_ID, @USER_INT_ID)";
+
+        public const string strInsertNota2 = "INSERT INTO TB_NOTA_STR VALUES (@STR_STR_PATH, @NOTA_INT_ID)";
+
+        public void SelectNota(string emailRecebe, string notaRecebe)
+        {
+            using (SqlConnection objConexao = new SqlConnection(strConexao))
+            {
+                using (SqlCommand objCommand = new SqlCommand(strSelectUser, objConexao))
+                {
+                    objConexao.Open();
+
+                    objCommand.Parameters.AddWithValue("@USER_STR_EMAIL", emailRecebe);
+
+                    string userId = "";
+                    string cursoId = "";
+                    string materiaId = "";
+                    string faculdadeId = "";
+                    int notaId = 0;
+
+                    SqlDataReader da = objCommand.ExecuteReader();
+                    while (da.Read())
+                    {
+                        userId = da.GetValue(0).ToString();
+                        faculdadeId = da.GetValue(1).ToString();
+                        cursoId = da.GetValue(2).ToString();
+                        materiaId = da.GetValue(3).ToString();
+
+                    }
+
+                    da.Close();
+
+                    using (SqlCommand objCommand2 = new SqlCommand(strInsertNota1, objConexao))
+                    {
+                        objCommand2.Parameters.AddWithValue("@USER_INT_ID", userId);
+                        objCommand2.Parameters.AddWithValue("@FAC_INT_ID", faculdadeId);
+                        objCommand2.Parameters.AddWithValue("@CUR_INT_ID", cursoId);
+                        objCommand2.Parameters.AddWithValue("@MAT_INT_ID", materiaId);
+
+
+                        notaId = (Int32)objCommand2.ExecuteScalar();
+
+
+                            using (SqlCommand objCommand3 = new SqlCommand (strInsertNota2 , objConexao))
+                            {
+                                objCommand3.Parameters.AddWithValue("@STR_STR_PATH", notaRecebe);
+                                objCommand3.Parameters.AddWithValue("@NOTA_INT_ID", notaId);
+
+                                int retorno2 = objCommand3.ExecuteNonQuery();
+
+                                if (retorno2 == 1)
+                                {
+                                    MessageBox.Show("Dados inseridos");
+                                }
+
+
+                            }
+                        
+
+                    }
+
+                        objConexao.Close();
+
+                }
+            }
+        }
+
+        private void GravarNota(string EmailVar, string Nota)
         {
             try
             {
-                Dados objDados = new Dados();
+                SelectNota(EmailVar, Nota);
 
-                Cadastro user =  objDados.SelectNota(EmailVar,NotaContent);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Deu ruim" + ex.Message);
+                MessageBox.Show("Deu ruim" + ex);
             }
         }
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -43,13 +114,23 @@ namespace Menus
             Cadastro user = new Cadastro();
             if (!String.IsNullOrEmpty(txtNota.Text))
             {
-                 GravarNota("21", txtNota.Text);
+                 GravarNota(Login.Usuario, txtNota.Text);
+            }
+            else
+            {
+                MessageBox.Show("Digite algo para que seja salvo");
             }
         }
 
         private void TelaNovaNota_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Menuprinc(lbRecebeEmailNovaNota.Text).Show();
         }
     }
 }

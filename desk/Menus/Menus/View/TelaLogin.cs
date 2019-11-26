@@ -16,8 +16,6 @@ namespace Menus
     {
         Thread nt;
 
-        Login usuario = new Login();
-
 
         public TelaLogin()
         {
@@ -42,7 +40,8 @@ namespace Menus
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
             {
-                usuario.Usuario = txtusuario.Text;
+
+                Login.Usuario = txtusuario.Text;
                 this.Hide();
                 new Menuprinc(txtusuario.Text).Show();
             }

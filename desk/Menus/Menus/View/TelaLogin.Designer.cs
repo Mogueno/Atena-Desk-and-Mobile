@@ -106,7 +106,7 @@
             this.btnface.Name = "btnface";
             this.btnface.Size = new System.Drawing.Size(322, 34);
             this.btnface.TabIndex = 5;
-            this.btnface.Text = "Face";
+            this.btnface.Text = "Facebook";
             this.btnface.UseVisualStyleBackColor = true;
             // 
             // btngoogle
@@ -116,7 +116,7 @@
             this.btngoogle.Name = "btngoogle";
             this.btngoogle.Size = new System.Drawing.Size(322, 38);
             this.btngoogle.TabIndex = 6;
-            this.btngoogle.Text = "google";
+            this.btngoogle.Text = "Google";
             this.btngoogle.UseVisualStyleBackColor = true;
             // 
             // TelaLogin

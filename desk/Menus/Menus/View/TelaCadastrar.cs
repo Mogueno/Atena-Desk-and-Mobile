@@ -80,6 +80,8 @@ namespace Menus
             {
                 if (!String.IsNullOrEmpty(txtnome.Text) && !String.IsNullOrEmpty(txtidade.Text) && !String.IsNullOrEmpty(txtsexo.Text) && !String.IsNullOrEmpty(txtlogin2.Text) && !String.IsNullOrEmpty(txtsenha2.Text))
                 {
+                    Login.Usuario = txtlogin2.Text;
+
                     GravarUser(txtnome.Text, txtidade.Text, txtsexo.Text, txtlogin2.Text, txtsenha2.Text, "0", "0");
 
                     emailMain = retorna();
