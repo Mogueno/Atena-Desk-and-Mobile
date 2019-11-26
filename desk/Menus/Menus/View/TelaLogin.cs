@@ -43,7 +43,9 @@ namespace Menus
                 new Menuprinc(txtusuario.Text).Show();
             }
             else
-                MessageBox.Show("Usuário ou senha incorretos");    
+            {
+                MessageBox.Show("Usuário ou senha incorretos");
+            }
         }
 
         private void btncadastrar_Click(object sender, EventArgs e)

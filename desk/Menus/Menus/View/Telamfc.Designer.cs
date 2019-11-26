@@ -56,7 +56,7 @@
             this.btnfinalizar.Location = new System.Drawing.Point(314, 403);
             this.btnfinalizar.Name = "btnfinalizar";
             this.btnfinalizar.Size = new System.Drawing.Size(165, 41);
-            this.btnfinalizar.TabIndex = 25;
+            this.btnfinalizar.TabIndex = 5;
             this.btnfinalizar.Text = "Finalizar";
             this.btnfinalizar.UseVisualStyleBackColor = false;
             this.btnfinalizar.Click += new System.EventHandler(this.btnfinalizar_Click);
@@ -69,7 +69,7 @@
             this.txthora1.Location = new System.Drawing.Point(461, 298);
             this.txthora1.Name = "txthora1";
             this.txthora1.Size = new System.Drawing.Size(208, 29);
-            this.txthora1.TabIndex = 23;
+            this.txthora1.TabIndex = 4;
             this.txthora1.Text = "Ex: 19:20";
             this.txthora1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -81,7 +81,7 @@
             this.txtmateria1.Location = new System.Drawing.Point(167, 298);
             this.txtmateria1.Name = "txtmateria1";
             this.txtmateria1.Size = new System.Drawing.Size(230, 29);
-            this.txtmateria1.TabIndex = 19;
+            this.txtmateria1.TabIndex = 3;
             this.txtmateria1.Text = "Ex: Matematica";
             this.txtmateria1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -93,7 +93,7 @@
             this.txtcurso.Location = new System.Drawing.Point(208, 194);
             this.txtcurso.Name = "txtcurso";
             this.txtcurso.Size = new System.Drawing.Size(402, 29);
-            this.txtcurso.TabIndex = 17;
+            this.txtcurso.TabIndex = 2;
             this.txtcurso.Text = "Insira seu curso";
             this.txtcurso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -115,7 +115,7 @@
             this.txtuniversidade.Location = new System.Drawing.Point(208, 143);
             this.txtuniversidade.Name = "txtuniversidade";
             this.txtuniversidade.Size = new System.Drawing.Size(402, 29);
-            this.txtuniversidade.TabIndex = 20;
+            this.txtuniversidade.TabIndex = 1;
             this.txtuniversidade.Text = "Insira sua Universidade";
             this.txtuniversidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

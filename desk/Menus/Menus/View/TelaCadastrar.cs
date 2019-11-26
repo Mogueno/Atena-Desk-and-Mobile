@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using Menus.Model;
+using System.Data.SqlClient;
 
 namespace Menus
 {
@@ -67,29 +68,38 @@ namespace Menus
 
         private void btnconcluir_Click(object sender, EventArgs e)
         {
-
-
-            if (!String.IsNullOrEmpty(txtnome.Text) && !String.IsNullOrEmpty(txtidade.Text) && !String.IsNullOrEmpty(txtsexo.Text) && !String.IsNullOrEmpty(txtlogin2.Text) && !String.IsNullOrEmpty(txtsenha2.Text))
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\odasf\Documents\bancoMain.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM TB_USER WHERE USER_STR_EMAIL='" + txtlogin2.Text + "'", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows[0][0].ToString() == "1")
             {
-                GravarUser(txtnome.Text, txtidade.Text, txtsexo.Text, txtlogin2.Text, txtsenha2.Text, "0", "0");
-
-                emailMain = retorna();
-
-                SelectUser(retorna());
-
-                var telaAtual = new TelaCadastrar();
-
-                var telaMFC = new Telamfc(txtlogin2.Text);
-
-                telaMFC.Show();
-
-
-                this.Hide();
+                MessageBox.Show("ERRO\n\n Usuário já existente");
             }
-
             else
             {
-                MessageBox.Show("Um ou mais campos estão em branco");
+                if (!String.IsNullOrEmpty(txtnome.Text) && !String.IsNullOrEmpty(txtidade.Text) && !String.IsNullOrEmpty(txtsexo.Text) && !String.IsNullOrEmpty(txtlogin2.Text) && !String.IsNullOrEmpty(txtsenha2.Text))
+                {
+                    GravarUser(txtnome.Text, txtidade.Text, txtsexo.Text, txtlogin2.Text, txtsenha2.Text, "0", "0");
+
+                    emailMain = retorna();
+
+                    SelectUser(retorna());
+
+                    var telaAtual = new TelaCadastrar();
+
+                    var telaMFC = new Telamfc(txtlogin2.Text);
+
+                    telaMFC.Show();
+
+
+                    this.Hide();
+                }
+
+                else
+                {
+                    MessageBox.Show("Um ou mais campos estão em branco");
+                }
             }
 
         }

@@ -51,7 +51,7 @@
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Primary = false;
             this.btnAtualizar.Size = new System.Drawing.Size(85, 36);
-            this.btnAtualizar.TabIndex = 29;
+            this.btnAtualizar.TabIndex = 3;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
@@ -76,21 +76,21 @@
             this.txtSexo.Location = new System.Drawing.Point(183, 174);
             this.txtSexo.Name = "txtSexo";
             this.txtSexo.Size = new System.Drawing.Size(537, 20);
-            this.txtSexo.TabIndex = 25;
+            this.txtSexo.TabIndex = 1;
             // 
             // txtIdade
             // 
             this.txtIdade.Location = new System.Drawing.Point(183, 203);
             this.txtIdade.Name = "txtIdade";
             this.txtIdade.Size = new System.Drawing.Size(537, 20);
-            this.txtIdade.TabIndex = 24;
+            this.txtIdade.TabIndex = 2;
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(183, 143);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(537, 20);
-            this.txtNome.TabIndex = 21;
+            this.txtNome.TabIndex = 0;
             // 
             // lbIdade
             // 
