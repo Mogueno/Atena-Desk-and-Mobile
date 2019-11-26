@@ -13,10 +13,11 @@ namespace Menus
 {
     public partial class Menuprinc : Form
     {
-		Thread pt;
-		public Menuprinc()
+		public Menuprinc(string texto)
         {
             InitializeComponent();
+
+            lbRecebeEmailMenu.Text = texto;
         }
 
         private void Label2_Click(object sender, EventArgs e)
@@ -26,29 +27,17 @@ namespace Menus
 
 		private void Button2_Click(object sender, EventArgs e)
 		{
-			this.Close();
-			pt = new Thread(novoform7);
-			pt.SetApartmentState(ApartmentState.STA);
-			pt.Start();
-		}
-
-		private void novoform7()
-		{
-			Application.Run(new TelaNovaNota());
+			this.Hide();
+            new TelaNovaNota(lbRecebeEmailMenu.Text).Show();
 		}
 
 		private void Button3_Click(object sender, EventArgs e)
 		{
-			this.Close();
-			pt = new Thread(novoform8);
-			pt.SetApartmentState(ApartmentState.STA);
-			pt.Start();
-		}
+            this.Hide();
+            new TelaConfiguracao(lbRecebeEmailMenu.Text).Show();
 
-		private void novoform8()
-		{
-			Application.Run(new TelaConfiguracao());
-		}
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {

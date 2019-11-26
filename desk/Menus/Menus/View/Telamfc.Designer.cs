@@ -52,7 +52,7 @@
             // btnfinalizar
             // 
             this.btnfinalizar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnfinalizar.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfinalizar.Location = new System.Drawing.Point(314, 403);
             this.btnfinalizar.Name = "btnfinalizar";
             this.btnfinalizar.Size = new System.Drawing.Size(165, 41);
@@ -64,7 +64,7 @@
             // txthora1
             // 
             this.txthora1.BackColor = System.Drawing.SystemColors.Control;
-            this.txthora1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txthora1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txthora1.ForeColor = System.Drawing.Color.Gray;
             this.txthora1.Location = new System.Drawing.Point(461, 298);
             this.txthora1.Name = "txthora1";
@@ -76,7 +76,7 @@
             // txtmateria1
             // 
             this.txtmateria1.BackColor = System.Drawing.SystemColors.Control;
-            this.txtmateria1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmateria1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmateria1.ForeColor = System.Drawing.Color.Gray;
             this.txtmateria1.Location = new System.Drawing.Point(167, 298);
             this.txtmateria1.Name = "txtmateria1";
@@ -88,7 +88,7 @@
             // txtcurso
             // 
             this.txtcurso.BackColor = System.Drawing.SystemColors.Control;
-            this.txtcurso.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcurso.ForeColor = System.Drawing.Color.Gray;
             this.txtcurso.Location = new System.Drawing.Point(208, 194);
             this.txtcurso.Name = "txtcurso";
@@ -100,17 +100,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(403, 302);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 25);
+            this.label4.Size = new System.Drawing.Size(62, 25);
             this.label4.TabIndex = 13;
             this.label4.Text = "Hora";
             // 
             // txtuniversidade
             // 
             this.txtuniversidade.BackColor = System.Drawing.SystemColors.Control;
-            this.txtuniversidade.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtuniversidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtuniversidade.ForeColor = System.Drawing.Color.Gray;
             this.txtuniversidade.Location = new System.Drawing.Point(208, 143);
             this.txtuniversidade.Name = "txtuniversidade";
@@ -122,50 +122,50 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(86, 302);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(70, 302);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 25);
+            this.label2.Size = new System.Drawing.Size(91, 25);
             this.label2.TabIndex = 10;
             this.label2.Text = "Matéria";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(266, 238);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(264, 33);
+            this.label3.Size = new System.Drawing.Size(319, 33);
             this.label3.TabIndex = 15;
             this.label3.Text = "Coloque sua matérias";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(219, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(322, 33);
+            this.label1.Size = new System.Drawing.Size(385, 33);
             this.label1.TabIndex = 16;
             this.label1.Text = "Coloque suas informações";
             // 
             // lbcurso
             // 
             this.lbcurso.AutoSize = true;
-            this.lbcurso.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbcurso.Location = new System.Drawing.Point(105, 198);
+            this.lbcurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbcurso.Location = new System.Drawing.Point(86, 196);
             this.lbcurso.Name = "lbcurso";
-            this.lbcurso.Size = new System.Drawing.Size(63, 25);
+            this.lbcurso.Size = new System.Drawing.Size(74, 25);
             this.lbcurso.TabIndex = 7;
             this.lbcurso.Text = "Curso";
             // 
             // lbuniversidade
             // 
             this.lbuniversidade.AutoSize = true;
-            this.lbuniversidade.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbuniversidade.Location = new System.Drawing.Point(78, 147);
+            this.lbuniversidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbuniversidade.Location = new System.Drawing.Point(53, 145);
             this.lbuniversidade.Name = "lbuniversidade";
-            this.lbuniversidade.Size = new System.Drawing.Size(124, 25);
+            this.lbuniversidade.Size = new System.Drawing.Size(150, 25);
             this.lbuniversidade.TabIndex = 12;
             this.lbuniversidade.Text = "Universidade";
             // 
@@ -208,11 +208,11 @@
             // nome
             // 
             this.nome.AutoSize = true;
-            this.nome.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nome.ForeColor = System.Drawing.Color.White;
             this.nome.Location = new System.Drawing.Point(56, 7);
             this.nome.Name = "nome";
-            this.nome.Size = new System.Drawing.Size(150, 32);
+            this.nome.Size = new System.Drawing.Size(147, 31);
             this.nome.TabIndex = 0;
             this.nome.Text = "Menu MFC";
             // 
@@ -245,7 +245,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "Telamfc";
             this.Text = "Telamfc";
-            this.Load += new System.EventHandler(this.Telamfc_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

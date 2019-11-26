@@ -80,20 +80,20 @@
             // btncadastrar
             // 
             this.btncadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncadastrar.Location = new System.Drawing.Point(12, 304);
+            this.btncadastrar.Location = new System.Drawing.Point(335, 209);
             this.btncadastrar.Name = "btncadastrar";
-            this.btncadastrar.Size = new System.Drawing.Size(161, 109);
+            this.btncadastrar.Size = new System.Drawing.Size(154, 34);
             this.btncadastrar.TabIndex = 2;
-            this.btncadastrar.Text = "Cadastrar-se";
+            this.btncadastrar.Text = "Cadastre-se";
             this.btncadastrar.UseVisualStyleBackColor = true;
             this.btncadastrar.Click += new System.EventHandler(this.btncadastrar_Click);
             // 
             // btnentrar
             // 
             this.btnentrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnentrar.Location = new System.Drawing.Point(267, 190);
+            this.btnentrar.Location = new System.Drawing.Point(167, 209);
             this.btnentrar.Name = "btnentrar";
-            this.btnentrar.Size = new System.Drawing.Size(131, 34);
+            this.btnentrar.Size = new System.Drawing.Size(162, 34);
             this.btnentrar.TabIndex = 3;
             this.btnentrar.Text = "Entrar";
             this.btnentrar.UseVisualStyleBackColor = true;
@@ -102,9 +102,9 @@
             // btnface
             // 
             this.btnface.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnface.Location = new System.Drawing.Point(334, 292);
+            this.btnface.Location = new System.Drawing.Point(167, 259);
             this.btnface.Name = "btnface";
-            this.btnface.Size = new System.Drawing.Size(131, 34);
+            this.btnface.Size = new System.Drawing.Size(322, 34);
             this.btnface.TabIndex = 4;
             this.btnface.Text = "Face";
             this.btnface.UseVisualStyleBackColor = true;
@@ -112,9 +112,9 @@
             // btngoogle
             // 
             this.btngoogle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btngoogle.Location = new System.Drawing.Point(334, 357);
+            this.btngoogle.Location = new System.Drawing.Point(167, 308);
             this.btngoogle.Name = "btngoogle";
-            this.btngoogle.Size = new System.Drawing.Size(131, 42);
+            this.btngoogle.Size = new System.Drawing.Size(322, 38);
             this.btngoogle.TabIndex = 5;
             this.btngoogle.Text = "google";
             this.btngoogle.UseVisualStyleBackColor = true;

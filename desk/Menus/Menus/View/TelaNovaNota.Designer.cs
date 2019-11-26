@@ -1,29 +1,30 @@
 ﻿namespace Menus
 {
-	partial class TelaNovaNota
-	{
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    partial class TelaNovaNota
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
 
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.txtNota = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnCancelar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.lbRecebeEmailNovaNota = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNota
@@ -65,11 +66,22 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // lbRecebeEmailNovaNota
+            // 
+            this.lbRecebeEmailNovaNota.AutoSize = true;
+            this.lbRecebeEmailNovaNota.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbRecebeEmailNovaNota.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbRecebeEmailNovaNota.Location = new System.Drawing.Point(617, 411);
+            this.lbRecebeEmailNovaNota.Name = "lbRecebeEmailNovaNota";
+            this.lbRecebeEmailNovaNota.Size = new System.Drawing.Size(0, 13);
+            this.lbRecebeEmailNovaNota.TabIndex = 5;
+            // 
             // TelaNovaNota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbRecebeEmailNovaNota);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.txtNota);
@@ -78,12 +90,13 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-		}
+        }
 
-		#endregion
+        #endregion
 
-		private System.Windows.Forms.TextBox txtNota;
+        private System.Windows.Forms.TextBox txtNota;
         private MaterialSkin.Controls.MaterialFlatButton btnAdicionar;
         private MaterialSkin.Controls.MaterialFlatButton btnCancelar;
+        private System.Windows.Forms.Label lbRecebeEmailNovaNota;
     }
 }

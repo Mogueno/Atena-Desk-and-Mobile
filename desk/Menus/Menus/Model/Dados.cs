@@ -41,6 +41,7 @@ namespace Menus.Model
 
         public const string strInsertNota2 = "INSERT INTO TB_NOTA_STR VALUES (@STR_STR_PATH, @NOTA_INT_ID)";
 
+
         public void GravarUser(string Nome, string Idade,  string Sexo, string Email, string Senha, string Facebook, string Google)
         {
             using (SqlConnection objConexao = new SqlConnection(strConexao))
@@ -80,6 +81,30 @@ namespace Menus.Model
 
 
                     user.UserId = (Int32)objCommand.ExecuteScalar();
+
+
+
+
+                    objConexao.Close();
+
+                }
+            }
+        }
+
+        public void SelectUserConfig(string EmailVar)
+        {
+            using (SqlConnection objConexao = new SqlConnection(strConexao))
+            {
+                using (SqlCommand objCommand = new SqlCommand(strSelectUser, objConexao))
+                {
+                    objCommand.Parameters.AddWithValue("@USER_STR_EMAIL_VAR", EmailVar);
+
+                    objConexao.Open();
+
+
+
+                    user.UserId = (Int32)objCommand.ExecuteScalar();
+
 
 
 
@@ -175,7 +200,7 @@ namespace Menus.Model
             }
         }
 
-        public void SelectNota(string EmailVar, string NotaContent)
+        public Cadastro SelectNota(string EmailVar, string NotaContent)
         {
             using (SqlConnection objConexao = new SqlConnection(strConexao))
             {
@@ -205,7 +230,7 @@ namespace Menus.Model
 
                         using (SqlCommand objCommand3 = new SqlCommand(strInsertNota1, objConexao))
                         {
-                            objCommand3.Parameters.AddWithValue("@NOTA_INT_ID",         user.NotaId);
+                            objCommand3.Parameters.AddWithValue("@NOTA_INT_ID", user.NotaId);
                             objCommand3.Parameters.AddWithValue("@STR_STR_PATH", NotaContent);
 
 
@@ -219,8 +244,10 @@ namespace Menus.Model
                     }
 
                     objConexao.Close();
+
+
                 }
-            }
+            }return user;
         }
 
 
@@ -340,24 +367,6 @@ namespace Menus.Model
 
             }
         }
-
-        public void GravarNota(string NotaContent)
-        {
-            using (SqlConnection objConexao = new SqlConnection(strConexao))
-            {
-                using (SqlCommand objCommand = new SqlCommand(strInsertNota, objConexao))
-                {
-                    objCommand.Parameters.AddWithValue("@STR_STR_PATH", NotaContent);
-
-                    objConexao.Open();
-
-                    objCommand.ExecuteNonQuery();
-
-                    objConexao.Close();
-                }
-            }
-        }
-
 
     }
 }

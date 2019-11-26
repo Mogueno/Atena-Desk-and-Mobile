@@ -7,16 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Controls;
 using Menus.Model;
+using MaterialSkin.Controls;
 
 namespace Menus
 {
 	public partial class TelaNovaNota : MaterialForm
 	{
-		public TelaNovaNota()
+		public TelaNovaNota(string texto)
 		{
 			InitializeComponent();
+
+            lbRecebeEmailNovaNota.Text = texto;
 		}
         private void GravarNota(string EmailVar, string NotaContent)
         {
@@ -24,7 +26,7 @@ namespace Menus
             {
                 Dados objDados = new Dados();
 
-                objDados.SelectNota(EmailVar,NotaContent);
+                Cadastro user =  objDados.SelectNota(EmailVar,NotaContent);
             }
             catch (Exception ex)
             {
@@ -33,10 +35,17 @@ namespace Menus
         }
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
+
+            Cadastro user = new Cadastro();
             if (!String.IsNullOrEmpty(txtNota.Text))
             {
-                GravarNota(txtNota)
+                 GravarNota("21", txtNota.Text);
             }
+        }
+
+        private void TelaNovaNota_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

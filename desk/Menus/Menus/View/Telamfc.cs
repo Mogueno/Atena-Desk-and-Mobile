@@ -68,26 +68,14 @@ namespace Menus
             {
                 GravarFacul(lbEmailLogin.Text,txtuniversidade.Text,txtcurso.Text, txtmateria1.Text, txthora1.Text);
 
-                this.Close();
-                ne = new Thread(novoform5);
-                ne.SetApartmentState(ApartmentState.STA);
-                ne.Start();
+                this.Hide();
+                new Menuprinc(lbEmailLogin.Text).Show();
             }
 
             else
             {
                 MessageBox.Show("um ou mais campos estão vazioss");
             }
-        }
-
-        private void novoform5()
-        {
-            Application.Run(new Menuprinc());
-        }
-
-        private void Telamfc_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

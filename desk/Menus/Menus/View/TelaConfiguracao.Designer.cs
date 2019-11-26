@@ -30,21 +30,14 @@
 		{
             this.btnAtualizar = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnEditarCadastro = new MaterialSkin.Controls.MaterialFlatButton();
-            this.txtHorario = new System.Windows.Forms.TextBox();
-            this.txtCurso = new System.Windows.Forms.TextBox();
             this.txtSexo = new System.Windows.Forms.TextBox();
             this.txtIdade = new System.Windows.Forms.TextBox();
-            this.txtMateria = new System.Windows.Forms.TextBox();
-            this.txtFaculdade = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.lbHorario = new MaterialSkin.Controls.MaterialLabel();
-            this.lbCurso = new MaterialSkin.Controls.MaterialLabel();
             this.lbIdade = new MaterialSkin.Controls.MaterialLabel();
-            this.lbMateria = new MaterialSkin.Controls.MaterialLabel();
-            this.lbFaculdade = new MaterialSkin.Controls.MaterialLabel();
             this.lbSexo = new MaterialSkin.Controls.MaterialLabel();
             this.lbNome = new MaterialSkin.Controls.MaterialLabel();
             this.lbDados = new System.Windows.Forms.Label();
+            this.lbRecebeEmailConfig = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAtualizar
@@ -61,6 +54,7 @@
             this.btnAtualizar.TabIndex = 29;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnEditarCadastro
             // 
@@ -77,20 +71,6 @@
             this.btnEditarCadastro.Text = "Editar Cadastro";
             this.btnEditarCadastro.UseVisualStyleBackColor = true;
             // 
-            // txtHorario
-            // 
-            this.txtHorario.Location = new System.Drawing.Point(183, 318);
-            this.txtHorario.Name = "txtHorario";
-            this.txtHorario.Size = new System.Drawing.Size(537, 20);
-            this.txtHorario.TabIndex = 27;
-            // 
-            // txtCurso
-            // 
-            this.txtCurso.Location = new System.Drawing.Point(183, 290);
-            this.txtCurso.Name = "txtCurso";
-            this.txtCurso.Size = new System.Drawing.Size(537, 20);
-            this.txtCurso.TabIndex = 26;
-            // 
             // txtSexo
             // 
             this.txtSexo.Location = new System.Drawing.Point(183, 174);
@@ -105,54 +85,12 @@
             this.txtIdade.Size = new System.Drawing.Size(537, 20);
             this.txtIdade.TabIndex = 24;
             // 
-            // txtMateria
-            // 
-            this.txtMateria.Location = new System.Drawing.Point(183, 262);
-            this.txtMateria.Name = "txtMateria";
-            this.txtMateria.Size = new System.Drawing.Size(537, 20);
-            this.txtMateria.TabIndex = 23;
-            // 
-            // txtFaculdade
-            // 
-            this.txtFaculdade.Location = new System.Drawing.Point(183, 232);
-            this.txtFaculdade.Name = "txtFaculdade";
-            this.txtFaculdade.Size = new System.Drawing.Size(537, 20);
-            this.txtFaculdade.TabIndex = 22;
-            // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(183, 143);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(537, 20);
             this.txtNome.TabIndex = 21;
-            // 
-            // lbHorario
-            // 
-            this.lbHorario.AutoSize = true;
-            this.lbHorario.BackColor = System.Drawing.Color.White;
-            this.lbHorario.Depth = 0;
-            this.lbHorario.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lbHorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbHorario.Location = new System.Drawing.Point(37, 317);
-            this.lbHorario.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lbHorario.Name = "lbHorario";
-            this.lbHorario.Size = new System.Drawing.Size(72, 19);
-            this.lbHorario.TabIndex = 20;
-            this.lbHorario.Text = "HORÁRIO";
-            // 
-            // lbCurso
-            // 
-            this.lbCurso.AutoSize = true;
-            this.lbCurso.BackColor = System.Drawing.Color.White;
-            this.lbCurso.Depth = 0;
-            this.lbCurso.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lbCurso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbCurso.Location = new System.Drawing.Point(36, 289);
-            this.lbCurso.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lbCurso.Name = "lbCurso";
-            this.lbCurso.Size = new System.Drawing.Size(57, 19);
-            this.lbCurso.TabIndex = 19;
-            this.lbCurso.Text = "CURSO";
             // 
             // lbIdade
             // 
@@ -167,34 +105,6 @@
             this.lbIdade.Size = new System.Drawing.Size(52, 19);
             this.lbIdade.TabIndex = 18;
             this.lbIdade.Text = "IDADE";
-            // 
-            // lbMateria
-            // 
-            this.lbMateria.AutoSize = true;
-            this.lbMateria.BackColor = System.Drawing.Color.White;
-            this.lbMateria.Depth = 0;
-            this.lbMateria.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lbMateria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbMateria.Location = new System.Drawing.Point(36, 261);
-            this.lbMateria.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lbMateria.Name = "lbMateria";
-            this.lbMateria.Size = new System.Drawing.Size(73, 19);
-            this.lbMateria.TabIndex = 16;
-            this.lbMateria.Text = "MATÉRIA";
-            // 
-            // lbFaculdade
-            // 
-            this.lbFaculdade.AutoSize = true;
-            this.lbFaculdade.BackColor = System.Drawing.Color.White;
-            this.lbFaculdade.Depth = 0;
-            this.lbFaculdade.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lbFaculdade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbFaculdade.Location = new System.Drawing.Point(37, 232);
-            this.lbFaculdade.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lbFaculdade.Name = "lbFaculdade";
-            this.lbFaculdade.Size = new System.Drawing.Size(94, 19);
-            this.lbFaculdade.TabIndex = 15;
-            this.lbFaculdade.Text = "FACULDADE";
             // 
             // lbSexo
             // 
@@ -235,30 +145,34 @@
             this.lbDados.TabIndex = 13;
             this.lbDados.Text = "SEUS DADOS";
             // 
+            // lbRecebeEmailConfig
+            // 
+            this.lbRecebeEmailConfig.AutoSize = true;
+            this.lbRecebeEmailConfig.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbRecebeEmailConfig.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbRecebeEmailConfig.Location = new System.Drawing.Point(41, 98);
+            this.lbRecebeEmailConfig.Name = "lbRecebeEmailConfig";
+            this.lbRecebeEmailConfig.Size = new System.Drawing.Size(0, 13);
+            this.lbRecebeEmailConfig.TabIndex = 30;
+            // 
             // TelaConfiguracao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbRecebeEmailConfig);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.btnEditarCadastro);
-            this.Controls.Add(this.txtHorario);
-            this.Controls.Add(this.txtCurso);
             this.Controls.Add(this.txtSexo);
             this.Controls.Add(this.txtIdade);
-            this.Controls.Add(this.txtMateria);
-            this.Controls.Add(this.txtFaculdade);
             this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.lbHorario);
-            this.Controls.Add(this.lbCurso);
             this.Controls.Add(this.lbIdade);
-            this.Controls.Add(this.lbMateria);
-            this.Controls.Add(this.lbFaculdade);
             this.Controls.Add(this.lbSexo);
             this.Controls.Add(this.lbNome);
             this.Controls.Add(this.lbDados);
             this.Name = "TelaConfiguracao";
             this.Text = "TelaConfiguracao";
+            this.Load += new System.EventHandler(this.TelaConfiguracao_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,20 +182,13 @@
 
 		private MaterialSkin.Controls.MaterialFlatButton btnAtualizar;
 		private MaterialSkin.Controls.MaterialFlatButton btnEditarCadastro;
-		private System.Windows.Forms.TextBox txtHorario;
-		private System.Windows.Forms.TextBox txtCurso;
 		private System.Windows.Forms.TextBox txtSexo;
 		private System.Windows.Forms.TextBox txtIdade;
-		private System.Windows.Forms.TextBox txtMateria;
-		private System.Windows.Forms.TextBox txtFaculdade;
 		private System.Windows.Forms.TextBox txtNome;
-		private MaterialSkin.Controls.MaterialLabel lbHorario;
-		private MaterialSkin.Controls.MaterialLabel lbCurso;
 		private MaterialSkin.Controls.MaterialLabel lbIdade;
-		private MaterialSkin.Controls.MaterialLabel lbMateria;
-		private MaterialSkin.Controls.MaterialLabel lbFaculdade;
 		private MaterialSkin.Controls.MaterialLabel lbSexo;
 		private MaterialSkin.Controls.MaterialLabel lbNome;
 		private System.Windows.Forms.Label lbDados;
-	}
+        private System.Windows.Forms.Label lbRecebeEmailConfig;
+    }
 }

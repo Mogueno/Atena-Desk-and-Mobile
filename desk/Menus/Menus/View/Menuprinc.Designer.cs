@@ -33,6 +33,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.lbRecebeEmailMenu = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,11 +85,21 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
+            // lbRecebeEmailMenu
+            // 
+            this.lbRecebeEmailMenu.AutoSize = true;
+            this.lbRecebeEmailMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbRecebeEmailMenu.Location = new System.Drawing.Point(60, 350);
+            this.lbRecebeEmailMenu.Name = "lbRecebeEmailMenu";
+            this.lbRecebeEmailMenu.Size = new System.Drawing.Size(0, 13);
+            this.lbRecebeEmailMenu.TabIndex = 6;
+            // 
             // Menuprinc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbRecebeEmailMenu);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -98,6 +109,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -107,5 +119,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lbRecebeEmailMenu;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Menus
 {
-    class Cadastro
+    public class Cadastro
     {
         private string nome;
         private string sobrenome;

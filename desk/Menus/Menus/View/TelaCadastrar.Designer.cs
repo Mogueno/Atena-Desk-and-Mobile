@@ -46,10 +46,10 @@
             // txtsenha2
             // 
             this.txtsenha2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsenha2.Location = new System.Drawing.Point(92, 256);
+            this.txtsenha2.Location = new System.Drawing.Point(158, 256);
             this.txtsenha2.Name = "txtsenha2";
             this.txtsenha2.PasswordChar = '*';
-            this.txtsenha2.Size = new System.Drawing.Size(156, 35);
+            this.txtsenha2.Size = new System.Drawing.Size(322, 35);
             this.txtsenha2.TabIndex = 4;
             // 
             // lbsenha2
@@ -65,7 +65,7 @@
             // txtnome
             // 
             this.txtnome.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnome.Location = new System.Drawing.Point(97, 24);
+            this.txtnome.Location = new System.Drawing.Point(158, 27);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(322, 35);
             this.txtnome.TabIndex = 5;
@@ -95,15 +95,15 @@
             this.txtsobrenome.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsobrenome.Location = new System.Drawing.Point(158, 71);
             this.txtsobrenome.Name = "txtsobrenome";
-            this.txtsobrenome.Size = new System.Drawing.Size(261, 35);
+            this.txtsobrenome.Size = new System.Drawing.Size(322, 35);
             this.txtsobrenome.TabIndex = 5;
             // 
             // txtidade
             // 
             this.txtidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtidade.Location = new System.Drawing.Point(92, 109);
+            this.txtidade.Location = new System.Drawing.Point(158, 112);
             this.txtidade.Name = "txtidade";
-            this.txtidade.Size = new System.Drawing.Size(114, 35);
+            this.txtidade.Size = new System.Drawing.Size(322, 35);
             this.txtidade.TabIndex = 7;
             // 
             // lbidade
@@ -119,16 +119,16 @@
             // txtsexo
             // 
             this.txtsexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsexo.Location = new System.Drawing.Point(86, 150);
+            this.txtsexo.Location = new System.Drawing.Point(158, 156);
             this.txtsexo.Name = "txtsexo";
-            this.txtsexo.Size = new System.Drawing.Size(120, 35);
+            this.txtsexo.Size = new System.Drawing.Size(322, 35);
             this.txtsexo.TabIndex = 9;
             // 
             // lbsexo
             // 
             this.lbsexo.AutoSize = true;
             this.lbsexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbsexo.Location = new System.Drawing.Point(12, 156);
+            this.lbsexo.Location = new System.Drawing.Point(12, 159);
             this.lbsexo.Name = "lbsexo";
             this.lbsexo.Size = new System.Drawing.Size(68, 29);
             this.lbsexo.TabIndex = 8;
@@ -137,9 +137,9 @@
             // txtlogin2
             // 
             this.txtlogin2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtlogin2.Location = new System.Drawing.Point(86, 205);
+            this.txtlogin2.Location = new System.Drawing.Point(158, 205);
             this.txtlogin2.Name = "txtlogin2";
-            this.txtlogin2.Size = new System.Drawing.Size(162, 35);
+            this.txtlogin2.Size = new System.Drawing.Size(322, 35);
             this.txtlogin2.TabIndex = 11;
             // 
             // lblogin2
@@ -155,9 +155,9 @@
             // btnconcluir
             // 
             this.btnconcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnconcluir.Location = new System.Drawing.Point(386, 292);
+            this.btnconcluir.Location = new System.Drawing.Point(558, 144);
             this.btnconcluir.Name = "btnconcluir";
-            this.btnconcluir.Size = new System.Drawing.Size(161, 109);
+            this.btnconcluir.Size = new System.Drawing.Size(199, 47);
             this.btnconcluir.TabIndex = 12;
             this.btnconcluir.Text = "Concluido";
             this.btnconcluir.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 328);
             this.Controls.Add(this.btnconcluir);
             this.Controls.Add(this.txtlogin2);
             this.Controls.Add(this.lblogin2);

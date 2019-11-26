@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Data.SqlClient;
 
 namespace Menus
 {
@@ -32,23 +33,17 @@ namespace Menus
 
         private void btnentrar_Click(object sender, EventArgs e)
         {
-            if (txtusuario.Text == "gabriel" && txtsenha.Text == "gabriel")
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\odasf\Documents\bancoMain.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM TB_USER WHERE USER_STR_EMAIL='" + txtusuario.Text + "' AND USER_STR_SENHA='" + txtsenha.Text + "'", con);
+            DataTable dt = new DataTable(); 
+            sda.Fill(dt);
+            if (dt.Rows[0][0].ToString() == "1")
             {
-                this.Close();
-                nt = new Thread(Menuprinc);
-                nt.SetApartmentState(ApartmentState.STA);
-                nt.Start();
-
+                this.Hide();
+                new Menuprinc(txtusuario.Text).Show();
             }
             else
-            {
-                MessageBox.Show("Senha ou Login inválida");
-            }
-        }
-
-        private void Menuprinc()
-        {
-            Application.Run(new Menuprinc());
+                MessageBox.Show("Usuário ou senha incorretos");    
         }
 
         private void btncadastrar_Click(object sender, EventArgs e)
