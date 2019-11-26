@@ -20,6 +20,10 @@ namespace Menus
 
             lbRecebeEmailNovaNota.Text = texto;
 		}
+
+
+        public const string strSelectUser = "SELECT USER_INT_ID FROM TB_USER WHERE USER_STR_EMAIL = @USER_STR_EMAIL_VAR";
+
         private void GravarNota(string EmailVar, string NotaContent)
         {
             try
