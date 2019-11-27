@@ -47,7 +47,7 @@
             this.btnfinalizar.BackColor = System.Drawing.SystemColors.Control;
             this.btnfinalizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnfinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.btnfinalizar.Location = new System.Drawing.Point(245, 370);
+            this.btnfinalizar.Location = new System.Drawing.Point(474, 370);
             this.btnfinalizar.Name = "btnfinalizar";
             this.btnfinalizar.Size = new System.Drawing.Size(165, 41);
             this.btnfinalizar.TabIndex = 5;
@@ -169,7 +169,7 @@
             // lbEmailLogin
             // 
             this.lbEmailLogin.AutoSize = true;
-            this.lbEmailLogin.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbEmailLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbEmailLogin.Location = new System.Drawing.Point(33, 82);
             this.lbEmailLogin.Name = "lbEmailLogin";
             this.lbEmailLogin.Size = new System.Drawing.Size(0, 13);

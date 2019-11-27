@@ -35,13 +35,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.lbRecebeEmailMenu = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSair = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(317, 129);
+            this.label2.Location = new System.Drawing.Point(283, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 13);
             this.label2.TabIndex = 1;
@@ -52,9 +53,9 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(27, 80);
+            this.panel1.Location = new System.Drawing.Point(61, 73);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(736, 286);
+            this.panel1.Size = new System.Drawing.Size(702, 286);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -98,6 +99,7 @@
             // 
             this.lbRecebeEmailMenu.AutoSize = true;
             this.lbRecebeEmailMenu.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.lbRecebeEmailMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbRecebeEmailMenu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbRecebeEmailMenu.Location = new System.Drawing.Point(0, 64);
             this.lbRecebeEmailMenu.Name = "lbRecebeEmailMenu";
@@ -114,11 +116,28 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 7;
             // 
+            // btnSair
+            // 
+            this.btnSair.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSair.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSair.Location = new System.Drawing.Point(0, 77);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(41, 21);
+            this.btnSair.TabIndex = 8;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Menuprinc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbRecebeEmailMenu);
             this.Controls.Add(this.button3);
@@ -127,6 +146,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Menuprinc";
             this.Text = "Menu Principal";
+            this.Load += new System.EventHandler(this.Menuprinc_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -142,5 +162,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lbRecebeEmailMenu;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSair;
     }
 }

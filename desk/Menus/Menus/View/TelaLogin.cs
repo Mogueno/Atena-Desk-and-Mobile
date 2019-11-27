@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Data.SqlClient;
 using MaterialSkin.Controls;
+using System.Configuration;
 
 namespace Menus
 {
@@ -33,6 +34,41 @@ namespace Menus
 
         }
 
+
+        public string strConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+        public const string strSelectData = "SELECT FAC_STR_NOME, CUR_STR_NOME, MAT_STR_NOME FROM TB_USER AS U JOIN TB_FACULDADE AS F ON U.USER_INT_ID = F.USER_INT_ID JOIN TB_CURSO AS C ON U.USER_INT_ID = C.USER_INT_ID JOIN TB_MATERIA AS M ON U.USER_INT_ID = M.USER_INT_ID WHERE U.USER_STR_EMAIL = @USER_STR_EMAIL";
+
+
+        public void SelectUserConfig(string emailRecebe)
+        {
+            using (SqlConnection objConexao = new SqlConnection(strConexao))
+            {
+                using (SqlCommand objCommand = new SqlCommand(strSelectData, objConexao))
+                {
+                    objConexao.Open();
+
+                    objCommand.Parameters.AddWithValue("@USER_STR_EMAIL", emailRecebe);
+
+                    SqlDataReader da = objCommand.ExecuteReader();
+                    while (da.Read())
+                    {
+                        Login.Facul = da.GetValue(0).ToString();
+                        Login.Curso = da.GetValue(1).ToString();
+                        Login.Materia = da.GetValue(2).ToString();
+                    }
+
+
+
+
+                    da.Close();
+                    objConexao.Close();
+
+                }
+            }
+        }
+
+
         private void btnentrar_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\odasf\Documents\bancoMain.mdf;Integrated Security=True;Connect Timeout=30");
@@ -43,6 +79,8 @@ namespace Menus
             {
 
                 Login.Usuario = txtusuario.Text;
+
+                SelectUserConfig(txtusuario.Text);
                 this.Hide();
                 new Menuprinc(txtusuario.Text).Show();
             }
@@ -54,15 +92,9 @@ namespace Menus
 
         private void btncadastrar_Click(object sender, EventArgs e)
         {
-            this.Close();
-            nt = new Thread(novoform6);
-            nt.SetApartmentState(ApartmentState.STA);
-            nt.Start();
+            this.Hide();
+            new TelaCadastrar().Show();
         }
 
-        private void novoform6()
-        {
-            Application.Run(new TelaCadastrar());
-        }
     }
 }

@@ -111,5 +111,11 @@ namespace Menus
         {
 
         }
+
+        private void btnVoltarLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new TelaLogin().Show();
+        }
     }
 }

@@ -41,6 +41,7 @@
             this.txtlogin2 = new System.Windows.Forms.TextBox();
             this.lblogin2 = new System.Windows.Forms.Label();
             this.btnconcluir = new System.Windows.Forms.Button();
+            this.btnVoltarLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtsenha2
@@ -162,19 +163,32 @@
             // 
             this.btnconcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnconcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnconcluir.Location = new System.Drawing.Point(147, 375);
+            this.btnconcluir.Location = new System.Drawing.Point(284, 373);
             this.btnconcluir.Name = "btnconcluir";
             this.btnconcluir.Size = new System.Drawing.Size(199, 47);
             this.btnconcluir.TabIndex = 6;
-            this.btnconcluir.Text = "Concluido";
+            this.btnconcluir.Text = "Próximo";
             this.btnconcluir.UseVisualStyleBackColor = true;
             this.btnconcluir.Click += new System.EventHandler(this.btnconcluir_Click);
+            // 
+            // btnVoltarLogin
+            // 
+            this.btnVoltarLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVoltarLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltarLogin.Location = new System.Drawing.Point(21, 373);
+            this.btnVoltarLogin.Name = "btnVoltarLogin";
+            this.btnVoltarLogin.Size = new System.Drawing.Size(199, 47);
+            this.btnVoltarLogin.TabIndex = 11;
+            this.btnVoltarLogin.Text = "Voltar";
+            this.btnVoltarLogin.UseVisualStyleBackColor = true;
+            this.btnVoltarLogin.Click += new System.EventHandler(this.btnVoltarLogin_Click);
             // 
             // TelaCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 458);
+            this.Controls.Add(this.btnVoltarLogin);
             this.Controls.Add(this.btnconcluir);
             this.Controls.Add(this.txtlogin2);
             this.Controls.Add(this.lblogin2);
@@ -211,5 +225,6 @@
         private System.Windows.Forms.Label lblogin2;
         private System.Windows.Forms.Button btnconcluir;
         public System.Windows.Forms.TextBox txtlogin2;
+        private System.Windows.Forms.Button btnVoltarLogin;
     }
 }

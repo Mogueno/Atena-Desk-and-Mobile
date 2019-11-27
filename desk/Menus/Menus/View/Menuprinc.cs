@@ -49,5 +49,16 @@ namespace Menus
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new TelaLogin().Show();
+        }
+
+        private void Menuprinc_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

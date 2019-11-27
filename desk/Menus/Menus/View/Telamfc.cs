@@ -90,5 +90,11 @@ namespace Menus
         {
 
         }
+
+        private void btnVoltarUni_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new TelaCadastrar().Show();
+        }
     }
 }
