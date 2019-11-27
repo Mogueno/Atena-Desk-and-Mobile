@@ -50,6 +50,7 @@
             // 
             this.btnAtualizar.AutoSize = true;
             this.btnAtualizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAtualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAtualizar.Depth = 0;
             this.btnAtualizar.Location = new System.Drawing.Point(495, 351);
             this.btnAtualizar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
@@ -234,6 +235,7 @@
             // 
             this.btnVoltar2.AutoSize = true;
             this.btnVoltar2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnVoltar2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVoltar2.Depth = 0;
             this.btnVoltar2.Location = new System.Drawing.Point(40, 351);
             this.btnVoltar2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
@@ -268,7 +270,7 @@
             this.Controls.Add(this.lbNome);
             this.Controls.Add(this.lbDados);
             this.Name = "TelaConfiguracao";
-            this.Text = "TelaConfiguracao";
+            this.Text = "Configurações";
             this.Load += new System.EventHandler(this.TelaConfiguracao_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

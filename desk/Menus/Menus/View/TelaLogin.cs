@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.Data.SqlClient;
+using MaterialSkin.Controls;
 
 namespace Menus
 {
-    public partial class TelaLogin : Form
+    public partial class TelaLogin : MaterialForm
     {
         Thread nt;
 

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telamfc));
             this.btnfinalizar = new System.Windows.Forms.Button();
             this.txthora1 = new System.Windows.Forms.TextBox();
             this.txtmateria1 = new System.Windows.Forms.TextBox();
@@ -40,20 +39,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbcurso = new System.Windows.Forms.Label();
             this.lbuniversidade = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblogo = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.nome = new System.Windows.Forms.Label();
             this.lbEmailLogin = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnfinalizar
             // 
-            this.btnfinalizar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnfinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnfinalizar.Location = new System.Drawing.Point(314, 403);
+            this.btnfinalizar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnfinalizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnfinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnfinalizar.Location = new System.Drawing.Point(245, 370);
             this.btnfinalizar.Name = "btnfinalizar";
             this.btnfinalizar.Size = new System.Drawing.Size(165, 41);
             this.btnfinalizar.TabIndex = 5;
@@ -63,158 +57,114 @@
             // 
             // txthora1
             // 
-            this.txthora1.BackColor = System.Drawing.SystemColors.Control;
+            this.txthora1.AccessibleName = "";
+            this.txthora1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txthora1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txthora1.ForeColor = System.Drawing.Color.Gray;
-            this.txthora1.Location = new System.Drawing.Point(461, 298);
+            this.txthora1.Location = new System.Drawing.Point(431, 309);
             this.txthora1.Name = "txthora1";
             this.txthora1.Size = new System.Drawing.Size(208, 29);
             this.txthora1.TabIndex = 4;
-            this.txthora1.Text = "Ex: 19:20";
             this.txthora1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtmateria1
             // 
-            this.txtmateria1.BackColor = System.Drawing.SystemColors.Control;
+            this.txtmateria1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtmateria1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmateria1.ForeColor = System.Drawing.Color.Gray;
-            this.txtmateria1.Location = new System.Drawing.Point(167, 298);
+            this.txtmateria1.Location = new System.Drawing.Point(137, 309);
             this.txtmateria1.Name = "txtmateria1";
             this.txtmateria1.Size = new System.Drawing.Size(230, 29);
             this.txtmateria1.TabIndex = 3;
-            this.txtmateria1.Text = "Ex: Matematica";
             this.txtmateria1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtcurso
             // 
-            this.txtcurso.BackColor = System.Drawing.SystemColors.Control;
+            this.txtcurso.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtcurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcurso.ForeColor = System.Drawing.Color.Gray;
-            this.txtcurso.Location = new System.Drawing.Point(208, 194);
+            this.txtcurso.Location = new System.Drawing.Point(215, 190);
             this.txtcurso.Name = "txtcurso";
-            this.txtcurso.Size = new System.Drawing.Size(402, 29);
+            this.txtcurso.Size = new System.Drawing.Size(424, 29);
             this.txtcurso.TabIndex = 2;
-            this.txtcurso.Text = "Insira seu curso";
             this.txtcurso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(403, 302);
+            this.label4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label4.Location = new System.Drawing.Point(373, 311);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 25);
+            this.label4.Size = new System.Drawing.Size(58, 25);
             this.label4.TabIndex = 13;
             this.label4.Text = "Hora";
             // 
             // txtuniversidade
             // 
-            this.txtuniversidade.BackColor = System.Drawing.SystemColors.Control;
+            this.txtuniversidade.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtuniversidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtuniversidade.ForeColor = System.Drawing.Color.Gray;
-            this.txtuniversidade.Location = new System.Drawing.Point(208, 143);
+            this.txtuniversidade.Location = new System.Drawing.Point(215, 137);
             this.txtuniversidade.Name = "txtuniversidade";
-            this.txtuniversidade.Size = new System.Drawing.Size(402, 29);
+            this.txtuniversidade.Size = new System.Drawing.Size(424, 29);
             this.txtuniversidade.TabIndex = 1;
-            this.txtuniversidade.Text = "Insira sua Universidade";
             this.txtuniversidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(70, 302);
+            this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label2.Location = new System.Drawing.Point(41, 311);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 25);
+            this.label2.Size = new System.Drawing.Size(84, 25);
             this.label2.TabIndex = 10;
             this.label2.Text = "Matéria";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(266, 238);
+            this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
+            this.label3.Location = new System.Drawing.Point(203, 240);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(319, 33);
+            this.label3.Size = new System.Drawing.Size(277, 33);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Coloque sua matérias";
+            this.label3.Text = "Insira suas Matérias";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(219, 82);
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(179, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(385, 33);
+            this.label1.Size = new System.Drawing.Size(326, 33);
             this.label1.TabIndex = 16;
-            this.label1.Text = "Coloque suas informações";
+            this.label1.Text = "Insira suas Informações";
             // 
             // lbcurso
             // 
             this.lbcurso.AutoSize = true;
-            this.lbcurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbcurso.Location = new System.Drawing.Point(86, 196);
+            this.lbcurso.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbcurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.lbcurso.Location = new System.Drawing.Point(41, 190);
             this.lbcurso.Name = "lbcurso";
-            this.lbcurso.Size = new System.Drawing.Size(74, 25);
+            this.lbcurso.Size = new System.Drawing.Size(69, 25);
             this.lbcurso.TabIndex = 7;
             this.lbcurso.Text = "Curso";
             // 
             // lbuniversidade
             // 
             this.lbuniversidade.AutoSize = true;
-            this.lbuniversidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbuniversidade.Location = new System.Drawing.Point(53, 145);
+            this.lbuniversidade.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbuniversidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.lbuniversidade.Location = new System.Drawing.Point(41, 137);
             this.lbuniversidade.Name = "lbuniversidade";
-            this.lbuniversidade.Size = new System.Drawing.Size(150, 25);
+            this.lbuniversidade.Size = new System.Drawing.Size(138, 25);
             this.lbuniversidade.TabIndex = 12;
             this.lbuniversidade.Text = "Universidade";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.lblogo);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.nome);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(800, 59);
-            this.panel1.TabIndex = 6;
-            // 
-            // lblogo
-            // 
-            this.lblogo.AutoSize = true;
-            this.lblogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblogo.Location = new System.Drawing.Point(677, 8);
-            this.lblogo.Name = "lblogo";
-            this.lblogo.Size = new System.Drawing.Size(92, 31);
-            this.lblogo.TabIndex = 1;
-            this.lblogo.Text = "LOGO";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 59);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // nome
-            // 
-            this.nome.AutoSize = true;
-            this.nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nome.ForeColor = System.Drawing.Color.White;
-            this.nome.Location = new System.Drawing.Point(56, 7);
-            this.nome.Name = "nome";
-            this.nome.Size = new System.Drawing.Size(147, 31);
-            this.nome.TabIndex = 0;
-            this.nome.Text = "Menu MFC";
             // 
             // lbEmailLogin
             // 
@@ -229,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(684, 450);
             this.Controls.Add(this.lbEmailLogin);
             this.Controls.Add(this.btnfinalizar);
             this.Controls.Add(this.txthora1);
@@ -242,12 +192,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbcurso);
             this.Controls.Add(this.lbuniversidade);
-            this.Controls.Add(this.panel1);
             this.Name = "Telamfc";
-            this.Text = "Telamfc";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "Cadastro de Universidade";
+            this.Load += new System.EventHandler(this.Telamfc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,10 +213,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbcurso;
         private System.Windows.Forms.Label lbuniversidade;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblogo;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label nome;
         private System.Windows.Forms.Label lbEmailLogin;
     }
 }

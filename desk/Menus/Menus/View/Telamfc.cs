@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using Menus.Model;
+using MaterialSkin.Controls;
+
 
 namespace Menus
 {
-    public partial class Telamfc : Form
+    public partial class Telamfc : MaterialForm
     {
 
         
@@ -82,6 +84,11 @@ namespace Menus
             {
                 MessageBox.Show("um ou mais campos estão vazioss");
             }
+        }
+
+        private void Telamfc_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

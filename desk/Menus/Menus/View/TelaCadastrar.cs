@@ -10,10 +10,11 @@ using System.Windows.Forms;
 using System.Threading;
 using Menus.Model;
 using System.Data.SqlClient;
+using MaterialSkin.Controls;
 
 namespace Menus
 {
-    public partial class TelaCadastrar : Form
+    public partial class TelaCadastrar : MaterialForm
     {
         Thread nf;
 
@@ -103,6 +104,11 @@ namespace Menus
                     MessageBox.Show("Um ou mais campos estão em branco");
                 }
             }
+
+        }
+
+        private void TelaCadastrar_Load(object sender, EventArgs e)
+        {
 
         }
     }

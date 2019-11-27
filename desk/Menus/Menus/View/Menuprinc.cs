@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using MaterialSkin.Controls;
 
 namespace Menus
 {
-    public partial class Menuprinc : Form
+    public partial class Menuprinc : MaterialForm
     {
 		public Menuprinc(string texto)
         {
@@ -42,6 +43,11 @@ namespace Menus
         private void button1_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://scholar.google.com.br/");
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -39,8 +39,9 @@
             // 
             this.btnAdicionar.AutoSize = true;
             this.btnAdicionar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionar.Depth = 0;
-            this.btnAdicionar.Location = new System.Drawing.Point(369, 399);
+            this.btnAdicionar.Location = new System.Drawing.Point(704, 399);
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAdicionar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdicionar.Name = "btnAdicionar";
@@ -55,6 +56,7 @@
             // 
             this.btnCancelar.AutoSize = true;
             this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Depth = 0;
             this.btnCancelar.Location = new System.Drawing.Point(13, 399);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
@@ -72,7 +74,7 @@
             this.lbRecebeEmailNovaNota.AutoSize = true;
             this.lbRecebeEmailNovaNota.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbRecebeEmailNovaNota.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbRecebeEmailNovaNota.Location = new System.Drawing.Point(617, 411);
+            this.lbRecebeEmailNovaNota.Location = new System.Drawing.Point(318, 411);
             this.lbRecebeEmailNovaNota.Name = "lbRecebeEmailNovaNota";
             this.lbRecebeEmailNovaNota.Size = new System.Drawing.Size(0, 13);
             this.lbRecebeEmailNovaNota.TabIndex = 5;
@@ -87,7 +89,7 @@
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.txtNota);
             this.Name = "TelaNovaNota";
-            this.Text = "TelaNovaNota";
+            this.Text = "Nova Nota";
             this.ResumeLayout(false);
             this.PerformLayout();
 
