@@ -23,7 +23,7 @@ namespace Menus
             InitializeComponent();
 
             lbRecebeEmailConfig.Text = textao;
-            //
+  
         }
 
         Cadastro user = new Cadastro();

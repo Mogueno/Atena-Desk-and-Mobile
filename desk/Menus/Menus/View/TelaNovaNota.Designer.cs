@@ -90,6 +90,7 @@
             this.Controls.Add(this.txtNota);
             this.Name = "TelaNovaNota";
             this.Text = "Nova Nota";
+            this.Load += new System.EventHandler(this.TelaNovaNota_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

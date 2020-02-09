@@ -132,5 +132,10 @@ namespace Menus
             this.Hide();
             new Menuprinc(lbRecebeEmailNovaNota.Text).Show();
         }
+
+        private void TelaNovaNota_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
