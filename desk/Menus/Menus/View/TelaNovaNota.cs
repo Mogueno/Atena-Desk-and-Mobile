@@ -31,9 +31,9 @@ namespace Menus
 
         public const string strInsertNota1 = "INSERT INTO TB_NOTA OUTPUT INSERTED.NOTA_INT_ID VALUES (@FAC_INT_ID, @CUR_INT_ID, @MAT_INT_ID, @USER_INT_ID)";
 
-        public const string strInsertNota2 = "INSERT INTO TB_NOTA_STR VALUES (@STR_STR_PATH, @NOTA_INT_ID)";
+        public const string strInsertNota2 = "INSERT INTO TB_NOTA_STR VALUES (@STR_STR_PATH, @NOTA_INT_ID, @STR_STR_TITLE)";
 
-        public void SelectNota(string emailRecebe, string notaRecebe)
+        public void SelectNota(string emailRecebe, string notaRecebe, string notaTitulo)
         {
             using (SqlConnection objConexao = new SqlConnection(strConexao))
             {
@@ -76,6 +76,7 @@ namespace Menus
                             {
                                 objCommand3.Parameters.AddWithValue("@STR_STR_PATH", notaRecebe);
                                 objCommand3.Parameters.AddWithValue("@NOTA_INT_ID", notaId);
+                                objCommand3.Parameters.AddWithValue("@STR_STR_TITLE", notaTitulo);
 
                                 int retorno2 = objCommand3.ExecuteNonQuery();
 
@@ -96,11 +97,11 @@ namespace Menus
             }
         }
 
-        private void GravarNota(string EmailVar, string Nota)
+        private void GravarNota(string EmailVar, string Nota, string Titulo)
         {
             try
             {
-                SelectNota(EmailVar, Nota);
+                SelectNota(EmailVar, Nota, Titulo);
 
             }
             catch (Exception ex)
@@ -112,9 +113,9 @@ namespace Menus
         {
 
             Cadastro user = new Cadastro();
-            if (!String.IsNullOrEmpty(txtNota.Text))
+            if (!String.IsNullOrEmpty(txtNota.Text) && !String.IsNullOrEmpty(txtTitle.Text))
             {
-                 GravarNota(Login.Usuario, txtNota.Text);
+                 GravarNota(Login.Usuario, txtNota.Text, txtTitle.Text);
             }
             else
             {
@@ -135,7 +136,9 @@ namespace Menus
 
         private void TelaNovaNota_Load_1(object sender, EventArgs e)
         {
-
+            FormBorderStyle = FormBorderStyle.Sizable;
+            WindowState = FormWindowState.Maximized;
+            TopMost = true;
         }
     }
 }

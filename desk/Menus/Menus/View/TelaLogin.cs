@@ -26,7 +26,9 @@ namespace Menus
 
         private void TelaLogin_Load(object sender, EventArgs e)
         {
-
+            FormBorderStyle = FormBorderStyle.Sizable;
+            WindowState = FormWindowState.Maximized;
+            TopMost = true;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

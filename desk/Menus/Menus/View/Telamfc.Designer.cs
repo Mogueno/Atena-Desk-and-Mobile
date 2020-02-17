@@ -47,7 +47,7 @@
             this.btnfinalizar.BackColor = System.Drawing.SystemColors.Control;
             this.btnfinalizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnfinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.btnfinalizar.Location = new System.Drawing.Point(474, 370);
+            this.btnfinalizar.Location = new System.Drawing.Point(794, 433);
             this.btnfinalizar.Name = "btnfinalizar";
             this.btnfinalizar.Size = new System.Drawing.Size(165, 41);
             this.btnfinalizar.TabIndex = 5;
@@ -61,7 +61,7 @@
             this.txthora1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txthora1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txthora1.ForeColor = System.Drawing.Color.Gray;
-            this.txthora1.Location = new System.Drawing.Point(431, 309);
+            this.txthora1.Location = new System.Drawing.Point(751, 372);
             this.txthora1.Name = "txthora1";
             this.txthora1.Size = new System.Drawing.Size(208, 29);
             this.txthora1.TabIndex = 4;
@@ -72,7 +72,7 @@
             this.txtmateria1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtmateria1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmateria1.ForeColor = System.Drawing.Color.Gray;
-            this.txtmateria1.Location = new System.Drawing.Point(137, 309);
+            this.txtmateria1.Location = new System.Drawing.Point(457, 372);
             this.txtmateria1.Name = "txtmateria1";
             this.txtmateria1.Size = new System.Drawing.Size(230, 29);
             this.txtmateria1.TabIndex = 3;
@@ -83,7 +83,7 @@
             this.txtcurso.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtcurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcurso.ForeColor = System.Drawing.Color.Gray;
-            this.txtcurso.Location = new System.Drawing.Point(215, 190);
+            this.txtcurso.Location = new System.Drawing.Point(535, 253);
             this.txtcurso.Name = "txtcurso";
             this.txtcurso.Size = new System.Drawing.Size(424, 29);
             this.txtcurso.TabIndex = 2;
@@ -94,7 +94,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.label4.Location = new System.Drawing.Point(373, 311);
+            this.label4.Location = new System.Drawing.Point(693, 374);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 25);
             this.label4.TabIndex = 13;
@@ -105,7 +105,7 @@
             this.txtuniversidade.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtuniversidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtuniversidade.ForeColor = System.Drawing.Color.Gray;
-            this.txtuniversidade.Location = new System.Drawing.Point(215, 137);
+            this.txtuniversidade.Location = new System.Drawing.Point(535, 200);
             this.txtuniversidade.Name = "txtuniversidade";
             this.txtuniversidade.Size = new System.Drawing.Size(424, 29);
             this.txtuniversidade.TabIndex = 1;
@@ -116,7 +116,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.label2.Location = new System.Drawing.Point(41, 311);
+            this.label2.Location = new System.Drawing.Point(361, 374);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 25);
             this.label2.TabIndex = 10;
@@ -127,7 +127,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
-            this.label3.Location = new System.Drawing.Point(203, 240);
+            this.label3.Location = new System.Drawing.Point(523, 303);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(277, 33);
             this.label3.TabIndex = 15;
@@ -138,7 +138,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(179, 82);
+            this.label1.Location = new System.Drawing.Point(499, 145);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(326, 33);
             this.label1.TabIndex = 16;
@@ -149,7 +149,7 @@
             this.lbcurso.AutoSize = true;
             this.lbcurso.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbcurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.lbcurso.Location = new System.Drawing.Point(41, 190);
+            this.lbcurso.Location = new System.Drawing.Point(361, 253);
             this.lbcurso.Name = "lbcurso";
             this.lbcurso.Size = new System.Drawing.Size(69, 25);
             this.lbcurso.TabIndex = 7;
@@ -160,7 +160,7 @@
             this.lbuniversidade.AutoSize = true;
             this.lbuniversidade.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbuniversidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.lbuniversidade.Location = new System.Drawing.Point(41, 137);
+            this.lbuniversidade.Location = new System.Drawing.Point(361, 200);
             this.lbuniversidade.Name = "lbuniversidade";
             this.lbuniversidade.Size = new System.Drawing.Size(138, 25);
             this.lbuniversidade.TabIndex = 12;
@@ -179,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 450);
+            this.ClientSize = new System.Drawing.Size(1557, 967);
             this.Controls.Add(this.lbEmailLogin);
             this.Controls.Add(this.btnfinalizar);
             this.Controls.Add(this.txthora1);

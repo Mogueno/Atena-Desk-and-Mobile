@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using Menus.Model;
-using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.IO;
 
 namespace Menus
 {
@@ -26,7 +26,7 @@ namespace Menus
 
         public string strConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-        public const string strSelectNote = "SELECT N1.STR_STR_PATH, U.USER_INT_ID, U.USER_STR_EMAIL FROM TB_NOTA_STR AS N1 JOIN TB_NOTA AS N2 ON N1.NOTA_INT_ID = N2.NOTA_INT_ID JOIN TB_USER AS U ON N2.USER_INT_ID = U.USER_INT_ID WHERE U.USER_STR_EMAIL = @USER_STR_EMAIL";
+        public const string strSelectNote = "SELECT N1.STR_STR_PATH, N1.STR_STR_TITLE, N1.STR_INT_ID, U.USER_INT_ID, U.USER_STR_EMAIL FROM TB_NOTA_STR AS N1 JOIN TB_NOTA AS N2 ON N1.NOTA_INT_ID = N2.NOTA_INT_ID JOIN TB_USER AS U ON N2.USER_INT_ID = U.USER_INT_ID WHERE U.USER_STR_EMAIL = @USER_STR_EMAIL";
 
         public void SelectNoteConfig(string emailRecebe)
         {
@@ -45,11 +45,12 @@ namespace Menus
                         while (da.Read())
                         {
                             Button button = new Button();
-                            button.Tag = da.GetString(0);
-                            button.Text = da.GetString(0);
-                            button.Width = flowLayoutPanel1.Width - 5;
+                            button.Tag = da.GetInt32(2);
+                            button.Text = da.GetString(1);
+                            button.Width = flowLayoutPanel2.Width - 5;
                             button.Cursor = Cursors.Hand;
-                            flowLayoutPanel1.Controls.Add(button);
+                            button.Click += new EventHandler(this.button_Click);
+                            flowLayoutPanel2.Controls.Add(button);
                         }
                     }
                     da.Close();
@@ -94,6 +95,19 @@ namespace Menus
             new TelaLogin().Show();
         }
 
+        private void button_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int s = Convert.ToInt32((sender as Button).Tag);
+
+            bancoMainEntities1 ht = new bancoMainEntities1();
+            var title = ht.TB_NOTA_STR.Where(a => a.STR_INT_ID == s).SingleOrDefault();
+            lbMainTitle.Text = title.STR_STR_TITLE;
+            lbMainDescription.Text = title.STR_STR_PATH;
+
+
+        }
+
         private void GetNote(string EmailVar)
         {
 
@@ -111,9 +125,53 @@ namespace Menus
         private void Menuprinc_Load(object sender, EventArgs e)
         {
             GetNote(lbRecebeEmailMenu.Text);
+            FormBorderStyle = FormBorderStyle.Sizable;
+            WindowState = FormWindowState.Maximized;
+            TopMost = true;
+            bancoMainEntities1 ht2 = new bancoMainEntities1();
+            var name = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+            var email2 = name.USER_STR_NOME;
+
+            var facul = ht2.TB_FACULDADE.Where(a => a.USER_INT_ID == name.USER_INT_ID).SingleOrDefault();
+            lbNomeMenu.Text = email2;
+            lbFacul.Text = facul.FAC_STR_NOME;
+            try
+            {
+                bancoMainEntities1 ht1 = new bancoMainEntities1();
+                var id = ht1.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                var email = id.USER_INT_ID;
+                var item = ht1.TB_PICTURES.Where(a => a.USER_INT_ID == email).FirstOrDefault();
+                byte[] arr = item.PIC_IMG_MAIN;
+                MemoryStream ms1 = new MemoryStream(arr);
+                pictureBox1.Image = Image.FromStream(ms1);
+            }
+            catch
+            {
+                pictureBox1.Image = pictureBox1.InitialImage;
+            }
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbRecebeEmailMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbNomeMenu_Click(object sender, EventArgs e)
         {
 
         }

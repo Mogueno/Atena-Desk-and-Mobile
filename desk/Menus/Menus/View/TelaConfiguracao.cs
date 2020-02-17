@@ -12,19 +12,21 @@ using Menus.Model;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.IO;
+using System.Runtime.InteropServices;
 
 namespace Menus
 {
 
     public partial class TelaConfiguracao : MaterialForm
-	{
+    {
         public TelaConfiguracao(string textao)
         {
             InitializeComponent();
 
             lbRecebeEmailConfig.Text = textao;
-  
         }
+
 
         Cadastro user = new Cadastro();
 
@@ -50,6 +52,7 @@ namespace Menus
                     while (da.Read())
                     {
                         txtNome.Text = da.GetValue(0).ToString();
+                        txtHello.Text = "Olá "+da.GetValue(0).ToString();
                         txtIdade.Text = da.GetValue(1).ToString();
                         txtSexo.Text = da.GetValue(2).ToString();
                     }
@@ -123,7 +126,23 @@ namespace Menus
 
         private void TelaConfiguracao_Load(object sender, EventArgs e)
         {
-
+            FormBorderStyle = FormBorderStyle.Sizable;
+            WindowState = FormWindowState.Maximized;
+            TopMost = true;
+            try
+            {
+                bancoMainEntities1 ht1 = new bancoMainEntities1();
+                var id = ht1.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailConfig.Text).SingleOrDefault();
+                var email = id.USER_INT_ID;
+                var item = ht1.TB_PICTURES.Where(a => a.USER_INT_ID == email).FirstOrDefault();
+                byte[] arr = item.PIC_IMG_MAIN;
+                MemoryStream ms1 = new MemoryStream(arr);
+                pictureBox1.Image = Image.FromStream(ms1);
+            }
+            catch
+            {
+                pictureBox1.Image = pictureBox1.InitialImage;
+            }
 
             GetUser(lbRecebeEmailConfig.Text);
 
@@ -146,6 +165,160 @@ namespace Menus
         {
             this.Hide();
             new Menuprinc(lbRecebeEmailConfig.Text).Show();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opendlg = new OpenFileDialog();
+            if (opendlg.ShowDialog() == DialogResult.OK)
+            {
+
+                Image img = Image.FromFile(opendlg.FileName);
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, img.RawFormat);
+                bancoMainEntities1 ht = new bancoMainEntities1();
+                var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailConfig.Text).SingleOrDefault();
+                var email = id.USER_INT_ID;
+                ht.TB_PICTURES.Add(new TB_PICTURES() { PIC_IMG_MAIN = ms.ToArray(), USER_INT_ID = email});
+                ht.SaveChanges();
+                var item = ht.TB_PICTURES.Where(a => a.USER_INT_ID == email).FirstOrDefault();
+                byte[] arr = item.PIC_IMG_MAIN;
+                MemoryStream ms1 = new MemoryStream(arr);
+                pictureBox1.Image = Image.FromStream(ms1);
+            }
+        }
+
+        private void lbDados_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opendlg = new OpenFileDialog();
+            if (opendlg.ShowDialog() == DialogResult.OK)
+            {
+
+                Image img = Image.FromFile(opendlg.FileName);
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, img.RawFormat);
+                bancoMainEntities1 ht = new bancoMainEntities1();
+                var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailConfig.Text).SingleOrDefault();
+                var email = id.USER_INT_ID;
+                var result = ht.TB_PICTURES.SingleOrDefault(a => a.USER_INT_ID == email);
+                if (result != null)
+                {
+                    result.PIC_IMG_MAIN = ms.ToArray();
+                    ht.SaveChanges();
+                }
+                else
+                {
+                    ht.TB_PICTURES.Add(new TB_PICTURES() { PIC_IMG_MAIN = ms.ToArray(), USER_INT_ID = email });
+                    ht.SaveChanges();
+                }
+                var item = ht.TB_PICTURES.Where(a => a.USER_INT_ID == email).FirstOrDefault();
+                byte[] arr = item.PIC_IMG_MAIN;
+                MemoryStream ms1 = new MemoryStream(arr);
+                pictureBox1.Image = Image.FromStream(ms1);
+            }
+        }
+
+        private void lbRecebeEmailConfig_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSexo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIdade_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbMateriaShow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCursoShow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbMateria_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCurso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbFaculShow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbIdade_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbFaculdade_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbSexo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbNome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            try
+            {
+                bancoMainEntities1 ht1 = new bancoMainEntities1();
+                var id = ht1.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailConfig.Text).SingleOrDefault();
+                var email = id.USER_INT_ID;
+                var item = ht1.TB_PICTURES.Where(a => a.USER_INT_ID == email).FirstOrDefault();
+                byte[] arr = item.PIC_IMG_MAIN;
+                MemoryStream ms1 = new MemoryStream(arr);
+                pictureBox1.Image = Image.FromStream(ms1);
+            }
+            catch
+            {
+                pictureBox1.Image = pictureBox1.InitialImage;
+            }
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Menus.Properties.Resources.User_icon_BLACK_01;
         }
     }
 }

@@ -1,0 +1,689 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="bancoMainModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TB_CURSO">
+          <Key>
+            <PropertyRef Name="CUR_INT_ID" />
+          </Key>
+          <Property Name="CUR_INT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CUR_STR_NOME" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="USER_INT_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_FACULDADE">
+          <Key>
+            <PropertyRef Name="FAC_INT_ID" />
+          </Key>
+          <Property Name="FAC_INT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FAC_STR_NOME" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="USER_INT_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_MATERIA">
+          <Key>
+            <PropertyRef Name="MAT_INT_ID" />
+          </Key>
+          <Property Name="MAT_INT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MAT_STR_NOME" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="USER_INT_ID" Type="int" Nullable="false" />
+          <Property Name="MAT_DATE_HORA" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_NOTA">
+          <Key>
+            <PropertyRef Name="NOTA_INT_ID" />
+          </Key>
+          <Property Name="NOTA_INT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FAC_INT_ID" Type="int" Nullable="false" />
+          <Property Name="CUR_INT_ID" Type="int" Nullable="false" />
+          <Property Name="MAT_INT_ID" Type="int" Nullable="false" />
+          <Property Name="USER_INT_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_NOTA_DES">
+          <Key>
+            <PropertyRef Name="DES_INT_ID" />
+          </Key>
+          <Property Name="DES_INT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DES_STR_PATH" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="NOTA_INT_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_NOTA_IMG">
+          <Key>
+            <PropertyRef Name="IMG_INT_ID" />
+          </Key>
+          <Property Name="IMG_INT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IMG_STR_PATH" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="NOTA_INT_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_NOTA_STR">
+          <Key>
+            <PropertyRef Name="STR_INT_ID" />
+          </Key>
+          <Property Name="STR_INT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STR_STR_PATH" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="NOTA_INT_ID" Type="int" Nullable="false" />
+          <Property Name="STR_STR_TITLE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_PICTURES">
+          <Key>
+            <PropertyRef Name="PIC_INT_ID" />
+          </Key>
+          <Property Name="PIC_INT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PIC_IMG_MAIN" Type="image" Nullable="false" />
+          <Property Name="USER_INT_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_USER">
+          <Key>
+            <PropertyRef Name="USER_INT_ID" />
+          </Key>
+          <Property Name="USER_INT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USER_STR_NOME" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="USER_INT_IDADE" Type="int" Nullable="false" />
+          <Property Name="USER_STR_SEXO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="USER_STR_EMAIL" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="USER_STR_SENHA" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="USER_STR_FACEBOOKLOGIN" Type="int" Nullable="false" />
+          <Property Name="USER_STR_GOOGLELOGIN" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="CUR_USER_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_CURSO">
+              <PropertyRef Name="USER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DES_USER_INT_ID">
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1" />
+          <End Role="TB_NOTA_DES" Type="Self.TB_NOTA_DES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_NOTA">
+              <PropertyRef Name="NOTA_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA_DES">
+              <PropertyRef Name="NOTA_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FAC_USER_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_FACULDADE" Type="Self.TB_FACULDADE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_FACULDADE">
+              <PropertyRef Name="USER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMG_USER_INT_ID">
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1" />
+          <End Role="TB_NOTA_IMG" Type="Self.TB_NOTA_IMG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_NOTA">
+              <PropertyRef Name="NOTA_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA_IMG">
+              <PropertyRef Name="NOTA_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MAT_USER_INT_ID">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_MATERIA">
+              <PropertyRef Name="USER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NOTA_CUR_INT_ID_FK">
+          <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="1" />
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_CURSO">
+              <PropertyRef Name="CUR_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA">
+              <PropertyRef Name="CUR_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NOTA_FAC_INT_ID_FK">
+          <End Role="TB_FACULDADE" Type="Self.TB_FACULDADE" Multiplicity="1" />
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_FACULDADE">
+              <PropertyRef Name="FAC_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA">
+              <PropertyRef Name="FAC_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NOTA_MAT_INT_ID_FK">
+          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="1" />
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_MATERIA">
+              <PropertyRef Name="MAT_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA">
+              <PropertyRef Name="MAT_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NOTA_USER_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA">
+              <PropertyRef Name="USER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PIC_USER_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_PICTURES" Type="Self.TB_PICTURES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_PICTURES">
+              <PropertyRef Name="USER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="STR_USER_INT_ID">
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1" />
+          <End Role="TB_NOTA_STR" Type="Self.TB_NOTA_STR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_NOTA">
+              <PropertyRef Name="NOTA_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA_STR">
+              <PropertyRef Name="NOTA_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bancoMainModelStoreContainer">
+          <EntitySet Name="TB_CURSO" EntityType="Self.TB_CURSO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_FACULDADE" EntityType="Self.TB_FACULDADE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_MATERIA" EntityType="Self.TB_MATERIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_NOTA" EntityType="Self.TB_NOTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_NOTA_DES" EntityType="Self.TB_NOTA_DES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_NOTA_IMG" EntityType="Self.TB_NOTA_IMG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_NOTA_STR" EntityType="Self.TB_NOTA_STR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_PICTURES" EntityType="Self.TB_PICTURES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_USER" EntityType="Self.TB_USER" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="CUR_USER_INT_ID_FK" Association="Self.CUR_USER_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_CURSO" EntitySet="TB_CURSO" />
+          </AssociationSet>
+          <AssociationSet Name="DES_USER_INT_ID" Association="Self.DES_USER_INT_ID">
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+            <End Role="TB_NOTA_DES" EntitySet="TB_NOTA_DES" />
+          </AssociationSet>
+          <AssociationSet Name="FAC_USER_INT_ID_FK" Association="Self.FAC_USER_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_FACULDADE" EntitySet="TB_FACULDADE" />
+          </AssociationSet>
+          <AssociationSet Name="IMG_USER_INT_ID" Association="Self.IMG_USER_INT_ID">
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+            <End Role="TB_NOTA_IMG" EntitySet="TB_NOTA_IMG" />
+          </AssociationSet>
+          <AssociationSet Name="MAT_USER_INT_ID" Association="Self.MAT_USER_INT_ID">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_MATERIA" EntitySet="TB_MATERIA" />
+          </AssociationSet>
+          <AssociationSet Name="NOTA_CUR_INT_ID_FK" Association="Self.NOTA_CUR_INT_ID_FK">
+            <End Role="TB_CURSO" EntitySet="TB_CURSO" />
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+          </AssociationSet>
+          <AssociationSet Name="NOTA_FAC_INT_ID_FK" Association="Self.NOTA_FAC_INT_ID_FK">
+            <End Role="TB_FACULDADE" EntitySet="TB_FACULDADE" />
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+          </AssociationSet>
+          <AssociationSet Name="NOTA_MAT_INT_ID_FK" Association="Self.NOTA_MAT_INT_ID_FK">
+            <End Role="TB_MATERIA" EntitySet="TB_MATERIA" />
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+          </AssociationSet>
+          <AssociationSet Name="NOTA_USER_INT_ID_FK" Association="Self.NOTA_USER_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+          </AssociationSet>
+          <AssociationSet Name="PIC_USER_INT_ID_FK" Association="Self.PIC_USER_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_PICTURES" EntitySet="TB_PICTURES" />
+          </AssociationSet>
+          <AssociationSet Name="STR_USER_INT_ID" Association="Self.STR_USER_INT_ID">
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+            <End Role="TB_NOTA_STR" EntitySet="TB_NOTA_STR" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bancoMainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TB_CURSO">
+          <Key>
+            <PropertyRef Name="CUR_INT_ID" />
+          </Key>
+          <Property Name="CUR_INT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CUR_STR_NOME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USER_INT_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_USER" Relationship="Self.CUR_USER_INT_ID_FK" FromRole="TB_CURSO" ToRole="TB_USER" />
+          <NavigationProperty Name="TB_NOTA" Relationship="Self.NOTA_CUR_INT_ID_FK" FromRole="TB_CURSO" ToRole="TB_NOTA" />
+        </EntityType>
+        <EntityType Name="TB_FACULDADE">
+          <Key>
+            <PropertyRef Name="FAC_INT_ID" />
+          </Key>
+          <Property Name="FAC_INT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FAC_STR_NOME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USER_INT_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_USER" Relationship="Self.FAC_USER_INT_ID_FK" FromRole="TB_FACULDADE" ToRole="TB_USER" />
+          <NavigationProperty Name="TB_NOTA" Relationship="Self.NOTA_FAC_INT_ID_FK" FromRole="TB_FACULDADE" ToRole="TB_NOTA" />
+        </EntityType>
+        <EntityType Name="TB_MATERIA">
+          <Key>
+            <PropertyRef Name="MAT_INT_ID" />
+          </Key>
+          <Property Name="MAT_INT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MAT_STR_NOME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USER_INT_ID" Type="Int32" Nullable="false" />
+          <Property Name="MAT_DATE_HORA" Type="Time" Nullable="false" Precision="7" />
+          <NavigationProperty Name="TB_USER" Relationship="Self.MAT_USER_INT_ID" FromRole="TB_MATERIA" ToRole="TB_USER" />
+          <NavigationProperty Name="TB_NOTA" Relationship="Self.NOTA_MAT_INT_ID_FK" FromRole="TB_MATERIA" ToRole="TB_NOTA" />
+        </EntityType>
+        <EntityType Name="TB_NOTA">
+          <Key>
+            <PropertyRef Name="NOTA_INT_ID" />
+          </Key>
+          <Property Name="NOTA_INT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FAC_INT_ID" Type="Int32" Nullable="false" />
+          <Property Name="CUR_INT_ID" Type="Int32" Nullable="false" />
+          <Property Name="MAT_INT_ID" Type="Int32" Nullable="false" />
+          <Property Name="USER_INT_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_CURSO" Relationship="Self.NOTA_CUR_INT_ID_FK" FromRole="TB_NOTA" ToRole="TB_CURSO" />
+          <NavigationProperty Name="TB_FACULDADE" Relationship="Self.NOTA_FAC_INT_ID_FK" FromRole="TB_NOTA" ToRole="TB_FACULDADE" />
+          <NavigationProperty Name="TB_MATERIA" Relationship="Self.NOTA_MAT_INT_ID_FK" FromRole="TB_NOTA" ToRole="TB_MATERIA" />
+          <NavigationProperty Name="TB_NOTA_DES" Relationship="Self.DES_USER_INT_ID" FromRole="TB_NOTA" ToRole="TB_NOTA_DES" />
+          <NavigationProperty Name="TB_NOTA_IMG" Relationship="Self.IMG_USER_INT_ID" FromRole="TB_NOTA" ToRole="TB_NOTA_IMG" />
+          <NavigationProperty Name="TB_USER" Relationship="Self.NOTA_USER_INT_ID_FK" FromRole="TB_NOTA" ToRole="TB_USER" />
+          <NavigationProperty Name="TB_NOTA_STR" Relationship="Self.STR_USER_INT_ID" FromRole="TB_NOTA" ToRole="TB_NOTA_STR" />
+        </EntityType>
+        <EntityType Name="TB_NOTA_DES">
+          <Key>
+            <PropertyRef Name="DES_INT_ID" />
+          </Key>
+          <Property Name="DES_INT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DES_STR_PATH" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOTA_INT_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_NOTA" Relationship="Self.DES_USER_INT_ID" FromRole="TB_NOTA_DES" ToRole="TB_NOTA" />
+        </EntityType>
+        <EntityType Name="TB_NOTA_IMG">
+          <Key>
+            <PropertyRef Name="IMG_INT_ID" />
+          </Key>
+          <Property Name="IMG_INT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IMG_STR_PATH" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOTA_INT_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_NOTA" Relationship="Self.IMG_USER_INT_ID" FromRole="TB_NOTA_IMG" ToRole="TB_NOTA" />
+        </EntityType>
+        <EntityType Name="TB_NOTA_STR">
+          <Key>
+            <PropertyRef Name="STR_INT_ID" />
+          </Key>
+          <Property Name="STR_INT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STR_STR_PATH" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOTA_INT_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_NOTA" Relationship="Self.STR_USER_INT_ID" FromRole="TB_NOTA_STR" ToRole="TB_NOTA" />
+          <Property Name="STR_STR_TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TB_PICTURES">
+          <Key>
+            <PropertyRef Name="PIC_INT_ID" />
+          </Key>
+          <Property Name="PIC_INT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PIC_IMG_MAIN" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="USER_INT_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_USER" Relationship="Self.PIC_USER_INT_ID_FK" FromRole="TB_PICTURES" ToRole="TB_USER" />
+        </EntityType>
+        <EntityType Name="TB_USER">
+          <Key>
+            <PropertyRef Name="USER_INT_ID" />
+          </Key>
+          <Property Name="USER_INT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USER_STR_NOME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USER_INT_IDADE" Type="Int32" Nullable="false" />
+          <Property Name="USER_STR_SEXO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USER_STR_EMAIL" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USER_STR_SENHA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USER_STR_FACEBOOKLOGIN" Type="Int32" Nullable="false" />
+          <Property Name="USER_STR_GOOGLELOGIN" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_CURSO" Relationship="Self.CUR_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_CURSO" />
+          <NavigationProperty Name="TB_FACULDADE" Relationship="Self.FAC_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_FACULDADE" />
+          <NavigationProperty Name="TB_MATERIA" Relationship="Self.MAT_USER_INT_ID" FromRole="TB_USER" ToRole="TB_MATERIA" />
+          <NavigationProperty Name="TB_NOTA" Relationship="Self.NOTA_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_NOTA" />
+          <NavigationProperty Name="TB_PICTURES" Relationship="Self.PIC_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_PICTURES" />
+        </EntityType>
+        <Association Name="CUR_USER_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_CURSO">
+              <PropertyRef Name="USER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NOTA_CUR_INT_ID_FK">
+          <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="1" />
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_CURSO">
+              <PropertyRef Name="CUR_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA">
+              <PropertyRef Name="CUR_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FAC_USER_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_FACULDADE" Type="Self.TB_FACULDADE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_FACULDADE">
+              <PropertyRef Name="USER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NOTA_FAC_INT_ID_FK">
+          <End Role="TB_FACULDADE" Type="Self.TB_FACULDADE" Multiplicity="1" />
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_FACULDADE">
+              <PropertyRef Name="FAC_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA">
+              <PropertyRef Name="FAC_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MAT_USER_INT_ID">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_MATERIA">
+              <PropertyRef Name="USER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NOTA_MAT_INT_ID_FK">
+          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="1" />
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_MATERIA">
+              <PropertyRef Name="MAT_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA">
+              <PropertyRef Name="MAT_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DES_USER_INT_ID">
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1" />
+          <End Role="TB_NOTA_DES" Type="Self.TB_NOTA_DES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_NOTA">
+              <PropertyRef Name="NOTA_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA_DES">
+              <PropertyRef Name="NOTA_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IMG_USER_INT_ID">
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1" />
+          <End Role="TB_NOTA_IMG" Type="Self.TB_NOTA_IMG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_NOTA">
+              <PropertyRef Name="NOTA_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA_IMG">
+              <PropertyRef Name="NOTA_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NOTA_USER_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA">
+              <PropertyRef Name="USER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="STR_USER_INT_ID">
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1" />
+          <End Role="TB_NOTA_STR" Type="Self.TB_NOTA_STR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_NOTA">
+              <PropertyRef Name="NOTA_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA_STR">
+              <PropertyRef Name="NOTA_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PIC_USER_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_PICTURES" Type="Self.TB_PICTURES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_PICTURES">
+              <PropertyRef Name="USER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bancoMainEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TB_CURSO" EntityType="Self.TB_CURSO" />
+          <EntitySet Name="TB_FACULDADE" EntityType="Self.TB_FACULDADE" />
+          <EntitySet Name="TB_MATERIA" EntityType="Self.TB_MATERIA" />
+          <EntitySet Name="TB_NOTA" EntityType="Self.TB_NOTA" />
+          <EntitySet Name="TB_NOTA_DES" EntityType="Self.TB_NOTA_DES" />
+          <EntitySet Name="TB_NOTA_IMG" EntityType="Self.TB_NOTA_IMG" />
+          <EntitySet Name="TB_NOTA_STR" EntityType="Self.TB_NOTA_STR" />
+          <EntitySet Name="TB_PICTURES" EntityType="Self.TB_PICTURES" />
+          <EntitySet Name="TB_USER" EntityType="Self.TB_USER" />
+          <AssociationSet Name="CUR_USER_INT_ID_FK" Association="Self.CUR_USER_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_CURSO" EntitySet="TB_CURSO" />
+          </AssociationSet>
+          <AssociationSet Name="NOTA_CUR_INT_ID_FK" Association="Self.NOTA_CUR_INT_ID_FK">
+            <End Role="TB_CURSO" EntitySet="TB_CURSO" />
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+          </AssociationSet>
+          <AssociationSet Name="FAC_USER_INT_ID_FK" Association="Self.FAC_USER_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_FACULDADE" EntitySet="TB_FACULDADE" />
+          </AssociationSet>
+          <AssociationSet Name="NOTA_FAC_INT_ID_FK" Association="Self.NOTA_FAC_INT_ID_FK">
+            <End Role="TB_FACULDADE" EntitySet="TB_FACULDADE" />
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+          </AssociationSet>
+          <AssociationSet Name="MAT_USER_INT_ID" Association="Self.MAT_USER_INT_ID">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_MATERIA" EntitySet="TB_MATERIA" />
+          </AssociationSet>
+          <AssociationSet Name="NOTA_MAT_INT_ID_FK" Association="Self.NOTA_MAT_INT_ID_FK">
+            <End Role="TB_MATERIA" EntitySet="TB_MATERIA" />
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+          </AssociationSet>
+          <AssociationSet Name="DES_USER_INT_ID" Association="Self.DES_USER_INT_ID">
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+            <End Role="TB_NOTA_DES" EntitySet="TB_NOTA_DES" />
+          </AssociationSet>
+          <AssociationSet Name="IMG_USER_INT_ID" Association="Self.IMG_USER_INT_ID">
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+            <End Role="TB_NOTA_IMG" EntitySet="TB_NOTA_IMG" />
+          </AssociationSet>
+          <AssociationSet Name="NOTA_USER_INT_ID_FK" Association="Self.NOTA_USER_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+          </AssociationSet>
+          <AssociationSet Name="STR_USER_INT_ID" Association="Self.STR_USER_INT_ID">
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+            <End Role="TB_NOTA_STR" EntitySet="TB_NOTA_STR" />
+          </AssociationSet>
+          <AssociationSet Name="PIC_USER_INT_ID_FK" Association="Self.PIC_USER_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_PICTURES" EntitySet="TB_PICTURES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bancoMainModelStoreContainer" CdmEntityContainer="bancoMainEntities1">
+          <EntitySetMapping Name="TB_CURSO">
+            <EntityTypeMapping TypeName="bancoMainModel.TB_CURSO">
+              <MappingFragment StoreEntitySet="TB_CURSO">
+                <ScalarProperty Name="CUR_INT_ID" ColumnName="CUR_INT_ID" />
+                <ScalarProperty Name="CUR_STR_NOME" ColumnName="CUR_STR_NOME" />
+                <ScalarProperty Name="USER_INT_ID" ColumnName="USER_INT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_FACULDADE">
+            <EntityTypeMapping TypeName="bancoMainModel.TB_FACULDADE">
+              <MappingFragment StoreEntitySet="TB_FACULDADE">
+                <ScalarProperty Name="FAC_INT_ID" ColumnName="FAC_INT_ID" />
+                <ScalarProperty Name="FAC_STR_NOME" ColumnName="FAC_STR_NOME" />
+                <ScalarProperty Name="USER_INT_ID" ColumnName="USER_INT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_MATERIA">
+            <EntityTypeMapping TypeName="bancoMainModel.TB_MATERIA">
+              <MappingFragment StoreEntitySet="TB_MATERIA">
+                <ScalarProperty Name="MAT_INT_ID" ColumnName="MAT_INT_ID" />
+                <ScalarProperty Name="MAT_STR_NOME" ColumnName="MAT_STR_NOME" />
+                <ScalarProperty Name="USER_INT_ID" ColumnName="USER_INT_ID" />
+                <ScalarProperty Name="MAT_DATE_HORA" ColumnName="MAT_DATE_HORA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_NOTA">
+            <EntityTypeMapping TypeName="bancoMainModel.TB_NOTA">
+              <MappingFragment StoreEntitySet="TB_NOTA">
+                <ScalarProperty Name="NOTA_INT_ID" ColumnName="NOTA_INT_ID" />
+                <ScalarProperty Name="FAC_INT_ID" ColumnName="FAC_INT_ID" />
+                <ScalarProperty Name="CUR_INT_ID" ColumnName="CUR_INT_ID" />
+                <ScalarProperty Name="MAT_INT_ID" ColumnName="MAT_INT_ID" />
+                <ScalarProperty Name="USER_INT_ID" ColumnName="USER_INT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_NOTA_DES">
+            <EntityTypeMapping TypeName="bancoMainModel.TB_NOTA_DES">
+              <MappingFragment StoreEntitySet="TB_NOTA_DES">
+                <ScalarProperty Name="DES_INT_ID" ColumnName="DES_INT_ID" />
+                <ScalarProperty Name="DES_STR_PATH" ColumnName="DES_STR_PATH" />
+                <ScalarProperty Name="NOTA_INT_ID" ColumnName="NOTA_INT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_NOTA_IMG">
+            <EntityTypeMapping TypeName="bancoMainModel.TB_NOTA_IMG">
+              <MappingFragment StoreEntitySet="TB_NOTA_IMG">
+                <ScalarProperty Name="IMG_INT_ID" ColumnName="IMG_INT_ID" />
+                <ScalarProperty Name="IMG_STR_PATH" ColumnName="IMG_STR_PATH" />
+                <ScalarProperty Name="NOTA_INT_ID" ColumnName="NOTA_INT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_NOTA_STR">
+            <EntityTypeMapping TypeName="bancoMainModel.TB_NOTA_STR">
+              <MappingFragment StoreEntitySet="TB_NOTA_STR">
+                <ScalarProperty Name="STR_STR_TITLE" ColumnName="STR_STR_TITLE" />
+                <ScalarProperty Name="STR_INT_ID" ColumnName="STR_INT_ID" />
+                <ScalarProperty Name="STR_STR_PATH" ColumnName="STR_STR_PATH" />
+                <ScalarProperty Name="NOTA_INT_ID" ColumnName="NOTA_INT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PICTURES">
+            <EntityTypeMapping TypeName="bancoMainModel.TB_PICTURES">
+              <MappingFragment StoreEntitySet="TB_PICTURES">
+                <ScalarProperty Name="PIC_INT_ID" ColumnName="PIC_INT_ID" />
+                <ScalarProperty Name="PIC_IMG_MAIN" ColumnName="PIC_IMG_MAIN" />
+                <ScalarProperty Name="USER_INT_ID" ColumnName="USER_INT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_USER">
+            <EntityTypeMapping TypeName="bancoMainModel.TB_USER">
+              <MappingFragment StoreEntitySet="TB_USER">
+                <ScalarProperty Name="USER_INT_ID" ColumnName="USER_INT_ID" />
+                <ScalarProperty Name="USER_STR_NOME" ColumnName="USER_STR_NOME" />
+                <ScalarProperty Name="USER_INT_IDADE" ColumnName="USER_INT_IDADE" />
+                <ScalarProperty Name="USER_STR_SEXO" ColumnName="USER_STR_SEXO" />
+                <ScalarProperty Name="USER_STR_EMAIL" ColumnName="USER_STR_EMAIL" />
+                <ScalarProperty Name="USER_STR_SENHA" ColumnName="USER_STR_SENHA" />
+                <ScalarProperty Name="USER_STR_FACEBOOKLOGIN" ColumnName="USER_STR_FACEBOOKLOGIN" />
+                <ScalarProperty Name="USER_STR_GOOGLELOGIN" ColumnName="USER_STR_GOOGLELOGIN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -25,11 +25,12 @@
             this.btnAdicionar = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnCancelar = new MaterialSkin.Controls.MaterialFlatButton();
             this.lbRecebeEmailNovaNota = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtNota
             // 
-            this.txtNota.Location = new System.Drawing.Point(13, 74);
+            this.txtNota.Location = new System.Drawing.Point(628, 253);
             this.txtNota.Multiline = true;
             this.txtNota.Name = "txtNota";
             this.txtNota.Size = new System.Drawing.Size(775, 316);
@@ -41,7 +42,7 @@
             this.btnAdicionar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionar.Depth = 0;
-            this.btnAdicionar.Location = new System.Drawing.Point(704, 399);
+            this.btnAdicionar.Location = new System.Drawing.Point(1319, 578);
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAdicionar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdicionar.Name = "btnAdicionar";
@@ -58,7 +59,7 @@
             this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Depth = 0;
-            this.btnCancelar.Location = new System.Drawing.Point(13, 399);
+            this.btnCancelar.Location = new System.Drawing.Point(628, 578);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancelar.Name = "btnCancelar";
@@ -74,16 +75,25 @@
             this.lbRecebeEmailNovaNota.AutoSize = true;
             this.lbRecebeEmailNovaNota.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbRecebeEmailNovaNota.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbRecebeEmailNovaNota.Location = new System.Drawing.Point(318, 411);
+            this.lbRecebeEmailNovaNota.Location = new System.Drawing.Point(933, 590);
             this.lbRecebeEmailNovaNota.Name = "lbRecebeEmailNovaNota";
             this.lbRecebeEmailNovaNota.Size = new System.Drawing.Size(0, 13);
             this.lbRecebeEmailNovaNota.TabIndex = 5;
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Location = new System.Drawing.Point(628, 204);
+            this.txtTitle.Multiline = true;
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(775, 33);
+            this.txtTitle.TabIndex = 6;
             // 
             // TelaNovaNota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(2083, 1066);
+            this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.lbRecebeEmailNovaNota);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAdicionar);
@@ -102,5 +112,6 @@
         private MaterialSkin.Controls.MaterialFlatButton btnAdicionar;
         private MaterialSkin.Controls.MaterialFlatButton btnCancelar;
         private System.Windows.Forms.Label lbRecebeEmailNovaNota;
+        private System.Windows.Forms.TextBox txtTitle;
     }
 }
