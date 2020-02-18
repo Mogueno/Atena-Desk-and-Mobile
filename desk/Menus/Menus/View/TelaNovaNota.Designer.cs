@@ -30,7 +30,8 @@
             // 
             // txtNota
             // 
-            this.txtNota.Location = new System.Drawing.Point(628, 253);
+            this.txtNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNota.Location = new System.Drawing.Point(217, 223);
             this.txtNota.Multiline = true;
             this.txtNota.Name = "txtNota";
             this.txtNota.Size = new System.Drawing.Size(775, 316);
@@ -42,7 +43,7 @@
             this.btnAdicionar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionar.Depth = 0;
-            this.btnAdicionar.Location = new System.Drawing.Point(1319, 578);
+            this.btnAdicionar.Location = new System.Drawing.Point(908, 591);
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAdicionar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdicionar.Name = "btnAdicionar";
@@ -59,7 +60,7 @@
             this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Depth = 0;
-            this.btnCancelar.Location = new System.Drawing.Point(628, 578);
+            this.btnCancelar.Location = new System.Drawing.Point(217, 591);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancelar.Name = "btnCancelar";
@@ -75,24 +76,25 @@
             this.lbRecebeEmailNovaNota.AutoSize = true;
             this.lbRecebeEmailNovaNota.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbRecebeEmailNovaNota.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbRecebeEmailNovaNota.Location = new System.Drawing.Point(933, 590);
+            this.lbRecebeEmailNovaNota.Location = new System.Drawing.Point(522, 603);
             this.lbRecebeEmailNovaNota.Name = "lbRecebeEmailNovaNota";
             this.lbRecebeEmailNovaNota.Size = new System.Drawing.Size(0, 13);
             this.lbRecebeEmailNovaNota.TabIndex = 5;
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(628, 204);
+            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.Location = new System.Drawing.Point(217, 142);
             this.txtTitle.Multiline = true;
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(775, 33);
+            this.txtTitle.Size = new System.Drawing.Size(775, 66);
             this.txtTitle.TabIndex = 6;
             // 
             // TelaNovaNota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2083, 1066);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.lbRecebeEmailNovaNota);
             this.Controls.Add(this.btnCancelar);

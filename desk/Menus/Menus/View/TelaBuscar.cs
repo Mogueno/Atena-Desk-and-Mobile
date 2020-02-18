@@ -1,18 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
+using Menus.Model;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
 
 namespace Menus
 {
-    public partial class Menuprinc : MaterialForm
+    public partial class TelaBuscar : MaterialForm
     {
-		public Menuprinc(string texto)
+		public TelaBuscar(string texto)
         {
             InitializeComponent();
 
@@ -176,10 +181,66 @@ namespace Menus
 
         }
 
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void button4_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            new TelaBuscar(lbRecebeEmailMenu.Text).Show();
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel2.Visible = false;
+            flowLayoutPanel3.Visible = true;
+            button10.Visible = true;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel4.Controls.Clear();
+            string searchContent = txtSearchBox.Text;
+            try
+            {
+                bancoMainEntities1 ht2 = new bancoMainEntities1();
+                var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
+                if (content.Count != 0)
+                {
+                    for (int i = 0; i < content.Count; i++)
+                    {
+                        Button button = new Button();
+                        button.Tag = content[i].STR_INT_ID;
+                        button.Text = content[i].STR_STR_TITLE;
+                        button.Width = flowLayoutPanel4.Width - 5;
+                        button.Cursor = Cursors.Hand;
+                        button.Click += new EventHandler(this.button_Click);
+                        flowLayoutPanel4.Controls.Add(button);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não foram encontradas notas");
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Deu ruim" + ex);
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel2.Visible = true;
+            button10.Visible = false;
+            flowLayoutPanel3.Visible = false;
         }
     }
 }

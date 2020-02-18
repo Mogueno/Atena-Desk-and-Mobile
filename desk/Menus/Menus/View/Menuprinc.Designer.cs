@@ -35,15 +35,15 @@
             this.lbNomeMenu = new System.Windows.Forms.Label();
             this.lbFacul = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbMainTitle = new System.Windows.Forms.Label();
+            this.lbMainDescription = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbMainTitle = new System.Windows.Forms.Label();
-            this.lbMainDescription = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -157,6 +157,42 @@
             this.tableLayoutPanel1.TabIndex = 13;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Location = new System.Drawing.Point(0, 64);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(400, 1039);
+            this.panel1.TabIndex = 14;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(403, 64);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(276, 1039);
+            this.flowLayoutPanel2.TabIndex = 15;
+            // 
+            // lbMainTitle
+            // 
+            this.lbMainTitle.AutoSize = true;
+            this.lbMainTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMainTitle.Location = new System.Drawing.Point(966, 120);
+            this.lbMainTitle.Name = "lbMainTitle";
+            this.lbMainTitle.Size = new System.Drawing.Size(0, 73);
+            this.lbMainTitle.TabIndex = 16;
+            this.lbMainTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbMainDescription
+            // 
+            this.lbMainDescription.AutoSize = true;
+            this.lbMainDescription.Location = new System.Drawing.Point(703, 367);
+            this.lbMainDescription.MaximumSize = new System.Drawing.Size(500, 0);
+            this.lbMainDescription.Name = "lbMainDescription";
+            this.lbMainDescription.Size = new System.Drawing.Size(0, 13);
+            this.lbMainDescription.TabIndex = 17;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -208,6 +244,7 @@
             this.button4.Text = "Buscar Notas";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // button1
             // 
@@ -248,47 +285,11 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Location = new System.Drawing.Point(0, 64);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 1039);
-            this.panel1.TabIndex = 14;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(403, 64);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(276, 1039);
-            this.flowLayoutPanel2.TabIndex = 15;
-            // 
-            // lbMainTitle
-            // 
-            this.lbMainTitle.AutoSize = true;
-            this.lbMainTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMainTitle.Location = new System.Drawing.Point(1168, 120);
-            this.lbMainTitle.Name = "lbMainTitle";
-            this.lbMainTitle.Size = new System.Drawing.Size(0, 73);
-            this.lbMainTitle.TabIndex = 16;
-            this.lbMainTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lbMainDescription
-            // 
-            this.lbMainDescription.AutoSize = true;
-            this.lbMainDescription.Location = new System.Drawing.Point(905, 367);
-            this.lbMainDescription.MaximumSize = new System.Drawing.Size(500, 0);
-            this.lbMainDescription.Name = "lbMainDescription";
-            this.lbMainDescription.Size = new System.Drawing.Size(0, 13);
-            this.lbMainDescription.TabIndex = 17;
-            // 
             // Menuprinc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1920, 1100);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.lbMainDescription);
             this.Controls.Add(this.lbMainTitle);
             this.Controls.Add(this.flowLayoutPanel2);

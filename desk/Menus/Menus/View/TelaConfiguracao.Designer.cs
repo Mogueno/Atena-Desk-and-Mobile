@@ -150,11 +150,11 @@
             // 
             this.lbDados.AutoSize = true;
             this.lbDados.BackColor = System.Drawing.Color.White;
-            this.lbDados.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDados.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lbDados.Location = new System.Drawing.Point(189, 86);
             this.lbDados.Name = "lbDados";
-            this.lbDados.Size = new System.Drawing.Size(330, 58);
+            this.lbDados.Size = new System.Drawing.Size(297, 55);
             this.lbDados.TabIndex = 13;
             this.lbDados.Text = "Minha Conta";
             this.lbDados.Click += new System.EventHandler(this.lbDados_Click);
@@ -283,7 +283,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(12, 86);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(148, 147);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -339,7 +339,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1670, 964);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.ControlBox = false;
             this.Controls.Add(this.txtHello);
             this.Controls.Add(this.pictureBox1);
