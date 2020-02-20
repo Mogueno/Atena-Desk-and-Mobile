@@ -111,8 +111,10 @@
             this.btnface.Name = "btnface";
             this.btnface.Size = new System.Drawing.Size(322, 34);
             this.btnface.TabIndex = 5;
+            this.btnface.Tag = "facebook";
             this.btnface.Text = "Facebook";
             this.btnface.UseVisualStyleBackColor = true;
+            this.btnface.Click += new System.EventHandler(this.btnface_Click);
             // 
             // btngoogle
             // 
@@ -129,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1672, 967);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.btngoogle);
             this.Controls.Add(this.btnface);
             this.Controls.Add(this.btnentrar);

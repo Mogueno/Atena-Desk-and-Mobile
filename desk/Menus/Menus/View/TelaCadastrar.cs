@@ -32,6 +32,9 @@ namespace Menus
         public TelaCadastrar()
         {
             InitializeComponent();
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+            TopMost = true;
 
         }
 
@@ -109,9 +112,6 @@ namespace Menus
 
         private void TelaCadastrar_Load(object sender, EventArgs e)
         {
-            FormBorderStyle = FormBorderStyle.Sizable;
-            WindowState = FormWindowState.Maximized;
-            TopMost = true;
         }
 
         private void btnVoltarLogin_Click(object sender, EventArgs e)

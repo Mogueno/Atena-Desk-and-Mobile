@@ -15,9 +15,9 @@ using System.IO;
 
 namespace Menus
 {
-    public partial class TelaBuscar : MaterialForm
+    public partial class TelaBuscar_Faculdade : MaterialForm
     {
-		public TelaBuscar(string texto)
+		public TelaBuscar_Faculdade(string texto)
         {
             InitializeComponent();
 
@@ -63,8 +63,20 @@ namespace Menus
             new TelaLogin().Show();
         }
 
+        private void button_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int s = Convert.ToInt32((sender as Button).Tag);
+
+            bancoMainEntities1 ht = new bancoMainEntities1();
+            var title = ht.TB_NOTA_STR.Where(a => a.STR_INT_ID == s).SingleOrDefault();
+
+
+        }
+
         private void Menuprinc_Load(object sender, EventArgs e)
         {
+
             bancoMainEntities1 ht2 = new bancoMainEntities1();
             var name = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
             var email2 = name.USER_STR_NOME;
@@ -86,7 +98,33 @@ namespace Menus
             {
                 pictureBox1.Image = pictureBox1.InitialImage;
             }
-        }
+            try
+            {
+                bancoMainEntities1 ht3 = new bancoMainEntities1();
+                var content = ht3.TB_FACULDADE.ToList();
+                if (content.Count != 0)
+                {
+                    for (int i = 0; i < content.Count; i++)
+                    {
+                        Button button = new Button();
+                        button.Tag = content[i].FAC_INT_ID;
+                        button.Text = content[i].FAC_STR_NOME;
+                        button.Width = flowLayoutPanel4.Width - 5;
+                        button.Cursor = Cursors.Hand;
+                        button.Click += new EventHandler(this.button_Click);
+                        flowLayoutPanel4.Controls.Add(button);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não foram encontradas notas");
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorProvider error = new ErrorProvider();
+            }
+    }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -130,29 +168,21 @@ namespace Menus
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new TelaBuscar_Texto(lbRecebeEmailMenu.Text).Show();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void button10_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            new TelaBuscar(lbRecebeEmailMenu.Text).Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void flowLayoutPanel4_Paint(object sender, PaintEventArgs e)
         {
-            this.Hide();
-            new TelaBuscar_Faculdade(lbRecebeEmailMenu.Text).Show();
-        }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new TelaBuscar_Curso(lbRecebeEmailMenu.Text).Show();
         }
     }
 }

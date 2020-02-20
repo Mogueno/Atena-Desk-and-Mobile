@@ -25,6 +25,10 @@ namespace Menus
             InitializeComponent();
 
             lbRecebeEmailConfig.Text = textao;
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+            TopMost = true;
+
         }
 
 
@@ -126,9 +130,6 @@ namespace Menus
 
         private void TelaConfiguracao_Load(object sender, EventArgs e)
         {
-            FormBorderStyle = FormBorderStyle.Sizable;
-            WindowState = FormWindowState.Maximized;
-            TopMost = true;
             try
             {
                 bancoMainEntities1 ht1 = new bancoMainEntities1();
@@ -303,7 +304,7 @@ namespace Menus
             try
             {
                 bancoMainEntities1 ht1 = new bancoMainEntities1();
-                var id = ht1.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailConfig.Text).SingleOrDefault();
+                var id = ht1.TB_USER.   Where(a => a.USER_STR_EMAIL == lbRecebeEmailConfig.Text).SingleOrDefault();
                 var email = id.USER_INT_ID;
                 var item = ht1.TB_PICTURES.Where(a => a.USER_INT_ID == email).FirstOrDefault();
                 byte[] arr = item.PIC_IMG_MAIN;

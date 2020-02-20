@@ -20,7 +20,11 @@ namespace Menus
 			InitializeComponent();
 
             lbRecebeEmailNovaNota.Text = texto;
-		}
+
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+            TopMost = true;
+        }
 
         public string strConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
@@ -136,9 +140,6 @@ namespace Menus
 
         private void TelaNovaNota_Load_1(object sender, EventArgs e)
         {
-            FormBorderStyle = FormBorderStyle.Sizable;
-            WindowState = FormWindowState.Maximized;
-            TopMost = true;
         }
     }
 }

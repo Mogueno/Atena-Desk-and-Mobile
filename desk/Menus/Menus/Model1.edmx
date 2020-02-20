@@ -134,18 +134,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="MAT_USER_INT_ID">
-          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
-          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TB_USER">
-              <PropertyRef Name="USER_INT_ID" />
-            </Principal>
-            <Dependent Role="TB_MATERIA">
-              <PropertyRef Name="USER_INT_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="NOTA_CUR_INT_ID_FK">
           <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="1" />
           <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
@@ -243,10 +231,6 @@
           <AssociationSet Name="IMG_USER_INT_ID" Association="Self.IMG_USER_INT_ID">
             <End Role="TB_NOTA" EntitySet="TB_NOTA" />
             <End Role="TB_NOTA_IMG" EntitySet="TB_NOTA_IMG" />
-          </AssociationSet>
-          <AssociationSet Name="MAT_USER_INT_ID" Association="Self.MAT_USER_INT_ID">
-            <End Role="TB_USER" EntitySet="TB_USER" />
-            <End Role="TB_MATERIA" EntitySet="TB_MATERIA" />
           </AssociationSet>
           <AssociationSet Name="NOTA_CUR_INT_ID_FK" Association="Self.NOTA_CUR_INT_ID_FK">
             <End Role="TB_CURSO" EntitySet="TB_CURSO" />

@@ -25,6 +25,10 @@ namespace Menus
             InitializeComponent();
 
             lbEmailLogin.Text = texto;
+
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+            TopMost = true;
         }
 
         private void btnconcluir_Click(object sender, EventArgs e)
@@ -88,9 +92,6 @@ namespace Menus
 
         private void Telamfc_Load(object sender, EventArgs e)
         {
-            FormBorderStyle = FormBorderStyle.Sizable;
-            WindowState = FormWindowState.Maximized;
-            TopMost = true;
         }
 
         private void btnVoltarUni_Click(object sender, EventArgs e)

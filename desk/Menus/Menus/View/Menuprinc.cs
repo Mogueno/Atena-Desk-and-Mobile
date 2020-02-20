@@ -15,8 +15,8 @@ namespace Menus
 		public Menuprinc(string texto)
         {
             InitializeComponent();
-
             lbRecebeEmailMenu.Text = texto;
+
         }
 
         public string strConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
@@ -119,10 +119,10 @@ namespace Menus
 
         private void Menuprinc_Load(object sender, EventArgs e)
         {
-            GetNote(lbRecebeEmailMenu.Text);
-            FormBorderStyle = FormBorderStyle.Sizable;
+            FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
             TopMost = true;
+            GetNote(lbRecebeEmailMenu.Text);
             bancoMainEntities1 ht2 = new bancoMainEntities1();
             var name = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
             var email2 = name.USER_STR_NOME;
@@ -180,6 +180,11 @@ namespace Menus
         {
             this.Hide();
             new TelaBuscar(lbRecebeEmailMenu.Text).Show();
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
