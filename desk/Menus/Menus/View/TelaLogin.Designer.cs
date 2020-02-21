@@ -34,8 +34,6 @@
             this.txtsenha = new System.Windows.Forms.TextBox();
             this.btncadastrar = new System.Windows.Forms.Button();
             this.btnentrar = new System.Windows.Forms.Button();
-            this.btnface = new System.Windows.Forms.Button();
-            this.btngoogle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbusuario
@@ -43,7 +41,7 @@
             this.lbusuario.AutoSize = true;
             this.lbusuario.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbusuario.Location = new System.Drawing.Point(616, 225);
+            this.lbusuario.Location = new System.Drawing.Point(201, 100);
             this.lbusuario.Name = "lbusuario";
             this.lbusuario.Size = new System.Drawing.Size(96, 29);
             this.lbusuario.TabIndex = 0;
@@ -52,7 +50,7 @@
             // txtusuario
             // 
             this.txtusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusuario.Location = new System.Drawing.Point(501, 268);
+            this.txtusuario.Location = new System.Drawing.Point(84, 141);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(322, 35);
             this.txtusuario.TabIndex = 1;
@@ -63,7 +61,7 @@
             this.lbsenha.AutoSize = true;
             this.lbsenha.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbsenha.Location = new System.Drawing.Point(624, 313);
+            this.lbsenha.Location = new System.Drawing.Point(209, 188);
             this.lbsenha.Name = "lbsenha";
             this.lbsenha.Size = new System.Drawing.Size(82, 29);
             this.lbsenha.TabIndex = 0;
@@ -72,7 +70,7 @@
             // txtsenha
             // 
             this.txtsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsenha.Location = new System.Drawing.Point(501, 349);
+            this.txtsenha.Location = new System.Drawing.Point(86, 224);
             this.txtsenha.Name = "txtsenha";
             this.txtsenha.PasswordChar = '*';
             this.txtsenha.Size = new System.Drawing.Size(322, 35);
@@ -83,7 +81,7 @@
             // 
             this.btncadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncadastrar.Location = new System.Drawing.Point(669, 396);
+            this.btncadastrar.Location = new System.Drawing.Point(254, 271);
             this.btncadastrar.Name = "btncadastrar";
             this.btncadastrar.Size = new System.Drawing.Size(152, 34);
             this.btncadastrar.TabIndex = 4;
@@ -95,7 +93,7 @@
             // 
             this.btnentrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnentrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnentrar.Location = new System.Drawing.Point(501, 396);
+            this.btnentrar.Location = new System.Drawing.Point(86, 271);
             this.btnentrar.Name = "btnentrar";
             this.btnentrar.Size = new System.Drawing.Size(152, 34);
             this.btnentrar.TabIndex = 3;
@@ -103,37 +101,11 @@
             this.btnentrar.UseVisualStyleBackColor = true;
             this.btnentrar.Click += new System.EventHandler(this.btnentrar_Click);
             // 
-            // btnface
-            // 
-            this.btnface.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnface.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnface.Location = new System.Drawing.Point(501, 446);
-            this.btnface.Name = "btnface";
-            this.btnface.Size = new System.Drawing.Size(322, 34);
-            this.btnface.TabIndex = 5;
-            this.btnface.Tag = "facebook";
-            this.btnface.Text = "Facebook";
-            this.btnface.UseVisualStyleBackColor = true;
-            this.btnface.Click += new System.EventHandler(this.btnface_Click);
-            // 
-            // btngoogle
-            // 
-            this.btngoogle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btngoogle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btngoogle.Location = new System.Drawing.Point(501, 495);
-            this.btngoogle.Name = "btngoogle";
-            this.btngoogle.Size = new System.Drawing.Size(322, 38);
-            this.btngoogle.TabIndex = 6;
-            this.btngoogle.Text = "Google";
-            this.btngoogle.UseVisualStyleBackColor = true;
-            // 
             // TelaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
-            this.Controls.Add(this.btngoogle);
-            this.Controls.Add(this.btnface);
+            this.ClientSize = new System.Drawing.Size(493, 384);
             this.Controls.Add(this.btnentrar);
             this.Controls.Add(this.btncadastrar);
             this.Controls.Add(this.txtsenha);
@@ -141,6 +113,7 @@
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.lbusuario);
             this.Name = "TelaLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.TelaLogin_Load);
             this.ResumeLayout(false);
@@ -156,8 +129,6 @@
         private System.Windows.Forms.TextBox txtsenha;
         private System.Windows.Forms.Button btncadastrar;
         private System.Windows.Forms.Button btnentrar;
-        private System.Windows.Forms.Button btnface;
-        private System.Windows.Forms.Button btngoogle;
     }
 }
 

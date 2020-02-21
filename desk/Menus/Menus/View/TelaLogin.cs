@@ -13,6 +13,8 @@ using MaterialSkin.Controls;
 using System.Configuration;
 using System.Collections.Specialized;
 using System.Drawing.Text;
+using System.IO;
+using System.Reflection;
 
 namespace Menus
 {
@@ -25,16 +27,9 @@ namespace Menus
         {
             InitializeComponent();
 
-            // FormBorderStyle = FormBorderStyle.None;
-            // WindowState = FormWindowState.Maximized;
-            // TopMost = true;
 
-            PrivateFontCollection pfc = new PrivateFontCollection();
-            pfc.AddFontFile(@"C:\MargemRounded-Medium.otf");
-            foreach (Control c in this.Controls)
-            {
-                c.Font = new Font(pfc.Families[0], 15, FontStyle.Regular);
-            }
+
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

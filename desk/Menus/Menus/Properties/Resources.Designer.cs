@@ -122,16 +122,6 @@ namespace Menus.Properties {
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Byte[].
-        /// </summary>
-        internal static byte[] MargemRounded_Medium {
-            get {
-                object obj = ResourceManager.GetObject("MargemRounded_Medium", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap plus_sign_in_circle {
