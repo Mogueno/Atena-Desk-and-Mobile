@@ -12,6 +12,7 @@ using Menus.Model;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
+using Transitions;
 
 namespace Menus
 {
@@ -164,6 +165,23 @@ namespace Menus
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Transition.run(button10, "Height", 30, new TransitionType_EaseInEaseOut(100));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("deu ruim\n\n"+ex);
+            }
         }
     }
 }

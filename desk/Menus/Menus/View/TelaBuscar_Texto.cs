@@ -146,7 +146,44 @@ namespace Menus
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            if (!String.IsNullOrEmpty(txtSearchBox.Text))
+            {
+                flowLayoutPanel4.Controls.Clear();
+                string searchContent = txtSearchBox.Text;
+                try
+                {
+                    bancoMainEntities1 ht2 = new bancoMainEntities1();
+                    var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
+                    if (content.Count != 0)
+                    {
+                        for (int i = 0; i < content.Count; i++)
+                        {
+                            Button button = new Button();
+                            button.Tag = content[i].STR_INT_ID;
+                            button.Text = content[i].STR_STR_TITLE;
+                            button.Width = flowLayoutPanel4.Width - 5;
+                            button.Cursor = Cursors.Hand;
+                            button.Click += new EventHandler(this.button_Click);
+                            flowLayoutPanel4.Controls.Add(button);
+                        }
+                    }
+                    else
+                    {
+                        TextBox txt = new TextBox();
+                        txt.Text = "Não foram encontrados resultados para a sua pesquisa";
+                        flowLayoutPanel4.Controls.Add(txt);
+                    }
+                }
 
+                catch (Exception ex)
+                {
+                    ErrorProvider error = new ErrorProvider();
+                }
+            }
+            else
+            {
+                flowLayoutPanel4.Controls.Clear();   
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
