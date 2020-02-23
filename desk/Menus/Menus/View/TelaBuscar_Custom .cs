@@ -12,12 +12,13 @@ using Menus.Model;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
+using Transitions;
 
 namespace Menus
 {
-    public partial class TelaBuscar_Faculdade : MaterialForm
+    public partial class TelaBuscar_Custom : MaterialForm
     {
-		public TelaBuscar_Faculdade(string texto)
+		public TelaBuscar_Custom(string texto)
         {
             InitializeComponent();
 
@@ -33,7 +34,13 @@ namespace Menus
 
         }
 
-		private void Button2_Click(object sender, EventArgs e)
+        private void SlidePanel(object sender)
+        {
+
+        }
+
+
+        private void Button2_Click(object sender, EventArgs e)
 		{
 			this.Hide();
             new TelaNovaNota(lbRecebeEmailMenu.Text).Show();
@@ -76,6 +83,16 @@ namespace Menus
 
         private void Menuprinc_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'bancoMainDataSet.TB_CURSO'. Você pode movê-la ou removê-la conforme necessário.
+            this.tB_CURSOTableAdapter.Fill(this.bancoMainDataSet.TB_CURSO);
+            // TODO: esta linha de código carrega dados na tabela 'bancoMainDataSet.TB_MATERIA'. Você pode movê-la ou removê-la conforme necessário.
+            this.tB_MATERIATableAdapter.Fill(this.bancoMainDataSet.TB_MATERIA);
+            // TODO: esta linha de código carrega dados na tabela 'bancoMainDataSet.TB_FACULDADE'. Você pode movê-la ou removê-la conforme necessário.
+            this.tB_FACULDADETableAdapter.Fill(this.bancoMainDataSet.TB_FACULDADE);
+
+            comboBox1.SelectedIndex = -1;
+            comboBox2.SelectedIndex = -1;
+            comboBox3.SelectedIndex = -1;
 
             bancoMainEntities1 ht2 = new bancoMainEntities1();
             var name = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
@@ -220,6 +237,40 @@ namespace Menus
             {
                 flowLayoutPanel4.Controls.Clear();   
             }
+        }
+
+        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            if(flowLayoutPanel2.Height == 0)
+            {
+                Transition.run(flowLayoutPanel2, "Height", 60, new TransitionType_EaseInEaseOut(100));
+            }
+            else
+            {
+                Transition.run(flowLayoutPanel2, "Height", 0, new TransitionType_EaseInEaseOut(100));
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (flowLayoutPanel6.Height == 0)
+            {
+                Transition.run(flowLayoutPanel6, "Height", 60, new TransitionType_EaseInEaseOut(100));
+            }
+            else
+            {
+                Transition.run(flowLayoutPanel6, "Height", 0, new TransitionType_EaseInEaseOut(100));
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

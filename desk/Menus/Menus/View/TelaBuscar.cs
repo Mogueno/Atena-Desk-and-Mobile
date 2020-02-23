@@ -169,7 +169,8 @@ namespace Menus
 
         private void button9_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new TelaBuscar_Custom(lbRecebeEmailMenu.Text).Show();
         }
 
         private void button11_Click(object sender, EventArgs e)

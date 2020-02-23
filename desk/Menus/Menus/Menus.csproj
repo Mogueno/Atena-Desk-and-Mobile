@@ -60,10 +60,16 @@
     <ManifestKeyFile>Menus_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -106,6 +112,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bancoMainDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bancoMainDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,6 +134,9 @@
     </Compile>
     <Compile Include="Model\Cadastro.cs" />
     <Compile Include="Model\Dados.cs" />
+    <Compile Include="RoundPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TB_CURSO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -149,6 +163,12 @@
     </Compile>
     <Compile Include="TB_USER.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\TelaBuscar_Custom .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TelaBuscar_Custom .Designer.cs">
+      <DependentUpon>TelaBuscar_Custom .cs</DependentUpon>
     </Compile>
     <Compile Include="View\TelaBuscar_Materia.cs">
       <SubType>Form</SubType>
@@ -219,6 +239,9 @@
     <Compile Include="View\TelaNovaNota.Designer.cs">
       <DependentUpon>TelaNovaNota.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\TelaBuscar_Custom .resx">
+      <DependentUpon>TelaBuscar_Custom .cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\TelaBuscar_Materia.resx">
       <DependentUpon>TelaBuscar_Materia.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,11 +289,22 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Menus_TemporaryKey.pfx" />
+    <None Include="bancoMainDataSet.xsc">
+      <DependentUpon>bancoMainDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bancoMainDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bancoMainDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bancoMainDataSet.xss">
+      <DependentUpon>bancoMainDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -300,13 +334,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bancoMain.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bancoMain_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>bancoMain.mdf</DependentUpon>
-    </Content>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -317,6 +344,21 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\back %281%29.png" />
+    <None Include="Resources\cogwheel1.png" />
+    <None Include="Resources\book1.png" />
+    <None Include="Resources\course1.png" />
+    <None Include="Resources\school1.png" />
+    <None Include="Resources\font1.png" />
+    <None Include="Resources\switch %281%29.png" />
+    <None Include="Resources\logout %281%29.png" />
+    <None Include="Resources\image %285%29.png" />
+    <None Include="Resources\image %284%29.png" />
+    <None Include="Resources\image %283%29.png" />
+    <None Include="Resources\Webp.net-resizeimage %288%29.png" />
+    <None Include="Resources\image.png" />
+    <None Include="Resources\image %282%29.png" />
+    <None Include="Resources\image %281%29.png" />
     <None Include="Resources\TextFile1.txt" />
     <None Include="Resources\search %282%29.png" />
     <None Include="Resources\cogwheel.png" />
