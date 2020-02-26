@@ -38,6 +38,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lbMainTitle = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panelTexto = new System.Windows.Forms.Panel();
             this.button19 = new System.Windows.Forms.Button();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
@@ -87,12 +87,32 @@
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button23 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtNota = new System.Windows.Forms.TextBox();
-            this.button24 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.button25 = new System.Windows.Forms.Button();
+            this.lbMateriaShow = new MaterialSkin.Controls.MaterialLabel();
+            this.lbCursoShow = new MaterialSkin.Controls.MaterialLabel();
+            this.lbFaculShow = new MaterialSkin.Controls.MaterialLabel();
+            this.lbDados = new System.Windows.Forms.Label();
+            this.roundPictureBox1 = new Menus.RoundPictureBox();
+            this.button26 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtIdade = new System.Windows.Forms.TextBox();
+            this.txtSexo = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lbRecebeEmailConfig = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -104,7 +124,6 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panelTexto.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -112,6 +131,8 @@
             this.flowLayoutPanel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbRecebeEmailMenu
@@ -314,6 +335,20 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
+            // panel6
+            // 
+            this.panel6.AutoScroll = true;
+            this.panel6.AutoSize = true;
+            this.panel6.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel6.Controls.Add(this.tableLayoutPanel1);
+            this.panel6.Controls.Add(this.pictureBox1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(255, 364);
+            this.panel6.TabIndex = 22;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
@@ -367,7 +402,6 @@
             this.lbMainDescription.Name = "lbMainDescription";
             this.lbMainDescription.Size = new System.Drawing.Size(715, 88);
             this.lbMainDescription.TabIndex = 17;
-            this.lbMainDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
@@ -479,7 +513,7 @@
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.return_Click);
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // flowLayoutPanel3
             // 
@@ -864,20 +898,6 @@
             this.button18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button18.UseVisualStyleBackColor = false;
             // 
-            // panel6
-            // 
-            this.panel6.AutoScroll = true;
-            this.panel6.AutoSize = true;
-            this.panel6.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel6.Controls.Add(this.tableLayoutPanel1);
-            this.panel6.Controls.Add(this.pictureBox1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(255, 364);
-            this.panel6.TabIndex = 22;
-            // 
             // panelTexto
             // 
             this.panelTexto.Controls.Add(this.button19);
@@ -1071,26 +1091,26 @@
             this.panel7.TabIndex = 25;
             this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
-            // button23
+            // button24
             // 
-            this.button23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(2)))), ((int)(((byte)(9)))));
-            this.button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button23.FlatAppearance.BorderColor = System.Drawing.Color.BlanchedAlmond;
-            this.button23.FlatAppearance.BorderSize = 0;
-            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.button23.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button23.Image = global::Menus.Properties.Resources.back__1_;
-            this.button23.Location = new System.Drawing.Point(0, 0);
-            this.button23.Margin = new System.Windows.Forms.Padding(5);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(62, 34);
-            this.button23.TabIndex = 20;
-            this.button23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button23.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button23.UseVisualStyleBackColor = false;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
+            this.button24.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button24.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button24.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button24.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button24.Location = new System.Drawing.Point(390, 530);
+            this.button24.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.button24.Name = "button24";
+            this.button24.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button24.Size = new System.Drawing.Size(255, 50);
+            this.button24.TabIndex = 26;
+            this.button24.Text = "Adicionar Nota";
+            this.button24.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button24.UseVisualStyleBackColor = false;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // txtTitle
             // 
@@ -1116,26 +1136,298 @@
             this.txtNota.Size = new System.Drawing.Size(900, 316);
             this.txtNota.TabIndex = 21;
             // 
-            // button24
+            // button23
             // 
-            this.button24.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button24.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button24.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button24.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button24.Location = new System.Drawing.Point(390, 530);
-            this.button24.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.button24.Name = "button24";
-            this.button24.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button24.Size = new System.Drawing.Size(255, 50);
-            this.button24.TabIndex = 26;
-            this.button24.Text = "Adicionar Nota";
-            this.button24.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button24.UseVisualStyleBackColor = false;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
+            this.button23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(2)))), ((int)(((byte)(9)))));
+            this.button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button23.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button23.FlatAppearance.BorderColor = System.Drawing.Color.BlanchedAlmond;
+            this.button23.FlatAppearance.BorderSize = 0;
+            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button23.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button23.Image = global::Menus.Properties.Resources.back__1_;
+            this.button23.Location = new System.Drawing.Point(0, 0);
+            this.button23.Margin = new System.Windows.Forms.Padding(5);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(62, 34);
+            this.button23.TabIndex = 20;
+            this.button23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button23.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.txtNome);
+            this.panel10.Controls.Add(this.label6);
+            this.panel10.Controls.Add(this.txtSexo);
+            this.panel10.Controls.Add(this.txtIdade);
+            this.panel10.Controls.Add(this.label7);
+            this.panel10.Controls.Add(this.lbRecebeEmailConfig);
+            this.panel10.Controls.Add(this.label8);
+            this.panel10.Controls.Add(this.label5);
+            this.panel10.Controls.Add(this.label4);
+            this.panel10.Controls.Add(this.label3);
+            this.panel10.Controls.Add(this.label2);
+            this.panel10.Controls.Add(this.button26);
+            this.panel10.Controls.Add(this.roundPictureBox1);
+            this.panel10.Controls.Add(this.lbMateriaShow);
+            this.panel10.Controls.Add(this.lbCursoShow);
+            this.panel10.Controls.Add(this.lbFaculShow);
+            this.panel10.Controls.Add(this.lbDados);
+            this.panel10.Controls.Add(this.button25);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(255, 42);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1031, 687);
+            this.panel10.TabIndex = 26;
+            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
+            // 
+            // button25
+            // 
+            this.button25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(2)))), ((int)(((byte)(9)))));
+            this.button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button25.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button25.FlatAppearance.BorderColor = System.Drawing.Color.BlanchedAlmond;
+            this.button25.FlatAppearance.BorderSize = 0;
+            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button25.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button25.Image = global::Menus.Properties.Resources.back__1_;
+            this.button25.Location = new System.Drawing.Point(0, 0);
+            this.button25.Margin = new System.Windows.Forms.Padding(5);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(62, 34);
+            this.button25.TabIndex = 20;
+            this.button25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button25.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.return_Click);
+            // 
+            // lbMateriaShow
+            // 
+            this.lbMateriaShow.AutoSize = true;
+            this.lbMateriaShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.lbMateriaShow.Depth = 0;
+            this.lbMateriaShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMateriaShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbMateriaShow.Location = new System.Drawing.Point(562, 476);
+            this.lbMateriaShow.MinimumSize = new System.Drawing.Size(410, 0);
+            this.lbMateriaShow.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbMateriaShow.Name = "lbMateriaShow";
+            this.lbMateriaShow.Size = new System.Drawing.Size(410, 33);
+            this.lbMateriaShow.TabIndex = 42;
+            this.lbMateriaShow.Click += new System.EventHandler(this.lbMateriaShow_Click);
+            // 
+            // lbCursoShow
+            // 
+            this.lbCursoShow.AutoSize = true;
+            this.lbCursoShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.lbCursoShow.Depth = 0;
+            this.lbCursoShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCursoShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbCursoShow.Location = new System.Drawing.Point(559, 302);
+            this.lbCursoShow.MinimumSize = new System.Drawing.Size(410, 0);
+            this.lbCursoShow.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbCursoShow.Name = "lbCursoShow";
+            this.lbCursoShow.Size = new System.Drawing.Size(410, 33);
+            this.lbCursoShow.TabIndex = 38;
+            this.lbCursoShow.Click += new System.EventHandler(this.lbCursoShow_Click);
+            // 
+            // lbFaculShow
+            // 
+            this.lbFaculShow.AutoSize = true;
+            this.lbFaculShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.lbFaculShow.Depth = 0;
+            this.lbFaculShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFaculShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbFaculShow.Location = new System.Drawing.Point(559, 381);
+            this.lbFaculShow.MinimumSize = new System.Drawing.Size(410, 0);
+            this.lbFaculShow.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbFaculShow.Name = "lbFaculShow";
+            this.lbFaculShow.Size = new System.Drawing.Size(410, 33);
+            this.lbFaculShow.TabIndex = 40;
+            this.lbFaculShow.Click += new System.EventHandler(this.lbFaculShow_Click);
+            // 
+            // lbDados
+            // 
+            this.lbDados.AutoSize = true;
+            this.lbDados.BackColor = System.Drawing.Color.Transparent;
+            this.lbDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDados.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbDados.Location = new System.Drawing.Point(408, 12);
+            this.lbDados.Name = "lbDados";
+            this.lbDados.Size = new System.Drawing.Size(297, 55);
+            this.lbDados.TabIndex = 37;
+            this.lbDados.Text = "Minha Conta";
+            // 
+            // roundPictureBox1
+            // 
+            this.roundPictureBox1.Location = new System.Drawing.Point(477, 82);
+            this.roundPictureBox1.Name = "roundPictureBox1";
+            this.roundPictureBox1.Size = new System.Drawing.Size(148, 148);
+            this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.roundPictureBox1.TabIndex = 48;
+            this.roundPictureBox1.TabStop = false;
+            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
+            // 
+            // button26
+            // 
+            this.button26.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button26.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button26.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button26.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button26.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button26.Location = new System.Drawing.Point(418, 619);
+            this.button26.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.button26.Name = "button26";
+            this.button26.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button26.Size = new System.Drawing.Size(255, 50);
+            this.button26.TabIndex = 49;
+            this.button26.Text = "Atualizar";
+            this.button26.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button26.UseVisualStyleBackColor = false;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Location = new System.Drawing.Point(56, 258);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 37);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Nome";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label3.Location = new System.Drawing.Point(56, 346);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 37);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "E-mail";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.Location = new System.Drawing.Point(56, 433);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 37);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "Sexo";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label5.Location = new System.Drawing.Point(56, 516);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 37);
+            this.label5.TabIndex = 53;
+            this.label5.Text = "Idade";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label6.Location = new System.Drawing.Point(558, 433);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(123, 37);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "Matéria";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label7.Location = new System.Drawing.Point(558, 344);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 37);
+            this.label7.TabIndex = 55;
+            this.label7.Text = "Curso";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label8.Location = new System.Drawing.Point(558, 260);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(167, 37);
+            this.label8.TabIndex = 54;
+            this.label8.Text = "Faculdade";
+            // 
+            // txtIdade
+            // 
+            this.txtIdade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.txtIdade.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdade.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdade.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.txtIdade.Location = new System.Drawing.Point(63, 561);
+            this.txtIdade.Name = "txtIdade";
+            this.txtIdade.Size = new System.Drawing.Size(410, 33);
+            this.txtIdade.TabIndex = 2;
+            // 
+            // txtSexo
+            // 
+            this.txtSexo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.txtSexo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSexo.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.txtSexo.Location = new System.Drawing.Point(63, 476);
+            this.txtSexo.Name = "txtSexo";
+            this.txtSexo.Size = new System.Drawing.Size(410, 33);
+            this.txtSexo.TabIndex = 1;
+            // 
+            // txtNome
+            // 
+            this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.txtNome.Location = new System.Drawing.Point(63, 300);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(410, 33);
+            this.txtNome.TabIndex = 0;
+            // 
+            // lbRecebeEmailConfig
+            // 
+            this.lbRecebeEmailConfig.AutoSize = true;
+            this.lbRecebeEmailConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.lbRecebeEmailConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRecebeEmailConfig.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lbRecebeEmailConfig.Location = new System.Drawing.Point(63, 388);
+            this.lbRecebeEmailConfig.MinimumSize = new System.Drawing.Size(410, 0);
+            this.lbRecebeEmailConfig.Name = "lbRecebeEmailConfig";
+            this.lbRecebeEmailConfig.Size = new System.Drawing.Size(410, 33);
+            this.lbRecebeEmailConfig.TabIndex = 30;
             // 
             // Menuprinc
             // 
@@ -1145,9 +1437,10 @@
             this.ClientSize = new System.Drawing.Size(1286, 729);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.panelSearch);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panelCurso);
             this.Controls.Add(this.panelTexto);
@@ -1166,6 +1459,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -1181,7 +1475,6 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.flowLayoutPanel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.panelTexto.ResumeLayout(false);
             this.panelTexto.PerformLayout();
             this.flowLayoutPanel6.ResumeLayout(false);
@@ -1194,6 +1487,9 @@
             this.panel9.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1263,5 +1559,24 @@
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button button25;
+        private MaterialSkin.Controls.MaterialLabel lbMateriaShow;
+        private MaterialSkin.Controls.MaterialLabel lbCursoShow;
+        private MaterialSkin.Controls.MaterialLabel lbFaculShow;
+        private System.Windows.Forms.Label lbDados;
+        private RoundPictureBox roundPictureBox1;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtSexo;
+        private System.Windows.Forms.TextBox txtIdade;
+        private System.Windows.Forms.Label lbRecebeEmailConfig;
     }
 }

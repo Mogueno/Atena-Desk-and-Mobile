@@ -31,9 +31,6 @@ namespace Menus
 
         }
 
-
-        Cadastro user = new Cadastro();
-
         public string strConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         public const string strSelectUser = "SELECT USER_STR_NOME, USER_INT_IDADE, USER_STR_SEXO FROM TB_USER WHERE USER_STR_EMAIL = @USER_STR_EMAIL_VAR";
