@@ -164,42 +164,6 @@
     <Compile Include="TB_USER.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaBuscar_Custom .cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaBuscar_Custom .Designer.cs">
-      <DependentUpon>TelaBuscar_Custom .cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaBuscar_Materia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaBuscar_Materia.Designer.cs">
-      <DependentUpon>TelaBuscar_Materia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaBuscar_Curso .cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaBuscar_Curso .Designer.cs">
-      <DependentUpon>TelaBuscar_Curso .cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaBuscar_Faculdade.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaBuscar_Faculdade.Designer.cs">
-      <DependentUpon>TelaBuscar_Faculdade.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaBuscar_Texto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaBuscar_Texto.Designer.cs">
-      <DependentUpon>TelaBuscar_Texto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaBuscar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaBuscar.Designer.cs">
-      <DependentUpon>TelaBuscar.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\TelaConfiguracao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,30 +197,6 @@
     <Compile Include="View\Telamfc.Designer.cs">
       <DependentUpon>Telamfc.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaNovaNota.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaNovaNota.Designer.cs">
-      <DependentUpon>TelaNovaNota.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="View\TelaBuscar_Custom .resx">
-      <DependentUpon>TelaBuscar_Custom .cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaBuscar_Materia.resx">
-      <DependentUpon>TelaBuscar_Materia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaBuscar_Curso .resx">
-      <DependentUpon>TelaBuscar_Curso .cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaBuscar_Faculdade.resx">
-      <DependentUpon>TelaBuscar_Faculdade.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaBuscar_Texto.resx">
-      <DependentUpon>TelaBuscar_Texto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaBuscar.resx">
-      <DependentUpon>TelaBuscar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\TelaConfiguracao.resx">
       <DependentUpon>TelaConfiguracao.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,9 +221,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Telamfc.resx">
       <DependentUpon>Telamfc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaNovaNota.resx">
-      <DependentUpon>TelaNovaNota.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
