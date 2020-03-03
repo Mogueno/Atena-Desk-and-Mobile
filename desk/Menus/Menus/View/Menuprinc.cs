@@ -183,10 +183,12 @@ namespace Menus
 
             bancoMainEntities1 ht = new bancoMainEntities1();
             var title = ht.TB_NOTA_STR.Where(a => a.STR_INT_ID == s).SingleOrDefault();
-            lbMainTitle.Text = title.STR_STR_TITLE;
-            lbMainDescription.Text = title.STR_STR_PATH;
-
-
+            textBox5.Text = title.STR_STR_TITLE;
+            label9.Text = title.STR_STR_TITLE;
+            textBox6.Text = title.STR_STR_PATH;
+            label10.Text = title.STR_STR_PATH;
+            tableLayoutPanel2.Tag = title.NOTA_INT_ID;
+            panel11.Visible = true;
         }
 
         private void GetNote(string EmailVar)
@@ -205,7 +207,6 @@ namespace Menus
 
         private void Menuprinc_Load(object sender, EventArgs e)
         {
-
             GetNote(lbRecebeEmailMenu.Text);
             bancoMainEntities1 ht2 = new bancoMainEntities1();
             var name = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
@@ -234,6 +235,11 @@ namespace Menus
             flowLayoutPanel2.AutoScroll = false;
             flowLayoutPanel2.VerticalScroll.Visible = false;
             flowLayoutPanel2.AutoScroll = true;
+
+            flowLayoutPanel7.HorizontalScroll.Maximum = 0;
+            flowLayoutPanel7.AutoScroll = false;
+            flowLayoutPanel7.VerticalScroll.Visible = false;
+            flowLayoutPanel7.AutoScroll = true;
 
             GetUser(lbRecebeEmailMenu.Text);
             lbRecebeEmailConfig.Text = lbRecebeEmailMenu.Text; 
@@ -297,52 +303,6 @@ namespace Menus
 
         }
 
-        protected override void WndProc(ref Message m)
-        {
-            const int RESIZE_HANDLE_SIZE = 10;
-
-            switch (m.Msg)
-            {
-                case 0x0084/*NCHITTEST*/ :
-                    base.WndProc(ref m);
-
-                    if ((int)m.Result == 0x01/*HTCLIENT*/)
-                    {
-                        Point screenPoint = new Point(m.LParam.ToInt32());
-                        Point clientPoint = this.PointToClient(screenPoint);
-                        if (clientPoint.Y <= RESIZE_HANDLE_SIZE)
-                        {
-                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
-                                m.Result = (IntPtr)13/*HTTOPLEFT*/ ;
-                            else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
-                                m.Result = (IntPtr)12/*HTTOP*/ ;
-                            else
-                                m.Result = (IntPtr)14/*HTTOPRIGHT*/ ;
-                        }
-                        else if (clientPoint.Y <= (Size.Height - RESIZE_HANDLE_SIZE))
-                        {
-                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
-                                m.Result = (IntPtr)10/*HTLEFT*/ ;
-                            else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
-                                m.Result = (IntPtr)2/*HTCAPTION*/ ;
-                            else
-                                m.Result = (IntPtr)11/*HTRIGHT*/ ;
-                        }
-                        else
-                        {
-                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
-                                m.Result = (IntPtr)16/*HTBOTTOMLEFT*/ ;
-                            else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
-                                m.Result = (IntPtr)15/*HTBOTTOM*/ ;
-                            else
-                                m.Result = (IntPtr)17/*HTBOTTOMRIGHT*/ ;
-                        }
-                    }
-                    return;
-            }
-            base.WndProc(ref m);
-        }
-
         protected override CreateParams CreateParams
         {
             get
@@ -355,7 +315,7 @@ namespace Menus
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void panelSearch_Paint(object sender, PaintEventArgs e)
@@ -370,43 +330,7 @@ namespace Menus
 
         private void txtSearchBox_TextChanged(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(txtSearchBox.Text))
-            {
-                flowLayoutPanel4.Controls.Clear();
-                string searchContent = txtSearchBox.Text;
-                try
-                {
-                    bancoMainEntities1 ht2 = new bancoMainEntities1();
-                    var content = ht2.TB_FACULDADE.Where(b => b.FAC_STR_NOME.Contains(searchContent)).ToList();
-                    if (content.Count != 0)
-                    {
-                        for (int i = 0; i < content.Count; i++)
-                        {
-                            Button button = new Button();
-                            button.Tag = content[i].FAC_INT_ID;
-                            button.Text = content[i].FAC_STR_NOME;
-                            button.Width = flowLayoutPanel4.Width - 5;
-                            button.Cursor = Cursors.Hand;
-                            flowLayoutPanel4.Controls.Add(button);
-                        }
-                    }
-                    else
-                    {
-                        TextBox txt = new TextBox();
-                        txt.Text = "Não foram encontrados resultados para a sua pesquisa";
-                        flowLayoutPanel4.Controls.Add(txt);
-                    }
-                }
 
-                catch (Exception ex)
-                {
-                    ErrorProvider error = new ErrorProvider();
-                }
-            }
-            else
-            {
-                flowLayoutPanel4.Controls.Clear();
-            }
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -416,6 +340,7 @@ namespace Menus
 
             try
             {
+                flowLayoutPanel4.Controls.Clear();
                 bancoMainEntities1 ht3 = new bancoMainEntities1();
                 var content = ht3.TB_FACULDADE.ToList();
                 if (content.Count != 0)
@@ -425,8 +350,14 @@ namespace Menus
                         Button button = new Button();
                         button.Tag = content[i].FAC_INT_ID;
                         button.Text = content[i].FAC_STR_NOME;
-                        button.Width = flowLayoutPanel4.Width - 5;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.BackColor = Color.FromArgb(11, 7, 17);
                         button.Cursor = Cursors.Hand;
+                        button.Height = 195;
+                        button.Width = 195;
+                        button.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        button.Cursor = Cursors.Hand;
+                        button.Click += new EventHandler(this.buttonSearch_Click);
                         flowLayoutPanel4.Controls.Add(button);
                     }
                 }
@@ -487,7 +418,13 @@ namespace Menus
                             button.Tag = content[i].STR_INT_ID;
                             button.Text = content[i].STR_STR_TITLE;
                             button.Width = flowLayoutPanel7.Width - 5;
+                            button.FlatStyle = FlatStyle.Flat;
+                            button.BackColor = Color.FromArgb(11, 7, 17);
                             button.Cursor = Cursors.Hand;
+                            button.Height = 75;
+                            button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            button.Cursor = Cursors.Hand;
+                            button.Click += new EventHandler(this.buttonSearchText_Click);
                             flowLayoutPanel7.Controls.Add(button);
                         }
                     }
@@ -506,8 +443,17 @@ namespace Menus
             }
             else
             {
-                flowLayoutPanel4.Controls.Clear();
+                flowLayoutPanel7.Controls.Clear();
             }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int s = Convert.ToInt32((sender as Button).Tag);
+            panel21.Tag = s;
+            panelFacul__Search.BringToFront();
+            searchButtons();
         }
 
         private void panelTexto_Paint(object sender, PaintEventArgs e)
@@ -685,6 +631,7 @@ namespace Menus
                             int retorno2 = objCommand3.ExecuteNonQuery();
 
                             if (retorno2 == 1)
+
                             {
                                 MessageBox.Show("Dados inseridos");
                                 panel3.BringToFront();
@@ -816,6 +763,365 @@ namespace Menus
         private void button26_Click(object sender, EventArgs e)
         {
             UpdateUser(lbRecebeEmailMenu.Text, txtNome.Text, txtIdade.Text, txtSexo.Text);
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_Click(object sender, EventArgs e)
+        {
+            ((TextBox)sender).SelectionLength = 0;
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            textBox5.Visible = true; 
+            label9.Visible = false;
+            textBox6.Visible = true;
+            label10.Visible = false;
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+
+        protected override void WndProc(ref Message m)
+        {
+            const int RESIZE_HANDLE_SIZE = 10;
+
+            switch (m.Msg)
+            {
+                case 0x0084/*NCHITTEST*/ :
+                    base.WndProc(ref m);
+
+                    if ((int)m.Result == 0x01/*HTCLIENT*/)
+                    {
+                        Point screenPoint = new Point(m.LParam.ToInt32());
+                        Point clientPoint = this.PointToClient(screenPoint);
+                        if (clientPoint.Y <= RESIZE_HANDLE_SIZE)
+                        {
+                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
+                                m.Result = (IntPtr)3/*HTTOPLEFT*/ ;
+                            else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
+                                m.Result = (IntPtr)2/*HTTOP*/ ;
+                            else
+                                m.Result = (IntPtr)4/*HTTOPRIGHT*/ ;
+                        }
+                        else if (clientPoint.Y <= (Size.Height - RESIZE_HANDLE_SIZE))
+                        {
+                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
+                                m.Result = (IntPtr)1/*HTLEFT*/ ;
+                            else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
+                                m.Result = (IntPtr)2/*HTCAPTION*/ ;
+                            else
+                                m.Result = (IntPtr)1/*HTRIGHT*/ ;
+                        }
+                        else
+                        {
+                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
+                                m.Result = (IntPtr)6/*HTBOTTOMLEFT*/ ;
+                            else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
+                                m.Result = (IntPtr)5/*HTBOTTOM*/ ;
+                            else
+                                m.Result = (IntPtr)7/*HTBOTTOMRIGHT*/ ;
+                        }
+                    }
+                    return;
+            }
+            base.WndProc(ref m);
+        }
+
+        private void buttonSearchText_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int s = Convert.ToInt32((sender as Button).Tag);
+
+            bancoMainEntities1 ht = new bancoMainEntities1();
+            var title = ht.TB_NOTA_STR.Where(a => a.STR_INT_ID == s).SingleOrDefault();
+            textBox5.Text = title.STR_STR_TITLE;
+            label12.Text = title.STR_STR_TITLE;
+            textBox3.Text = title.STR_STR_PATH;
+            label11.Text = title.STR_STR_PATH;
+            panel4.Visible = true;
+        }
+
+        private void buttonSearchFacul_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int s = Convert.ToInt32((sender as Button).Tag);
+
+            bancoMainEntities1 ht = new bancoMainEntities1();
+            var title = ht.TB_NOTA_STR.Where(a => a.STR_INT_ID == s).SingleOrDefault();
+            label14.Text = title.STR_STR_TITLE;
+            label13.Text = title.STR_STR_PATH;
+            panel20.Visible = true;
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                bancoMainEntities1 ht2 = new bancoMainEntities1();
+
+                int noteId = Convert.ToInt32(tableLayoutPanel2.Tag);
+
+                var itemToRemove = ht2.TB_NOTA_STR.SingleOrDefault(x => x.NOTA_INT_ID == noteId);
+
+                var noteToRemove = ht2.TB_NOTA.SingleOrDefault(x => x.NOTA_INT_ID == noteId);
+
+                if (itemToRemove != null && noteToRemove != null)
+                {
+                    ht2.TB_NOTA_STR.Remove(itemToRemove);
+                    ht2.TB_NOTA.Remove(noteToRemove);
+                    ht2.SaveChanges();
+
+
+                    flowLayoutPanel2.Controls.Clear();
+                    textBox5.Clear();
+                    label9.Text = "";
+                    textBox6.Clear();
+                    label10.Text = "";
+                    panel11.Visible = false;
+                    GetNote(lbRecebeEmailMenu.Text);
+                    MessageBox.Show("Nota Excluída com Sucesso");
+                }
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show("Deu ruim" + ex);
+            }
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(textBox9.Text))
+            {
+                flowLayoutPanel4.Controls.Clear();
+                string searchContent = textBox9.Text;
+                try
+                {
+                    bancoMainEntities1 ht2 = new bancoMainEntities1();
+                    var content = ht2.TB_FACULDADE.Where(b => b.FAC_STR_NOME.Contains(searchContent)).ToList();
+
+
+
+                    //var entryPoint = (from ep in ht2.TB_NOTA
+                    //                  join e in ht2.tbl_Entry on ep.EID equals e.EID
+                    //                  join t in ht2.tbl_Title on e.TID equals t.TID
+                    //                  where e.OwnerID == user.UID
+                    //                  select new
+                    //                  {
+                    //                      UID = e.OwnerID,
+                    //                      TID = e.TID,
+                    //                      Title = t.Title,
+                    //                      EID = e.EID
+                    //                  }).Take(10);
+
+                    if (content.Count != 0)
+                    {
+                        for (int i = 0; i < content.Count; i++)
+                        {
+                            Button button = new Button();
+                            button.Tag = content[i].FAC_INT_ID;
+                            button.Text = content[i].FAC_STR_NOME;
+                            button.FlatStyle = FlatStyle.Flat;
+                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.Cursor = Cursors.Hand;
+                            button.Height = 195;
+                            button.Width = 195;
+                            button.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            button.Cursor = Cursors.Hand;
+                            button.Click += new EventHandler(this.buttonSearch_Click);
+                            flowLayoutPanel4.Controls.Add(button);
+                        }
+                    }
+                    else
+                    {
+                        TextBox txt = new TextBox();
+                        txt.Text = "Não foram encontrados resultados para a sua pesquisa";
+                        flowLayoutPanel4.Controls.Add(txt);
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    ErrorProvider error = new ErrorProvider();
+                }
+            }
+            else
+            {
+                try
+                {
+                    flowLayoutPanel4.Controls.Clear();
+                    bancoMainEntities1 ht3 = new bancoMainEntities1();
+                    var content = ht3.TB_FACULDADE.ToList();
+                    if (content.Count != 0)
+                    {
+                        for (int i = 0; i < content.Count; i++)
+                        {
+                            Button button = new Button();
+                            button.Tag = content[i].FAC_INT_ID;
+                            button.Text = content[i].FAC_STR_NOME;
+                            button.FlatStyle = FlatStyle.Flat;
+                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.Cursor = Cursors.Hand;
+                            button.Height = 195;
+                            button.Width = 195;
+                            button.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            button.Cursor = Cursors.Hand;
+                            button.Click += new EventHandler(this.buttonSearch_Click);
+                            flowLayoutPanel4.Controls.Add(button);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foram encontradas notas");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ErrorProvider error = new ErrorProvider();
+                }
+            }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(textBox1.Text))
+            {
+                flowLayoutPanel10.Controls.Clear();
+                string searchContent = textBox1.Text;
+                try
+                {
+                    bancoMainEntities1 ht2 = new bancoMainEntities1();
+
+                    int facId = Convert.ToInt32(panel21.Tag);
+
+                    var entryPoint = (from str in ht2.TB_NOTA_STR
+                                      join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                      where facId == nota.FAC_INT_ID
+                                      select new
+                                      {
+                                          notaTitle = str.STR_STR_TITLE
+                                      }).ToList();
+
+
+                    //var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
+                    if (entryPoint.Count != 0)
+                    {
+                        for (int i = 0; i < entryPoint.Count; i++)
+                        {
+                            Button button = new Button();
+                            //button.Tag = content[i].STR_INT_ID;
+                            button.Text = entryPoint[i].notaTitle;
+                            button.Width = flowLayoutPanel10.Width - 5;
+                            button.FlatStyle = FlatStyle.Flat;
+                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.Cursor = Cursors.Hand;
+                            button.Height = 75;
+                            button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            button.Cursor = Cursors.Hand;
+                            //button.Click += new EventHandler(this.buttonSearch_Click);
+                            flowLayoutPanel10.Controls.Add(button);
+                        }
+                    }
+                    else
+                    {
+                        TextBox txt = new TextBox();
+                        txt.Text = "Não foram encontrados resultados para a sua pesquisa";
+                        flowLayoutPanel10.Controls.Add(txt);
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    ErrorProvider error = new ErrorProvider();
+                }
+            }
+            else
+            {
+                flowLayoutPanel10.Controls.Clear();
+            }
+        }
+
+        private void flowLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void searchButtons()
+        {
+
+            flowLayoutPanel10.Controls.Clear();
+            try
+            {
+                bancoMainEntities1 ht2 = new bancoMainEntities1();
+
+                int facId = Convert.ToInt32(panel21.Tag);
+
+                var entryPoint = (from str in ht2.TB_NOTA_STR
+                                  join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                  where facId == nota.FAC_INT_ID
+                                  select new
+                                  {
+                                      notaTitle = str.STR_STR_TITLE,
+                                      notaId = str.STR_INT_ID,
+                                  }).ToList();
+
+
+                //var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
+                if (entryPoint.Count != 0)
+                {
+                    for (int i = 0; i < entryPoint.Count; i++)
+                    {
+                        Button button = new Button();
+                        button.Tag = entryPoint[i].notaId;
+                        button.Text = entryPoint[i].notaTitle;
+                        button.Width = flowLayoutPanel10.Width - 5;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.BackColor = Color.FromArgb(11, 7, 17);
+                        button.Cursor = Cursors.Hand;
+                        button.Height = 75;
+                        button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        button.Cursor = Cursors.Hand;
+                        button.Click += new EventHandler(this.buttonSearchFacul_Click);
+                        flowLayoutPanel10.Controls.Add(button);
+                    }
+                }
+                else
+                {
+                    TextBox txt = new TextBox();
+                    txt.Text = "Não foram encontrados resultados para a sua pesquisa";
+                    flowLayoutPanel10.Controls.Add(txt);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                ErrorProvider error = new ErrorProvider();
+            }
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            panelFacul.BringToFront();
+            panel20.Visible = false;
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            panel3.BringToFront();
         }
     }
 }

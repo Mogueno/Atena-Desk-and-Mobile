@@ -40,19 +40,19 @@
             // 
             this.lbusuario.AutoSize = true;
             this.lbusuario.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbusuario.Location = new System.Drawing.Point(201, 100);
+            this.lbusuario.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbusuario.Location = new System.Drawing.Point(127, 23);
             this.lbusuario.Name = "lbusuario";
-            this.lbusuario.Size = new System.Drawing.Size(96, 29);
+            this.lbusuario.Size = new System.Drawing.Size(104, 29);
             this.lbusuario.TabIndex = 0;
             this.lbusuario.Text = "Usuario";
             // 
             // txtusuario
             // 
-            this.txtusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusuario.Location = new System.Drawing.Point(84, 141);
+            this.txtusuario.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtusuario.Location = new System.Drawing.Point(14, 55);
             this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(322, 35);
+            this.txtusuario.Size = new System.Drawing.Size(322, 37);
             this.txtusuario.TabIndex = 1;
             this.txtusuario.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -60,30 +60,30 @@
             // 
             this.lbsenha.AutoSize = true;
             this.lbsenha.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbsenha.Location = new System.Drawing.Point(209, 188);
+            this.lbsenha.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbsenha.Location = new System.Drawing.Point(134, 112);
             this.lbsenha.Name = "lbsenha";
-            this.lbsenha.Size = new System.Drawing.Size(82, 29);
+            this.lbsenha.Size = new System.Drawing.Size(87, 29);
             this.lbsenha.TabIndex = 0;
             this.lbsenha.Text = "Senha";
             // 
             // txtsenha
             // 
-            this.txtsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsenha.Location = new System.Drawing.Point(86, 224);
+            this.txtsenha.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsenha.Location = new System.Drawing.Point(14, 144);
             this.txtsenha.Name = "txtsenha";
             this.txtsenha.PasswordChar = '*';
-            this.txtsenha.Size = new System.Drawing.Size(322, 35);
+            this.txtsenha.Size = new System.Drawing.Size(322, 37);
             this.txtsenha.TabIndex = 2;
             this.txtsenha.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btncadastrar
             // 
             this.btncadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncadastrar.Location = new System.Drawing.Point(254, 271);
+            this.btncadastrar.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncadastrar.Location = new System.Drawing.Point(14, 264);
             this.btncadastrar.Name = "btncadastrar";
-            this.btncadastrar.Size = new System.Drawing.Size(152, 34);
+            this.btncadastrar.Size = new System.Drawing.Size(322, 49);
             this.btncadastrar.TabIndex = 4;
             this.btncadastrar.Text = "Cadastre-se";
             this.btncadastrar.UseVisualStyleBackColor = true;
@@ -92,10 +92,10 @@
             // btnentrar
             // 
             this.btnentrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnentrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnentrar.Location = new System.Drawing.Point(86, 271);
+            this.btnentrar.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnentrar.Location = new System.Drawing.Point(14, 200);
             this.btnentrar.Name = "btnentrar";
-            this.btnentrar.Size = new System.Drawing.Size(152, 34);
+            this.btnentrar.Size = new System.Drawing.Size(322, 49);
             this.btnentrar.TabIndex = 3;
             this.btnentrar.Text = "Entrar";
             this.btnentrar.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 384);
+            this.ClientSize = new System.Drawing.Size(350, 350);
             this.Controls.Add(this.btnentrar);
             this.Controls.Add(this.btncadastrar);
             this.Controls.Add(this.txtsenha);

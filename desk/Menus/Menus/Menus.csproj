@@ -344,6 +344,13 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\sydney-opera-house %281%29.png" />
+    <None Include="Resources\trash %281%29.png" />
+    <None Include="Resources\download %281%29.png" />
+    <None Include="Resources\minimize %281%29.png" />
+    <None Include="Resources\share %281%29.png" />
+    <None Include="Resources\edit %282%29 %281%29.png" />
+    <None Include="Resources\edit %281%29.png" />
     <None Include="Resources\back %281%29.png" />
     <None Include="Resources\cogwheel1.png" />
     <None Include="Resources\book1.png" />
