@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileTCC.View.MainPageApp">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <!-- PANEL 1 -->
+
+        <ContentView
+            Grid.Row="0"
+            IsVisible="True" BackgroundColor="White" x:Name="MainView">
+
+
+        </ContentView>
+
+
+        <Grid ColumnSpacing="0" RowSpacing="0" Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Orientation="Vertical"  HorizontalOptions="Center" Padding="20" Margin="-20,-10,-20,-17" Grid.Column="0">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="HomeClick" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+                <Image x:Name="tab_home_icon_selected" IsVisible="True" Source="home.png" HeightRequest="22" WidthRequest="22" Margin="0,0,0,-2" />
+                <Label Margin="0" x:Name="tab_home"/>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Vertical"  HorizontalOptions="Center" Padding="20" Margin="-20,-10,-20,-17" Grid.Column="1">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoogleClick" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+                <Image x:Name="tab_scan_icon_unselected"  Source="google.png" HeightRequest="22" WidthRequest="22" Margin="0,0,0,-2" />
+                <Label x:Name="tab_gs"  />
+
+            </StackLayout>
+            
+            <StackLayout Orientation="Vertical"  HorizontalOptions="Center" Padding="20" Margin="-20,-10,-20,-17" Grid.Column="2">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="NovaNotaClick" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+                <Image x:Name="tab_novanota_icon_unselected" Source="novanota.png" HeightRequest="22" WidthRequest="22" Margin="0,0,0,-2" />
+                <Label x:Name="tab_nota" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical"  HorizontalOptions="Center" Padding="20" Margin="-20,-10,-20,-17" Grid.Column="3">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SearchClick" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+                <Image x:Name="tab_search_icon_unselected" Source="search.png" HeightRequest="22" WidthRequest="22" Margin="0,0,0,-2" />
+                <Label x:Name="tab_search" />
+            </StackLayout>
+
+
+            <StackLayout Orientation="Vertical"  HorizontalOptions="Center" Padding="20" Margin="-20,-10,-20,-17" Grid.Column="4">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ConfigClick" NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+                <Image x:Name="tab_music_icon_unselected" Source="settings.png" HeightRequest="22" WidthRequest="22" Margin="0,0,0,-2" />
+                <Label x:Name="tab_config" />
+            </StackLayout>
+
+        </Grid>
+
+    </Grid>
+
+
+</ContentPage>
