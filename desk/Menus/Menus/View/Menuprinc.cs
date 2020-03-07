@@ -131,9 +131,10 @@ namespace Menus
                             Button button = new Button();
                             button.Tag = da.GetInt32(2);
                             button.Text = da.GetString(1) + "\n" + shortFoo;
-                            button.Width = flowLayoutPanel2.Width -25;
+                            button.Width = flowLayoutPanel2.Width -5;
                             button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
                             button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -148,21 +149,14 @@ namespace Menus
             }
         }
 
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
 		private void Button2_Click(object sender, EventArgs e)
 		{
-            panel7.BringToFront();
+            panelNovaNota.BringToFront();
 		}
 
 		private void Button3_Click(object sender, EventArgs e)
 		{
-            panel10.BringToFront();
-
-
+            panelMinhaConta.BringToFront();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -247,60 +241,9 @@ namespace Menus
             lbFaculShow.Text = Login.Facul;
             lbCursoShow.Text = Login.Curso;
         }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbRecebeEmailMenu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbNomeMenu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void button4_Click_1(object sender, EventArgs e)
         {
             panelSearch.BringToFront();
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         protected override CreateParams CreateParams
@@ -317,22 +260,6 @@ namespace Menus
         {
             Application.Exit();
         }
-
-        private void panelSearch_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSearchBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
             panelSearch.SendToBack();
@@ -372,20 +299,10 @@ namespace Menus
             }
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button12_Click(object sender, EventArgs e)
         {
             panelSearch.SendToBack();
-            panel3.BringToFront();
+            panelHome.BringToFront();
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -397,7 +314,7 @@ namespace Menus
         private void button13_Click(object sender, EventArgs e)
         {
             panelSearch.SendToBack();
-            panel3.BringToFront();
+            panelHome.BringToFront();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -456,15 +373,6 @@ namespace Menus
             searchButtons();
         }
 
-        private void panelTexto_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-        }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(textBox2.Text))
@@ -506,14 +414,9 @@ namespace Menus
             }
         }
 
-        private void flowLayoutPanel9_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button16_Click(object sender, EventArgs e)
         {
-            panelCurso.BringToFront();
+            panelCur.BringToFront();
             try
             {
                 bancoMainEntities1 ht3 = new bancoMainEntities1();
@@ -554,22 +457,12 @@ namespace Menus
 
         private void button8_Click(object sender, EventArgs e)
         {
-            panelCurso.BringToFront();
+            panelCur.BringToFront();
         }
 
         private void button6_Click_1(object sender, EventArgs e)
         {
             panelTexto.BringToFront();
-        }
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnAdicionar_Click(object sender, EventArgs e)
-        {
-
         }
 
         public string strConexao2 = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
@@ -634,7 +527,7 @@ namespace Menus
 
                             {
                                 MessageBox.Show("Dados inseridos");
-                                panel3.BringToFront();
+                                panelHome.BringToFront();
                                 flowLayoutPanel2.Controls.Clear();
                                 GetNote(lbRecebeEmailMenu.Text);
                             }
@@ -681,52 +574,15 @@ namespace Menus
 
         private void button23_Click(object sender, EventArgs e)
         {
-            panel3.BringToFront();
-        }
-
-        private void panel10_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbCursoShow_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbMateria_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbCurso_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbFaculShow_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbFaculdade_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbMateriaShow_Click(object sender, EventArgs e)
-        {
-
+            panelHome.BringToFront();
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            UpdateUser(lbRecebeEmailMenu.Text, txtNome.Text, txtIdade.Text, txtSexo.Text);
+            if (!String.IsNullOrEmpty(lbRecebeEmailMenu.Text) && !String.IsNullOrEmpty(txtNome.Text) && !String.IsNullOrEmpty(txtIdade.Text) && !String.IsNullOrEmpty(txtSexo.Text))
+            {
+                UpdateUser(lbRecebeEmailMenu.Text, txtNome.Text, txtIdade.Text, txtSexo.Text);
+            }
         }
 
         private void roundPictureBox1_Click(object sender, EventArgs e)
@@ -762,12 +618,10 @@ namespace Menus
 
         private void button26_Click(object sender, EventArgs e)
         {
-            UpdateUser(lbRecebeEmailMenu.Text, txtNome.Text, txtIdade.Text, txtSexo.Text);
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
+            if (!String.IsNullOrEmpty(lbRecebeEmailMenu.Text) && !String.IsNullOrEmpty(txtNome.Text) && !String.IsNullOrEmpty(txtIdade.Text) && !String.IsNullOrEmpty(txtSexo.Text))
+            {
+                UpdateUser(lbRecebeEmailMenu.Text, txtNome.Text, txtIdade.Text, txtSexo.Text);
+            }
         }
 
         private void textBox4_Click(object sender, EventArgs e)
@@ -909,20 +763,6 @@ namespace Menus
                     bancoMainEntities1 ht2 = new bancoMainEntities1();
                     var content = ht2.TB_FACULDADE.Where(b => b.FAC_STR_NOME.Contains(searchContent)).ToList();
 
-
-
-                    //var entryPoint = (from ep in ht2.TB_NOTA
-                    //                  join e in ht2.tbl_Entry on ep.EID equals e.EID
-                    //                  join t in ht2.tbl_Title on e.TID equals t.TID
-                    //                  where e.OwnerID == user.UID
-                    //                  select new
-                    //                  {
-                    //                      UID = e.OwnerID,
-                    //                      TID = e.TID,
-                    //                      Title = t.Title,
-                    //                      EID = e.EID
-                    //                  }).Take(10);
-
                     if (content.Count != 0)
                     {
                         for (int i = 0; i < content.Count; i++)
@@ -991,11 +831,6 @@ namespace Menus
             }
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void textBox10_TextChanged(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(textBox1.Text))
@@ -1053,11 +888,6 @@ namespace Menus
             {
                 flowLayoutPanel10.Controls.Clear();
             }
-        }
-
-        private void flowLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void searchButtons()
@@ -1121,7 +951,7 @@ namespace Menus
 
         private void button34_Click(object sender, EventArgs e)
         {
-            panel3.BringToFront();
+            panelHome.BringToFront();
         }
     }
 }

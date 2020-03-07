@@ -107,5 +107,10 @@ namespace Menus
         {
 
         }
+
+        private void lbsenha_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

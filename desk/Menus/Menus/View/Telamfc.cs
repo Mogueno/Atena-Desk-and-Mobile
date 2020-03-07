@@ -46,10 +46,6 @@ namespace Menus
 
         private void GravarFacul(string EmailUser,string NomeFacul, string NomeCurso, string NomeMateria, string HoraMateria)
         {
-
-
-
-
             try
             {
                 Dados objDados = new Dados();

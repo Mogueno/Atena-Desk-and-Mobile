@@ -14,7 +14,7 @@ using MaterialSkin.Controls;
 
 namespace Menus
 {
-    public partial class TelaCadastrar : MaterialForm
+    public partial class TelaCadastrar : Form
     {
         Thread nf;
 
@@ -22,7 +22,7 @@ namespace Menus
 
         public string retorna()
         {
-            string emailLogin = txtlogin2.Text;
+            string emailLogin = txtLogin3.Text;
 
             return emailLogin;
         }
@@ -32,10 +32,6 @@ namespace Menus
         public TelaCadastrar()
         {
             InitializeComponent();
-            FormBorderStyle = FormBorderStyle.None;
-            WindowState = FormWindowState.Maximized;
-            TopMost = true;
-
         }
 
         private void GravarUser(string Nome, string Idade, string Sexo, string Email, string Senha, string Facebook, string Google)
@@ -73,7 +69,7 @@ namespace Menus
         private void btnconcluir_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\odasf\Documents\bancoMain.mdf;Integrated Security=True;Connect Timeout=30");
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM TB_USER WHERE USER_STR_EMAIL='" + txtlogin2.Text + "'", con);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM TB_USER WHERE USER_STR_EMAIL='" + txtLogin3.Text + "'", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
@@ -82,11 +78,11 @@ namespace Menus
             }
             else
             {
-                if (!String.IsNullOrEmpty(txtnome.Text) && !String.IsNullOrEmpty(txtidade.Text) && !String.IsNullOrEmpty(txtsexo.Text) && !String.IsNullOrEmpty(txtlogin2.Text) && !String.IsNullOrEmpty(txtsenha2.Text))
+                if (!String.IsNullOrEmpty(txtNome3.Text) && !String.IsNullOrEmpty(txtIdade3.Text) && !String.IsNullOrEmpty(txtSexo3.Text) && !String.IsNullOrEmpty(txtLogin3.Text) && !String.IsNullOrEmpty(txtSenha3.Text))
                 {
-                    Login.Usuario = txtlogin2.Text;
+                    Login.Usuario = txtLogin3.Text;
 
-                    GravarUser(txtnome.Text, txtidade.Text, txtsexo.Text, txtlogin2.Text, txtsenha2.Text, "0", "0");
+                    GravarUser(txtNome3.Text, txtIdade3.Text, txtSexo3.Text, txtLogin3.Text, txtSenha3.Text, "0", "0");
 
                     emailMain = retorna();
 
@@ -94,7 +90,7 @@ namespace Menus
 
                     var telaAtual = new TelaCadastrar();
 
-                    var telaMFC = new Telamfc(txtlogin2.Text);
+                    var telaMFC = new Telamfc(txtLogin3.Text);
 
                     telaMFC.Show();
 
@@ -118,6 +114,11 @@ namespace Menus
         {
             this.Hide();
             new TelaLogin().Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

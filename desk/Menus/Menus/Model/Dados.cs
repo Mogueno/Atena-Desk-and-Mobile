@@ -77,14 +77,7 @@ namespace Menus.Model
                     objCommand.Parameters.AddWithValue("@USER_STR_EMAIL_VAR", EmailVar);
 
                     objConexao.Open();
-
-
-
                     user.UserId = (Int32)objCommand.ExecuteScalar();
-
-
-
-
                     objConexao.Close();
 
                 }
