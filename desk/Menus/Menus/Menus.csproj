@@ -164,12 +164,6 @@
     <Compile Include="TB_USER.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaConfiguracao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaConfiguracao.Designer.cs">
-      <DependentUpon>TelaConfiguracao.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\TelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,15 +185,6 @@
     <Compile Include="View\TelaCadastrar.Designer.cs">
       <DependentUpon>TelaCadastrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Telamfc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Telamfc.Designer.cs">
-      <DependentUpon>Telamfc.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="View\TelaConfiguracao.resx">
-      <DependentUpon>TelaConfiguracao.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,9 +203,6 @@
     </Compile>
     <EmbeddedResource Include="View\TelaCadastrar.resx">
       <DependentUpon>TelaCadastrar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Telamfc.resx">
-      <DependentUpon>Telamfc.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

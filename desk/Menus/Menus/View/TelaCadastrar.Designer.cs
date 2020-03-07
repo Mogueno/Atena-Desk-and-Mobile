@@ -45,6 +45,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtSenha3 = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnfinalizar = new System.Windows.Forms.Button();
+            this.txtmateria1 = new System.Windows.Forms.TextBox();
+            this.txtcurso = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtuniversidade = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbcurso = new System.Windows.Forms.Label();
+            this.lbuniversidade = new System.Windows.Forms.Label();
+            this.txthora1 = new System.Windows.Forms.MaskedTextBox();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnconcluir
@@ -236,35 +251,199 @@
             this.panel5.Size = new System.Drawing.Size(457, 1);
             this.panel5.TabIndex = 19;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel1);
+            this.panel6.Controls.Add(this.panel2);
+            this.panel6.Controls.Add(this.panel5);
+            this.panel6.Controls.Add(this.panel3);
+            this.panel6.Controls.Add(this.panel4);
+            this.panel6.Controls.Add(this.lbsenha);
+            this.panel6.Controls.Add(this.btnconcluir);
+            this.panel6.Controls.Add(this.btnVoltarLogin);
+            this.panel6.Controls.Add(this.lbusuario);
+            this.panel6.Controls.Add(this.txtLogin3);
+            this.panel6.Controls.Add(this.txtSenha3);
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Controls.Add(this.txtSexo3);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.txtNome3);
+            this.panel6.Controls.Add(this.txtIdade3);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(675, 496);
+            this.panel6.TabIndex = 26;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.txthora1);
+            this.panel7.Controls.Add(this.btnfinalizar);
+            this.panel7.Controls.Add(this.txtmateria1);
+            this.panel7.Controls.Add(this.txtcurso);
+            this.panel7.Controls.Add(this.label4);
+            this.panel7.Controls.Add(this.txtuniversidade);
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Controls.Add(this.label6);
+            this.panel7.Controls.Add(this.label7);
+            this.panel7.Controls.Add(this.lbcurso);
+            this.panel7.Controls.Add(this.lbuniversidade);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(675, 496);
+            this.panel7.TabIndex = 26;
+            // 
+            // btnfinalizar
+            // 
+            this.btnfinalizar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnfinalizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnfinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnfinalizar.Location = new System.Drawing.Point(498, 432);
+            this.btnfinalizar.Name = "btnfinalizar";
+            this.btnfinalizar.Size = new System.Drawing.Size(165, 41);
+            this.btnfinalizar.TabIndex = 21;
+            this.btnfinalizar.Text = "Finalizar";
+            this.btnfinalizar.UseVisualStyleBackColor = false;
+            this.btnfinalizar.Click += new System.EventHandler(this.btnfinalizar_Click);
+            // 
+            // txtmateria1
+            // 
+            this.txtmateria1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.txtmateria1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmateria1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtmateria1.Location = new System.Drawing.Point(139, 267);
+            this.txtmateria1.Name = "txtmateria1";
+            this.txtmateria1.Size = new System.Drawing.Size(367, 29);
+            this.txtmateria1.TabIndex = 19;
+            this.txtmateria1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtcurso
+            // 
+            this.txtcurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.txtcurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcurso.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtcurso.Location = new System.Drawing.Point(217, 148);
+            this.txtcurso.Name = "txtcurso";
+            this.txtcurso.Size = new System.Drawing.Size(424, 29);
+            this.txtcurso.TabIndex = 18;
+            this.txtcurso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(514, 271);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 25);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Hora";
+            // 
+            // txtuniversidade
+            // 
+            this.txtuniversidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.txtuniversidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtuniversidade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtuniversidade.Location = new System.Drawing.Point(217, 95);
+            this.txtuniversidade.Name = "txtuniversidade";
+            this.txtuniversidade.Size = new System.Drawing.Size(424, 29);
+            this.txtuniversidade.TabIndex = 17;
+            this.txtuniversidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(43, 269);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 25);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Matéria";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(174, 213);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(338, 33);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Insira até Cinco Matérias";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(180, 28);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(326, 33);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Insira suas Informações";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // lbcurso
+            // 
+            this.lbcurso.AutoSize = true;
+            this.lbcurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.lbcurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.lbcurso.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbcurso.Location = new System.Drawing.Point(43, 148);
+            this.lbcurso.Name = "lbcurso";
+            this.lbcurso.Size = new System.Drawing.Size(69, 25);
+            this.lbcurso.TabIndex = 22;
+            this.lbcurso.Text = "Curso";
+            // 
+            // lbuniversidade
+            // 
+            this.lbuniversidade.AutoSize = true;
+            this.lbuniversidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.lbuniversidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.lbuniversidade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbuniversidade.Location = new System.Drawing.Point(43, 95);
+            this.lbuniversidade.Name = "lbuniversidade";
+            this.lbuniversidade.Size = new System.Drawing.Size(138, 25);
+            this.lbuniversidade.TabIndex = 24;
+            this.lbuniversidade.Text = "Universidade";
+            // 
+            // txthora1
+            // 
+            this.txthora1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.txthora1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txthora1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txthora1.Location = new System.Drawing.Point(578, 265);
+            this.txthora1.Mask = "00:00";
+            this.txthora1.Name = "txthora1";
+            this.txthora1.Size = new System.Drawing.Size(63, 31);
+            this.txthora1.TabIndex = 28;
+            this.txthora1.Text = "0000";
+            this.txthora1.ValidatingType = typeof(System.DateTime);
+            // 
             // TelaCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(675, 496);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.txtIdade3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtNome3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtSenha3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtLogin3);
-            this.Controls.Add(this.lbsenha);
-            this.Controls.Add(this.txtSexo3);
-            this.Controls.Add(this.lbusuario);
-            this.Controls.Add(this.btnVoltarLogin);
-            this.Controls.Add(this.btnconcluir);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel7);
             this.Name = "TelaCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela de Cadastro";
             this.Load += new System.EventHandler(this.TelaCadastrar_Load);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -286,5 +465,18 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtSenha3;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnfinalizar;
+        private System.Windows.Forms.TextBox txtmateria1;
+        private System.Windows.Forms.TextBox txtcurso;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtuniversidade;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbcurso;
+        private System.Windows.Forms.Label lbuniversidade;
+        private System.Windows.Forms.MaskedTextBox txthora1;
     }
 }
