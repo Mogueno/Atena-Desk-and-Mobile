@@ -47,6 +47,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.txthora1 = new System.Windows.Forms.MaskedTextBox();
             this.btnfinalizar = new System.Windows.Forms.Button();
             this.txtmateria1 = new System.Windows.Forms.TextBox();
             this.txtcurso = new System.Windows.Forms.TextBox();
@@ -57,9 +60,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbcurso = new System.Windows.Forms.Label();
             this.lbuniversidade = new System.Windows.Forms.Label();
-            this.txthora1 = new System.Windows.Forms.MaskedTextBox();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnconcluir
@@ -278,6 +281,8 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.pictureBox1);
+            this.panel7.Controls.Add(this.flowLayoutPanel2);
             this.panel7.Controls.Add(this.txthora1);
             this.panel7.Controls.Add(this.btnfinalizar);
             this.panel7.Controls.Add(this.txtmateria1);
@@ -295,12 +300,48 @@
             this.panel7.Size = new System.Drawing.Size(675, 496);
             this.panel7.TabIndex = 26;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Menus.Properties.Resources.download__1_1;
+            this.pictureBox1.Location = new System.Drawing.Point(620, 102);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(217, 130);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(424, 0);
+            this.flowLayoutPanel2.TabIndex = 29;
+            this.flowLayoutPanel2.WrapContents = false;
+            // 
+            // txthora1
+            // 
+            this.txthora1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.txthora1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txthora1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txthora1.Location = new System.Drawing.Point(578, 265);
+            this.txthora1.Mask = "00:00";
+            this.txthora1.Name = "txthora1";
+            this.txthora1.Size = new System.Drawing.Size(63, 31);
+            this.txthora1.TabIndex = 28;
+            this.txthora1.Text = "0000";
+            this.txthora1.ValidatingType = typeof(System.DateTime);
+            // 
             // btnfinalizar
             // 
             this.btnfinalizar.BackColor = System.Drawing.SystemColors.Control;
             this.btnfinalizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnfinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnfinalizar.Location = new System.Drawing.Point(498, 432);
+            this.btnfinalizar.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.btnfinalizar.Name = "btnfinalizar";
             this.btnfinalizar.Size = new System.Drawing.Size(165, 41);
             this.btnfinalizar.TabIndex = 21;
@@ -345,13 +386,16 @@
             // txtuniversidade
             // 
             this.txtuniversidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.txtuniversidade.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtuniversidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtuniversidade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtuniversidade.Location = new System.Drawing.Point(217, 95);
             this.txtuniversidade.Name = "txtuniversidade";
+            this.txtuniversidade.ReadOnly = true;
             this.txtuniversidade.Size = new System.Drawing.Size(424, 29);
             this.txtuniversidade.TabIndex = 17;
             this.txtuniversidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtuniversidade.Click += new System.EventHandler(this.txtuniversidade_Click);
             // 
             // label5
             // 
@@ -414,27 +458,14 @@
             this.lbuniversidade.TabIndex = 24;
             this.lbuniversidade.Text = "Universidade";
             // 
-            // txthora1
-            // 
-            this.txthora1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.txthora1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txthora1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txthora1.Location = new System.Drawing.Point(578, 265);
-            this.txthora1.Mask = "00:00";
-            this.txthora1.Name = "txthora1";
-            this.txthora1.Size = new System.Drawing.Size(63, 31);
-            this.txthora1.TabIndex = 28;
-            this.txthora1.Text = "0000";
-            this.txthora1.ValidatingType = typeof(System.DateTime);
-            // 
             // TelaCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(675, 496);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
             this.Name = "TelaCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela de Cadastro";
@@ -443,6 +474,7 @@
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -478,5 +510,7 @@
         private System.Windows.Forms.Label lbcurso;
         private System.Windows.Forms.Label lbuniversidade;
         private System.Windows.Forms.MaskedTextBox txthora1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

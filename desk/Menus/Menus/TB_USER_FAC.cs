@@ -12,20 +12,13 @@ namespace Menus
     using System;
     using System.Collections.Generic;
     
-    public partial class TB_CURSO
+    public partial class TB_USER_FAC
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TB_CURSO()
-        {
-            this.TB_NOTA = new HashSet<TB_NOTA>();
-        }
-    
-        public int CUR_INT_ID { get; set; }
-        public string CUR_STR_NOME { get; set; }
+        public int USER_FAC_ID { get; set; }
+        public int FAC_INT_ID { get; set; }
         public int USER_INT_ID { get; set; }
     
+        public virtual TB_FACULDADE TB_FACULDADE { get; set; }
         public virtual TB_USER TB_USER { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TB_NOTA> TB_NOTA { get; set; }
     }
 }

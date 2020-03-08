@@ -112,7 +112,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button26 = new System.Windows.Forms.Button();
-            this.roundPictureBox1 = new Menus.RoundPictureBox();
             this.lbMateriaShow = new MaterialSkin.Controls.MaterialLabel();
             this.lbCursoShow = new MaterialSkin.Controls.MaterialLabel();
             this.lbFaculShow = new MaterialSkin.Controls.MaterialLabel();
@@ -155,6 +154,7 @@
             this.panel27 = new System.Windows.Forms.Panel();
             this.button36 = new System.Windows.Forms.Button();
             this.flowLayoutPanel13 = new System.Windows.Forms.FlowLayoutPanel();
+            this.roundPictureBox1 = new Menus.RoundPictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -180,7 +180,6 @@
             this.panel9.SuspendLayout();
             this.panelNovaNota.SuspendLayout();
             this.panelMinhaConta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.panelHome.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -196,6 +195,7 @@
             this.panel25.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel27.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbRecebeEmailMenu
@@ -693,6 +693,7 @@
             this.flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(10);
             this.flowLayoutPanel4.Size = new System.Drawing.Size(1031, 604);
             this.flowLayoutPanel4.TabIndex = 25;
+            this.flowLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel4_Paint);
             // 
             // panel17
             // 
@@ -1515,28 +1516,18 @@
             this.button26.UseVisualStyleBackColor = false;
             this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
-            // roundPictureBox1
-            // 
-            this.roundPictureBox1.Location = new System.Drawing.Point(477, 82);
-            this.roundPictureBox1.Name = "roundPictureBox1";
-            this.roundPictureBox1.Size = new System.Drawing.Size(148, 148);
-            this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.roundPictureBox1.TabIndex = 48;
-            this.roundPictureBox1.TabStop = false;
-            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
-            // 
             // lbMateriaShow
             // 
             this.lbMateriaShow.AutoSize = true;
             this.lbMateriaShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.lbMateriaShow.Depth = 0;
-            this.lbMateriaShow.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbMateriaShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbMateriaShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbMateriaShow.Location = new System.Drawing.Point(562, 476);
             this.lbMateriaShow.MinimumSize = new System.Drawing.Size(410, 0);
             this.lbMateriaShow.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbMateriaShow.Name = "lbMateriaShow";
-            this.lbMateriaShow.Size = new System.Drawing.Size(410, 19);
+            this.lbMateriaShow.Size = new System.Drawing.Size(410, 18);
             this.lbMateriaShow.TabIndex = 42;
             // 
             // lbCursoShow
@@ -1544,28 +1535,30 @@
             this.lbCursoShow.AutoSize = true;
             this.lbCursoShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.lbCursoShow.Depth = 0;
-            this.lbCursoShow.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbCursoShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbCursoShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbCursoShow.Location = new System.Drawing.Point(559, 302);
+            this.lbCursoShow.Location = new System.Drawing.Point(562, 382);
             this.lbCursoShow.MinimumSize = new System.Drawing.Size(410, 0);
             this.lbCursoShow.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbCursoShow.Name = "lbCursoShow";
-            this.lbCursoShow.Size = new System.Drawing.Size(410, 19);
+            this.lbCursoShow.Size = new System.Drawing.Size(410, 18);
             this.lbCursoShow.TabIndex = 38;
+            this.lbCursoShow.Click += new System.EventHandler(this.lbCursoShow_Click);
             // 
             // lbFaculShow
             // 
             this.lbFaculShow.AutoSize = true;
             this.lbFaculShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.lbFaculShow.Depth = 0;
-            this.lbFaculShow.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbFaculShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbFaculShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbFaculShow.Location = new System.Drawing.Point(559, 381);
+            this.lbFaculShow.Location = new System.Drawing.Point(558, 306);
             this.lbFaculShow.MinimumSize = new System.Drawing.Size(410, 0);
             this.lbFaculShow.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbFaculShow.Name = "lbFaculShow";
-            this.lbFaculShow.Size = new System.Drawing.Size(410, 19);
+            this.lbFaculShow.Size = new System.Drawing.Size(410, 18);
             this.lbFaculShow.TabIndex = 40;
+            this.lbFaculShow.Click += new System.EventHandler(this.lbFaculShow_Click);
             // 
             // lbDados
             // 
@@ -1911,6 +1904,7 @@
             // 
             // flowLayoutPanel10
             // 
+            this.flowLayoutPanel10.AutoScroll = true;
             this.flowLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel10.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
@@ -2102,6 +2096,16 @@
             this.flowLayoutPanel13.Size = new System.Drawing.Size(0, 0);
             this.flowLayoutPanel13.TabIndex = 20;
             // 
+            // roundPictureBox1
+            // 
+            this.roundPictureBox1.Location = new System.Drawing.Point(477, 82);
+            this.roundPictureBox1.Name = "roundPictureBox1";
+            this.roundPictureBox1.Size = new System.Drawing.Size(148, 148);
+            this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.roundPictureBox1.TabIndex = 48;
+            this.roundPictureBox1.TabStop = false;
+            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
+            // 
             // Menuprinc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2109,14 +2113,14 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1286, 729);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panelMinhaConta);
+            this.Controls.Add(this.panelFacul__Search);
+            this.Controls.Add(this.panelSearch);
+            this.Controls.Add(this.panelFacul);
             this.Controls.Add(this.panelNovaNota);
             this.Controls.Add(this.panelHome);
             this.Controls.Add(this.panelCurso);
-            this.Controls.Add(this.panelMinhaConta);
-            this.Controls.Add(this.panelSearch);
-            this.Controls.Add(this.panelFacul__Search);
             this.Controls.Add(this.panelTexto);
-            this.Controls.Add(this.panelFacul);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panelCur);
@@ -2166,7 +2170,6 @@
             this.panelNovaNota.PerformLayout();
             this.panelMinhaConta.ResumeLayout(false);
             this.panelMinhaConta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panelHome.ResumeLayout(false);
@@ -2190,6 +2193,7 @@
             this.panel25.ResumeLayout(false);
             this.panel26.ResumeLayout(false);
             this.panel27.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

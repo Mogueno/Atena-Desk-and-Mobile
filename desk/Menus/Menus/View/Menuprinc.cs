@@ -206,9 +206,18 @@ namespace Menus
             var name = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
             var email2 = name.USER_STR_NOME;
 
-            var facul = ht2.TB_FACULDADE.Where(a => a.USER_INT_ID == name.USER_INT_ID).SingleOrDefault();
+
+
+            var facul3 = (from str in ht2.TB_USER_FAC
+                          join fac in ht2.TB_FACULDADE on str.FAC_INT_ID equals fac.FAC_INT_ID
+                          where name.USER_INT_ID == str.USER_INT_ID
+                          select new
+                          {
+                              faculName = fac.FAC_STR_NOME,
+                          }).SingleOrDefault();
+
             lbNomeMenu.Text = email2;
-            lbFacul.Text = facul.FAC_STR_NOME;
+            lbFacul.Text = facul3.faculName;
             try
             {
                 bancoMainEntities1 ht1 = new bancoMainEntities1();
@@ -238,7 +247,7 @@ namespace Menus
             GetUser(lbRecebeEmailMenu.Text);
             lbRecebeEmailConfig.Text = lbRecebeEmailMenu.Text; 
             lbMateriaShow.Text = Login.Materia;
-            lbFaculShow.Text = Login.Facul;
+            lbFaculShow.Text = facul3.faculName;
             lbCursoShow.Text = Login.Curso;
         }
         private void button4_Click_1(object sender, EventArgs e)
@@ -467,7 +476,7 @@ namespace Menus
 
         public string strConexao2 = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-        public const string strSelectUser = "SELECT U.USER_INT_ID, F.FAC_INT_ID, C.CUR_INT_ID, M.MAT_INT_ID FROM TB_USER AS U JOIN TB_FACULDADE AS F ON U.USER_INT_ID = F.USER_INT_ID JOIN TB_CURSO AS C ON U.USER_INT_ID = C.USER_INT_ID JOIN TB_MATERIA AS M ON U.USER_INT_ID = M.USER_INT_ID WHERE U.USER_STR_EMAIL = @USER_STR_EMAIL";
+        public const string strSelectUser = "SELECT U.USER_INT_ID, F.FAC_INT_ID, C.CUR_INT_ID, M.MAT_INT_ID FROM TB_USER AS U JOIN TB_USER_FAC AS F ON U.USER_INT_ID = F.USER_INT_ID JOIN TB_CURSO AS C ON U.USER_INT_ID = C.USER_INT_ID JOIN TB_MATERIA AS M ON U.USER_INT_ID = M.USER_INT_ID WHERE U.USER_STR_EMAIL = @USER_STR_EMAIL";
 
         public const string strSelectNota = "SELECT NOTA_INT_ID FROM ";
 
@@ -833,10 +842,10 @@ namespace Menus
 
         private void textBox10_TextChanged(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(textBox1.Text))
+            if (!String.IsNullOrEmpty(textBox10.Text))
             {
                 flowLayoutPanel10.Controls.Clear();
-                string searchContent = textBox1.Text;
+                string searchContent = textBox10.Text;
                 try
                 {
                     bancoMainEntities1 ht2 = new bancoMainEntities1();
@@ -848,17 +857,17 @@ namespace Menus
                                       where facId == nota.FAC_INT_ID
                                       select new
                                       {
-                                          notaTitle = str.STR_STR_TITLE
-                                      }).ToList();
+                                          notaTitle = str.STR_STR_TITLE,
+                                          notaId = str.STR_INT_ID
+                                      }).Where(c => c.notaTitle.Contains(searchContent)).ToList();
 
 
-                    //var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
                     if (entryPoint.Count != 0)
                     {
                         for (int i = 0; i < entryPoint.Count; i++)
                         {
                             Button button = new Button();
-                            //button.Tag = content[i].STR_INT_ID;
+                            button.Tag = entryPoint[i].notaId;
                             button.Text = entryPoint[i].notaTitle;
                             button.Width = flowLayoutPanel10.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
@@ -867,7 +876,7 @@ namespace Menus
                             button.Height = 75;
                             button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                             button.Cursor = Cursors.Hand;
-                            //button.Click += new EventHandler(this.buttonSearch_Click);
+                            button.Click += new EventHandler(this.buttonSearchFacul_Click);
                             flowLayoutPanel10.Controls.Add(button);
                         }
                     }
@@ -887,6 +896,55 @@ namespace Menus
             else
             {
                 flowLayoutPanel10.Controls.Clear();
+                try
+                {
+                    bancoMainEntities1 ht2 = new bancoMainEntities1();
+
+                    int facId = Convert.ToInt32(panel21.Tag);
+
+                    var entryPoint = (from str in ht2.TB_NOTA_STR
+                                      join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                      where facId == nota.FAC_INT_ID
+                                      select new
+                                      {
+                                          notaTitle = str.STR_STR_TITLE,
+                                          notaId = str.STR_INT_ID,
+                                      }).ToList();
+
+
+
+
+                    //var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
+                    if (entryPoint.Count != 0)
+                    {
+                        for (int i = 0; i < entryPoint.Count; i++)
+                        {
+                            Button button = new Button();
+                            button.Tag = entryPoint[i].notaId;
+                            button.Text = entryPoint[i].notaTitle;
+                            button.Width = flowLayoutPanel10.Width - 5;
+                            button.FlatStyle = FlatStyle.Flat;
+                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.Cursor = Cursors.Hand;
+                            button.Height = 75;
+                            button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            button.Cursor = Cursors.Hand;
+                            button.Click += new EventHandler(this.buttonSearchFacul_Click);
+                            flowLayoutPanel10.Controls.Add(button);
+                        }
+                    }
+                    else
+                    {
+                        TextBox txt = new TextBox();
+                        txt.Text = "Não foram encontrados resultados para a sua pesquisa";
+                        flowLayoutPanel10.Controls.Add(txt);
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    ErrorProvider error = new ErrorProvider();
+                }
             }
         }
 
@@ -908,6 +966,8 @@ namespace Menus
                                       notaTitle = str.STR_STR_TITLE,
                                       notaId = str.STR_INT_ID,
                                   }).ToList();
+
+
 
 
                 //var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
@@ -946,12 +1006,28 @@ namespace Menus
         private void button33_Click(object sender, EventArgs e)
         {
             panelFacul.BringToFront();
+            textBox10.Clear();
             panel20.Visible = false;
         }
 
         private void button34_Click(object sender, EventArgs e)
         {
             panelHome.BringToFront();
+        }
+
+        private void flowLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbCursoShow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbFaculShow_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

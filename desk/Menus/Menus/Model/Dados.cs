@@ -121,14 +121,14 @@ namespace Menus.Model
 
                     user.UserId = (Int32)objCommand.ExecuteScalar();
 
-                    using (SqlCommand objCommand2 = new SqlCommand(strInsertFacul, objConexao))
-                    {
-                        objCommand2.Parameters.AddWithValue("@USER_INT_ID", user.UserId);
-                        objCommand2.Parameters.AddWithValue("@FAC_STR_NOME", NomeFacul);
+                    //using (SqlCommand objCommand2 = new SqlCommand(strInsertFacul, objConexao))
+                    //{
+                    //    objCommand2.Parameters.AddWithValue("@USER_INT_ID", user.UserId);
+                    //    objCommand2.Parameters.AddWithValue("@FAC_STR_NOME", NomeFacul);
 
-                        objCommand2.ExecuteNonQuery();
+                    //    objCommand2.ExecuteNonQuery();
 
-                    }
+                    //}
 
                     objConexao.Close();
                 }

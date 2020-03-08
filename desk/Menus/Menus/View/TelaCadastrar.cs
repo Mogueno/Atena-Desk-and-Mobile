@@ -11,6 +11,7 @@ using System.Threading;
 using Menus.Model;
 using System.Data.SqlClient;
 using MaterialSkin.Controls;
+using Transitions;
 
 namespace Menus
 {
@@ -41,6 +42,22 @@ namespace Menus
                 Dados objDados = new Dados();
 
                 objDados.SelectFacul(EmailUser, NomeFacul);
+                //bancoMainEntities1 ht = new bancoMainEntities1();
+
+                //var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == EmailUser).SingleOrDefault();
+                //var email = id.USER_INT_ID;
+                //var result = ht.TB_CURSO.SingleOrDefault(a => a.USER_INT_ID == email);
+                //if (result != null)
+                //{
+                //    result.PIC_IMG_MAIN = ms.ToArray();
+                //    ht.SaveChanges();
+                //}
+                //else
+                //{
+                //    ht.TB_PICTURES.Add(new TB_PICTURES() { PIC_IMG_MAIN = ms.ToArray(), USER_INT_ID = email });
+                //    ht.SaveChanges();
+                //}
+
 
                 objDados.SelectCurso(EmailUser, NomeCurso);
 
@@ -99,14 +116,6 @@ namespace Menus
             {
                 if (!String.IsNullOrEmpty(txtNome3.Text) && !String.IsNullOrEmpty(txtIdade3.Text) && !String.IsNullOrEmpty(txtSexo3.Text) && !String.IsNullOrEmpty(txtLogin3.Text) && !String.IsNullOrEmpty(txtSenha3.Text))
                 {
-                    Login.Usuario = txtLogin3.Text;
-
-                    GravarUser(txtNome3.Text, txtIdade3.Text, txtSexo3.Text, txtLogin3.Text, txtSenha3.Text, "0", "0");
-
-                    emailMain = retorna();
-
-                    SelectUser(retorna());
-
                     panel7.BringToFront();
                 }
 
@@ -120,6 +129,51 @@ namespace Menus
 
         private void TelaCadastrar_Load(object sender, EventArgs e)
         {
+            try
+            {
+                bancoMainEntities1 ht3 = new bancoMainEntities1();
+                var content = ht3.TB_FACULDADE.ToList();
+                if (content.Count != 0)
+                {
+                    for (int i = 0; i < content.Count; i++)
+                    {
+                        Button button = new Button();
+                        button.Tag = content[i].FAC_INT_ID;
+                        button.Text = content[i].FAC_STR_NOME;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.UseVisualStyleBackColor = false;
+                        button.BackColor = Color.FromArgb(32, 32, 32);
+                        button.Margin = new Padding(5);
+                        button.ForeColor = Color.White;
+                        button.Cursor = Cursors.Hand;
+                        button.Height = 40;
+                        button.Width = 397;
+                        button.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        button.Cursor = Cursors.Hand;
+                        button.Click += new EventHandler(this.button_Click);
+                        flowLayoutPanel2.Controls.Add(button);
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não foram encontradas notas");
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorProvider error = new ErrorProvider();
+            }
+        }
+
+        private void button_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            string s = (sender as Button).Text;
+            int a = Convert.ToInt32((sender as Button).Tag);
+            txtuniversidade.Text = s;
+            txtuniversidade.Tag = a;
+            Transition.run(flowLayoutPanel2, "Height", 0, new TransitionType_EaseInEaseOut(250));
         }
 
         private void btnVoltarLogin_Click(object sender, EventArgs e)
@@ -145,8 +199,24 @@ namespace Menus
                 Login.Materia = txtmateria1.Text;
                 Login.Curso = txtcurso.Text;
                 Login.Facul = txtuniversidade.Text;
+                Login.Usuario = txtLogin3.Text;
+
+                int s = Convert.ToInt32(txtuniversidade.Tag);
 
 
+
+                GravarUser(txtNome3.Text, txtIdade3.Text, txtSexo3.Text, txtLogin3.Text, txtSenha3.Text, "0", "0");
+
+
+                bancoMainEntities1 ht = new bancoMainEntities1();
+                var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == txtLogin3.Text).SingleOrDefault();
+
+                ht.TB_USER_FAC.Add(new TB_USER_FAC() { FAC_INT_ID = s, USER_INT_ID = id.USER_INT_ID });
+                ht.SaveChanges();
+
+                emailMain = retorna();
+
+                SelectUser(retorna());
 
                 GravarFacul(txtLogin3.Text, txtuniversidade.Text, txtcurso.Text, txtmateria1.Text, txthora1.Text);
 
@@ -157,6 +227,19 @@ namespace Menus
             else
             {
                 MessageBox.Show("um ou mais campos estão vazios");
+            }
+
+        }
+
+        private void txtuniversidade_Click(object sender, EventArgs e)
+        {
+            if (flowLayoutPanel2.Height == 0)
+            {
+                Transition.run(flowLayoutPanel2, "Height", 280, new TransitionType_EaseInEaseOut(250));
+            }
+            else
+            {
+                Transition.run(flowLayoutPanel2, "Height", 0, new TransitionType_EaseInEaseOut(250));
             }
         }
     }
