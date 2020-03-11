@@ -12,13 +12,13 @@ namespace Menus
     using System;
     using System.Collections.Generic;
     
-    public partial class TB_USER_FAC1
+    public partial class TB_USER_MAT
     {
-        public int USER_FAC_ID { get; set; }
-        public int FAC_INT_ID { get; set; }
+        public int USER_MAT_ID { get; set; }
+        public int MAT_INT_ID { get; set; }
         public int USER_INT_ID { get; set; }
     
-        public virtual TB_FACULDADE TB_FACULDADE { get; set; }
+        public virtual TB_MATERIA TB_MATERIA { get; set; }
         public virtual TB_USER TB_USER { get; set; }
     }
 }

@@ -18,7 +18,6 @@ namespace Menus
         public TB_FACULDADE()
         {
             this.TB_NOTA = new HashSet<TB_NOTA>();
-            this.TB_USER_FAC = new HashSet<TB_USER_FAC1>();
             this.TB_USER_FAC1 = new HashSet<TB_USER_FAC>();
         }
     
@@ -29,8 +28,6 @@ namespace Menus
         public virtual TB_USER TB_USER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_NOTA> TB_NOTA { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TB_USER_FAC1> TB_USER_FAC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_USER_FAC> TB_USER_FAC1 { get; set; }
     }

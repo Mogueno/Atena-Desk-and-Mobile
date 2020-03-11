@@ -325,14 +325,14 @@
             // txthora1
             // 
             this.txthora1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.txthora1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txthora1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txthora1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txthora1.Location = new System.Drawing.Point(578, 265);
             this.txthora1.Mask = "00:00";
             this.txthora1.Name = "txthora1";
-            this.txthora1.Size = new System.Drawing.Size(63, 31);
+            this.txthora1.Size = new System.Drawing.Size(63, 24);
             this.txthora1.TabIndex = 28;
-            this.txthora1.Text = "0000";
             this.txthora1.ValidatingType = typeof(System.DateTime);
             // 
             // btnfinalizar
@@ -464,8 +464,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(675, 496);
-            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel7);
             this.Name = "TelaCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela de Cadastro";

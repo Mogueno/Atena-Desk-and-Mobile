@@ -15,12 +15,10 @@
         <EntityTypeShape EntityType="bancoMainModel.TB_PICTURES" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
         <EntityTypeShape EntityType="bancoMainModel.TB_USER" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bancoMainModel.TB_USER_FAC" Width="1.5" PointX="5.25" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="bancoMainModel.TB_USER_FAC1" Width="1.5" PointX="8.25" PointY="9.375" IsExpanded="true" />
         <AssociationConnector Association="bancoMainModel.CUR_USER_INT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.NOTA_CUR_INT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.FAC_USER_INT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.NOTA_FAC_INT_ID_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="bancoMainModel.USER_FAC_FAC_INT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.USER_FAC_FAC_INT_ID_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.MAT_USER_INT_ID" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.NOTA_MAT_INT_ID_FK" ManuallyRouted="false" />
@@ -29,8 +27,13 @@
         <AssociationConnector Association="bancoMainModel.NOTA_USER_INT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.STR_USER_INT_ID" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.PIC_USER_INT_ID_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="bancoMainModel.USER_FAC_USER_INT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.USER_FAC_USER_INT_ID_FK1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="bancoMainModel.TB_USER_CUR" Width="1.5" PointX="5.25" PointY="4.25" />
+        <EntityTypeShape EntityType="bancoMainModel.TB_USER_MAT" Width="1.5" PointX="5.25" PointY="15.25" />
+        <AssociationConnector Association="bancoMainModel.USER_CUR_CUR_INT_ID_FK" />
+        <AssociationConnector Association="bancoMainModel.USER_MAT_MAT_INT_ID_FK" />
+        <AssociationConnector Association="bancoMainModel.USER_CUR_USER_INT_ID_FK" />
+        <AssociationConnector Association="bancoMainModel.USER_MAT_USER_INT_ID_FK" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

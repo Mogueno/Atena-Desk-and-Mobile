@@ -18,6 +18,7 @@ namespace Menus
         public TB_CURSO()
         {
             this.TB_NOTA = new HashSet<TB_NOTA>();
+            this.TB_USER_CUR = new HashSet<TB_USER_CUR>();
         }
     
         public int CUR_INT_ID { get; set; }
@@ -27,5 +28,7 @@ namespace Menus
         public virtual TB_USER TB_USER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_NOTA> TB_NOTA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_USER_CUR> TB_USER_CUR { get; set; }
     }
 }

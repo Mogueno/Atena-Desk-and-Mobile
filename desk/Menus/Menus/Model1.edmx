@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="bancoMainModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="bancoMainModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TB_CURSO">
           <Key>
             <PropertyRef Name="CUR_INT_ID" />
@@ -86,6 +86,14 @@
           <Property Name="USER_STR_FACEBOOKLOGIN" Type="int" Nullable="false" />
           <Property Name="USER_STR_GOOGLELOGIN" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="TB_USER_CUR">
+          <Key>
+            <PropertyRef Name="USER_CUR_ID" />
+          </Key>
+          <Property Name="USER_CUR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CUR_INT_ID" Type="int" Nullable="false" />
+          <Property Name="USER_INT_ID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="TB_USER_FAC">
           <Key>
             <PropertyRef Name="USER_FAC_ID" />
@@ -94,12 +102,12 @@
           <Property Name="FAC_INT_ID" Type="int" Nullable="false" />
           <Property Name="USER_INT_ID" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="TB_USER-FAC">
+        <EntityType Name="TB_USER_MAT">
           <Key>
-            <PropertyRef Name="USER_FAC_ID" />
+            <PropertyRef Name="USER_MAT_ID" />
           </Key>
-          <Property Name="USER_FAC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FAC_INT_ID" Type="int" Nullable="false" />
+          <Property Name="USER_MAT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MAT_INT_ID" Type="int" Nullable="false" />
           <Property Name="USER_INT_ID" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="CUR_USER_INT_ID_FK">
@@ -147,18 +155,6 @@
             </Principal>
             <Dependent Role="TB_NOTA_IMG">
               <PropertyRef Name="NOTA_INT_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="MAT_USER_INT_ID">
-          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
-          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TB_USER">
-              <PropertyRef Name="USER_INT_ID" />
-            </Principal>
-            <Dependent Role="TB_MATERIA">
-              <PropertyRef Name="USER_INT_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -234,26 +230,50 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="USER_FAC_FAC_INT_ID_FK">
-          <End Role="TB_FACULDADE" Type="Self.TB_FACULDADE" Multiplicity="1" />
-          <End Role="TB_USER-FAC" Type="Self.TB_USER-FAC" Multiplicity="*" />
+        <Association Name="USER_CUR_CUR_INT_ID_FK">
+          <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="1" />
+          <End Role="TB_USER_CUR" Type="Self.TB_USER_CUR" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="TB_FACULDADE">
-              <PropertyRef Name="FAC_INT_ID" />
+            <Principal Role="TB_CURSO">
+              <PropertyRef Name="CUR_INT_ID" />
             </Principal>
-            <Dependent Role="TB_USER-FAC">
-              <PropertyRef Name="FAC_INT_ID" />
+            <Dependent Role="TB_USER_CUR">
+              <PropertyRef Name="CUR_INT_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="USER_FAC_USER_INT_ID_FK">
+        <Association Name="USER_CUR_USER_INT_ID_FK">
           <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
-          <End Role="TB_USER-FAC" Type="Self.TB_USER-FAC" Multiplicity="*" />
+          <End Role="TB_USER_CUR" Type="Self.TB_USER_CUR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_USER">
               <PropertyRef Name="USER_INT_ID" />
             </Principal>
-            <Dependent Role="TB_USER-FAC">
+            <Dependent Role="TB_USER_CUR">
+              <PropertyRef Name="USER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USER_MAT_MAT_INT_ID_FK">
+          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="1" />
+          <End Role="TB_USER_MAT" Type="Self.TB_USER_MAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_MATERIA">
+              <PropertyRef Name="MAT_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_USER_MAT">
+              <PropertyRef Name="MAT_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USER_MAT_USER_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_USER_MAT" Type="Self.TB_USER_MAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_USER_MAT">
               <PropertyRef Name="USER_INT_ID" />
             </Dependent>
           </ReferentialConstraint>
@@ -292,8 +312,9 @@
           <EntitySet Name="TB_NOTA_STR" EntityType="Self.TB_NOTA_STR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_PICTURES" EntityType="Self.TB_PICTURES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_USER" EntityType="Self.TB_USER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_USER_CUR" EntityType="Self.TB_USER_CUR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_USER_FAC" EntityType="Self.TB_USER_FAC" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TB_USER-FAC" EntityType="Self.TB_USER-FAC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_USER_MAT" EntityType="Self.TB_USER_MAT" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="CUR_USER_INT_ID_FK" Association="Self.CUR_USER_INT_ID_FK">
             <End Role="TB_USER" EntitySet="TB_USER" />
             <End Role="TB_CURSO" EntitySet="TB_CURSO" />
@@ -309,10 +330,6 @@
           <AssociationSet Name="IMG_USER_INT_ID" Association="Self.IMG_USER_INT_ID">
             <End Role="TB_NOTA" EntitySet="TB_NOTA" />
             <End Role="TB_NOTA_IMG" EntitySet="TB_NOTA_IMG" />
-          </AssociationSet>
-          <AssociationSet Name="MAT_USER_INT_ID" Association="Self.MAT_USER_INT_ID">
-            <End Role="TB_USER" EntitySet="TB_USER" />
-            <End Role="TB_MATERIA" EntitySet="TB_MATERIA" />
           </AssociationSet>
           <AssociationSet Name="NOTA_CUR_INT_ID_FK" Association="Self.NOTA_CUR_INT_ID_FK">
             <End Role="TB_CURSO" EntitySet="TB_CURSO" />
@@ -338,13 +355,21 @@
             <End Role="TB_NOTA" EntitySet="TB_NOTA" />
             <End Role="TB_NOTA_STR" EntitySet="TB_NOTA_STR" />
           </AssociationSet>
-          <AssociationSet Name="USER_FAC_FAC_INT_ID_FK" Association="Self.USER_FAC_FAC_INT_ID_FK">
-            <End Role="TB_FACULDADE" EntitySet="TB_FACULDADE" />
-            <End Role="TB_USER-FAC" EntitySet="TB_USER-FAC" />
+          <AssociationSet Name="USER_CUR_CUR_INT_ID_FK" Association="Self.USER_CUR_CUR_INT_ID_FK">
+            <End Role="TB_CURSO" EntitySet="TB_CURSO" />
+            <End Role="TB_USER_CUR" EntitySet="TB_USER_CUR" />
           </AssociationSet>
-          <AssociationSet Name="USER_FAC_USER_INT_ID_FK" Association="Self.USER_FAC_USER_INT_ID_FK">
+          <AssociationSet Name="USER_CUR_USER_INT_ID_FK" Association="Self.USER_CUR_USER_INT_ID_FK">
             <End Role="TB_USER" EntitySet="TB_USER" />
-            <End Role="TB_USER-FAC" EntitySet="TB_USER-FAC" />
+            <End Role="TB_USER_CUR" EntitySet="TB_USER_CUR" />
+          </AssociationSet>
+          <AssociationSet Name="USER_MAT_MAT_INT_ID_FK" Association="Self.USER_MAT_MAT_INT_ID_FK">
+            <End Role="TB_MATERIA" EntitySet="TB_MATERIA" />
+            <End Role="TB_USER_MAT" EntitySet="TB_USER_MAT" />
+          </AssociationSet>
+          <AssociationSet Name="USER_MAT_USER_INT_ID_FK" Association="Self.USER_MAT_USER_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_USER_MAT" EntitySet="TB_USER_MAT" />
           </AssociationSet>
           <AssociationSet Name="USER-FAC_FAC_INT_ID_FK" Association="Self.USER-FAC_FAC_INT_ID_FK">
             <End Role="TB_FACULDADE" EntitySet="TB_FACULDADE" />
@@ -355,8 +380,7 @@
             <End Role="TB_USER_FAC" EntitySet="TB_USER_FAC" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bancoMainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -369,6 +393,7 @@
           <Property Name="USER_INT_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TB_USER" Relationship="Self.CUR_USER_INT_ID_FK" FromRole="TB_CURSO" ToRole="TB_USER" />
           <NavigationProperty Name="TB_NOTA" Relationship="Self.NOTA_CUR_INT_ID_FK" FromRole="TB_CURSO" ToRole="TB_NOTA" />
+          <NavigationProperty Name="TB_USER_CUR" Relationship="bancoMainModel.USER_CUR_CUR_INT_ID_FK" FromRole="TB_CURSO" ToRole="TB_USER_CUR" />
         </EntityType>
         <EntityType Name="TB_FACULDADE">
           <Key>
@@ -379,8 +404,6 @@
           <Property Name="USER_INT_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TB_USER" Relationship="Self.FAC_USER_INT_ID_FK" FromRole="TB_FACULDADE" ToRole="TB_USER" />
           <NavigationProperty Name="TB_NOTA" Relationship="Self.NOTA_FAC_INT_ID_FK" FromRole="TB_FACULDADE" ToRole="TB_NOTA" />
-          <NavigationProperty Name="TB_USER_FAC" Relationship="Self.USER_FAC_FAC_INT_ID_FK" FromRole="TB_FACULDADE" ToRole="TB_USER_FAC" />
-          <NavigationProperty Name="TB_USER_FAC1" Relationship="Self.USER_FAC_FAC_INT_ID_FK1" FromRole="TB_FACULDADE" ToRole="TB_USER_FAC" />
         </EntityType>
         <EntityType Name="TB_MATERIA">
           <Key>
@@ -392,6 +415,7 @@
           <Property Name="MAT_DATE_HORA" Type="Time" Nullable="false" Precision="7" />
           <NavigationProperty Name="TB_USER" Relationship="Self.MAT_USER_INT_ID" FromRole="TB_MATERIA" ToRole="TB_USER" />
           <NavigationProperty Name="TB_NOTA" Relationship="Self.NOTA_MAT_INT_ID_FK" FromRole="TB_MATERIA" ToRole="TB_NOTA" />
+          <NavigationProperty Name="TB_USER_MAT" Relationship="bancoMainModel.USER_MAT_MAT_INT_ID_FK" FromRole="TB_MATERIA" ToRole="TB_USER_MAT" />
         </EntityType>
         <EntityType Name="TB_NOTA">
           <Key>
@@ -464,8 +488,9 @@
           <NavigationProperty Name="TB_MATERIA" Relationship="Self.MAT_USER_INT_ID" FromRole="TB_USER" ToRole="TB_MATERIA" />
           <NavigationProperty Name="TB_NOTA" Relationship="Self.NOTA_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_NOTA" />
           <NavigationProperty Name="TB_PICTURES" Relationship="Self.PIC_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_PICTURES" />
-          <NavigationProperty Name="TB_USER_FAC" Relationship="Self.USER_FAC_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_USER_FAC" />
           <NavigationProperty Name="TB_USER_FAC1" Relationship="Self.USER_FAC_USER_INT_ID_FK1" FromRole="TB_USER" ToRole="TB_USER_FAC" />
+          <NavigationProperty Name="TB_USER_CUR" Relationship="bancoMainModel.USER_CUR_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_USER_CUR" />
+          <NavigationProperty Name="TB_USER_MAT" Relationship="bancoMainModel.USER_MAT_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_USER_MAT" />
         </EntityType>
         <EntityType Name="TB_USER_FAC">
           <Key>
@@ -476,16 +501,6 @@
           <Property Name="USER_INT_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TB_FACULDADE" Relationship="Self.USER_FAC_FAC_INT_ID_FK1" FromRole="TB_USER_FAC" ToRole="TB_FACULDADE" />
           <NavigationProperty Name="TB_USER" Relationship="Self.USER_FAC_USER_INT_ID_FK1" FromRole="TB_USER_FAC" ToRole="TB_USER" />
-        </EntityType>
-        <EntityType Name="TB_USER_FAC1">
-          <Key>
-            <PropertyRef Name="USER_FAC_ID" />
-          </Key>
-          <Property Name="USER_FAC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FAC_INT_ID" Type="Int32" Nullable="false" />
-          <Property Name="USER_INT_ID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="TB_FACULDADE" Relationship="Self.USER_FAC_FAC_INT_ID_FK" FromRole="TB_USER_FAC" ToRole="TB_FACULDADE" />
-          <NavigationProperty Name="TB_USER" Relationship="Self.USER_FAC_USER_INT_ID_FK" FromRole="TB_USER_FAC" ToRole="TB_USER" />
         </EntityType>
         <Association Name="CUR_USER_INT_ID_FK">
           <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
@@ -531,18 +546,6 @@
               <PropertyRef Name="FAC_INT_ID" />
             </Principal>
             <Dependent Role="TB_NOTA">
-              <PropertyRef Name="FAC_INT_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="USER_FAC_FAC_INT_ID_FK">
-          <End Role="TB_FACULDADE" Type="Self.TB_FACULDADE" Multiplicity="1" />
-          <End Role="TB_USER_FAC" Type="Self.TB_USER_FAC1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TB_FACULDADE">
-              <PropertyRef Name="FAC_INT_ID" />
-            </Principal>
-            <Dependent Role="TB_USER_FAC">
               <PropertyRef Name="FAC_INT_ID" />
             </Dependent>
           </ReferentialConstraint>
@@ -643,18 +646,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="USER_FAC_USER_INT_ID_FK">
-          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
-          <End Role="TB_USER_FAC" Type="Self.TB_USER_FAC1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TB_USER">
-              <PropertyRef Name="USER_INT_ID" />
-            </Principal>
-            <Dependent Role="TB_USER_FAC">
-              <PropertyRef Name="USER_INT_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="USER_FAC_USER_INT_ID_FK1">
           <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
           <End Role="TB_USER_FAC" Type="Self.TB_USER_FAC" Multiplicity="*" />
@@ -678,7 +669,6 @@
           <EntitySet Name="TB_PICTURES" EntityType="Self.TB_PICTURES" />
           <EntitySet Name="TB_USER" EntityType="Self.TB_USER" />
           <EntitySet Name="TB_USER_FAC" EntityType="Self.TB_USER_FAC" />
-          <EntitySet Name="TB_USER_FAC1" EntityType="Self.TB_USER_FAC1" />
           <AssociationSet Name="CUR_USER_INT_ID_FK" Association="Self.CUR_USER_INT_ID_FK">
             <End Role="TB_USER" EntitySet="TB_USER" />
             <End Role="TB_CURSO" EntitySet="TB_CURSO" />
@@ -694,10 +684,6 @@
           <AssociationSet Name="NOTA_FAC_INT_ID_FK" Association="Self.NOTA_FAC_INT_ID_FK">
             <End Role="TB_FACULDADE" EntitySet="TB_FACULDADE" />
             <End Role="TB_NOTA" EntitySet="TB_NOTA" />
-          </AssociationSet>
-          <AssociationSet Name="USER_FAC_FAC_INT_ID_FK" Association="Self.USER_FAC_FAC_INT_ID_FK">
-            <End Role="TB_FACULDADE" EntitySet="TB_FACULDADE" />
-            <End Role="TB_USER_FAC" EntitySet="TB_USER_FAC1" />
           </AssociationSet>
           <AssociationSet Name="USER_FAC_FAC_INT_ID_FK1" Association="Self.USER_FAC_FAC_INT_ID_FK1">
             <End Role="TB_FACULDADE" EntitySet="TB_FACULDADE" />
@@ -731,15 +717,97 @@
             <End Role="TB_USER" EntitySet="TB_USER" />
             <End Role="TB_PICTURES" EntitySet="TB_PICTURES" />
           </AssociationSet>
-          <AssociationSet Name="USER_FAC_USER_INT_ID_FK" Association="Self.USER_FAC_USER_INT_ID_FK">
-            <End Role="TB_USER" EntitySet="TB_USER" />
-            <End Role="TB_USER_FAC" EntitySet="TB_USER_FAC1" />
-          </AssociationSet>
           <AssociationSet Name="USER_FAC_USER_INT_ID_FK1" Association="Self.USER_FAC_USER_INT_ID_FK1">
             <End Role="TB_USER" EntitySet="TB_USER" />
             <End Role="TB_USER_FAC" EntitySet="TB_USER_FAC" />
           </AssociationSet>
+          <EntitySet Name="TB_USER_CUR" EntityType="bancoMainModel.TB_USER_CUR" />
+          <EntitySet Name="TB_USER_MAT" EntityType="bancoMainModel.TB_USER_MAT" />
+          <AssociationSet Name="USER_CUR_CUR_INT_ID_FK" Association="bancoMainModel.USER_CUR_CUR_INT_ID_FK">
+            <End Role="TB_CURSO" EntitySet="TB_CURSO" />
+            <End Role="TB_USER_CUR" EntitySet="TB_USER_CUR" />
+          </AssociationSet>
+          <AssociationSet Name="USER_MAT_MAT_INT_ID_FK" Association="bancoMainModel.USER_MAT_MAT_INT_ID_FK">
+            <End Role="TB_MATERIA" EntitySet="TB_MATERIA" />
+            <End Role="TB_USER_MAT" EntitySet="TB_USER_MAT" />
+          </AssociationSet>
+          <AssociationSet Name="USER_CUR_USER_INT_ID_FK" Association="bancoMainModel.USER_CUR_USER_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_USER_CUR" EntitySet="TB_USER_CUR" />
+          </AssociationSet>
+          <AssociationSet Name="USER_MAT_USER_INT_ID_FK" Association="bancoMainModel.USER_MAT_USER_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_USER_MAT" EntitySet="TB_USER_MAT" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="TB_USER_CUR">
+          <Key>
+            <PropertyRef Name="USER_CUR_ID" />
+          </Key>
+          <Property Name="USER_CUR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CUR_INT_ID" Type="Int32" Nullable="false" />
+          <Property Name="USER_INT_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_CURSO" Relationship="bancoMainModel.USER_CUR_CUR_INT_ID_FK" FromRole="TB_USER_CUR" ToRole="TB_CURSO" />
+          <NavigationProperty Name="TB_USER" Relationship="bancoMainModel.USER_CUR_USER_INT_ID_FK" FromRole="TB_USER_CUR" ToRole="TB_USER" />
+        </EntityType>
+        <EntityType Name="TB_USER_MAT">
+          <Key>
+            <PropertyRef Name="USER_MAT_ID" />
+          </Key>
+          <Property Name="USER_MAT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MAT_INT_ID" Type="Int32" Nullable="false" />
+          <Property Name="USER_INT_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_MATERIA" Relationship="bancoMainModel.USER_MAT_MAT_INT_ID_FK" FromRole="TB_USER_MAT" ToRole="TB_MATERIA" />
+          <NavigationProperty Name="TB_USER" Relationship="bancoMainModel.USER_MAT_USER_INT_ID_FK" FromRole="TB_USER_MAT" ToRole="TB_USER" />
+        </EntityType>
+        <Association Name="USER_CUR_CUR_INT_ID_FK">
+          <End Type="bancoMainModel.TB_CURSO" Role="TB_CURSO" Multiplicity="1" />
+          <End Type="bancoMainModel.TB_USER_CUR" Role="TB_USER_CUR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_CURSO">
+              <PropertyRef Name="CUR_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_USER_CUR">
+              <PropertyRef Name="CUR_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USER_MAT_MAT_INT_ID_FK">
+          <End Type="bancoMainModel.TB_MATERIA" Role="TB_MATERIA" Multiplicity="1" />
+          <End Type="bancoMainModel.TB_USER_MAT" Role="TB_USER_MAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_MATERIA">
+              <PropertyRef Name="MAT_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_USER_MAT">
+              <PropertyRef Name="MAT_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USER_CUR_USER_INT_ID_FK">
+          <End Type="bancoMainModel.TB_USER" Role="TB_USER" Multiplicity="1" />
+          <End Type="bancoMainModel.TB_USER_CUR" Role="TB_USER_CUR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_USER_CUR">
+              <PropertyRef Name="USER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USER_MAT_USER_INT_ID_FK">
+          <End Type="bancoMainModel.TB_USER" Role="TB_USER" Multiplicity="1" />
+          <End Type="bancoMainModel.TB_USER_MAT" Role="TB_USER_MAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_USER_MAT">
+              <PropertyRef Name="USER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -845,12 +913,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TB_USER_FAC1">
-            <EntityTypeMapping TypeName="bancoMainModel.TB_USER_FAC1">
-              <MappingFragment StoreEntitySet="TB_USER-FAC">
-                <ScalarProperty Name="USER_FAC_ID" ColumnName="USER_FAC_ID" />
-                <ScalarProperty Name="FAC_INT_ID" ColumnName="FAC_INT_ID" />
+          <EntitySetMapping Name="TB_USER_CUR">
+            <EntityTypeMapping TypeName="bancoMainModel.TB_USER_CUR">
+              <MappingFragment StoreEntitySet="TB_USER_CUR">
                 <ScalarProperty Name="USER_INT_ID" ColumnName="USER_INT_ID" />
+                <ScalarProperty Name="CUR_INT_ID" ColumnName="CUR_INT_ID" />
+                <ScalarProperty Name="USER_CUR_ID" ColumnName="USER_CUR_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_USER_MAT">
+            <EntityTypeMapping TypeName="bancoMainModel.TB_USER_MAT">
+              <MappingFragment StoreEntitySet="TB_USER_MAT">
+                <ScalarProperty Name="USER_INT_ID" ColumnName="USER_INT_ID" />
+                <ScalarProperty Name="MAT_INT_ID" ColumnName="MAT_INT_ID" />
+                <ScalarProperty Name="USER_MAT_ID" ColumnName="USER_MAT_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

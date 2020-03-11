@@ -164,10 +164,13 @@
     <Compile Include="TB_USER.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TB_USER_CUR.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="TB_USER_FAC.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="TB_USER_FAC1.cs">
+    <Compile Include="TB_USER_MAT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="View\TelaLogin.cs">

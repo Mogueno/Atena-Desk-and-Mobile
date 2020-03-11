@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace Menus.Model
 {
@@ -24,7 +25,7 @@ namespace Menus.Model
         public const string strSelectUser = "SELECT USER_INT_ID FROM TB_USER WHERE USER_STR_EMAIL = @USER_STR_EMAIL_VAR";
 
         public const string strUpdateCurso = "UPDATE TB_CURSO SET = CUR_STR_NOME = @CUR_STR_NOME WHERE USER_INT_ID = @USER_INT_ID";
-        public const string strInsertCurso = "INSERT INTO TB_CURSO VALUES (@CUR_STR_NOME, @USER_INT_ID)";
+        public const string strInsertCurso = "INSERT INTO TB_CURSO output INSERTED.CUR_INT_ID VALUES (@CUR_STR_NOME, @USER_INT_ID)";
 
         public const string strSelectNota = "SELECT NOTA_INT_ID FROM TB_NOTA WHERE USER_STR_ID = @USER_STR_ID";
 
@@ -136,33 +137,67 @@ namespace Menus.Model
         }
 
         public void SelectCurso(string EmailVar, string NomeCurso)
-        {
-            using (SqlConnection objConexao = new SqlConnection(strConexao))
-            {
-                using (SqlCommand objCommand = new SqlCommand(strSelectUser, objConexao))
+        { 
+            bancoMainEntities1 ht = new bancoMainEntities1();
+
+            var resultado = (from str in ht.TB_CURSO
+                             select new
+                             {
+                                 cursoTitle = str.CUR_STR_NOME,
+                                 cursoId = str.CUR_INT_ID
+                             }).Where(a => a.cursoTitle == NomeCurso).ToList();
+
+            if (resultado.Count == 0) { 
+
+                using (SqlConnection objConexao = new SqlConnection(strConexao))
                 {
-                    objCommand.Parameters.AddWithValue("@USER_STR_EMAIL_VAR", EmailVar);
-
-                    objConexao.Open();
-
-
-
-                    user.UserId = (Int32)objCommand.ExecuteScalar();
-
-                    using (SqlCommand objCommand2 = new SqlCommand(strInsertCurso, objConexao))
+                    using (SqlCommand objCommand = new SqlCommand(strSelectUser, objConexao))
                     {
-                        objCommand2.Parameters.AddWithValue("@USER_INT_ID", user.UserId);
-                        objCommand2.Parameters.AddWithValue("@CUR_STR_NOME", NomeCurso);
+                        objCommand.Parameters.AddWithValue("@USER_STR_EMAIL_VAR", EmailVar);
 
-                        objCommand2.ExecuteNonQuery();
+                        objConexao.Open();
 
+
+
+                        user.UserId = (Int32)objCommand.ExecuteScalar();
+
+                        using (SqlCommand objCommand2 = new SqlCommand(strInsertCurso, objConexao))
+                        {
+                            objCommand2.Parameters.AddWithValue("@USER_INT_ID", user.UserId);
+                            objCommand2.Parameters.AddWithValue("@CUR_STR_NOME", NomeCurso);
+
+                            int modified = (int)objCommand2.ExecuteScalar();
+
+                            var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == EmailVar).SingleOrDefault();
+                            var email = id.USER_INT_ID;
+
+                            ht.TB_USER_CUR.Add(new TB_USER_CUR() { CUR_INT_ID = modified, USER_INT_ID = email });
+                            ht.SaveChanges();
+
+                        }
+
+                        objConexao.Close();
                     }
-
-                    objConexao.Close();
                 }
+
+
+            }
+            else
+            {
+                var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == EmailVar).SingleOrDefault();
+                var email = id.USER_INT_ID;
+
+                ht.TB_USER_CUR.Add(new TB_USER_CUR() { CUR_INT_ID = resultado[0].cursoId, USER_INT_ID = email});
+                ht.SaveChanges();
             }
         }
 
+        public string Teste123(string recebe)
+        {
+            string nameToSearch = Regex.Replace(recebe, @"\s+", "").ToLower();
+
+            return nameToSearch;
+        }
 
         public void SelectMateria(string EmailVar, string NomeMateria, string HoraMateria)
         {

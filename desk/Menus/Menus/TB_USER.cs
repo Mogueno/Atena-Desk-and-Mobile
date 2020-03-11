@@ -22,8 +22,9 @@ namespace Menus
             this.TB_MATERIA = new HashSet<TB_MATERIA>();
             this.TB_NOTA = new HashSet<TB_NOTA>();
             this.TB_PICTURES = new HashSet<TB_PICTURES>();
-            this.TB_USER_FAC = new HashSet<TB_USER_FAC1>();
             this.TB_USER_FAC1 = new HashSet<TB_USER_FAC>();
+            this.TB_USER_CUR = new HashSet<TB_USER_CUR>();
+            this.TB_USER_MAT = new HashSet<TB_USER_MAT>();
         }
     
         public int USER_INT_ID { get; set; }
@@ -46,8 +47,10 @@ namespace Menus
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_PICTURES> TB_PICTURES { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TB_USER_FAC1> TB_USER_FAC { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_USER_FAC> TB_USER_FAC1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_USER_CUR> TB_USER_CUR { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_USER_MAT> TB_USER_MAT { get; set; }
     }
 }
