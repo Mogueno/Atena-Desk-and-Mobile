@@ -159,9 +159,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="NOTA_CUR_INT_ID_FK">
-          <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="1" />
           <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_CURSO">
@@ -541,9 +539,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="NOTA_CUR_INT_ID_FK">
-          <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="1" />
           <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_CURSO">

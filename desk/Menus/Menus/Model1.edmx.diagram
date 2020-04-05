@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="411fd1216e264039be773948c2fdf128" Name="Diagram1">
+      <Diagram DiagramId="85d9d34b5446420a80ae7745970325de" Name="Diagram1">
         <EntityTypeShape EntityType="bancoMainModel.TB_CURSO" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="bancoMainModel.TB_FACULDADE" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="bancoMainModel.TB_MATERIA" Width="1.5" PointX="3.75" PointY="3.875" IsExpanded="true" />

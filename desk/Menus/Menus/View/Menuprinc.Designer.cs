@@ -52,7 +52,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.panelFacul = new System.Windows.Forms.Panel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -115,7 +114,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button26 = new System.Windows.Forms.Button();
-            this.roundPictureBox1 = new Menus.RoundPictureBox();
             this.lbMateriaShow = new MaterialSkin.Controls.MaterialLabel();
             this.lbCursoShow = new MaterialSkin.Controls.MaterialLabel();
             this.lbFaculShow = new MaterialSkin.Controls.MaterialLabel();
@@ -183,6 +181,32 @@
             this.panel32 = new System.Windows.Forms.Panel();
             this.button40 = new System.Windows.Forms.Button();
             this.flowLayoutPanel17 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelMateria = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel19 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel33 = new System.Windows.Forms.Panel();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.panel34 = new System.Windows.Forms.Panel();
+            this.button41 = new System.Windows.Forms.Button();
+            this.panel35 = new System.Windows.Forms.Panel();
+            this.panel36 = new System.Windows.Forms.Panel();
+            this.button42 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel20 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelMateria__Search = new System.Windows.Forms.Panel();
+            this.panel37 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.panel38 = new System.Windows.Forms.Panel();
+            this.button43 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel21 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel39 = new System.Windows.Forms.Panel();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.panel40 = new System.Windows.Forms.Panel();
+            this.button44 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel22 = new System.Windows.Forms.FlowLayoutPanel();
+            this.roundPictureBox1 = new Menus.RoundPictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -209,7 +233,6 @@
             this.panelNovaNota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelMinhaConta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.panelHome.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -236,6 +259,18 @@
             this.panel30.SuspendLayout();
             this.panel31.SuspendLayout();
             this.panel32.SuspendLayout();
+            this.panelMateria.SuspendLayout();
+            this.panel33.SuspendLayout();
+            this.panel34.SuspendLayout();
+            this.panel35.SuspendLayout();
+            this.panel36.SuspendLayout();
+            this.panelMateria__Search.SuspendLayout();
+            this.panel37.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.panel38.SuspendLayout();
+            this.panel39.SuspendLayout();
+            this.panel40.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbRecebeEmailMenu
@@ -587,10 +622,9 @@
             this.flowLayoutPanel3.Controls.Add(this.button7);
             this.flowLayoutPanel3.Controls.Add(this.button8);
             this.flowLayoutPanel3.Controls.Add(this.button9);
-            this.flowLayoutPanel3.Controls.Add(this.button10);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(193, 132);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(123, 219);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(644, 423);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(840, 211);
             this.flowLayoutPanel3.TabIndex = 16;
             // 
             // button6
@@ -678,7 +712,7 @@
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button9.Image = global::Menus.Properties.Resources.book1;
-            this.button9.Location = new System.Drawing.Point(5, 215);
+            this.button9.Location = new System.Drawing.Point(635, 5);
             this.button9.Margin = new System.Windows.Forms.Padding(5);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(200, 200);
@@ -687,29 +721,7 @@
             this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button9.UseVisualStyleBackColor = false;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button10.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gainsboro;
-            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.button10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button10.Image = global::Menus.Properties.Resources.cogwheel1;
-            this.button10.Location = new System.Drawing.Point(215, 215);
-            this.button10.Margin = new System.Windows.Forms.Padding(5);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(200, 200);
-            this.button10.TabIndex = 12;
-            this.button10.Text = "Filtros Personalizados";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button10.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // panelFacul
             // 
@@ -1599,28 +1611,18 @@
             this.button26.UseVisualStyleBackColor = false;
             this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
-            // roundPictureBox1
-            // 
-            this.roundPictureBox1.Location = new System.Drawing.Point(477, 82);
-            this.roundPictureBox1.Name = "roundPictureBox1";
-            this.roundPictureBox1.Size = new System.Drawing.Size(148, 148);
-            this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.roundPictureBox1.TabIndex = 48;
-            this.roundPictureBox1.TabStop = false;
-            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
-            // 
             // lbMateriaShow
             // 
             this.lbMateriaShow.AutoSize = true;
             this.lbMateriaShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.lbMateriaShow.Depth = 0;
-            this.lbMateriaShow.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbMateriaShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbMateriaShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbMateriaShow.Location = new System.Drawing.Point(562, 476);
             this.lbMateriaShow.MinimumSize = new System.Drawing.Size(410, 0);
             this.lbMateriaShow.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbMateriaShow.Name = "lbMateriaShow";
-            this.lbMateriaShow.Size = new System.Drawing.Size(410, 19);
+            this.lbMateriaShow.Size = new System.Drawing.Size(410, 18);
             this.lbMateriaShow.TabIndex = 42;
             // 
             // lbCursoShow
@@ -1628,13 +1630,13 @@
             this.lbCursoShow.AutoSize = true;
             this.lbCursoShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.lbCursoShow.Depth = 0;
-            this.lbCursoShow.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbCursoShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbCursoShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbCursoShow.Location = new System.Drawing.Point(562, 382);
             this.lbCursoShow.MinimumSize = new System.Drawing.Size(410, 0);
             this.lbCursoShow.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbCursoShow.Name = "lbCursoShow";
-            this.lbCursoShow.Size = new System.Drawing.Size(410, 19);
+            this.lbCursoShow.Size = new System.Drawing.Size(410, 18);
             this.lbCursoShow.TabIndex = 38;
             this.lbCursoShow.Click += new System.EventHandler(this.lbCursoShow_Click);
             // 
@@ -1643,13 +1645,13 @@
             this.lbFaculShow.AutoSize = true;
             this.lbFaculShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.lbFaculShow.Depth = 0;
-            this.lbFaculShow.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbFaculShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbFaculShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbFaculShow.Location = new System.Drawing.Point(558, 306);
             this.lbFaculShow.MinimumSize = new System.Drawing.Size(410, 0);
             this.lbFaculShow.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbFaculShow.Name = "lbFaculShow";
-            this.lbFaculShow.Size = new System.Drawing.Size(410, 19);
+            this.lbFaculShow.Size = new System.Drawing.Size(410, 18);
             this.lbFaculShow.TabIndex = 40;
             this.lbFaculShow.Click += new System.EventHandler(this.lbFaculShow_Click);
             // 
@@ -2515,18 +2517,353 @@
             this.flowLayoutPanel17.Size = new System.Drawing.Size(0, 0);
             this.flowLayoutPanel17.TabIndex = 20;
             // 
+            // panelMateria
+            // 
+            this.panelMateria.Controls.Add(this.flowLayoutPanel19);
+            this.panelMateria.Controls.Add(this.panel33);
+            this.panelMateria.Controls.Add(this.panel34);
+            this.panelMateria.Controls.Add(this.panel35);
+            this.panelMateria.Controls.Add(this.flowLayoutPanel20);
+            this.panelMateria.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMateria.Location = new System.Drawing.Point(255, 42);
+            this.panelMateria.Name = "panelMateria";
+            this.panelMateria.Size = new System.Drawing.Size(1031, 687);
+            this.panelMateria.TabIndex = 31;
+            // 
+            // flowLayoutPanel19
+            // 
+            this.flowLayoutPanel19.AutoScroll = true;
+            this.flowLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel19.Location = new System.Drawing.Point(0, 83);
+            this.flowLayoutPanel19.Name = "flowLayoutPanel19";
+            this.flowLayoutPanel19.Padding = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanel19.Size = new System.Drawing.Size(1031, 604);
+            this.flowLayoutPanel19.TabIndex = 25;
+            // 
+            // panel33
+            // 
+            this.panel33.Controls.Add(this.textBox16);
+            this.panel33.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel33.Location = new System.Drawing.Point(0, 42);
+            this.panel33.Name = "panel33";
+            this.panel33.Size = new System.Drawing.Size(1031, 41);
+            this.panel33.TabIndex = 26;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox16.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.textBox16.Location = new System.Drawing.Point(0, 0);
+            this.textBox16.MinimumSize = new System.Drawing.Size(4, 4);
+            this.textBox16.Multiline = true;
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(1031, 41);
+            this.textBox16.TabIndex = 19;
+            this.textBox16.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
+            // 
+            // panel34
+            // 
+            this.panel34.BackColor = System.Drawing.Color.Transparent;
+            this.panel34.Controls.Add(this.button41);
+            this.panel34.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel34.Location = new System.Drawing.Point(0, 0);
+            this.panel34.Name = "panel34";
+            this.panel34.Size = new System.Drawing.Size(1031, 42);
+            this.panel34.TabIndex = 27;
+            // 
+            // button41
+            // 
+            this.button41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(2)))), ((int)(((byte)(9)))));
+            this.button41.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button41.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button41.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button41.FlatAppearance.BorderColor = System.Drawing.Color.BlanchedAlmond;
+            this.button41.FlatAppearance.BorderSize = 0;
+            this.button41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button41.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button41.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button41.Image = global::Menus.Properties.Resources.back__1_;
+            this.button41.Location = new System.Drawing.Point(0, 0);
+            this.button41.Margin = new System.Windows.Forms.Padding(5);
+            this.button41.Name = "button41";
+            this.button41.Size = new System.Drawing.Size(62, 42);
+            this.button41.TabIndex = 19;
+            this.button41.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button41.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button41.UseVisualStyleBackColor = false;
+            // 
+            // panel35
+            // 
+            this.panel35.Controls.Add(this.panel36);
+            this.panel35.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel35.Location = new System.Drawing.Point(0, 0);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(1031, 687);
+            this.panel35.TabIndex = 24;
+            // 
+            // panel36
+            // 
+            this.panel36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.panel36.Controls.Add(this.button42);
+            this.panel36.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel36.Location = new System.Drawing.Point(0, 0);
+            this.panel36.Name = "panel36";
+            this.panel36.Size = new System.Drawing.Size(1031, 42);
+            this.panel36.TabIndex = 22;
+            // 
+            // button42
+            // 
+            this.button42.BackColor = System.Drawing.Color.Transparent;
+            this.button42.BackgroundImage = global::Menus.Properties.Resources.download__1_;
+            this.button42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button42.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button42.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button42.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button42.FlatAppearance.BorderSize = 0;
+            this.button42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button42.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button42.Location = new System.Drawing.Point(988, 0);
+            this.button42.Name = "button42";
+            this.button42.Size = new System.Drawing.Size(43, 42);
+            this.button42.TabIndex = 9;
+            this.button42.UseVisualStyleBackColor = false;
+            // 
+            // flowLayoutPanel20
+            // 
+            this.flowLayoutPanel20.AutoSize = true;
+            this.flowLayoutPanel20.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel20.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel20.Location = new System.Drawing.Point(63, 92);
+            this.flowLayoutPanel20.Name = "flowLayoutPanel20";
+            this.flowLayoutPanel20.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel20.TabIndex = 20;
+            // 
+            // panelMateria__Search
+            // 
+            this.panelMateria__Search.Controls.Add(this.panel37);
+            this.panelMateria__Search.Controls.Add(this.flowLayoutPanel21);
+            this.panelMateria__Search.Controls.Add(this.panel39);
+            this.panelMateria__Search.Controls.Add(this.panel40);
+            this.panelMateria__Search.Controls.Add(this.flowLayoutPanel22);
+            this.panelMateria__Search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMateria__Search.Location = new System.Drawing.Point(255, 42);
+            this.panelMateria__Search.Name = "panelMateria__Search";
+            this.panelMateria__Search.Size = new System.Drawing.Size(1031, 687);
+            this.panelMateria__Search.TabIndex = 32;
+            // 
+            // panel37
+            // 
+            this.panel37.Controls.Add(this.tableLayoutPanel6);
+            this.panel37.Controls.Add(this.panel38);
+            this.panel37.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel37.Location = new System.Drawing.Point(245, 83);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(786, 604);
+            this.panel37.TabIndex = 23;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.AutoSize = true;
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Controls.Add(this.label17, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.textBox17, 0, 3);
+            this.tableLayoutPanel6.Controls.Add(this.textBox18, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.label18, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel6.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.tableLayoutPanel6.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 42);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 4;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(786, 183);
+            this.tableLayoutPanel6.TabIndex = 21;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(3, 64);
+            this.label17.Margin = new System.Windows.Forms.Padding(3);
+            this.label17.MaximumSize = new System.Drawing.Size(786, 0);
+            this.label17.MinimumSize = new System.Drawing.Size(786, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(786, 25);
+            this.label17.TabIndex = 23;
+            // 
+            // textBox17
+            // 
+            this.textBox17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.textBox17.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox17.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox17.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textBox17.Location = new System.Drawing.Point(3, 156);
+            this.textBox17.MaximumSize = new System.Drawing.Size(737, 0);
+            this.textBox17.MaxLength = 999999999;
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(715, 24);
+            this.textBox17.TabIndex = 20;
+            this.textBox17.Visible = false;
+            // 
+            // textBox18
+            // 
+            this.textBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.textBox18.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox18.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textBox18.Location = new System.Drawing.Point(3, 95);
+            this.textBox18.MaximumSize = new System.Drawing.Size(737, 0);
+            this.textBox18.MaxLength = 999999999;
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(715, 55);
+            this.textBox18.TabIndex = 21;
+            this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox18.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 3);
+            this.label18.Margin = new System.Windows.Forms.Padding(3);
+            this.label18.MaximumSize = new System.Drawing.Size(786, 0);
+            this.label18.MinimumSize = new System.Drawing.Size(786, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(786, 55);
+            this.label18.TabIndex = 22;
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel38
+            // 
+            this.panel38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.panel38.Controls.Add(this.button43);
+            this.panel38.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel38.Location = new System.Drawing.Point(0, 0);
+            this.panel38.Name = "panel38";
+            this.panel38.Size = new System.Drawing.Size(786, 42);
+            this.panel38.TabIndex = 22;
+            // 
+            // button43
+            // 
+            this.button43.BackColor = System.Drawing.Color.Transparent;
+            this.button43.BackgroundImage = global::Menus.Properties.Resources.download__1_;
+            this.button43.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button43.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button43.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button43.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button43.FlatAppearance.BorderSize = 0;
+            this.button43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button43.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button43.Location = new System.Drawing.Point(743, 0);
+            this.button43.Name = "button43";
+            this.button43.Size = new System.Drawing.Size(43, 42);
+            this.button43.TabIndex = 9;
+            this.button43.UseVisualStyleBackColor = false;
+            // 
+            // flowLayoutPanel21
+            // 
+            this.flowLayoutPanel21.AutoScroll = true;
+            this.flowLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel21.Location = new System.Drawing.Point(0, 83);
+            this.flowLayoutPanel21.Name = "flowLayoutPanel21";
+            this.flowLayoutPanel21.Size = new System.Drawing.Size(245, 604);
+            this.flowLayoutPanel21.TabIndex = 21;
+            // 
+            // panel39
+            // 
+            this.panel39.Controls.Add(this.textBox19);
+            this.panel39.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel39.Location = new System.Drawing.Point(0, 42);
+            this.panel39.Name = "panel39";
+            this.panel39.Size = new System.Drawing.Size(1031, 41);
+            this.panel39.TabIndex = 22;
+            // 
+            // textBox19
+            // 
+            this.textBox19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox19.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.textBox19.Location = new System.Drawing.Point(0, 0);
+            this.textBox19.MinimumSize = new System.Drawing.Size(4, 4);
+            this.textBox19.Multiline = true;
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(1031, 41);
+            this.textBox19.TabIndex = 19;
+            this.textBox19.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
+            // 
+            // panel40
+            // 
+            this.panel40.BackColor = System.Drawing.Color.Transparent;
+            this.panel40.Controls.Add(this.button44);
+            this.panel40.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel40.Location = new System.Drawing.Point(0, 0);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(1031, 42);
+            this.panel40.TabIndex = 21;
+            // 
+            // button44
+            // 
+            this.button44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(2)))), ((int)(((byte)(9)))));
+            this.button44.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button44.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button44.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button44.FlatAppearance.BorderColor = System.Drawing.Color.BlanchedAlmond;
+            this.button44.FlatAppearance.BorderSize = 0;
+            this.button44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button44.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button44.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button44.Image = global::Menus.Properties.Resources.back__1_;
+            this.button44.Location = new System.Drawing.Point(0, 0);
+            this.button44.Margin = new System.Windows.Forms.Padding(5);
+            this.button44.Name = "button44";
+            this.button44.Size = new System.Drawing.Size(62, 42);
+            this.button44.TabIndex = 19;
+            this.button44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button44.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button44.UseVisualStyleBackColor = false;
+            this.button44.Click += new System.EventHandler(this.button44_Click);
+            // 
+            // flowLayoutPanel22
+            // 
+            this.flowLayoutPanel22.AutoSize = true;
+            this.flowLayoutPanel22.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel22.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel22.Location = new System.Drawing.Point(63, 92);
+            this.flowLayoutPanel22.Name = "flowLayoutPanel22";
+            this.flowLayoutPanel22.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel22.TabIndex = 20;
+            // 
+            // roundPictureBox1
+            // 
+            this.roundPictureBox1.Location = new System.Drawing.Point(477, 82);
+            this.roundPictureBox1.Name = "roundPictureBox1";
+            this.roundPictureBox1.Size = new System.Drawing.Size(148, 148);
+            this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.roundPictureBox1.TabIndex = 48;
+            this.roundPictureBox1.TabStop = false;
+            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
+            // 
             // Menuprinc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1286, 729);
-            this.Controls.Add(this.panelNovaNota);
-            this.Controls.Add(this.panelHome);
-            this.Controls.Add(this.panelTexto);
-            this.Controls.Add(this.panelSearch);
+            this.Controls.Add(this.panelMateria);
             this.Controls.Add(this.panelCurso2);
+            this.Controls.Add(this.panelMateria__Search);
             this.Controls.Add(this.panelCurso2__Search);
+            this.Controls.Add(this.panelHome);
+            this.Controls.Add(this.panelSearch);
+            this.Controls.Add(this.panelNovaNota);
+            this.Controls.Add(this.panelTexto);
             this.Controls.Add(this.panelFacul__Search);
             this.Controls.Add(this.panelFacul);
             this.Controls.Add(this.label1);
@@ -2582,7 +2919,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelMinhaConta.ResumeLayout(false);
             this.panelMinhaConta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panelHome.ResumeLayout(false);
@@ -2623,6 +2959,24 @@
             this.panel31.ResumeLayout(false);
             this.panel31.PerformLayout();
             this.panel32.ResumeLayout(false);
+            this.panelMateria.ResumeLayout(false);
+            this.panelMateria.PerformLayout();
+            this.panel33.ResumeLayout(false);
+            this.panel33.PerformLayout();
+            this.panel34.ResumeLayout(false);
+            this.panel35.ResumeLayout(false);
+            this.panel36.ResumeLayout(false);
+            this.panelMateria__Search.ResumeLayout(false);
+            this.panelMateria__Search.PerformLayout();
+            this.panel37.ResumeLayout(false);
+            this.panel37.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
+            this.panel38.ResumeLayout(false);
+            this.panel39.ResumeLayout(false);
+            this.panel39.PerformLayout();
+            this.panel40.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2649,7 +3003,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Panel panelFacul;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button12;
@@ -2784,5 +3137,30 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel18;
         private System.Windows.Forms.TextBox txtuniversidade;
+        private System.Windows.Forms.Panel panelMateria;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel19;
+        private System.Windows.Forms.Panel panel33;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.Panel panel34;
+        private System.Windows.Forms.Button button41;
+        private System.Windows.Forms.Panel panel35;
+        private System.Windows.Forms.Panel panel36;
+        private System.Windows.Forms.Button button42;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel20;
+        private System.Windows.Forms.Panel panelMateria__Search;
+        private System.Windows.Forms.Panel panel37;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Panel panel38;
+        private System.Windows.Forms.Button button43;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel21;
+        private System.Windows.Forms.Panel panel39;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.Panel panel40;
+        private System.Windows.Forms.Button button44;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel22;
     }
 }
