@@ -42,26 +42,27 @@ namespace Menus
                 Dados objDados = new Dados();
 
                 objDados.SelectFacul(EmailUser, NomeFacul);
-                //bancoMainEntities1 ht = new bancoMainEntities1();
-
-                //var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == EmailUser).SingleOrDefault();
-                //var email = id.USER_INT_ID;
-                //var result = ht.TB_CURSO.SingleOrDefault(a => a.USER_INT_ID == email);
-                //if (result != null)
-                //{
-                //    result.PIC_IMG_MAIN = ms.ToArray();
-                //    ht.SaveChanges();
-                //}
-                //else
-                //{
-                //    ht.TB_PICTURES.Add(new TB_PICTURES() { PIC_IMG_MAIN = ms.ToArray(), USER_INT_ID = email });
-                //    ht.SaveChanges();
-                //}
-
 
                 objDados.SelectCurso(EmailUser, NomeCurso);
 
-                objDados.SelectMateria(EmailUser, NomeMateria, HoraMateria);
+                List<Control> myControls = new List<Control>();
+                foreach (Control control in panel9.Controls)
+                {
+                    if (control.Visible == true)
+                    {
+
+                        foreach (Control control2 in control.Controls) {
+                            if (control2 is TextBox || control2 is MaskedTextBox)
+                            {
+                                myControls.Add(control2);
+                            }
+                        }
+                        MessageBox.Show(myControls[1].Text);
+                        objDados.SelectMateria(EmailUser, myControls[0].Text, myControls[1].Text);
+                        myControls.Clear();
+                    }
+                }
+
             }
 
             catch (Exception ex)
@@ -242,5 +243,46 @@ namespace Menus
                 Transition.run(flowLayoutPanel2, "Height", 0, new TransitionType_EaseInEaseOut(250));
             }
         }
+
+        private void txthora1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int currentTab = panel8.TabIndex;
+
+            foreach (Control control in panel9.Controls)
+            {
+                if (control.Visible == false)
+                {
+                    control.Visible = true;
+                    break;
+
+                    
+                }
+            }
+        }
+        private void deleteMateria_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.Parent.Visible = false;
+
+            foreach (Control control in btn.Parent.Controls)
+            {
+                if (control is TextBox || control is MaskedTextBox)
+                {
+                    control.Text = "";
+                }
+            }
+
+        }
+
     }
 }

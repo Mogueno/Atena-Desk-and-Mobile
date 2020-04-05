@@ -7,6 +7,7 @@ using MaterialSkin.Controls;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
+using Transitions;
 
 namespace Menus
 {
@@ -256,10 +257,68 @@ namespace Menus
             lbMateriaShow.Text = Login.Materia;
             lbFaculShow.Text = facul3.faculName;
             lbCursoShow.Text = curso3.cursoName;
+
+
+            try
+            {
+
+                var id = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                var email = id.USER_INT_ID;
+
+                var matList = (from mat in ht2.TB_USER_MAT
+                                  join matfull in ht2.TB_MATERIA on mat.MAT_INT_ID equals matfull.MAT_INT_ID
+                                  where email == mat.USER_INT_ID
+                                  select new
+                                  {
+                                      matTitle = matfull.MAT_STR_NOME,
+                                      matId = mat.MAT_INT_ID
+                                  }).ToList();
+
+
+                if (matList.Count != 0)
+                {
+                    for (int i = 0; i < matList.Count; i++)
+                    {
+                        Button button = new Button();
+                        button.Tag = matList[i].matId;
+                        button.Text = matList[i].matTitle;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.UseVisualStyleBackColor = false;
+                        button.BackColor = Color.FromArgb(32, 32, 32);
+                        button.Margin = new Padding(5);
+                        button.ForeColor = Color.White;
+                        button.Cursor = Cursors.Hand;
+                        button.Height = 40;
+                        button.Width = 371;
+                        button.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        button.Cursor = Cursors.Hand;
+                        button.Click += new EventHandler(this.buttonDrop_Click);
+                        flowLayoutPanel18.Controls.Add(button);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não foram encontradas notas");
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorProvider error = new ErrorProvider();
+            }
         }
         private void button4_Click_1(object sender, EventArgs e)
         {
             panelSearch.BringToFront();
+        }
+        
+        private void buttonDrop_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            string s = btn.Text;
+            int a = Convert.ToInt32(btn.Tag);
+            txtuniversidade.Text = s;
+            txtuniversidade.Tag = a;
+            Transition.run(flowLayoutPanel18, "Height", 0, new TransitionType_EaseInEaseOut(250));
         }
 
         protected override CreateParams CreateParams
@@ -534,7 +593,7 @@ namespace Menus
 
         public const string strInsertNota2 = "INSERT INTO TB_NOTA_STR VALUES (@STR_STR_PATH, @NOTA_INT_ID, @STR_STR_TITLE)";
 
-        public void SelectNota(string emailRecebe, string notaRecebe, string notaTitulo)
+        public void SelectNota(string emailRecebe, string notaRecebe, string notaTitulo, int Materia)
         {
             using (SqlConnection objConexao = new SqlConnection(strConexao2))
             {
@@ -546,7 +605,7 @@ namespace Menus
 
                     string userId = "";
                     string cursoId = "";
-                    string materiaId = "";
+                    int materiaId = Materia;
                     string faculdadeId = "";
                     int notaId = 0;
 
@@ -556,8 +615,6 @@ namespace Menus
                         userId = da.GetValue(0).ToString();
                         faculdadeId = da.GetValue(1).ToString();
                         cursoId = da.GetValue(2).ToString();
-                        materiaId = da.GetValue(3).ToString();
-
                     }
 
                     da.Close();
@@ -603,11 +660,11 @@ namespace Menus
         }
 
 
-        private void GravarNota(string EmailVar, string Nota, string Titulo)
+        private void GravarNota(string EmailVar, string Nota, string Titulo, int Materia)
         {
             try
             {
-                SelectNota(EmailVar, Nota, Titulo);
+                SelectNota(EmailVar, Nota, Titulo, Materia);
 
             }
             catch (Exception ex)
@@ -622,7 +679,7 @@ namespace Menus
             Cadastro user = new Cadastro();
             if (!String.IsNullOrEmpty(txtNota.Text) && !String.IsNullOrEmpty(txtTitle.Text))
             {
-                GravarNota(lbRecebeEmailMenu.Text, txtNota.Text, txtTitle.Text);
+                GravarNota(lbRecebeEmailMenu.Text, txtNota.Text, txtTitle.Text, Convert.ToInt32(txtuniversidade.Tag));
             }
             else
             {
@@ -1150,6 +1207,215 @@ namespace Menus
         private void button40_Click(object sender, EventArgs e)
         {
             panelCurso2.BringToFront();
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(textBox12.Text))
+            {
+                flowLayoutPanel14.Controls.Clear();
+                string searchContent = textBox12.Text;
+                try
+                {
+                    bancoMainEntities1 ht2 = new bancoMainEntities1();
+                    var content = ht2.TB_CURSO.Where(b => b.CUR_STR_NOME.Contains(searchContent)).ToList();
+
+                    if (content.Count != 0)
+                    {
+                        for (int i = 0; i < content.Count; i++)
+                        {
+                            Button button = new Button();
+                            button.Tag = content[i].CUR_INT_ID;
+                            button.Text = content[i].CUR_STR_NOME;
+                            button.FlatStyle = FlatStyle.Flat;
+                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.Cursor = Cursors.Hand;
+                            button.Height = 195;
+                            button.Width = 195;
+                            button.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            button.Cursor = Cursors.Hand;
+                            button.Click += new EventHandler(this.buttonCurSearch_Click);
+                            flowLayoutPanel14.Controls.Add(button);
+                        }
+                    }
+                    else
+                    {
+                        TextBox txt = new TextBox();
+                        txt.Text = "Não foram encontrados resultados para a sua pesquisa";
+                        flowLayoutPanel14.Controls.Add(txt);
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    ErrorProvider error = new ErrorProvider();
+                }
+            }
+            else
+            {
+                try
+                {
+                    flowLayoutPanel14.Controls.Clear();
+                    bancoMainEntities1 ht3 = new bancoMainEntities1();
+                    var content = ht3.TB_CURSO.ToList();
+                    if (content.Count != 0)
+                    {
+                        for (int i = 0; i < content.Count; i++)
+                        {
+                            Button button = new Button();
+                            button.Tag = content[i].CUR_INT_ID;
+                            button.Text = content[i].CUR_STR_NOME;
+                            button.FlatStyle = FlatStyle.Flat;
+                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.Cursor = Cursors.Hand;
+                            button.Height = 195;
+                            button.Width = 195;
+                            button.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            button.Cursor = Cursors.Hand;
+                            button.Click += new EventHandler(this.buttonCurSearch_Click);
+                            flowLayoutPanel14.Controls.Add(button);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foram encontradas notas");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ErrorProvider error = new ErrorProvider();
+                }
+            }
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(textBox15.Text))
+            {
+                flowLayoutPanel16.Controls.Clear();
+                string searchContent = textBox15.Text;
+                try
+                {
+                    bancoMainEntities1 ht2 = new bancoMainEntities1();
+
+                    int facId = Convert.ToInt32(panel29.Tag);
+
+                    var entryPoint = (from str in ht2.TB_NOTA_STR
+                                      join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                      where facId == nota.CUR_INT_ID
+                                      select new
+                                      {
+                                          notaTitle = str.STR_STR_TITLE,
+                                          notaId = str.STR_INT_ID
+                                      }).Where(c => c.notaTitle.Contains(searchContent)).ToList();
+
+
+                    if (entryPoint.Count != 0)
+                    {
+                        for (int i = 0; i < entryPoint.Count; i++)
+                        {
+                            Button button = new Button();
+                            button.Tag = entryPoint[i].notaId;
+                            button.Text = entryPoint[i].notaTitle;
+                            button.Width = flowLayoutPanel16.Width - 5;
+                            button.FlatStyle = FlatStyle.Flat;
+                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.Cursor = Cursors.Hand;
+                            button.Height = 75;
+                            button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            button.Cursor = Cursors.Hand;
+                            button.Click += new EventHandler(this.buttonSearchCurso_Click);
+                            flowLayoutPanel16.Controls.Add(button);
+                        }
+                    }
+                    else
+                    {
+                        TextBox txt = new TextBox();
+                        txt.Text = "Não foram encontrados resultados para a sua pesquisa";
+                        flowLayoutPanel16.Controls.Add(txt);
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    ErrorProvider error = new ErrorProvider();
+                }
+            }
+            else
+            {
+                flowLayoutPanel16.Controls.Clear();
+                try
+                {
+                    bancoMainEntities1 ht2 = new bancoMainEntities1();
+
+                    int facId = Convert.ToInt32(panel29.Tag);
+
+                    var entryPoint = (from str in ht2.TB_NOTA_STR
+                                      join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                      where facId == nota.CUR_INT_ID
+                                      select new
+                                      {
+                                          notaTitle = str.STR_STR_TITLE,
+                                          notaId = str.STR_INT_ID,
+                                      }).ToList();
+
+
+
+
+                    //var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
+                    if (entryPoint.Count != 0)
+                    {
+                        for (int i = 0; i < entryPoint.Count; i++)
+                        {
+                            Button button = new Button();
+                            button.Tag = entryPoint[i].notaId;
+                            button.Text = entryPoint[i].notaTitle;
+                            button.Width = flowLayoutPanel16.Width - 5;
+                            button.FlatStyle = FlatStyle.Flat;
+                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.Cursor = Cursors.Hand;
+                            button.Height = 75;
+                            button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            button.Cursor = Cursors.Hand;
+                            button.Click += new EventHandler(this.buttonSearchCurso_Click);
+                            flowLayoutPanel16.Controls.Add(button);
+                        }
+                    }
+                    else
+                    {
+                        TextBox txt = new TextBox();
+                        txt.Text = "Não foram encontrados resultados para a sua pesquisa";
+                        flowLayoutPanel16.Controls.Add(txt);
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    ErrorProvider error = new ErrorProvider();
+                }
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtuniversidade_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtuniversidade_Click(object sender, EventArgs e)
+        {
+            if (flowLayoutPanel18.Height == 0)
+            {
+                Transition.run(flowLayoutPanel18, "Height", 280, new TransitionType_EaseInEaseOut(250));
+            }
+            else
+            {
+                Transition.run(flowLayoutPanel18, "Height", 0, new TransitionType_EaseInEaseOut(250));
+            }
         }
     }
 }

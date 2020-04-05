@@ -35,7 +35,9 @@ namespace Menus.Model
 
         public const string strUpdateFacul = "UPDATE TB_FACULDADE SET = FAC_STR_NOME = @FAC_STR_NOME WHERE FAC_USER_INT_ID_FK = @FAC_USER_INT_ID_FK";
 
-        public const string strInsertMateria = "INSERT INTO TB_MATERIA VALUES (@MAT_STR_NOME, @USER_INT_ID, @MAT_DATE_HORA)";
+        public const string strInsertMateria = "INSERT INTO TB_MATERIA output INSERTED.MAT_INT_ID VALUES (@MAT_STR_NOME, @USER_INT_ID)";
+
+        public const string strInsertUserMater = "INSERT INTO TB_USER_MAT VALUES (@MAT_INT_ID, @USER_INT_ID, @USER_MAT_TIME_HORA)";
 
         //MUDAR OS VALORES DE INSERÇÃO DEPOIS
         public const string strInsertNota1 = "INSERT INTO TB_NOTA VALUES (1, 1, 1, @USER_INT_ID)";
@@ -201,30 +203,66 @@ namespace Menus.Model
 
         public void SelectMateria(string EmailVar, string NomeMateria, string HoraMateria)
         {
-            using (SqlConnection objConexao = new SqlConnection(strConexao))
+            bancoMainEntities1 ht = new bancoMainEntities1();
+
+            var resultado = (from str in ht.TB_MATERIA
+                             select new
+                             {
+                                 materiaTitle = str.MAT_STR_NOME,
+                                 materiaId = str.MAT_INT_ID
+                             }).Where(a => a.materiaTitle == NomeMateria).ToList();
+
+            if (resultado.Count == 0)
             {
-                using (SqlCommand objCommand = new SqlCommand(strSelectUser, objConexao))
+                using (SqlConnection objConexao = new SqlConnection(strConexao))
                 {
-                    objCommand.Parameters.AddWithValue("@USER_STR_EMAIL_VAR", EmailVar);
-
-                    objConexao.Open();
-
-
-
-                    user.UserId = (Int32)objCommand.ExecuteScalar();
-
-                    using (SqlCommand objCommand2 = new SqlCommand(strInsertMateria, objConexao))
+                    using (SqlCommand objCommand = new SqlCommand(strSelectUser, objConexao))
                     {
-                        objCommand2.Parameters.AddWithValue("@USER_INT_ID", user.UserId);
-                        objCommand2.Parameters.AddWithValue("@MAT_STR_NOME", NomeMateria);
-                        objCommand2.Parameters.AddWithValue("@MAT_DATE_HORA", HoraMateria);
+                        objCommand.Parameters.AddWithValue("@USER_STR_EMAIL_VAR", EmailVar);
 
-                        objCommand2.ExecuteNonQuery();
+                        objConexao.Open();
 
+                        user.UserId = (Int32)objCommand.ExecuteScalar();
+
+                        using (SqlCommand objCommand2 = new SqlCommand(strInsertMateria, objConexao))
+                        {
+                            objCommand2.Parameters.AddWithValue("@USER_INT_ID", user.UserId);
+                            objCommand2.Parameters.AddWithValue("@MAT_STR_NOME", NomeMateria);
+
+
+                            user.Modified = (int)objCommand2.ExecuteScalar();
+
+
+                            //var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == EmailVar).SingleOrDefault();
+                            //var email = id.USER_INT_ID;
+
+                            //ht.TB_USER_MAT.Add(new TB_USER_MAT() { MAT_INT_ID = modified, USER_INT_ID = email, USER_MAT_TIME_HORA = });
+                            //ht.SaveChanges();
+
+
+                            using (SqlCommand objCommand3 = new SqlCommand(strInsertUserMater, objConexao))
+                            {
+                                objCommand3.Parameters.AddWithValue("@MAT_INT_ID", user.Modified);
+                                objCommand3.Parameters.AddWithValue("@USER_INT_ID", user.UserId);
+                                objCommand3.Parameters.AddWithValue("@USER_MAT_TIME_HORA", HoraMateria);
+
+                                objCommand3.ExecuteNonQuery();
+                            }
+                        }
+
+                        objConexao.Close();
                     }
-
-                    objConexao.Close();
                 }
+            }
+            else
+            {
+                
+                
+                var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == EmailVar).SingleOrDefault();
+                var email = id.USER_INT_ID;
+                TimeSpan time = TimeSpan.Parse(HoraMateria);
+                ht.TB_USER_MAT.Add(new TB_USER_MAT() { MAT_INT_ID = resultado[0].materiaId, USER_INT_ID = email, USER_MAT_TIME_HORA = time});
+                ht.SaveChanges();
             }
         }
 

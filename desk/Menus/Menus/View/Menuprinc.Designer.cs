@@ -95,6 +95,9 @@
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panelNovaNota = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel18 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtuniversidade = new System.Windows.Forms.TextBox();
             this.button24 = new System.Windows.Forms.Button();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtNota = new System.Windows.Forms.TextBox();
@@ -112,6 +115,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button26 = new System.Windows.Forms.Button();
+            this.roundPictureBox1 = new Menus.RoundPictureBox();
             this.lbMateriaShow = new MaterialSkin.Controls.MaterialLabel();
             this.lbCursoShow = new MaterialSkin.Controls.MaterialLabel();
             this.lbFaculShow = new MaterialSkin.Controls.MaterialLabel();
@@ -179,7 +183,6 @@
             this.panel32 = new System.Windows.Forms.Panel();
             this.button40 = new System.Windows.Forms.Button();
             this.flowLayoutPanel17 = new System.Windows.Forms.FlowLayoutPanel();
-            this.roundPictureBox1 = new Menus.RoundPictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -204,7 +207,9 @@
             this.flowLayoutPanel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panelNovaNota.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelMinhaConta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.panelHome.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -231,7 +236,6 @@
             this.panel30.SuspendLayout();
             this.panel31.SuspendLayout();
             this.panel32.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbRecebeEmailMenu
@@ -1292,6 +1296,9 @@
             // panelNovaNota
             // 
             this.panelNovaNota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.panelNovaNota.Controls.Add(this.flowLayoutPanel18);
+            this.panelNovaNota.Controls.Add(this.pictureBox2);
+            this.panelNovaNota.Controls.Add(this.txtuniversidade);
             this.panelNovaNota.Controls.Add(this.button24);
             this.panelNovaNota.Controls.Add(this.txtTitle);
             this.panelNovaNota.Controls.Add(this.txtNota);
@@ -1301,6 +1308,46 @@
             this.panelNovaNota.Name = "panelNovaNota";
             this.panelNovaNota.Size = new System.Drawing.Size(1031, 687);
             this.panelNovaNota.TabIndex = 25;
+            // 
+            // flowLayoutPanel18
+            // 
+            this.flowLayoutPanel18.AutoScroll = true;
+            this.flowLayoutPanel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.flowLayoutPanel18.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel18.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.flowLayoutPanel18.Location = new System.Drawing.Point(72, 92);
+            this.flowLayoutPanel18.Name = "flowLayoutPanel18";
+            this.flowLayoutPanel18.Size = new System.Drawing.Size(399, 0);
+            this.flowLayoutPanel18.TabIndex = 30;
+            this.flowLayoutPanel18.WrapContents = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Menus.Properties.Resources.download__1_1;
+            this.pictureBox2.Location = new System.Drawing.Point(447, 62);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // txtuniversidade
+            // 
+            this.txtuniversidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.txtuniversidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtuniversidade.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtuniversidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtuniversidade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtuniversidade.Location = new System.Drawing.Point(72, 54);
+            this.txtuniversidade.Name = "txtuniversidade";
+            this.txtuniversidade.ReadOnly = true;
+            this.txtuniversidade.Size = new System.Drawing.Size(399, 29);
+            this.txtuniversidade.TabIndex = 33;
+            this.txtuniversidade.Text = "Selecione a Matéria";
+            this.txtuniversidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtuniversidade.Click += new System.EventHandler(this.txtuniversidade_Click);
+            this.txtuniversidade.TextChanged += new System.EventHandler(this.txtuniversidade_TextChanged);
             // 
             // button24
             // 
@@ -1552,18 +1599,28 @@
             this.button26.UseVisualStyleBackColor = false;
             this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
+            // roundPictureBox1
+            // 
+            this.roundPictureBox1.Location = new System.Drawing.Point(477, 82);
+            this.roundPictureBox1.Name = "roundPictureBox1";
+            this.roundPictureBox1.Size = new System.Drawing.Size(148, 148);
+            this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.roundPictureBox1.TabIndex = 48;
+            this.roundPictureBox1.TabStop = false;
+            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
+            // 
             // lbMateriaShow
             // 
             this.lbMateriaShow.AutoSize = true;
             this.lbMateriaShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.lbMateriaShow.Depth = 0;
-            this.lbMateriaShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lbMateriaShow.Font = new System.Drawing.Font("Roboto", 11F);
             this.lbMateriaShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbMateriaShow.Location = new System.Drawing.Point(562, 476);
             this.lbMateriaShow.MinimumSize = new System.Drawing.Size(410, 0);
             this.lbMateriaShow.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbMateriaShow.Name = "lbMateriaShow";
-            this.lbMateriaShow.Size = new System.Drawing.Size(410, 18);
+            this.lbMateriaShow.Size = new System.Drawing.Size(410, 19);
             this.lbMateriaShow.TabIndex = 42;
             // 
             // lbCursoShow
@@ -1571,13 +1628,13 @@
             this.lbCursoShow.AutoSize = true;
             this.lbCursoShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.lbCursoShow.Depth = 0;
-            this.lbCursoShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lbCursoShow.Font = new System.Drawing.Font("Roboto", 11F);
             this.lbCursoShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbCursoShow.Location = new System.Drawing.Point(562, 382);
             this.lbCursoShow.MinimumSize = new System.Drawing.Size(410, 0);
             this.lbCursoShow.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbCursoShow.Name = "lbCursoShow";
-            this.lbCursoShow.Size = new System.Drawing.Size(410, 18);
+            this.lbCursoShow.Size = new System.Drawing.Size(410, 19);
             this.lbCursoShow.TabIndex = 38;
             this.lbCursoShow.Click += new System.EventHandler(this.lbCursoShow_Click);
             // 
@@ -1586,13 +1643,13 @@
             this.lbFaculShow.AutoSize = true;
             this.lbFaculShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.lbFaculShow.Depth = 0;
-            this.lbFaculShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lbFaculShow.Font = new System.Drawing.Font("Roboto", 11F);
             this.lbFaculShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbFaculShow.Location = new System.Drawing.Point(558, 306);
             this.lbFaculShow.MinimumSize = new System.Drawing.Size(410, 0);
             this.lbFaculShow.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbFaculShow.Name = "lbFaculShow";
-            this.lbFaculShow.Size = new System.Drawing.Size(410, 18);
+            this.lbFaculShow.Size = new System.Drawing.Size(410, 19);
             this.lbFaculShow.TabIndex = 40;
             this.lbFaculShow.Click += new System.EventHandler(this.lbFaculShow_Click);
             // 
@@ -1660,7 +1717,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(746, 183);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(746, 104);
             this.tableLayoutPanel2.TabIndex = 18;
             // 
             // label10
@@ -1686,8 +1743,9 @@
             this.textBox5.Location = new System.Drawing.Point(3, 95);
             this.textBox5.MaximumSize = new System.Drawing.Size(746, 0);
             this.textBox5.MaxLength = 999999999;
+            this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(740, 55);
+            this.textBox5.Size = new System.Drawing.Size(740, 0);
             this.textBox5.TabIndex = 21;
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox5.Visible = false;
@@ -1714,11 +1772,12 @@
             this.textBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(3, 156);
+            this.textBox6.Location = new System.Drawing.Point(3, 101);
             this.textBox6.MaximumSize = new System.Drawing.Size(746, 0);
             this.textBox6.MaxLength = 999999999;
+            this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(740, 24);
+            this.textBox6.Size = new System.Drawing.Size(740, 0);
             this.textBox6.TabIndex = 20;
             this.textBox6.Visible = false;
             // 
@@ -2175,6 +2234,7 @@
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(1031, 41);
             this.textBox12.TabIndex = 19;
+            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // panel10
             // 
@@ -2411,6 +2471,7 @@
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(1031, 41);
             this.textBox15.TabIndex = 19;
+            this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
             // 
             // panel32
             // 
@@ -2454,33 +2515,23 @@
             this.flowLayoutPanel17.Size = new System.Drawing.Size(0, 0);
             this.flowLayoutPanel17.TabIndex = 20;
             // 
-            // roundPictureBox1
-            // 
-            this.roundPictureBox1.Location = new System.Drawing.Point(477, 82);
-            this.roundPictureBox1.Name = "roundPictureBox1";
-            this.roundPictureBox1.Size = new System.Drawing.Size(148, 148);
-            this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.roundPictureBox1.TabIndex = 48;
-            this.roundPictureBox1.TabStop = false;
-            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
-            // 
             // Menuprinc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1286, 729);
-            this.Controls.Add(this.panelHome);
-            this.Controls.Add(this.panelCurso2__Search);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panelCurso2);
-            this.Controls.Add(this.panelSearch);
-            this.Controls.Add(this.panelFacul);
-            this.Controls.Add(this.panelMinhaConta);
-            this.Controls.Add(this.panelFacul__Search);
             this.Controls.Add(this.panelNovaNota);
-            this.Controls.Add(this.panelCurso);
+            this.Controls.Add(this.panelHome);
             this.Controls.Add(this.panelTexto);
+            this.Controls.Add(this.panelSearch);
+            this.Controls.Add(this.panelCurso2);
+            this.Controls.Add(this.panelCurso2__Search);
+            this.Controls.Add(this.panelFacul__Search);
+            this.Controls.Add(this.panelFacul);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panelMinhaConta);
+            this.Controls.Add(this.panelCurso);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panelCur);
@@ -2528,8 +2579,10 @@
             this.panel9.PerformLayout();
             this.panelNovaNota.ResumeLayout(false);
             this.panelNovaNota.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelMinhaConta.ResumeLayout(false);
             this.panelMinhaConta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panelHome.ResumeLayout(false);
@@ -2570,7 +2623,6 @@
             this.panel31.ResumeLayout(false);
             this.panel31.PerformLayout();
             this.panel32.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2729,5 +2781,8 @@
         private System.Windows.Forms.Panel panel32;
         private System.Windows.Forms.Button button40;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel17;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel18;
+        private System.Windows.Forms.TextBox txtuniversidade;
     }
 }

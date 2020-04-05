@@ -4,36 +4,35 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3aac1bfd17ea4d03b5ce150cb349f9c5" Name="Diagram1">
-        <EntityTypeShape EntityType="bancoMainModel.TB_CURSO" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="bancoMainModel.TB_FACULDADE" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="bancoMainModel.TB_MATERIA" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="bancoMainModel.TB_NOTA" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="bancoMainModel.TB_NOTA_DES" Width="1.5" PointX="7.5" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="bancoMainModel.TB_NOTA_IMG" Width="1.5" PointX="7.5" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="bancoMainModel.TB_NOTA_STR" Width="1.5" PointX="7.5" PointY="15" IsExpanded="true" />
-        <EntityTypeShape EntityType="bancoMainModel.TB_PICTURES" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="bancoMainModel.TB_USER" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="bancoMainModel.TB_USER_FAC" Width="1.5" PointX="5.25" PointY="12.375" IsExpanded="true" />
+      <Diagram DiagramId="411fd1216e264039be773948c2fdf128" Name="Diagram1">
+        <EntityTypeShape EntityType="bancoMainModel.TB_CURSO" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="bancoMainModel.TB_FACULDADE" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bancoMainModel.TB_MATERIA" Width="1.5" PointX="3.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bancoMainModel.TB_NOTA" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bancoMainModel.TB_NOTA_DES" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bancoMainModel.TB_NOTA_IMG" Width="1.5" PointX="7.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bancoMainModel.TB_NOTA_STR" Width="1.5" PointX="7.5" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bancoMainModel.TB_PICTURES" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bancoMainModel.TB_USER" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bancoMainModel.TB_USER_CUR" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bancoMainModel.TB_USER_FAC" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bancoMainModel.TB_USER_MAT" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="bancoMainModel.CUR_USER_INT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.NOTA_CUR_INT_ID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="bancoMainModel.USER_CUR_CUR_INT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.FAC_USER_INT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.NOTA_FAC_INT_ID_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="bancoMainModel.USER_FAC_FAC_INT_ID_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="bancoMainModel.MAT_USER_INT_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="bancoMainModel.USER_FAC_FAC_INT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.NOTA_MAT_INT_ID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="bancoMainModel.USER_MAT_MAT_INT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.DES_USER_INT_ID" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.IMG_USER_INT_ID" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.NOTA_USER_INT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.STR_USER_INT_ID" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.PIC_USER_INT_ID_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="bancoMainModel.USER_FAC_USER_INT_ID_FK1" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="bancoMainModel.TB_USER_CUR" Width="1.5" PointX="5.25" PointY="4.25" />
-        <EntityTypeShape EntityType="bancoMainModel.TB_USER_MAT" Width="1.5" PointX="5.25" PointY="15.25" />
-        <AssociationConnector Association="bancoMainModel.USER_CUR_CUR_INT_ID_FK" />
-        <AssociationConnector Association="bancoMainModel.USER_MAT_MAT_INT_ID_FK" />
-        <AssociationConnector Association="bancoMainModel.USER_CUR_USER_INT_ID_FK" />
-        <AssociationConnector Association="bancoMainModel.USER_MAT_USER_INT_ID_FK" />
+        <AssociationConnector Association="bancoMainModel.USER_CUR_USER_INT_ID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="bancoMainModel.USER_MAT_USER_INT_ID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="bancoMainModel.USER_FAC_USER_INT_ID_FK" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

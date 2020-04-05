@@ -24,9 +24,7 @@ namespace Menus
         public int MAT_INT_ID { get; set; }
         public string MAT_STR_NOME { get; set; }
         public int USER_INT_ID { get; set; }
-        public System.TimeSpan MAT_DATE_HORA { get; set; }
     
-        public virtual TB_USER TB_USER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_NOTA> TB_NOTA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
