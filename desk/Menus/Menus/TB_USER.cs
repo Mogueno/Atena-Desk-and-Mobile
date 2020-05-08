@@ -21,6 +21,8 @@ namespace Menus
             this.TB_FACULDADE = new HashSet<TB_FACULDADE>();
             this.TB_NOTA = new HashSet<TB_NOTA>();
             this.TB_PICTURES = new HashSet<TB_PICTURES>();
+            this.TB_SHARE = new HashSet<TB_SHARE>();
+            this.TB_SHARE1 = new HashSet<TB_SHARE>();
             this.TB_USER_CUR = new HashSet<TB_USER_CUR>();
             this.TB_USER_MAT = new HashSet<TB_USER_MAT>();
             this.TB_USER_FAC = new HashSet<TB_USER_FAC>();
@@ -43,6 +45,10 @@ namespace Menus
         public virtual ICollection<TB_NOTA> TB_NOTA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_PICTURES> TB_PICTURES { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_SHARE> TB_SHARE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_SHARE> TB_SHARE1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_USER_CUR> TB_USER_CUR { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

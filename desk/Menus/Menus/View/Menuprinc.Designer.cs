@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menuprinc));
             this.lbRecebeEmailMenu = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbNomeMenu = new System.Windows.Forms.Label();
@@ -41,6 +42,8 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
             this.button34 = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
@@ -206,6 +209,52 @@
             this.panel40 = new System.Windows.Forms.Panel();
             this.button44 = new System.Windows.Forms.Button();
             this.flowLayoutPanel22 = new System.Windows.Forms.FlowLayoutPanel();
+            this.ModalShare = new System.Windows.Forms.Panel();
+            this.lbTitle = new System.Windows.Forms.Label();
+            this.flowLayoutPanel23 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel41 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel24 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbName = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbFaculdade = new System.Windows.Forms.Label();
+            this.panel42 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel25 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel43 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.panel44 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel26 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.panel45 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel27 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.modalNotify = new System.Windows.Forms.Panel();
+            this.button45 = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel28 = new System.Windows.Forms.FlowLayoutPanel();
+            this.Wrapper = new System.Windows.Forms.Panel();
+            this.confirmNote = new System.Windows.Forms.Panel();
+            this.panel46 = new System.Windows.Forms.Panel();
+            this.label34 = new System.Windows.Forms.Label();
+            this.panel48 = new System.Windows.Forms.Panel();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.panel47 = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
+            this.panel49 = new System.Windows.Forms.Panel();
+            this.button46 = new System.Windows.Forms.Button();
+            this.btnconcluir = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
             this.roundPictureBox1 = new Menus.RoundPictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -270,6 +319,28 @@
             this.panel38.SuspendLayout();
             this.panel39.SuspendLayout();
             this.panel40.SuspendLayout();
+            this.ModalShare.SuspendLayout();
+            this.flowLayoutPanel23.SuspendLayout();
+            this.panel41.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.flowLayoutPanel24.SuspendLayout();
+            this.panel42.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.flowLayoutPanel25.SuspendLayout();
+            this.panel44.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.flowLayoutPanel26.SuspendLayout();
+            this.panel45.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.flowLayoutPanel27.SuspendLayout();
+            this.modalNotify.SuspendLayout();
+            this.Wrapper.SuspendLayout();
+            this.confirmNote.SuspendLayout();
+            this.panel46.SuspendLayout();
+            this.panel48.SuspendLayout();
+            this.panel47.SuspendLayout();
+            this.panel49.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -499,6 +570,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.panel2.Controls.Add(this.label28);
+            this.panel2.Controls.Add(this.button10);
             this.panel2.Controls.Add(this.button34);
             this.panel2.Controls.Add(this.btnSair);
             this.panel2.Controls.Add(this.button29);
@@ -509,10 +582,42 @@
             this.panel2.Size = new System.Drawing.Size(1286, 42);
             this.panel2.TabIndex = 19;
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.White;
+            this.label28.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(66, 5);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(13, 13);
+            this.label28.TabIndex = 13;
+            this.label28.Text = "1";
+            this.label28.Visible = false;
+            this.label28.Click += new System.EventHandler(this.label28_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Transparent;
+            this.button10.BackgroundImage = global::Menus.Properties.Resources.notification__4___1_;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button10.Location = new System.Drawing.Point(43, 0);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(43, 42);
+            this.button10.TabIndex = 12;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // button34
             // 
             this.button34.BackColor = System.Drawing.Color.Transparent;
-            this.button34.BackgroundImage = global::Menus.Properties.Resources.sydney_opera_house__1_;
+            this.button34.BackgroundImage = global::Menus.Properties.Resources.sydney_opera_house__1_1;
             this.button34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button34.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button34.Dock = System.Windows.Forms.DockStyle.Left;
@@ -586,9 +691,9 @@
             this.panelSearch.Controls.Add(this.button12);
             this.panelSearch.Controls.Add(this.flowLayoutPanel3);
             this.panelSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSearch.Location = new System.Drawing.Point(255, 42);
+            this.panelSearch.Location = new System.Drawing.Point(0, 0);
             this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Size = new System.Drawing.Size(1031, 687);
+            this.panelSearch.Size = new System.Drawing.Size(1286, 729);
             this.panelSearch.TabIndex = 21;
             // 
             // button12
@@ -624,7 +729,7 @@
             this.flowLayoutPanel3.Controls.Add(this.button9);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(123, 219);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(840, 211);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(1095, 253);
             this.flowLayoutPanel3.TabIndex = 16;
             // 
             // button6
@@ -731,9 +836,9 @@
             this.panelFacul.Controls.Add(this.panel4);
             this.panelFacul.Controls.Add(this.flowLayoutPanel1);
             this.panelFacul.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFacul.Location = new System.Drawing.Point(255, 42);
+            this.panelFacul.Location = new System.Drawing.Point(0, 0);
             this.panelFacul.Name = "panelFacul";
-            this.panelFacul.Size = new System.Drawing.Size(1031, 687);
+            this.panelFacul.Size = new System.Drawing.Size(1286, 729);
             this.panelFacul.TabIndex = 22;
             // 
             // flowLayoutPanel4
@@ -743,7 +848,7 @@
             this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(1031, 604);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(1286, 646);
             this.flowLayoutPanel4.TabIndex = 25;
             this.flowLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel4_Paint);
             // 
@@ -753,7 +858,7 @@
             this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel17.Location = new System.Drawing.Point(0, 42);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(1031, 41);
+            this.panel17.Size = new System.Drawing.Size(1286, 41);
             this.panel17.TabIndex = 26;
             // 
             // textBox9
@@ -765,7 +870,7 @@
             this.textBox9.MinimumSize = new System.Drawing.Size(4, 4);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(1031, 41);
+            this.textBox9.Size = new System.Drawing.Size(1286, 41);
             this.textBox9.TabIndex = 19;
             this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
@@ -776,7 +881,7 @@
             this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel18.Location = new System.Drawing.Point(0, 0);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(1031, 42);
+            this.panel18.Size = new System.Drawing.Size(1286, 42);
             this.panel18.TabIndex = 27;
             // 
             // button31
@@ -807,7 +912,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1031, 687);
+            this.panel4.Size = new System.Drawing.Size(1286, 729);
             this.panel4.TabIndex = 24;
             // 
             // panel16
@@ -817,7 +922,7 @@
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(0, 0);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(1031, 42);
+            this.panel16.Size = new System.Drawing.Size(1286, 42);
             this.panel16.TabIndex = 22;
             // 
             // button11
@@ -831,7 +936,7 @@
             this.button11.FlatAppearance.BorderSize = 0;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button11.Location = new System.Drawing.Point(988, 0);
+            this.button11.Location = new System.Drawing.Point(1243, 0);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(43, 42);
             this.button11.TabIndex = 9;
@@ -852,9 +957,9 @@
             this.panel5.Controls.Add(this.button13);
             this.panel5.Controls.Add(this.flowLayoutPanel5);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(255, 42);
+            this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1031, 687);
+            this.panel5.Size = new System.Drawing.Size(1286, 729);
             this.panel5.TabIndex = 23;
             // 
             // button13
@@ -891,7 +996,7 @@
             this.flowLayoutPanel5.Controls.Add(this.button18);
             this.flowLayoutPanel5.Location = new System.Drawing.Point(193, 132);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(644, 423);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(899, 465);
             this.flowLayoutPanel5.TabIndex = 16;
             // 
             // button14
@@ -978,7 +1083,7 @@
             this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button17.Image = global::Menus.Properties.Resources.book1;
-            this.button17.Location = new System.Drawing.Point(5, 215);
+            this.button17.Location = new System.Drawing.Point(635, 5);
             this.button17.Margin = new System.Windows.Forms.Padding(5);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(200, 200);
@@ -1001,7 +1106,7 @@
             this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button18.Image = global::Menus.Properties.Resources.cogwheel1;
-            this.button18.Location = new System.Drawing.Point(215, 215);
+            this.button18.Location = new System.Drawing.Point(5, 215);
             this.button18.Margin = new System.Windows.Forms.Padding(5);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(200, 200);
@@ -1019,9 +1124,9 @@
             this.panelTexto.Controls.Add(this.panel13);
             this.panelTexto.Controls.Add(this.flowLayoutPanel6);
             this.panelTexto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTexto.Location = new System.Drawing.Point(255, 42);
+            this.panelTexto.Location = new System.Drawing.Point(0, 0);
             this.panelTexto.Name = "panelTexto";
-            this.panelTexto.Size = new System.Drawing.Size(1031, 687);
+            this.panelTexto.Size = new System.Drawing.Size(1286, 729);
             this.panelTexto.TabIndex = 23;
             // 
             // panel14
@@ -1031,7 +1136,7 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(245, 83);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(786, 604);
+            this.panel14.Size = new System.Drawing.Size(1041, 646);
             this.panel14.TabIndex = 23;
             // 
             // tableLayoutPanel3
@@ -1054,7 +1159,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(786, 183);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1041, 183);
             this.tableLayoutPanel3.TabIndex = 21;
             // 
             // label11
@@ -1119,7 +1224,7 @@
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel15.Location = new System.Drawing.Point(0, 0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(786, 42);
+            this.panel15.Size = new System.Drawing.Size(1041, 42);
             this.panel15.TabIndex = 22;
             // 
             // button30
@@ -1133,7 +1238,7 @@
             this.button30.FlatAppearance.BorderSize = 0;
             this.button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button30.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button30.Location = new System.Drawing.Point(743, 0);
+            this.button30.Location = new System.Drawing.Point(998, 0);
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(43, 42);
             this.button30.TabIndex = 9;
@@ -1144,7 +1249,7 @@
             this.flowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel7.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(245, 604);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(245, 646);
             this.flowLayoutPanel7.TabIndex = 21;
             // 
             // panel8
@@ -1153,7 +1258,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 42);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1031, 41);
+            this.panel8.Size = new System.Drawing.Size(1286, 41);
             this.panel8.TabIndex = 22;
             // 
             // textBox1
@@ -1165,7 +1270,7 @@
             this.textBox1.MinimumSize = new System.Drawing.Size(4, 4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1031, 41);
+            this.textBox1.Size = new System.Drawing.Size(1286, 41);
             this.textBox1.TabIndex = 19;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -1176,7 +1281,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(1031, 42);
+            this.panel13.Size = new System.Drawing.Size(1286, 42);
             this.panel13.TabIndex = 21;
             // 
             // button19
@@ -1216,9 +1321,9 @@
             this.panelCur.Controls.Add(this.button21);
             this.panelCur.Controls.Add(this.flowLayoutPanel8);
             this.panelCur.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCur.Location = new System.Drawing.Point(255, 42);
+            this.panelCur.Location = new System.Drawing.Point(0, 0);
             this.panelCur.Name = "panelCur";
-            this.panelCur.Size = new System.Drawing.Size(1031, 687);
+            this.panelCur.Size = new System.Drawing.Size(1286, 729);
             this.panelCur.TabIndex = 24;
             // 
             // button21
@@ -1298,10 +1403,10 @@
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(255, 42);
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1031, 687);
+            this.webBrowser1.Size = new System.Drawing.Size(1286, 729);
             this.webBrowser1.TabIndex = 21;
             this.webBrowser1.Url = new System.Uri("https://scholar.google.com.br/", System.UriKind.Absolute);
             // 
@@ -1316,9 +1421,9 @@
             this.panelNovaNota.Controls.Add(this.txtNota);
             this.panelNovaNota.Controls.Add(this.button23);
             this.panelNovaNota.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelNovaNota.Location = new System.Drawing.Point(255, 42);
+            this.panelNovaNota.Location = new System.Drawing.Point(0, 0);
             this.panelNovaNota.Name = "panelNovaNota";
-            this.panelNovaNota.Size = new System.Drawing.Size(1031, 687);
+            this.panelNovaNota.Size = new System.Drawing.Size(1286, 729);
             this.panelNovaNota.TabIndex = 25;
             // 
             // flowLayoutPanel18
@@ -1449,9 +1554,9 @@
             this.panelMinhaConta.Controls.Add(this.lbDados);
             this.panelMinhaConta.Controls.Add(this.button25);
             this.panelMinhaConta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMinhaConta.Location = new System.Drawing.Point(255, 42);
+            this.panelMinhaConta.Location = new System.Drawing.Point(0, 0);
             this.panelMinhaConta.Name = "panelMinhaConta";
-            this.panelMinhaConta.Size = new System.Drawing.Size(1031, 687);
+            this.panelMinhaConta.Size = new System.Drawing.Size(1286, 729);
             this.panelMinhaConta.TabIndex = 26;
             // 
             // txtNome
@@ -1697,6 +1802,7 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(245, 687);
             this.flowLayoutPanel2.TabIndex = 15;
+            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -1852,6 +1958,7 @@
             this.button27.Size = new System.Drawing.Size(43, 42);
             this.button27.TabIndex = 8;
             this.button27.UseVisualStyleBackColor = false;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
             // button28
             // 
@@ -1879,9 +1986,9 @@
             this.panelFacul__Search.Controls.Add(this.panel23);
             this.panelFacul__Search.Controls.Add(this.flowLayoutPanel11);
             this.panelFacul__Search.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFacul__Search.Location = new System.Drawing.Point(255, 42);
+            this.panelFacul__Search.Location = new System.Drawing.Point(0, 0);
             this.panelFacul__Search.Name = "panelFacul__Search";
-            this.panelFacul__Search.Size = new System.Drawing.Size(1031, 687);
+            this.panelFacul__Search.Size = new System.Drawing.Size(1286, 729);
             this.panelFacul__Search.TabIndex = 27;
             // 
             // panel20
@@ -1891,7 +1998,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(245, 83);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(786, 604);
+            this.panel20.Size = new System.Drawing.Size(1041, 646);
             this.panel20.TabIndex = 23;
             // 
             // tableLayoutPanel4
@@ -1914,7 +2021,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(786, 183);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1041, 183);
             this.tableLayoutPanel4.TabIndex = 21;
             // 
             // label13
@@ -1979,7 +2086,7 @@
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel21.Location = new System.Drawing.Point(0, 0);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(786, 42);
+            this.panel21.Size = new System.Drawing.Size(1041, 42);
             this.panel21.TabIndex = 22;
             // 
             // button32
@@ -1993,7 +2100,7 @@
             this.button32.FlatAppearance.BorderSize = 0;
             this.button32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button32.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button32.Location = new System.Drawing.Point(743, 0);
+            this.button32.Location = new System.Drawing.Point(998, 0);
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(43, 42);
             this.button32.TabIndex = 9;
@@ -2005,7 +2112,7 @@
             this.flowLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel10.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
-            this.flowLayoutPanel10.Size = new System.Drawing.Size(245, 604);
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(245, 646);
             this.flowLayoutPanel10.TabIndex = 21;
             // 
             // panel22
@@ -2014,7 +2121,7 @@
             this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel22.Location = new System.Drawing.Point(0, 42);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(1031, 41);
+            this.panel22.Size = new System.Drawing.Size(1286, 41);
             this.panel22.TabIndex = 22;
             // 
             // textBox10
@@ -2026,7 +2133,7 @@
             this.textBox10.MinimumSize = new System.Drawing.Size(4, 4);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(1031, 41);
+            this.textBox10.Size = new System.Drawing.Size(1286, 41);
             this.textBox10.TabIndex = 19;
             this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
@@ -2037,7 +2144,7 @@
             this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel23.Location = new System.Drawing.Point(0, 0);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(1031, 42);
+            this.panel23.Size = new System.Drawing.Size(1286, 42);
             this.panel23.TabIndex = 21;
             // 
             // button33
@@ -2080,9 +2187,9 @@
             this.panelCurso.Controls.Add(this.panel26);
             this.panelCurso.Controls.Add(this.flowLayoutPanel13);
             this.panelCurso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCurso.Location = new System.Drawing.Point(255, 42);
+            this.panelCurso.Location = new System.Drawing.Point(0, 0);
             this.panelCurso.Name = "panelCurso";
-            this.panelCurso.Size = new System.Drawing.Size(1031, 687);
+            this.panelCurso.Size = new System.Drawing.Size(1286, 729);
             this.panelCurso.TabIndex = 28;
             // 
             // flowLayoutPanel12
@@ -2092,7 +2199,7 @@
             this.flowLayoutPanel12.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
             this.flowLayoutPanel12.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel12.Size = new System.Drawing.Size(1031, 604);
+            this.flowLayoutPanel12.Size = new System.Drawing.Size(1286, 646);
             this.flowLayoutPanel12.TabIndex = 25;
             // 
             // panel24
@@ -2101,7 +2208,7 @@
             this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel24.Location = new System.Drawing.Point(0, 42);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(1031, 41);
+            this.panel24.Size = new System.Drawing.Size(1286, 41);
             this.panel24.TabIndex = 26;
             // 
             // textBox11
@@ -2113,7 +2220,7 @@
             this.textBox11.MinimumSize = new System.Drawing.Size(4, 4);
             this.textBox11.Multiline = true;
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(1031, 41);
+            this.textBox11.Size = new System.Drawing.Size(1286, 41);
             this.textBox11.TabIndex = 19;
             // 
             // panel25
@@ -2123,7 +2230,7 @@
             this.panel25.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel25.Location = new System.Drawing.Point(0, 0);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(1031, 42);
+            this.panel25.Size = new System.Drawing.Size(1286, 42);
             this.panel25.TabIndex = 27;
             // 
             // button35
@@ -2153,7 +2260,7 @@
             this.panel26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel26.Location = new System.Drawing.Point(0, 0);
             this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(1031, 687);
+            this.panel26.Size = new System.Drawing.Size(1286, 729);
             this.panel26.TabIndex = 24;
             // 
             // panel27
@@ -2163,7 +2270,7 @@
             this.panel27.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel27.Location = new System.Drawing.Point(0, 0);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(1031, 42);
+            this.panel27.Size = new System.Drawing.Size(1286, 42);
             this.panel27.TabIndex = 22;
             // 
             // button36
@@ -2177,7 +2284,7 @@
             this.button36.FlatAppearance.BorderSize = 0;
             this.button36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button36.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button36.Location = new System.Drawing.Point(988, 0);
+            this.button36.Location = new System.Drawing.Point(1243, 0);
             this.button36.Name = "button36";
             this.button36.Size = new System.Drawing.Size(43, 42);
             this.button36.TabIndex = 9;
@@ -2201,9 +2308,9 @@
             this.panelCurso2.Controls.Add(this.panel19);
             this.panelCurso2.Controls.Add(this.flowLayoutPanel15);
             this.panelCurso2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCurso2.Location = new System.Drawing.Point(255, 42);
+            this.panelCurso2.Location = new System.Drawing.Point(0, 0);
             this.panelCurso2.Name = "panelCurso2";
-            this.panelCurso2.Size = new System.Drawing.Size(1031, 687);
+            this.panelCurso2.Size = new System.Drawing.Size(1286, 729);
             this.panelCurso2.TabIndex = 29;
             // 
             // flowLayoutPanel14
@@ -2213,7 +2320,7 @@
             this.flowLayoutPanel14.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel14.Name = "flowLayoutPanel14";
             this.flowLayoutPanel14.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel14.Size = new System.Drawing.Size(1031, 604);
+            this.flowLayoutPanel14.Size = new System.Drawing.Size(1286, 646);
             this.flowLayoutPanel14.TabIndex = 25;
             // 
             // panel7
@@ -2222,7 +2329,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 42);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1031, 41);
+            this.panel7.Size = new System.Drawing.Size(1286, 41);
             this.panel7.TabIndex = 26;
             // 
             // textBox12
@@ -2234,7 +2341,7 @@
             this.textBox12.MinimumSize = new System.Drawing.Size(4, 4);
             this.textBox12.Multiline = true;
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(1031, 41);
+            this.textBox12.Size = new System.Drawing.Size(1286, 41);
             this.textBox12.TabIndex = 19;
             this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
@@ -2245,7 +2352,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1031, 42);
+            this.panel10.Size = new System.Drawing.Size(1286, 42);
             this.panel10.TabIndex = 27;
             // 
             // button37
@@ -2276,7 +2383,7 @@
             this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel19.Location = new System.Drawing.Point(0, 0);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(1031, 687);
+            this.panel19.Size = new System.Drawing.Size(1286, 729);
             this.panel19.TabIndex = 24;
             // 
             // panel28
@@ -2286,7 +2393,7 @@
             this.panel28.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel28.Location = new System.Drawing.Point(0, 0);
             this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(1031, 42);
+            this.panel28.Size = new System.Drawing.Size(1286, 42);
             this.panel28.TabIndex = 22;
             // 
             // button38
@@ -2300,7 +2407,7 @@
             this.button38.FlatAppearance.BorderSize = 0;
             this.button38.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button38.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button38.Location = new System.Drawing.Point(988, 0);
+            this.button38.Location = new System.Drawing.Point(1243, 0);
             this.button38.Name = "button38";
             this.button38.Size = new System.Drawing.Size(43, 42);
             this.button38.TabIndex = 9;
@@ -2324,9 +2431,9 @@
             this.panelCurso2__Search.Controls.Add(this.panel32);
             this.panelCurso2__Search.Controls.Add(this.flowLayoutPanel17);
             this.panelCurso2__Search.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCurso2__Search.Location = new System.Drawing.Point(255, 42);
+            this.panelCurso2__Search.Location = new System.Drawing.Point(0, 0);
             this.panelCurso2__Search.Name = "panelCurso2__Search";
-            this.panelCurso2__Search.Size = new System.Drawing.Size(1031, 687);
+            this.panelCurso2__Search.Size = new System.Drawing.Size(1286, 729);
             this.panelCurso2__Search.TabIndex = 30;
             // 
             // panel29
@@ -2336,7 +2443,7 @@
             this.panel29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel29.Location = new System.Drawing.Point(245, 83);
             this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(786, 604);
+            this.panel29.Size = new System.Drawing.Size(1041, 646);
             this.panel29.TabIndex = 23;
             // 
             // tableLayoutPanel5
@@ -2359,7 +2466,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(786, 183);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1041, 183);
             this.tableLayoutPanel5.TabIndex = 21;
             // 
             // label15
@@ -2424,7 +2531,7 @@
             this.panel30.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel30.Location = new System.Drawing.Point(0, 0);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(786, 42);
+            this.panel30.Size = new System.Drawing.Size(1041, 42);
             this.panel30.TabIndex = 22;
             // 
             // button39
@@ -2438,7 +2545,7 @@
             this.button39.FlatAppearance.BorderSize = 0;
             this.button39.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button39.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button39.Location = new System.Drawing.Point(743, 0);
+            this.button39.Location = new System.Drawing.Point(998, 0);
             this.button39.Name = "button39";
             this.button39.Size = new System.Drawing.Size(43, 42);
             this.button39.TabIndex = 9;
@@ -2450,7 +2557,7 @@
             this.flowLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel16.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel16.Name = "flowLayoutPanel16";
-            this.flowLayoutPanel16.Size = new System.Drawing.Size(245, 604);
+            this.flowLayoutPanel16.Size = new System.Drawing.Size(245, 646);
             this.flowLayoutPanel16.TabIndex = 21;
             // 
             // panel31
@@ -2459,7 +2566,7 @@
             this.panel31.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel31.Location = new System.Drawing.Point(0, 42);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(1031, 41);
+            this.panel31.Size = new System.Drawing.Size(1286, 41);
             this.panel31.TabIndex = 22;
             // 
             // textBox15
@@ -2471,7 +2578,7 @@
             this.textBox15.MinimumSize = new System.Drawing.Size(4, 4);
             this.textBox15.Multiline = true;
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(1031, 41);
+            this.textBox15.Size = new System.Drawing.Size(1286, 41);
             this.textBox15.TabIndex = 19;
             this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
             // 
@@ -2482,7 +2589,7 @@
             this.panel32.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel32.Location = new System.Drawing.Point(0, 0);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(1031, 42);
+            this.panel32.Size = new System.Drawing.Size(1286, 42);
             this.panel32.TabIndex = 21;
             // 
             // button40
@@ -2525,9 +2632,9 @@
             this.panelMateria.Controls.Add(this.panel35);
             this.panelMateria.Controls.Add(this.flowLayoutPanel20);
             this.panelMateria.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMateria.Location = new System.Drawing.Point(255, 42);
+            this.panelMateria.Location = new System.Drawing.Point(0, 0);
             this.panelMateria.Name = "panelMateria";
-            this.panelMateria.Size = new System.Drawing.Size(1031, 687);
+            this.panelMateria.Size = new System.Drawing.Size(1286, 729);
             this.panelMateria.TabIndex = 31;
             // 
             // flowLayoutPanel19
@@ -2537,7 +2644,7 @@
             this.flowLayoutPanel19.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel19.Name = "flowLayoutPanel19";
             this.flowLayoutPanel19.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel19.Size = new System.Drawing.Size(1031, 604);
+            this.flowLayoutPanel19.Size = new System.Drawing.Size(1286, 646);
             this.flowLayoutPanel19.TabIndex = 25;
             // 
             // panel33
@@ -2546,7 +2653,7 @@
             this.panel33.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel33.Location = new System.Drawing.Point(0, 42);
             this.panel33.Name = "panel33";
-            this.panel33.Size = new System.Drawing.Size(1031, 41);
+            this.panel33.Size = new System.Drawing.Size(1286, 41);
             this.panel33.TabIndex = 26;
             // 
             // textBox16
@@ -2558,7 +2665,7 @@
             this.textBox16.MinimumSize = new System.Drawing.Size(4, 4);
             this.textBox16.Multiline = true;
             this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(1031, 41);
+            this.textBox16.Size = new System.Drawing.Size(1286, 41);
             this.textBox16.TabIndex = 19;
             this.textBox16.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
             // 
@@ -2569,7 +2676,7 @@
             this.panel34.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel34.Location = new System.Drawing.Point(0, 0);
             this.panel34.Name = "panel34";
-            this.panel34.Size = new System.Drawing.Size(1031, 42);
+            this.panel34.Size = new System.Drawing.Size(1286, 42);
             this.panel34.TabIndex = 27;
             // 
             // button41
@@ -2599,7 +2706,7 @@
             this.panel35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel35.Location = new System.Drawing.Point(0, 0);
             this.panel35.Name = "panel35";
-            this.panel35.Size = new System.Drawing.Size(1031, 687);
+            this.panel35.Size = new System.Drawing.Size(1286, 729);
             this.panel35.TabIndex = 24;
             // 
             // panel36
@@ -2609,7 +2716,7 @@
             this.panel36.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel36.Location = new System.Drawing.Point(0, 0);
             this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(1031, 42);
+            this.panel36.Size = new System.Drawing.Size(1286, 42);
             this.panel36.TabIndex = 22;
             // 
             // button42
@@ -2623,7 +2730,7 @@
             this.button42.FlatAppearance.BorderSize = 0;
             this.button42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button42.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button42.Location = new System.Drawing.Point(988, 0);
+            this.button42.Location = new System.Drawing.Point(1243, 0);
             this.button42.Name = "button42";
             this.button42.Size = new System.Drawing.Size(43, 42);
             this.button42.TabIndex = 9;
@@ -2647,9 +2754,9 @@
             this.panelMateria__Search.Controls.Add(this.panel40);
             this.panelMateria__Search.Controls.Add(this.flowLayoutPanel22);
             this.panelMateria__Search.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMateria__Search.Location = new System.Drawing.Point(255, 42);
+            this.panelMateria__Search.Location = new System.Drawing.Point(0, 0);
             this.panelMateria__Search.Name = "panelMateria__Search";
-            this.panelMateria__Search.Size = new System.Drawing.Size(1031, 687);
+            this.panelMateria__Search.Size = new System.Drawing.Size(1286, 729);
             this.panelMateria__Search.TabIndex = 32;
             // 
             // panel37
@@ -2659,7 +2766,7 @@
             this.panel37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel37.Location = new System.Drawing.Point(245, 83);
             this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(786, 604);
+            this.panel37.Size = new System.Drawing.Size(1041, 646);
             this.panel37.TabIndex = 23;
             // 
             // tableLayoutPanel6
@@ -2682,7 +2789,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(786, 183);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1041, 183);
             this.tableLayoutPanel6.TabIndex = 21;
             // 
             // label17
@@ -2747,7 +2854,7 @@
             this.panel38.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel38.Location = new System.Drawing.Point(0, 0);
             this.panel38.Name = "panel38";
-            this.panel38.Size = new System.Drawing.Size(786, 42);
+            this.panel38.Size = new System.Drawing.Size(1041, 42);
             this.panel38.TabIndex = 22;
             // 
             // button43
@@ -2761,7 +2868,7 @@
             this.button43.FlatAppearance.BorderSize = 0;
             this.button43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button43.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button43.Location = new System.Drawing.Point(743, 0);
+            this.button43.Location = new System.Drawing.Point(998, 0);
             this.button43.Name = "button43";
             this.button43.Size = new System.Drawing.Size(43, 42);
             this.button43.TabIndex = 9;
@@ -2773,7 +2880,7 @@
             this.flowLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel21.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel21.Name = "flowLayoutPanel21";
-            this.flowLayoutPanel21.Size = new System.Drawing.Size(245, 604);
+            this.flowLayoutPanel21.Size = new System.Drawing.Size(245, 646);
             this.flowLayoutPanel21.TabIndex = 21;
             // 
             // panel39
@@ -2782,7 +2889,7 @@
             this.panel39.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel39.Location = new System.Drawing.Point(0, 42);
             this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(1031, 41);
+            this.panel39.Size = new System.Drawing.Size(1286, 41);
             this.panel39.TabIndex = 22;
             // 
             // textBox19
@@ -2794,7 +2901,7 @@
             this.textBox19.MinimumSize = new System.Drawing.Size(4, 4);
             this.textBox19.Multiline = true;
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(1031, 41);
+            this.textBox19.Size = new System.Drawing.Size(1286, 41);
             this.textBox19.TabIndex = 19;
             this.textBox19.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
             // 
@@ -2805,7 +2912,7 @@
             this.panel40.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel40.Location = new System.Drawing.Point(0, 0);
             this.panel40.Name = "panel40";
-            this.panel40.Size = new System.Drawing.Size(1031, 42);
+            this.panel40.Size = new System.Drawing.Size(1286, 42);
             this.panel40.TabIndex = 21;
             // 
             // button44
@@ -2840,6 +2947,601 @@
             this.flowLayoutPanel22.Size = new System.Drawing.Size(0, 0);
             this.flowLayoutPanel22.TabIndex = 20;
             // 
+            // ModalShare
+            // 
+            this.ModalShare.Controls.Add(this.lbTitle);
+            this.ModalShare.Controls.Add(this.flowLayoutPanel23);
+            this.ModalShare.Location = new System.Drawing.Point(348, 103);
+            this.ModalShare.Name = "ModalShare";
+            this.ModalShare.Size = new System.Drawing.Size(591, 530);
+            this.ModalShare.TabIndex = 33;
+            // 
+            // lbTitle
+            // 
+            this.lbTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lbTitle.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbTitle.Location = new System.Drawing.Point(184, 17);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(223, 29);
+            this.lbTitle.TabIndex = 2;
+            this.lbTitle.Text = "Escolha o usuário";
+            // 
+            // flowLayoutPanel23
+            // 
+            this.flowLayoutPanel23.AutoScroll = true;
+            this.flowLayoutPanel23.Controls.Add(this.panel41);
+            this.flowLayoutPanel23.Controls.Add(this.panel42);
+            this.flowLayoutPanel23.Controls.Add(this.panel44);
+            this.flowLayoutPanel23.Controls.Add(this.panel45);
+            this.flowLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel23.Location = new System.Drawing.Point(0, 58);
+            this.flowLayoutPanel23.Name = "flowLayoutPanel23";
+            this.flowLayoutPanel23.Padding = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanel23.Size = new System.Drawing.Size(591, 472);
+            this.flowLayoutPanel23.TabIndex = 1;
+            // 
+            // panel41
+            // 
+            this.panel41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel41.Controls.Add(this.pictureBox3);
+            this.panel41.Controls.Add(this.flowLayoutPanel24);
+            this.panel41.Location = new System.Drawing.Point(13, 13);
+            this.panel41.Name = "panel41";
+            this.panel41.Padding = new System.Windows.Forms.Padding(5);
+            this.panel41.Size = new System.Drawing.Size(548, 116);
+            this.panel41.TabIndex = 0;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox3.InitialImage = global::Menus.Properties.Resources.User_icon_BLACK_01;
+            this.pictureBox3.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(106, 104);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
+            // 
+            // flowLayoutPanel24
+            // 
+            this.flowLayoutPanel24.Controls.Add(this.lbName);
+            this.flowLayoutPanel24.Controls.Add(this.lbEmail);
+            this.flowLayoutPanel24.Controls.Add(this.lbFaculdade);
+            this.flowLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel24.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel24.Location = new System.Drawing.Point(98, 5);
+            this.flowLayoutPanel24.Name = "flowLayoutPanel24";
+            this.flowLayoutPanel24.Size = new System.Drawing.Size(443, 104);
+            this.flowLayoutPanel24.TabIndex = 4;
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.BackColor = System.Drawing.Color.Transparent;
+            this.lbName.Font = new System.Drawing.Font("Verdana", 15F);
+            this.lbName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbName.Location = new System.Drawing.Point(3, 10);
+            this.lbName.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(189, 25);
+            this.lbName.TabIndex = 1;
+            this.lbName.Text = "Escolha o usuário";
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lbEmail.Font = new System.Drawing.Font("Verdana", 13F);
+            this.lbEmail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbEmail.Location = new System.Drawing.Point(3, 45);
+            this.lbEmail.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(166, 22);
+            this.lbEmail.TabIndex = 3;
+            this.lbEmail.Text = "Escolha o usuário";
+            // 
+            // lbFaculdade
+            // 
+            this.lbFaculdade.AutoSize = true;
+            this.lbFaculdade.BackColor = System.Drawing.Color.Transparent;
+            this.lbFaculdade.Font = new System.Drawing.Font("Verdana", 13F);
+            this.lbFaculdade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbFaculdade.Location = new System.Drawing.Point(3, 77);
+            this.lbFaculdade.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.lbFaculdade.Name = "lbFaculdade";
+            this.lbFaculdade.Size = new System.Drawing.Size(166, 22);
+            this.lbFaculdade.TabIndex = 2;
+            this.lbFaculdade.Text = "Escolha o usuário";
+            // 
+            // panel42
+            // 
+            this.panel42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel42.Controls.Add(this.pictureBox4);
+            this.panel42.Controls.Add(this.flowLayoutPanel25);
+            this.panel42.Location = new System.Drawing.Point(13, 135);
+            this.panel42.Name = "panel42";
+            this.panel42.Padding = new System.Windows.Forms.Padding(5);
+            this.panel42.Size = new System.Drawing.Size(548, 116);
+            this.panel42.TabIndex = 1;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox4.InitialImage = global::Menus.Properties.Resources.User_icon_BLACK_01;
+            this.pictureBox4.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(106, 104);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 5;
+            this.pictureBox4.TabStop = false;
+            // 
+            // flowLayoutPanel25
+            // 
+            this.flowLayoutPanel25.Controls.Add(this.panel43);
+            this.flowLayoutPanel25.Controls.Add(this.label19);
+            this.flowLayoutPanel25.Controls.Add(this.label20);
+            this.flowLayoutPanel25.Controls.Add(this.label21);
+            this.flowLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel25.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel25.Location = new System.Drawing.Point(115, 5);
+            this.flowLayoutPanel25.Name = "flowLayoutPanel25";
+            this.flowLayoutPanel25.Size = new System.Drawing.Size(426, 104);
+            this.flowLayoutPanel25.TabIndex = 4;
+            // 
+            // panel43
+            // 
+            this.panel43.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel43.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel43.Location = new System.Drawing.Point(3, 3);
+            this.panel43.Name = "panel43";
+            this.panel43.Size = new System.Drawing.Size(0, 116);
+            this.panel43.TabIndex = 4;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Verdana", 15F);
+            this.label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label19.Location = new System.Drawing.Point(9, 10);
+            this.label19.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(189, 25);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Escolha o usuário";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Verdana", 13F);
+            this.label20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label20.Location = new System.Drawing.Point(9, 45);
+            this.label20.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(166, 22);
+            this.label20.TabIndex = 3;
+            this.label20.Text = "Escolha o usuário";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Verdana", 13F);
+            this.label21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label21.Location = new System.Drawing.Point(9, 77);
+            this.label21.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(166, 22);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Escolha o usuário";
+            // 
+            // panel44
+            // 
+            this.panel44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel44.Controls.Add(this.pictureBox5);
+            this.panel44.Controls.Add(this.flowLayoutPanel26);
+            this.panel44.Location = new System.Drawing.Point(13, 257);
+            this.panel44.Name = "panel44";
+            this.panel44.Padding = new System.Windows.Forms.Padding(5);
+            this.panel44.Size = new System.Drawing.Size(548, 116);
+            this.panel44.TabIndex = 2;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox5.InitialImage = global::Menus.Properties.Resources.User_icon_BLACK_01;
+            this.pictureBox5.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(106, 104);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 5;
+            this.pictureBox5.TabStop = false;
+            // 
+            // flowLayoutPanel26
+            // 
+            this.flowLayoutPanel26.Controls.Add(this.label22);
+            this.flowLayoutPanel26.Controls.Add(this.label23);
+            this.flowLayoutPanel26.Controls.Add(this.label24);
+            this.flowLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel26.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel26.Location = new System.Drawing.Point(115, 5);
+            this.flowLayoutPanel26.Name = "flowLayoutPanel26";
+            this.flowLayoutPanel26.Size = new System.Drawing.Size(426, 104);
+            this.flowLayoutPanel26.TabIndex = 4;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Verdana", 15F);
+            this.label22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label22.Location = new System.Drawing.Point(3, 10);
+            this.label22.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(189, 25);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Escolha o usuário";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Font = new System.Drawing.Font("Verdana", 13F);
+            this.label23.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label23.Location = new System.Drawing.Point(3, 45);
+            this.label23.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(166, 22);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Escolha o usuário";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("Verdana", 13F);
+            this.label24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label24.Location = new System.Drawing.Point(3, 77);
+            this.label24.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(166, 22);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Escolha o usuário";
+            // 
+            // panel45
+            // 
+            this.panel45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel45.Controls.Add(this.pictureBox6);
+            this.panel45.Controls.Add(this.flowLayoutPanel27);
+            this.panel45.Location = new System.Drawing.Point(13, 379);
+            this.panel45.Name = "panel45";
+            this.panel45.Padding = new System.Windows.Forms.Padding(5);
+            this.panel45.Size = new System.Drawing.Size(548, 116);
+            this.panel45.TabIndex = 3;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox6.InitialImage = global::Menus.Properties.Resources.User_icon_BLACK_01;
+            this.pictureBox6.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(106, 104);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 5;
+            this.pictureBox6.TabStop = false;
+            // 
+            // flowLayoutPanel27
+            // 
+            this.flowLayoutPanel27.Controls.Add(this.label25);
+            this.flowLayoutPanel27.Controls.Add(this.label26);
+            this.flowLayoutPanel27.Controls.Add(this.label27);
+            this.flowLayoutPanel27.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel27.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel27.Location = new System.Drawing.Point(115, 5);
+            this.flowLayoutPanel27.Name = "flowLayoutPanel27";
+            this.flowLayoutPanel27.Size = new System.Drawing.Size(426, 104);
+            this.flowLayoutPanel27.TabIndex = 4;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Verdana", 15F);
+            this.label25.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label25.Location = new System.Drawing.Point(3, 10);
+            this.label25.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(189, 25);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Escolha o usuário";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Verdana", 13F);
+            this.label26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label26.Location = new System.Drawing.Point(3, 45);
+            this.label26.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(166, 22);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "Escolha o usuário";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Transparent;
+            this.label27.Font = new System.Drawing.Font("Verdana", 13F);
+            this.label27.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label27.Location = new System.Drawing.Point(3, 77);
+            this.label27.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(166, 22);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "Escolha o usuário";
+            // 
+            // modalNotify
+            // 
+            this.modalNotify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.modalNotify.Controls.Add(this.button45);
+            this.modalNotify.Controls.Add(this.label29);
+            this.modalNotify.Controls.Add(this.flowLayoutPanel28);
+            this.modalNotify.Location = new System.Drawing.Point(44, 42);
+            this.modalNotify.Name = "modalNotify";
+            this.modalNotify.Size = new System.Drawing.Size(431, 382);
+            this.modalNotify.TabIndex = 34;
+            this.modalNotify.Visible = false;
+            // 
+            // button45
+            // 
+            this.button45.BackColor = System.Drawing.Color.Transparent;
+            this.button45.BackgroundImage = global::Menus.Properties.Resources.close__1_;
+            this.button45.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button45.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button45.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button45.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button45.FlatAppearance.BorderSize = 0;
+            this.button45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button45.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button45.Location = new System.Drawing.Point(388, 0);
+            this.button45.Name = "button45";
+            this.button45.Size = new System.Drawing.Size(43, 45);
+            this.button45.TabIndex = 12;
+            this.button45.UseVisualStyleBackColor = false;
+            this.button45.Click += new System.EventHandler(this.button45_Click);
+            // 
+            // label29
+            // 
+            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label29.Location = new System.Drawing.Point(8, 9);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(157, 29);
+            this.label29.TabIndex = 2;
+            this.label29.Text = "Notificações";
+            // 
+            // flowLayoutPanel28
+            // 
+            this.flowLayoutPanel28.AutoScroll = true;
+            this.flowLayoutPanel28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.flowLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel28.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel28.Location = new System.Drawing.Point(0, 45);
+            this.flowLayoutPanel28.Name = "flowLayoutPanel28";
+            this.flowLayoutPanel28.Padding = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanel28.Size = new System.Drawing.Size(431, 337);
+            this.flowLayoutPanel28.TabIndex = 1;
+            this.flowLayoutPanel28.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel28_Paint);
+            // 
+            // Wrapper
+            // 
+            this.Wrapper.Controls.Add(this.panelHome);
+            this.Wrapper.Controls.Add(this.panel1);
+            this.Wrapper.Controls.Add(this.panel2);
+            this.Wrapper.Controls.Add(this.panelCur);
+            this.Wrapper.Controls.Add(this.panel5);
+            this.Wrapper.Controls.Add(this.webBrowser1);
+            this.Wrapper.Controls.Add(this.panelCurso);
+            this.Wrapper.Controls.Add(this.panelMinhaConta);
+            this.Wrapper.Controls.Add(this.panelFacul);
+            this.Wrapper.Controls.Add(this.panelFacul__Search);
+            this.Wrapper.Controls.Add(this.panelTexto);
+            this.Wrapper.Controls.Add(this.panelNovaNota);
+            this.Wrapper.Controls.Add(this.panelSearch);
+            this.Wrapper.Controls.Add(this.panelCurso2__Search);
+            this.Wrapper.Controls.Add(this.panelMateria__Search);
+            this.Wrapper.Controls.Add(this.panelCurso2);
+            this.Wrapper.Controls.Add(this.panelMateria);
+            this.Wrapper.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Wrapper.Location = new System.Drawing.Point(0, 0);
+            this.Wrapper.Name = "Wrapper";
+            this.Wrapper.Size = new System.Drawing.Size(1286, 729);
+            this.Wrapper.TabIndex = 14;
+            // 
+            // confirmNote
+            // 
+            this.confirmNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.confirmNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.confirmNote.Controls.Add(this.panel46);
+            this.confirmNote.Controls.Add(this.panel49);
+            this.confirmNote.Controls.Add(this.panel3);
+            this.confirmNote.Location = new System.Drawing.Point(337, 116);
+            this.confirmNote.Name = "confirmNote";
+            this.confirmNote.Size = new System.Drawing.Size(606, 496);
+            this.confirmNote.TabIndex = 35;
+            // 
+            // panel46
+            // 
+            this.panel46.AutoScroll = true;
+            this.panel46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.panel46.Controls.Add(this.label34);
+            this.panel46.Controls.Add(this.panel48);
+            this.panel46.Controls.Add(this.label32);
+            this.panel46.Controls.Add(this.panel47);
+            this.panel46.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel46.Location = new System.Drawing.Point(0, 58);
+            this.panel46.Name = "panel46";
+            this.panel46.Size = new System.Drawing.Size(604, 378);
+            this.panel46.TabIndex = 21;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.Transparent;
+            this.label34.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label34.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label34.Location = new System.Drawing.Point(0, 259);
+            this.label34.MaximumSize = new System.Drawing.Size(585, 0);
+            this.label34.Name = "label34";
+            this.label34.Padding = new System.Windows.Forms.Padding(15);
+            this.label34.Size = new System.Drawing.Size(585, 233);
+            this.label34.TabIndex = 23;
+            this.label34.Text = resources.GetString("label34.Text");
+            this.label34.Click += new System.EventHandler(this.label34_Click);
+            // 
+            // panel48
+            // 
+            this.panel48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.panel48.Controls.Add(this.label33);
+            this.panel48.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel48.Location = new System.Drawing.Point(0, 217);
+            this.panel48.Name = "panel48";
+            this.panel48.Size = new System.Drawing.Size(587, 42);
+            this.panel48.TabIndex = 22;
+            // 
+            // label33
+            // 
+            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label33.Location = new System.Drawing.Point(233, 8);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(140, 29);
+            this.label33.TabIndex = 2;
+            this.label33.Text = "Conteúdo";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.Transparent;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label32.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label32.Location = new System.Drawing.Point(0, 42);
+            this.label32.MaximumSize = new System.Drawing.Size(585, 0);
+            this.label32.Name = "label32";
+            this.label32.Padding = new System.Windows.Forms.Padding(15);
+            this.label32.Size = new System.Drawing.Size(585, 175);
+            this.label32.TabIndex = 2;
+            this.label32.Text = "Título doadoiajd foas fjoisadjf osiadfj sadoifj asiofjoaisdfjoidasj fasoifj asofj" +
+    " dasoif jasoipfj oaijfoiasjfoipasfoij asoidf j]ASDADASDADAS MD ASKJFOKSAJF IOASJ" +
+    "FO WASIFJOISRMFIOPWAMF ";
+            // 
+            // panel47
+            // 
+            this.panel47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.panel47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel47.Controls.Add(this.label31);
+            this.panel47.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel47.Location = new System.Drawing.Point(0, 0);
+            this.panel47.Name = "panel47";
+            this.panel47.Size = new System.Drawing.Size(587, 42);
+            this.panel47.TabIndex = 21;
+            // 
+            // label31
+            // 
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label31.Location = new System.Drawing.Point(259, 7);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(89, 29);
+            this.label31.TabIndex = 2;
+            this.label31.Text = "Título";
+            // 
+            // panel49
+            // 
+            this.panel49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.panel49.Controls.Add(this.button46);
+            this.panel49.Controls.Add(this.btnconcluir);
+            this.panel49.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel49.Location = new System.Drawing.Point(0, 436);
+            this.panel49.Name = "panel49";
+            this.panel49.Padding = new System.Windows.Forms.Padding(10);
+            this.panel49.Size = new System.Drawing.Size(604, 58);
+            this.panel49.TabIndex = 22;
+            // 
+            // button46
+            // 
+            this.button46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.button46.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button46.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button46.FlatAppearance.BorderSize = 0;
+            this.button46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button46.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button46.ForeColor = System.Drawing.Color.White;
+            this.button46.Location = new System.Drawing.Point(10, 10);
+            this.button46.Name = "button46";
+            this.button46.Size = new System.Drawing.Size(199, 38);
+            this.button46.TabIndex = 8;
+            this.button46.Text = "Deletar";
+            this.button46.UseVisualStyleBackColor = false;
+            this.button46.Click += new System.EventHandler(this.button46_Click);
+            // 
+            // btnconcluir
+            // 
+            this.btnconcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.btnconcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnconcluir.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnconcluir.FlatAppearance.BorderSize = 0;
+            this.btnconcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnconcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnconcluir.ForeColor = System.Drawing.Color.White;
+            this.btnconcluir.Location = new System.Drawing.Point(395, 10);
+            this.btnconcluir.Name = "btnconcluir";
+            this.btnconcluir.Size = new System.Drawing.Size(199, 38);
+            this.btnconcluir.TabIndex = 7;
+            this.btnconcluir.Text = "Inserir";
+            this.btnconcluir.UseVisualStyleBackColor = false;
+            this.btnconcluir.Click += new System.EventHandler(this.btnconcluir_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.panel3.Controls.Add(this.label30);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(604, 58);
+            this.panel3.TabIndex = 20;
+            // 
+            // label30
+            // 
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
+            this.label30.Font = new System.Drawing.Font("Verdana", 22F);
+            this.label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label30.Location = new System.Drawing.Point(180, 10);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(247, 36);
+            this.label30.TabIndex = 2;
+            this.label30.Text = "Confirmar Nota";
+            this.label30.Click += new System.EventHandler(this.label30_Click);
+            // 
             // roundPictureBox1
             // 
             this.roundPictureBox1.Location = new System.Drawing.Point(477, 82);
@@ -2856,24 +3558,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1286, 729);
-            this.Controls.Add(this.panelMateria);
-            this.Controls.Add(this.panelCurso2);
-            this.Controls.Add(this.panelMateria__Search);
-            this.Controls.Add(this.panelCurso2__Search);
-            this.Controls.Add(this.panelHome);
-            this.Controls.Add(this.panelSearch);
-            this.Controls.Add(this.panelNovaNota);
-            this.Controls.Add(this.panelTexto);
-            this.Controls.Add(this.panelFacul__Search);
-            this.Controls.Add(this.panelFacul);
+            this.Controls.Add(this.modalNotify);
+            this.Controls.Add(this.Wrapper);
+            this.Controls.Add(this.confirmNote);
+            this.Controls.Add(this.ModalShare);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panelMinhaConta);
-            this.Controls.Add(this.panelCurso);
-            this.Controls.Add(this.webBrowser1);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panelCur);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(950, 600);
@@ -2888,6 +3577,7 @@
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panelSearch.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.panelFacul.ResumeLayout(false);
@@ -2976,6 +3666,38 @@
             this.panel39.ResumeLayout(false);
             this.panel39.PerformLayout();
             this.panel40.ResumeLayout(false);
+            this.ModalShare.ResumeLayout(false);
+            this.ModalShare.PerformLayout();
+            this.flowLayoutPanel23.ResumeLayout(false);
+            this.panel41.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.flowLayoutPanel24.ResumeLayout(false);
+            this.flowLayoutPanel24.PerformLayout();
+            this.panel42.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.flowLayoutPanel25.ResumeLayout(false);
+            this.flowLayoutPanel25.PerformLayout();
+            this.panel44.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.flowLayoutPanel26.ResumeLayout(false);
+            this.flowLayoutPanel26.PerformLayout();
+            this.panel45.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.flowLayoutPanel27.ResumeLayout(false);
+            this.flowLayoutPanel27.PerformLayout();
+            this.modalNotify.ResumeLayout(false);
+            this.modalNotify.PerformLayout();
+            this.Wrapper.ResumeLayout(false);
+            this.confirmNote.ResumeLayout(false);
+            this.panel46.ResumeLayout(false);
+            this.panel46.PerformLayout();
+            this.panel48.ResumeLayout(false);
+            this.panel48.PerformLayout();
+            this.panel47.ResumeLayout(false);
+            this.panel47.PerformLayout();
+            this.panel49.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -3162,5 +3884,53 @@
         private System.Windows.Forms.Panel panel40;
         private System.Windows.Forms.Button button44;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel22;
+        private System.Windows.Forms.Panel ModalShare;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel23;
+        private System.Windows.Forms.Panel panel41;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel24;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Label lbFaculdade;
+        private System.Windows.Forms.Panel panel42;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel25;
+        private System.Windows.Forms.Panel panel43;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel panel44;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel26;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Panel panel45;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel27;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label lbTitle;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Panel modalNotify;
+        private System.Windows.Forms.Button button45;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel28;
+        private System.Windows.Forms.Panel Wrapper;
+        private System.Windows.Forms.Panel confirmNote;
+        private System.Windows.Forms.Panel panel46;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Panel panel47;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Panel panel48;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Panel panel49;
+        private System.Windows.Forms.Button button46;
+        private System.Windows.Forms.Button btnconcluir;
     }
 }

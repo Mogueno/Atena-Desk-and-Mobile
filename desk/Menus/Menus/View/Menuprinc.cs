@@ -21,7 +21,7 @@ namespace Menus
 
         public string strConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-        public const string strSelectNote = "SELECT N1.STR_STR_PATH, N1.STR_STR_TITLE, N1.STR_INT_ID, U.USER_INT_ID, U.USER_STR_EMAIL FROM TB_NOTA_STR AS N1 JOIN TB_NOTA AS N2 ON N1.NOTA_INT_ID = N2.NOTA_INT_ID JOIN TB_USER AS U ON N2.USER_INT_ID = U.USER_INT_ID WHERE U.USER_STR_EMAIL = @USER_STR_EMAIL";
+        public const string strSelectNote = "SELECT N1.STR_STR_PATH, N1.STR_STR_TITLE, N1.STR_INT_ID FROM TB_NOTA_STR AS N1 JOIN TB_NOTA AS N2 ON N1.STR_INT_ID = N2.STR_INT_ID JOIN TB_USER AS U ON N2.USER_INT_ID = U.USER_INT_ID WHERE U.USER_STR_EMAIL = @USER_STR_EMAIL";
 
         public const string strSelectUser2 = "SELECT USER_STR_NOME, USER_INT_IDADE, USER_STR_SEXO FROM TB_USER WHERE USER_STR_EMAIL = @USER_STR_EMAIL_VAR";
 
@@ -177,12 +177,16 @@ namespace Menus
             int s = Convert.ToInt32((sender as Button).Tag);
 
             bancoMainEntities1 ht = new bancoMainEntities1();
+            var name = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+            var email2 = name.USER_INT_ID;
+
             var title = ht.TB_NOTA_STR.Where(a => a.STR_INT_ID == s).SingleOrDefault();
+            var noteParent = ht.TB_NOTA.Where(a => a.STR_INT_ID == s && a.USER_INT_ID == email2).SingleOrDefault();
             textBox5.Text = title.STR_STR_TITLE;
             label9.Text = title.STR_STR_TITLE;
             textBox6.Text = title.STR_STR_PATH;
             label10.Text = title.STR_STR_PATH;
-            tableLayoutPanel2.Tag = title.NOTA_INT_ID;
+            tableLayoutPanel2.Tag = noteParent.NOTA_INT_ID;
             panel11.Visible = true;
         }
 
@@ -207,7 +211,10 @@ namespace Menus
             var name = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
             var email2 = name.USER_STR_NOME;
 
+            var path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddEllipse(0, 0, 12, 12);
 
+            this.label28.Region = new Region(path);
 
             var facul3 = (from str in ht2.TB_USER_FAC
                           join fac in ht2.TB_FACULDADE on str.FAC_INT_ID equals fac.FAC_INT_ID
@@ -305,12 +312,115 @@ namespace Menus
             {
                 ErrorProvider error = new ErrorProvider();
             }
+
+            try
+            {
+                var id = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                var email = id.USER_INT_ID;
+                var content = (from str in ht2.TB_SHARE
+                                  join send in ht2.TB_USER on str.SENDER_INT_ID equals send.USER_INT_ID
+                                  join recipient in ht2.TB_USER on str.RECIPIENT_INT_ID equals recipient.USER_INT_ID
+                                  join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                  join notaChild in ht2.TB_NOTA_STR on nota.STR_INT_ID equals notaChild.STR_INT_ID
+                                  where email == recipient.USER_INT_ID
+                                  select new
+                                  {
+                                      shareId = str.SHARE_INT_ID,
+                                      senderName = send.USER_STR_NOME
+                                  }).ToList();
+                if (content.Count != 0)
+                {
+                    MessageBox.Show("pois é amigo tem mensagem pra você");
+                    flowLayoutPanel28.Controls.Clear();
+
+                    button10.BackgroundImage = Properties.Resources.notification__4___1_;
+                    label28.Visible = true;
+                    label28.Text = Convert.ToString(content.Count);
+
+                    for (int i = 0; i < content.Count; i++)
+                    {
+                        string conteudo = content[i].senderName + " enviou uma nota!";
+
+                        Label label30 = new Label();
+                        label30.AutoSize = true;
+                        label30.BackColor = System.Drawing.Color.Transparent;
+                        label30.Dock = System.Windows.Forms.DockStyle.Left;
+                        label30.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+                        label30.Location = new System.Drawing.Point(13, 10);
+                        label30.MaximumSize = new System.Drawing.Size(380, 0);
+                        label30.Size = new System.Drawing.Size(377, 87);
+                        label30.Tag = content[i].shareId;
+                        label30.Cursor = Cursors.Hand;
+                        label30.Text = conteudo;
+
+                        //EventHandler CliqueNaNota = (s, evento) => MyMethod(content[i].notaTitle, content[i].notaContent, content[i].notaId, content[i].notaCur, content[i].notaFacul);
+
+                        //label30.Click += CliqueNaNota;//suscribe
+                        //MessageBox.Show("nota title " + content[i].notaTitle + " nota content " + content[i].notaContent + " nota id " + content[i].notaId + " nota cur " + content[i].notaCur + " nota facul " + content[i].notaFacul);
+
+                        label30.Click += new EventHandler(this.showNote__click);
+
+
+                        flowLayoutPanel28.Controls.Add(label30);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("NÃO TEM MENSAGEM AMIGÃO\n");
+
+                    button10.BackgroundImage = Properties.Resources.notification__3___1_;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                ErrorProvider error = new ErrorProvider();
+            }
         }
         private void button4_Click_1(object sender, EventArgs e)
         {
             panelSearch.BringToFront();
         }
-        
+
+        private void showNote__click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ola meninas");
+            Label label = sender as Label;
+            int s = Convert.ToInt32(label.Tag);
+            btnconcluir.Tag = s;
+            confirmNote.BringToFront();
+            bancoMainEntities1 ht2 = new bancoMainEntities1();
+
+            var content = (from str in ht2.TB_SHARE
+                           join send in ht2.TB_USER on str.SENDER_INT_ID equals send.USER_INT_ID
+                           join recipient in ht2.TB_USER on str.RECIPIENT_INT_ID equals recipient.USER_INT_ID
+                           join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                           join notaChild in ht2.TB_NOTA_STR on nota.STR_INT_ID equals notaChild.STR_INT_ID
+                           where s == str.SHARE_INT_ID
+                           select new
+                           {
+                               notaId = nota.NOTA_INT_ID,
+                               notaChildId = nota.STR_INT_ID,
+                               notaTitle = notaChild.STR_STR_TITLE,
+                               notaContent = notaChild.STR_STR_PATH,
+                               notaFacul = nota.FAC_INT_ID,
+                               notaCur = nota.CUR_INT_ID,
+                               notaMat = nota.MAT_INT_ID,
+                               senderName = send.USER_STR_NOME
+                           }).SingleOrDefault();
+
+
+            label32.Text = content.notaTitle;
+            label34.Text = content.notaContent;
+            confirmNote.Tag = content.notaId;
+
+            NoteData.CurId = content.notaCur;
+            NoteData.FacId = content.notaFacul;
+            NoteData.MatId = content.notaMat;
+            NoteData.Noteid = Convert.ToInt32(content.notaChildId);
+        }
+
         private void buttonDrop_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -602,6 +712,10 @@ namespace Menus
 
         public const string strInsertNota2 = "INSERT INTO TB_NOTA_STR VALUES (@STR_STR_PATH, @NOTA_INT_ID, @STR_STR_TITLE)";
 
+        public const string strInsertNota3 = "INSERT INTO TB_NOTA_STR OUTPUT INSERTED.STR_INT_ID VALUES (@STR_STR_PATH, NULL, @STR_STR_TITLE)";
+
+        public const string strInsertNota4 = "INSERT INTO TB_NOTA VALUES (@FAC_INT_ID, @CUR_INT_ID, @MAT_INT_ID, @USER_INT_ID, @STR_INT_ID)";
+
         public void SelectNota(string emailRecebe, string notaRecebe, string notaTitulo, int Materia)
         {
             using (SqlConnection objConexao = new SqlConnection(strConexao2))
@@ -628,22 +742,32 @@ namespace Menus
 
                     da.Close();
 
-                    using (SqlCommand objCommand2 = new SqlCommand(strInsertNota1, objConexao))
+                    using (SqlCommand objCommand2 = new SqlCommand(strInsertNota3, objConexao))
                     {
-                        objCommand2.Parameters.AddWithValue("@USER_INT_ID", userId);
-                        objCommand2.Parameters.AddWithValue("@FAC_INT_ID", faculdadeId);
-                        objCommand2.Parameters.AddWithValue("@CUR_INT_ID", cursoId);
-                        objCommand2.Parameters.AddWithValue("@MAT_INT_ID", materiaId);
+                    //    objCommand2.Parameters.AddWithValue("@USER_INT_ID", userId);
+                    //    objCommand2.Parameters.AddWithValue("@FAC_INT_ID", faculdadeId);
+                    //    objCommand2.Parameters.AddWithValue("@CUR_INT_ID", cursoId);
+                    //    objCommand2.Parameters.AddWithValue("@MAT_INT_ID", materiaId);
+
+                        objCommand2.Parameters.AddWithValue("@STR_STR_PATH", notaRecebe);
+                        //objCommand2.Parameters.AddWithValue("@NOTA_INT_ID", notaId);
+                        objCommand2.Parameters.AddWithValue("@STR_STR_TITLE", notaTitulo);
 
 
                         notaId = (Int32)objCommand2.ExecuteScalar();
 
 
-                        using (SqlCommand objCommand3 = new SqlCommand(strInsertNota2, objConexao))
+                        using (SqlCommand objCommand3 = new SqlCommand(strInsertNota4, objConexao))
                         {
-                            objCommand3.Parameters.AddWithValue("@STR_STR_PATH", notaRecebe);
-                            objCommand3.Parameters.AddWithValue("@NOTA_INT_ID", notaId);
-                            objCommand3.Parameters.AddWithValue("@STR_STR_TITLE", notaTitulo);
+                            //objCommand3.Parameters.AddWithValue("@STR_STR_PATH", notaRecebe);
+                            //objCommand3.Parameters.AddWithValue("@NOTA_INT_ID", notaId);
+                            //objCommand3.Parameters.AddWithValue("@STR_STR_TITLE", notaTitulo);
+
+                            objCommand3.Parameters.AddWithValue("@USER_INT_ID", userId);
+                            objCommand3.Parameters.AddWithValue("@FAC_INT_ID", faculdadeId);
+                            objCommand3.Parameters.AddWithValue("@CUR_INT_ID", cursoId);
+                            objCommand3.Parameters.AddWithValue("@MAT_INT_ID", materiaId);
+                            objCommand3.Parameters.AddWithValue("@STR_INT_ID", notaId);
 
                             int retorno2 = objCommand3.ExecuteNonQuery();
 
@@ -1722,6 +1846,328 @@ namespace Menus
                     ErrorProvider error = new ErrorProvider();
                 }
             }
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int notaId = Convert.ToInt32(tableLayoutPanel2.Tag);
+                bancoMainEntities1 ht1 = new bancoMainEntities1();
+                var id = ht1.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                var userId = id.USER_INT_ID;
+                ModalShare.BringToFront();
+
+
+                MessageBox.Show("hello " + userId + ", nota número: " + notaId);
+
+                flowLayoutPanel23.Controls.Clear();
+                try
+                {
+                    flowLayoutPanel23.Controls.Clear();
+                    bancoMainEntities1 ht3 = new bancoMainEntities1();
+
+                    var entryPoint = (from str in ht3.TB_USER
+                                      join facul1 in ht3.TB_USER_FAC on str.USER_INT_ID equals facul1.USER_INT_ID
+                                      join facul2 in ht3.TB_FACULDADE on facul1.FAC_INT_ID equals facul2.FAC_INT_ID
+                                      select new
+                                      {
+                                          userName = str.USER_STR_NOME,
+                                          userEmail = str.USER_STR_EMAIL,
+                                          userFac = facul2.FAC_STR_NOME,
+                                          userIdentity = str.USER_INT_ID,
+                                      }).ToList();
+
+                    if (entryPoint.Count != 0)
+                    {
+                        for (int i = 0; i < entryPoint.Count; i++)
+                        {
+                            panel1 = new System.Windows.Forms.Panel();
+                            lbName = new System.Windows.Forms.Label();
+                            lbFaculdade = new System.Windows.Forms.Label();
+                            lbEmail = new System.Windows.Forms.Label();
+                            flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+                            pictureBox1 = new System.Windows.Forms.PictureBox();
+                            //flowLayoutPanel1.SuspendLayout();
+                            //panel1.SuspendLayout();
+                            //this.flowLayoutPanel2.SuspendLayout();
+
+                            //
+                            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                            this.panel1.Controls.Add(this.pictureBox1);
+                            this.panel1.Controls.Add(this.flowLayoutPanel2);
+                            this.panel1.Location = new System.Drawing.Point(13, 13);
+                            this.panel1.Name = "panel1";
+                            this.panel1.Padding = new System.Windows.Forms.Padding(5);
+                            this.panel1.Size = new System.Drawing.Size(548, 116);
+                            this.panel1.TabIndex = 0;
+                            this.panel1.Tag = entryPoint[i].userIdentity;
+                            this.panel1.Click += new EventHandler(this.shareActions_Click);
+
+                            // 
+                            // lbName
+                            // 
+                            this.lbName.AutoSize = true;
+                            this.lbName.BackColor = System.Drawing.Color.Transparent;
+                            this.lbName.Font = new System.Drawing.Font("Verdana", 15F);
+                            this.lbName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+                            this.lbName.Location = new System.Drawing.Point(3, 10);
+                            this.lbName.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+                            this.lbName.Name = "lbName";
+                            this.lbName.Size = new System.Drawing.Size(189, 25);
+                            this.lbName.TabIndex = 1;
+                            this.lbName.Text = entryPoint[i].userName;
+                            // 
+                            // lbFaculdade
+                            // 
+                            this.lbFaculdade.AutoSize = true;
+                            this.lbFaculdade.BackColor = System.Drawing.Color.Transparent;
+                            this.lbFaculdade.Font = new System.Drawing.Font("Verdana", 13F);
+                            this.lbFaculdade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+                            this.lbFaculdade.Location = new System.Drawing.Point(3, 77);
+                            this.lbFaculdade.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+                            this.lbFaculdade.Name = "lbFaculdade";
+                            this.lbFaculdade.Size = new System.Drawing.Size(166, 22);
+                            this.lbFaculdade.TabIndex = 2;
+                            this.lbFaculdade.Text = entryPoint[i].userFac;
+                            // 
+                            // lbEmail
+                            // 
+                            this.lbEmail.AutoSize = true;
+                            this.lbEmail.BackColor = System.Drawing.Color.Transparent;
+                            this.lbEmail.Font = new System.Drawing.Font("Verdana", 13F);
+                            this.lbEmail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+                            this.lbEmail.Location = new System.Drawing.Point(3, 45);
+                            this.lbEmail.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+                            this.lbEmail.Name = "lbEmail";
+                            this.lbEmail.Size = new System.Drawing.Size(166, 22);
+                            this.lbEmail.TabIndex = 3;
+                            this.lbEmail.Text = entryPoint[i].userEmail;
+                            //this.lbEmail.Click += new System.EventHandler(this.label3_Click);
+                            // 
+                            // flowLayoutPanel2
+                            // 
+                            this.flowLayoutPanel2.Controls.Add(this.lbName);
+                            this.flowLayoutPanel2.Controls.Add(this.lbEmail);
+                            this.flowLayoutPanel2.Controls.Add(this.lbFaculdade);
+                            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Right;
+                            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+                            this.flowLayoutPanel2.Location = new System.Drawing.Point(117, 5);
+                            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+                            this.flowLayoutPanel2.Size = new System.Drawing.Size(426, 106);
+                            this.flowLayoutPanel2.TabIndex = 4;
+                            // 
+                            // pictureBox1
+                            // 
+                            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+                            this.pictureBox1.Location = new System.Drawing.Point(5, 5);
+                            this.pictureBox1.Name = "pictureBox1";
+                            this.pictureBox1.Size = new System.Drawing.Size(106, 106);
+                            this.pictureBox1.TabIndex = 5;
+                            this.pictureBox1.TabStop = false;
+                            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                            this.pictureBox1.InitialImage = global::Menus.Properties.Resources.User_icon_BLACK_01;
+
+
+
+                            try
+                            {
+                                bancoMainEntities1 ht = new bancoMainEntities1();
+
+                                int idFinal = entryPoint[i].userIdentity;
+                                var item = ht.TB_PICTURES.Where(a => a.USER_INT_ID == idFinal).FirstOrDefault();
+                                byte[] arr = item.PIC_IMG_MAIN;
+                                MemoryStream ms1 = new MemoryStream(arr);
+                                pictureBox1.Image = Image.FromStream(ms1);
+                            }
+                            catch
+                            {
+                                pictureBox1.Image = pictureBox1.InitialImage;
+                            }
+
+                            flowLayoutPanel23.Controls.Add(panel1);
+                            this.TopMost = true;
+                            this.Focus();
+                            this.BringToFront();
+                            this.TopMost = false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foram encontradas notas");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ErrorProvider error = new ErrorProvider();
+                }
+            }
+            catch
+            {
+            }
+        }
+        private void shareActions_Click(object sender, EventArgs e)
+        {
+            Panel panel = sender as Panel;
+            int s = Convert.ToInt32(panel.Tag);
+
+            int notaId = Convert.ToInt32(tableLayoutPanel2.Tag);
+            bancoMainEntities1 ht1 = new bancoMainEntities1();
+            var id = ht1.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+            var userId = id.USER_INT_ID;
+
+            int nota = Convert.ToInt32(notaId);
+            int user = Convert.ToInt32(userId);
+
+
+            MessageBox.Show("Esse é o ID do usuário " + s);
+
+            try
+            {
+                bancoMainEntities1 ht = new bancoMainEntities1();
+
+                ht.TB_SHARE.Add(new TB_SHARE() { NOTA_INT_ID = nota, RECIPIENT_INT_ID = s, SENDER_INT_ID = user });
+                ht.SaveChanges();
+
+                MessageBox.Show("Nota enviada para o usuário!");
+
+                ModalShare.SendToBack();
+            }
+            catch (Exception ex)
+            {
+                ErrorProvider error = new ErrorProvider();
+            }
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel28_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            modalNotify.Visible = true;
+            modalNotify.BringToFront();
+        }
+
+        private void button45_Click(object sender, EventArgs e)
+        {
+            modalNotify.Visible = false;
+        }
+
+        private void label30_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label34_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnconcluir_Click(object sender, EventArgs e)
+        {
+            bancoMainEntities1 ht1 = new bancoMainEntities1();
+            var id = ht1.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+            var userId = id.USER_INT_ID;
+
+            MessageBox.Show("ta ai " + NoteData.FacId+ " " + NoteData.CurId + " " + NoteData.MatId);
+
+            ht1.TB_NOTA.Add(new TB_NOTA() { FAC_INT_ID = NoteData.FacId, CUR_INT_ID = NoteData.CurId, MAT_INT_ID = NoteData.MatId, USER_INT_ID = userId, STR_INT_ID = NoteData.Noteid });
+            ht1.SaveChanges();
+
+            int shareId = Convert.ToInt32(btnconcluir.Tag);
+
+
+            var notificationToRemove = ht1.TB_SHARE.SingleOrDefault(x => x.SHARE_INT_ID == shareId);
+
+            if (notificationToRemove != null)
+            {
+                ht1.TB_SHARE.Remove(notificationToRemove);
+                ht1.SaveChanges();
+
+
+                flowLayoutPanel28.Controls.Clear();
+                try
+                {
+                    bancoMainEntities1 ht2 = new bancoMainEntities1();
+                    var id2 = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                    var email = id2.USER_INT_ID;
+                    var content = (from str in ht2.TB_SHARE
+                                   join send in ht2.TB_USER on str.SENDER_INT_ID equals send.USER_INT_ID
+                                   join recipient in ht2.TB_USER on str.RECIPIENT_INT_ID equals recipient.USER_INT_ID
+                                   join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                   join notaChild in ht2.TB_NOTA_STR on nota.STR_INT_ID equals notaChild.STR_INT_ID
+                                   where email == recipient.USER_INT_ID
+                                   select new
+                                   {
+                                       shareId = str.SHARE_INT_ID,
+                                       senderName = send.USER_STR_NOME
+                                   }).ToList();
+                    if (content.Count != 0)
+                    {
+                        MessageBox.Show("pois é amigo tem mensagem pra você");
+                        flowLayoutPanel28.Controls.Clear();
+
+                        button10.BackgroundImage = Properties.Resources.notification__4___1_;
+                        label28.Visible = true;
+                        label28.Text = Convert.ToString(content.Count);
+
+                        for (int i = 0; i < content.Count; i++)
+                        {
+                            string conteudo = content[i].senderName + " enviou uma nota!";
+
+                            Label label30 = new Label();
+                            label30.AutoSize = true;
+                            label30.BackColor = System.Drawing.Color.Transparent;
+                            label30.Dock = System.Windows.Forms.DockStyle.Left;
+                            label30.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+                            label30.Location = new System.Drawing.Point(13, 10);
+                            label30.MaximumSize = new System.Drawing.Size(380, 0);
+                            label30.Size = new System.Drawing.Size(377, 87);
+                            label30.Tag = content[i].shareId;
+                            label30.Cursor = Cursors.Hand;
+                            label30.Text = conteudo;
+
+                            label30.Click += new EventHandler(this.showNote__click);
+
+
+                            flowLayoutPanel28.Controls.Add(label30);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("NÃO TEM MENSAGEM AMIGÃO\n");
+
+                        button10.BackgroundImage = Properties.Resources.notification__3___1_;
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    ErrorProvider error = new ErrorProvider();
+                }
+            }
+
+
+            confirmNote.SendToBack();
+            GetNote(lbRecebeEmailMenu.Text);
+        }
+
+        private void button46_Click(object sender, EventArgs e)
+        {
+            confirmNote.SendToBack();
         }
     }
 }

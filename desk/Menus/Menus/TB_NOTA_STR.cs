@@ -14,11 +14,19 @@ namespace Menus
     
     public partial class TB_NOTA_STR
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TB_NOTA_STR()
+        {
+            this.TB_NOTA = new HashSet<TB_NOTA>();
+        }
+    
         public int STR_INT_ID { get; set; }
         public string STR_STR_PATH { get; set; }
-        public int NOTA_INT_ID { get; set; }
+        public Nullable<int> NOTA_INT_ID { get; set; }
         public string STR_STR_TITLE { get; set; }
     
-        public virtual TB_NOTA TB_NOTA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_NOTA> TB_NOTA { get; set; }
+        public virtual TB_NOTA TB_NOTA1 { get; set; }
     }
 }

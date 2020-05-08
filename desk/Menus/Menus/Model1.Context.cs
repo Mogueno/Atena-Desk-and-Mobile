@@ -33,6 +33,7 @@ namespace Menus
         public virtual DbSet<TB_NOTA_IMG> TB_NOTA_IMG { get; set; }
         public virtual DbSet<TB_NOTA_STR> TB_NOTA_STR { get; set; }
         public virtual DbSet<TB_PICTURES> TB_PICTURES { get; set; }
+        public virtual DbSet<TB_SHARE> TB_SHARE { get; set; }
         public virtual DbSet<TB_USER> TB_USER { get; set; }
         public virtual DbSet<TB_USER_CUR> TB_USER_CUR { get; set; }
         public virtual DbSet<TB_USER_FAC> TB_USER_FAC { get; set; }

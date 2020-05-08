@@ -189,6 +189,7 @@ namespace Menus.Model
                 var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == EmailVar).SingleOrDefault();
                 var email = id.USER_INT_ID;
 
+
                 ht.TB_USER_CUR.Add(new TB_USER_CUR() { CUR_INT_ID = resultado[0].cursoId, USER_INT_ID = email});
                 ht.SaveChanges();
             }

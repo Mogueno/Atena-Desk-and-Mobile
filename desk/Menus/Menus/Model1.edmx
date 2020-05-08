@@ -38,6 +38,7 @@
           <Property Name="CUR_INT_ID" Type="int" Nullable="false" />
           <Property Name="MAT_INT_ID" Type="int" Nullable="false" />
           <Property Name="USER_INT_ID" Type="int" Nullable="false" />
+          <Property Name="STR_INT_ID" Type="int" />
         </EntityType>
         <EntityType Name="TB_NOTA_DES">
           <Key>
@@ -61,7 +62,7 @@
           </Key>
           <Property Name="STR_INT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="STR_STR_PATH" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="NOTA_INT_ID" Type="int" Nullable="false" />
+          <Property Name="NOTA_INT_ID" Type="int" />
           <Property Name="STR_STR_TITLE" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TB_PICTURES">
@@ -71,6 +72,15 @@
           <Property Name="PIC_INT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PIC_IMG_MAIN" Type="image" Nullable="false" />
           <Property Name="USER_INT_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_SHARE">
+          <Key>
+            <PropertyRef Name="SHARE_INT_ID" />
+          </Key>
+          <Property Name="SHARE_INT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOTA_INT_ID" Type="int" Nullable="false" />
+          <Property Name="RECIPIENT_INT_ID" Type="int" Nullable="false" />
+          <Property Name="SENDER_INT_ID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_USER">
           <Key>
@@ -123,7 +133,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DES_USER_INT_ID">
-          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1" />
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_NOTA_DES" Type="Self.TB_NOTA_DES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_NOTA">
@@ -147,7 +159,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="IMG_USER_INT_ID">
-          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1" />
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_NOTA_IMG" Type="Self.TB_NOTA_IMG" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_NOTA">
@@ -159,7 +173,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="NOTA_CUR_INT_ID_FK">
-          <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="1" />
+          <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_CURSO">
@@ -171,7 +187,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="NOTA_FAC_INT_ID_FK">
-          <End Role="TB_FACULDADE" Type="Self.TB_FACULDADE" Multiplicity="1" />
+          <End Role="TB_FACULDADE" Type="Self.TB_FACULDADE" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_FACULDADE">
@@ -183,7 +201,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="NOTA_MAT_INT_ID_FK">
-          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="1" />
+          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_MATERIA">
@@ -195,7 +215,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="NOTA_USER_INT_ID_FK">
-          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_USER">
@@ -207,7 +229,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="PIC_USER_INT_ID_FK">
-          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_PICTURES" Type="Self.TB_PICTURES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_USER">
@@ -218,8 +242,46 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="RECIPIENT_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_SHARE" Type="Self.TB_SHARE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_SHARE">
+              <PropertyRef Name="RECIPIENT_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SENDER_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_SHARE" Type="Self.TB_SHARE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_SHARE">
+              <PropertyRef Name="SENDER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="STR_INT_ID">
+          <End Role="TB_NOTA_STR" Type="Self.TB_NOTA_STR" Multiplicity="0..1" />
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_NOTA_STR">
+              <PropertyRef Name="STR_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA">
+              <PropertyRef Name="STR_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="STR_USER_INT_ID">
-          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1">
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="TB_NOTA_STR" Type="Self.TB_NOTA_STR" Multiplicity="*" />
@@ -247,7 +309,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="USER_CUR_USER_INT_ID_FK">
-          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_USER_CUR" Type="Self.TB_USER_CUR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_USER">
@@ -259,7 +323,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="USER_MAT_MAT_INT_ID_FK">
-          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="1" />
+          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_USER_MAT" Type="Self.TB_USER_MAT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_MATERIA">
@@ -271,7 +337,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="USER_MAT_USER_INT_ID_FK">
-          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_USER_MAT" Type="Self.TB_USER_MAT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_USER">
@@ -283,7 +351,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="USER-FAC_FAC_INT_ID_FK">
-          <End Role="TB_FACULDADE" Type="Self.TB_FACULDADE" Multiplicity="1" />
+          <End Role="TB_FACULDADE" Type="Self.TB_FACULDADE" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_USER_FAC" Type="Self.TB_USER_FAC" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_FACULDADE">
@@ -295,7 +365,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="USER-FAC_USER_INT_ID_FK">
-          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_USER_FAC" Type="Self.TB_USER_FAC" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_USER">
@@ -315,6 +387,7 @@
           <EntitySet Name="TB_NOTA_IMG" EntityType="Self.TB_NOTA_IMG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_NOTA_STR" EntityType="Self.TB_NOTA_STR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_PICTURES" EntityType="Self.TB_PICTURES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_SHARE" EntityType="Self.TB_SHARE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_USER" EntityType="Self.TB_USER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_USER_CUR" EntityType="Self.TB_USER_CUR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_USER_FAC" EntityType="Self.TB_USER_FAC" Schema="dbo" store:Type="Tables" />
@@ -354,6 +427,18 @@
           <AssociationSet Name="PIC_USER_INT_ID_FK" Association="Self.PIC_USER_INT_ID_FK">
             <End Role="TB_USER" EntitySet="TB_USER" />
             <End Role="TB_PICTURES" EntitySet="TB_PICTURES" />
+          </AssociationSet>
+          <AssociationSet Name="RECIPIENT_INT_ID_FK" Association="Self.RECIPIENT_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_SHARE" EntitySet="TB_SHARE" />
+          </AssociationSet>
+          <AssociationSet Name="SENDER_INT_ID_FK" Association="Self.SENDER_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_SHARE" EntitySet="TB_SHARE" />
+          </AssociationSet>
+          <AssociationSet Name="STR_INT_ID" Association="Self.STR_INT_ID">
+            <End Role="TB_NOTA_STR" EntitySet="TB_NOTA_STR" />
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
           </AssociationSet>
           <AssociationSet Name="STR_USER_INT_ID" Association="Self.STR_USER_INT_ID">
             <End Role="TB_NOTA" EntitySet="TB_NOTA" />
@@ -430,13 +515,15 @@
           <Property Name="CUR_INT_ID" Type="Int32" Nullable="false" />
           <Property Name="MAT_INT_ID" Type="Int32" Nullable="false" />
           <Property Name="USER_INT_ID" Type="Int32" Nullable="false" />
+          <Property Name="STR_INT_ID" Type="Int32" />
           <NavigationProperty Name="TB_CURSO" Relationship="Self.NOTA_CUR_INT_ID_FK" FromRole="TB_NOTA" ToRole="TB_CURSO" />
           <NavigationProperty Name="TB_FACULDADE" Relationship="Self.NOTA_FAC_INT_ID_FK" FromRole="TB_NOTA" ToRole="TB_FACULDADE" />
           <NavigationProperty Name="TB_MATERIA" Relationship="Self.NOTA_MAT_INT_ID_FK" FromRole="TB_NOTA" ToRole="TB_MATERIA" />
           <NavigationProperty Name="TB_NOTA_DES" Relationship="Self.DES_USER_INT_ID" FromRole="TB_NOTA" ToRole="TB_NOTA_DES" />
           <NavigationProperty Name="TB_NOTA_IMG" Relationship="Self.IMG_USER_INT_ID" FromRole="TB_NOTA" ToRole="TB_NOTA_IMG" />
           <NavigationProperty Name="TB_USER" Relationship="Self.NOTA_USER_INT_ID_FK" FromRole="TB_NOTA" ToRole="TB_USER" />
-          <NavigationProperty Name="TB_NOTA_STR" Relationship="Self.STR_USER_INT_ID" FromRole="TB_NOTA" ToRole="TB_NOTA_STR" />
+          <NavigationProperty Name="TB_NOTA_STR" Relationship="Self.STR_INT_ID" FromRole="TB_NOTA" ToRole="TB_NOTA_STR" />
+          <NavigationProperty Name="TB_NOTA_STR1" Relationship="Self.STR_USER_INT_ID" FromRole="TB_NOTA" ToRole="TB_NOTA_STR" />
         </EntityType>
         <EntityType Name="TB_NOTA_DES">
           <Key>
@@ -462,9 +549,10 @@
           </Key>
           <Property Name="STR_INT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="STR_STR_PATH" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NOTA_INT_ID" Type="Int32" Nullable="false" />
+          <Property Name="NOTA_INT_ID" Type="Int32" />
           <Property Name="STR_STR_TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="TB_NOTA" Relationship="Self.STR_USER_INT_ID" FromRole="TB_NOTA_STR" ToRole="TB_NOTA" />
+          <NavigationProperty Name="TB_NOTA" Relationship="Self.STR_INT_ID" FromRole="TB_NOTA_STR" ToRole="TB_NOTA" />
+          <NavigationProperty Name="TB_NOTA1" Relationship="Self.STR_USER_INT_ID" FromRole="TB_NOTA_STR" ToRole="TB_NOTA" />
         </EntityType>
         <EntityType Name="TB_PICTURES">
           <Key>
@@ -474,6 +562,17 @@
           <Property Name="PIC_IMG_MAIN" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <Property Name="USER_INT_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TB_USER" Relationship="Self.PIC_USER_INT_ID_FK" FromRole="TB_PICTURES" ToRole="TB_USER" />
+        </EntityType>
+        <EntityType Name="TB_SHARE">
+          <Key>
+            <PropertyRef Name="SHARE_INT_ID" />
+          </Key>
+          <Property Name="SHARE_INT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOTA_INT_ID" Type="Int32" Nullable="false" />
+          <Property Name="RECIPIENT_INT_ID" Type="Int32" Nullable="false" />
+          <Property Name="SENDER_INT_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_USER" Relationship="Self.RECIPIENT_INT_ID_FK" FromRole="TB_SHARE" ToRole="TB_USER" />
+          <NavigationProperty Name="TB_USER1" Relationship="Self.SENDER_INT_ID_FK" FromRole="TB_SHARE" ToRole="TB_USER" />
         </EntityType>
         <EntityType Name="TB_USER">
           <Key>
@@ -491,6 +590,8 @@
           <NavigationProperty Name="TB_FACULDADE" Relationship="Self.FAC_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_FACULDADE" />
           <NavigationProperty Name="TB_NOTA" Relationship="Self.NOTA_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_NOTA" />
           <NavigationProperty Name="TB_PICTURES" Relationship="Self.PIC_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_PICTURES" />
+          <NavigationProperty Name="TB_SHARE" Relationship="Self.RECIPIENT_INT_ID_FK" FromRole="TB_USER" ToRole="TB_SHARE" />
+          <NavigationProperty Name="TB_SHARE1" Relationship="Self.SENDER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_SHARE" />
           <NavigationProperty Name="TB_USER_CUR" Relationship="Self.USER_CUR_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_USER_CUR" />
           <NavigationProperty Name="TB_USER_MAT" Relationship="Self.USER_MAT_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_USER_MAT" />
           <NavigationProperty Name="TB_USER_FAC" Relationship="Self.USER_FAC_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_USER_FAC" />
@@ -539,7 +640,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="NOTA_CUR_INT_ID_FK">
-          <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="1" />
+          <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_CURSO">
@@ -577,7 +680,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="NOTA_FAC_INT_ID_FK">
-          <End Role="TB_FACULDADE" Type="Self.TB_FACULDADE" Multiplicity="1" />
+          <End Role="TB_FACULDADE" Type="Self.TB_FACULDADE" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_FACULDADE">
@@ -589,7 +694,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="USER_FAC_FAC_INT_ID_FK">
-          <End Role="TB_FACULDADE" Type="Self.TB_FACULDADE" Multiplicity="1" />
+          <End Role="TB_FACULDADE" Type="Self.TB_FACULDADE" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_USER_FAC" Type="Self.TB_USER_FAC" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_FACULDADE">
@@ -601,7 +708,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="NOTA_MAT_INT_ID_FK">
-          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="1" />
+          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_MATERIA">
@@ -613,7 +722,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="USER_MAT_MAT_INT_ID_FK">
-          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="1" />
+          <End Role="TB_MATERIA" Type="Self.TB_MATERIA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_USER_MAT" Type="Self.TB_USER_MAT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_MATERIA">
@@ -625,7 +736,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DES_USER_INT_ID">
-          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1" />
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_NOTA_DES" Type="Self.TB_NOTA_DES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_NOTA">
@@ -637,7 +750,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="IMG_USER_INT_ID">
-          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1" />
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_NOTA_IMG" Type="Self.TB_NOTA_IMG" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_NOTA">
@@ -649,7 +764,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="NOTA_USER_INT_ID_FK">
-          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_USER">
@@ -660,8 +777,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="STR_INT_ID">
+          <End Role="TB_NOTA_STR" Type="Self.TB_NOTA_STR" Multiplicity="0..1" />
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_NOTA_STR">
+              <PropertyRef Name="STR_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA">
+              <PropertyRef Name="STR_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="STR_USER_INT_ID">
-          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="1">
+          <End Role="TB_NOTA" Type="Self.TB_NOTA" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="TB_NOTA_STR" Type="Self.TB_NOTA_STR" Multiplicity="*" />
@@ -675,7 +804,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="PIC_USER_INT_ID_FK">
-          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_PICTURES" Type="Self.TB_PICTURES" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_USER">
@@ -686,8 +817,36 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="USER_CUR_USER_INT_ID_FK">
+        <Association Name="RECIPIENT_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_SHARE" Type="Self.TB_SHARE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_SHARE">
+              <PropertyRef Name="RECIPIENT_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SENDER_INT_ID_FK">
           <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_SHARE" Type="Self.TB_SHARE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_SHARE">
+              <PropertyRef Name="SENDER_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USER_CUR_USER_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_USER_CUR" Type="Self.TB_USER_CUR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_USER">
@@ -699,7 +858,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="USER_MAT_USER_INT_ID_FK">
-          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_USER_MAT" Type="Self.TB_USER_MAT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_USER">
@@ -711,7 +872,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="USER_FAC_USER_INT_ID_FK">
-          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_USER_FAC" Type="Self.TB_USER_FAC" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_USER">
@@ -731,6 +894,7 @@
           <EntitySet Name="TB_NOTA_IMG" EntityType="Self.TB_NOTA_IMG" />
           <EntitySet Name="TB_NOTA_STR" EntityType="Self.TB_NOTA_STR" />
           <EntitySet Name="TB_PICTURES" EntityType="Self.TB_PICTURES" />
+          <EntitySet Name="TB_SHARE" EntityType="Self.TB_SHARE" />
           <EntitySet Name="TB_USER" EntityType="Self.TB_USER" />
           <EntitySet Name="TB_USER_CUR" EntityType="Self.TB_USER_CUR" />
           <EntitySet Name="TB_USER_FAC" EntityType="Self.TB_USER_FAC" />
@@ -779,6 +943,10 @@
             <End Role="TB_USER" EntitySet="TB_USER" />
             <End Role="TB_NOTA" EntitySet="TB_NOTA" />
           </AssociationSet>
+          <AssociationSet Name="STR_INT_ID" Association="Self.STR_INT_ID">
+            <End Role="TB_NOTA_STR" EntitySet="TB_NOTA_STR" />
+            <End Role="TB_NOTA" EntitySet="TB_NOTA" />
+          </AssociationSet>
           <AssociationSet Name="STR_USER_INT_ID" Association="Self.STR_USER_INT_ID">
             <End Role="TB_NOTA" EntitySet="TB_NOTA" />
             <End Role="TB_NOTA_STR" EntitySet="TB_NOTA_STR" />
@@ -786,6 +954,14 @@
           <AssociationSet Name="PIC_USER_INT_ID_FK" Association="Self.PIC_USER_INT_ID_FK">
             <End Role="TB_USER" EntitySet="TB_USER" />
             <End Role="TB_PICTURES" EntitySet="TB_PICTURES" />
+          </AssociationSet>
+          <AssociationSet Name="RECIPIENT_INT_ID_FK" Association="Self.RECIPIENT_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_SHARE" EntitySet="TB_SHARE" />
+          </AssociationSet>
+          <AssociationSet Name="SENDER_INT_ID_FK" Association="Self.SENDER_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_SHARE" EntitySet="TB_SHARE" />
           </AssociationSet>
           <AssociationSet Name="USER_CUR_USER_INT_ID_FK" Association="Self.USER_CUR_USER_INT_ID_FK">
             <End Role="TB_USER" EntitySet="TB_USER" />
@@ -841,6 +1017,7 @@
                 <ScalarProperty Name="CUR_INT_ID" ColumnName="CUR_INT_ID" />
                 <ScalarProperty Name="MAT_INT_ID" ColumnName="MAT_INT_ID" />
                 <ScalarProperty Name="USER_INT_ID" ColumnName="USER_INT_ID" />
+                <ScalarProperty Name="STR_INT_ID" ColumnName="STR_INT_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -878,6 +1055,16 @@
                 <ScalarProperty Name="PIC_INT_ID" ColumnName="PIC_INT_ID" />
                 <ScalarProperty Name="PIC_IMG_MAIN" ColumnName="PIC_IMG_MAIN" />
                 <ScalarProperty Name="USER_INT_ID" ColumnName="USER_INT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_SHARE">
+            <EntityTypeMapping TypeName="bancoMainModel.TB_SHARE">
+              <MappingFragment StoreEntitySet="TB_SHARE">
+                <ScalarProperty Name="SHARE_INT_ID" ColumnName="SHARE_INT_ID" />
+                <ScalarProperty Name="NOTA_INT_ID" ColumnName="NOTA_INT_ID" />
+                <ScalarProperty Name="RECIPIENT_INT_ID" ColumnName="RECIPIENT_INT_ID" />
+                <ScalarProperty Name="SENDER_INT_ID" ColumnName="SENDER_INT_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
