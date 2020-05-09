@@ -24,9 +24,13 @@ namespace Menus
         public string STR_STR_PATH { get; set; }
         public Nullable<int> NOTA_INT_ID { get; set; }
         public string STR_STR_TITLE { get; set; }
+        public Nullable<int> STR_INT_AUTHOR { get; set; }
+        public Nullable<int> STR_INT_EDITED { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_NOTA> TB_NOTA { get; set; }
         public virtual TB_NOTA TB_NOTA1 { get; set; }
+        public virtual TB_USER TB_USER { get; set; }
+        public virtual TB_USER TB_USER1 { get; set; }
     }
 }

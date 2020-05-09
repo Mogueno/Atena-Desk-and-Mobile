@@ -37,6 +37,8 @@
         <AssociationConnector Association="bancoMainModel.USER_CUR_USER_INT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.USER_MAT_USER_INT_ID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="bancoMainModel.USER_FAC_USER_INT_ID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="bancoMainModel.AUTHOR_INT_ID_FK" />
+        <AssociationConnector Association="bancoMainModel.EDITED_INT_ID_FK" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

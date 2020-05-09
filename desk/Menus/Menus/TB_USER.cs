@@ -26,6 +26,8 @@ namespace Menus
             this.TB_USER_CUR = new HashSet<TB_USER_CUR>();
             this.TB_USER_MAT = new HashSet<TB_USER_MAT>();
             this.TB_USER_FAC = new HashSet<TB_USER_FAC>();
+            this.TB_NOTA_STR = new HashSet<TB_NOTA_STR>();
+            this.TB_NOTA_STR1 = new HashSet<TB_NOTA_STR>();
         }
     
         public int USER_INT_ID { get; set; }
@@ -55,5 +57,9 @@ namespace Menus
         public virtual ICollection<TB_USER_MAT> TB_USER_MAT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_USER_FAC> TB_USER_FAC { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_NOTA_STR> TB_NOTA_STR { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_NOTA_STR> TB_NOTA_STR1 { get; set; }
     }
 }

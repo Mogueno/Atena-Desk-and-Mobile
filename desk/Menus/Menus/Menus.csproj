@@ -135,6 +135,7 @@
     <Compile Include="Model\Cadastro.cs" />
     <Compile Include="Model\Dados.cs" />
     <Compile Include="Model\NoteData.cs" />
+    <Compile Include="Model\TypeAssistant.cs" />
     <Compile Include="RoundPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>

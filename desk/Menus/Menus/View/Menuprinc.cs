@@ -8,15 +8,65 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
 using Transitions;
+using Menus.Model;
 
 namespace Menus
 {
+    
     public partial class Menuprinc : Form
     {
-		public Menuprinc(string texto)
+        TypeAssistant assistant;
+        public Menuprinc(string texto)
         {
             InitializeComponent();
             lbRecebeEmailMenu.Text = texto;
+
+            assistant = new TypeAssistant();
+            assistant.Idled += assistant_Idled;
+        }
+
+        // Insere dados se usuário ficar x tempo sem digitar
+        void assistant_Idled(object sender, EventArgs e)
+        {
+            this.Invoke(
+            new MethodInvoker(() =>
+            {
+                bancoMainEntities1 ht = new bancoMainEntities1();
+                var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                int id2 = id.USER_INT_ID;
+                int strId = Convert.ToInt32(tableLayoutPanel2.Tag);
+                var result = ht.TB_NOTA_STR.SingleOrDefault(a => a.STR_INT_ID == strId);
+
+                if (result != null)
+                {
+                    result.STR_STR_PATH = textBox6.Text;
+                    result.STR_STR_TITLE = textBox5.Text;
+                    result.STR_INT_EDITED = id2;
+                    ht.SaveChanges();
+
+                    var username = (from str in ht.TB_NOTA_STR
+                                    join user in ht.TB_USER on str.STR_INT_EDITED equals user.USER_INT_ID
+                                    where str.STR_INT_ID == result.STR_INT_ID
+                                    select new
+                                    {
+                                        userName = user.USER_STR_NOME,
+                                    }).SingleOrDefault();
+                    try
+                    {
+                        bancoMainEntities1 ht1 = new bancoMainEntities1();
+                        var item = ht1.TB_PICTURES.Where(a => a.USER_INT_ID == id2).FirstOrDefault();
+                        byte[] arr = item.PIC_IMG_MAIN;
+                        MemoryStream ms1 = new MemoryStream(arr);
+                        roundPictureBox2.Image = Image.FromStream(ms1);
+                    }
+                    catch
+                    {
+                        roundPictureBox2.Image = pictureBox1.InitialImage;
+                    }
+                    label35.Text = username.userName;
+                }
+
+            }));
         }
 
         public string strConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
@@ -182,11 +232,31 @@ namespace Menus
 
             var title = ht.TB_NOTA_STR.Where(a => a.STR_INT_ID == s).SingleOrDefault();
             var noteParent = ht.TB_NOTA.Where(a => a.STR_INT_ID == s && a.USER_INT_ID == email2).SingleOrDefault();
+
+            var username = (from str in ht.TB_NOTA_STR
+                            join user in ht.TB_USER on str.STR_INT_EDITED equals user.USER_INT_ID
+                            where str.STR_INT_ID == s
+                            select new
+                            {
+                                userName = user.USER_STR_NOME,
+                                userId = user.USER_INT_ID
+                            }).SingleOrDefault();
+            try
+            {
+                bancoMainEntities1 ht1 = new bancoMainEntities1();
+                var item = ht1.TB_PICTURES.Where(a => a.USER_INT_ID == username.userId).FirstOrDefault();
+                byte[] arr = item.PIC_IMG_MAIN;
+                MemoryStream ms1 = new MemoryStream(arr);
+                roundPictureBox2.Image = Image.FromStream(ms1);
+            }
+            catch
+            {
+                roundPictureBox2.Image = pictureBox1.InitialImage;
+            }
             textBox5.Text = title.STR_STR_TITLE;
-            label9.Text = title.STR_STR_TITLE;
             textBox6.Text = title.STR_STR_PATH;
-            label10.Text = title.STR_STR_PATH;
-            tableLayoutPanel2.Tag = noteParent.NOTA_INT_ID;
+            label35.Text = username.userName;
+            tableLayoutPanel2.Tag = title.STR_INT_ID;
             panel11.Visible = true;
         }
 
@@ -259,11 +329,16 @@ namespace Menus
             flowLayoutPanel7.VerticalScroll.Visible = false;
             flowLayoutPanel7.AutoScroll = true;
 
+            //autoSizeTxt(textBox5);
+            //autoSizeTxt(textBox6);
+
+
             GetUser(lbRecebeEmailMenu.Text);
             lbRecebeEmailConfig.Text = lbRecebeEmailMenu.Text; 
             lbMateriaShow.Text = Login.Materia;
             lbFaculShow.Text = facul3.faculName;
             lbCursoShow.Text = curso3.cursoName;
+
 
 
             try
@@ -320,7 +395,7 @@ namespace Menus
                 var content = (from str in ht2.TB_SHARE
                                   join send in ht2.TB_USER on str.SENDER_INT_ID equals send.USER_INT_ID
                                   join recipient in ht2.TB_USER on str.RECIPIENT_INT_ID equals recipient.USER_INT_ID
-                                  join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                  join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.STR_INT_ID
                                   join notaChild in ht2.TB_NOTA_STR on nota.STR_INT_ID equals notaChild.STR_INT_ID
                                   where email == recipient.USER_INT_ID
                                   select new
@@ -383,6 +458,7 @@ namespace Menus
             panelSearch.BringToFront();
         }
 
+
         private void showNote__click(object sender, EventArgs e)
         {
             MessageBox.Show("ola meninas");
@@ -395,7 +471,7 @@ namespace Menus
             var content = (from str in ht2.TB_SHARE
                            join send in ht2.TB_USER on str.SENDER_INT_ID equals send.USER_INT_ID
                            join recipient in ht2.TB_USER on str.RECIPIENT_INT_ID equals recipient.USER_INT_ID
-                           join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                           join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.STR_INT_ID
                            join notaChild in ht2.TB_NOTA_STR on nota.STR_INT_ID equals notaChild.STR_INT_ID
                            where s == str.SHARE_INT_ID
                            select new
@@ -712,7 +788,7 @@ namespace Menus
 
         public const string strInsertNota2 = "INSERT INTO TB_NOTA_STR VALUES (@STR_STR_PATH, @NOTA_INT_ID, @STR_STR_TITLE)";
 
-        public const string strInsertNota3 = "INSERT INTO TB_NOTA_STR OUTPUT INSERTED.STR_INT_ID VALUES (@STR_STR_PATH, NULL, @STR_STR_TITLE)";
+        public const string strInsertNota3 = "INSERT INTO TB_NOTA_STR OUTPUT INSERTED.STR_INT_ID VALUES (@STR_STR_PATH, NULL, @STR_STR_TITLE, @STR_INT_AUTHOR, @STR_INT_EDITED)";
 
         public const string strInsertNota4 = "INSERT INTO TB_NOTA VALUES (@FAC_INT_ID, @CUR_INT_ID, @MAT_INT_ID, @USER_INT_ID, @STR_INT_ID)";
 
@@ -752,6 +828,12 @@ namespace Menus
                         objCommand2.Parameters.AddWithValue("@STR_STR_PATH", notaRecebe);
                         //objCommand2.Parameters.AddWithValue("@NOTA_INT_ID", notaId);
                         objCommand2.Parameters.AddWithValue("@STR_STR_TITLE", notaTitulo);
+                        bancoMainEntities1 ht = new bancoMainEntities1();
+                        var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                        var idUser = id.USER_INT_ID;
+                        objCommand2.Parameters.AddWithValue("@STR_INT_AUTHOR", idUser);
+                        objCommand2.Parameters.AddWithValue("@STR_INT_EDITED", idUser);
+
 
 
                         notaId = (Int32)objCommand2.ExecuteScalar();
@@ -880,9 +962,7 @@ namespace Menus
         private void button28_Click(object sender, EventArgs e)
         {
             textBox5.Visible = true; 
-            label9.Visible = false;
             textBox6.Visible = true;
-            label10.Visible = false;
         }
 
         private void button29_Click(object sender, EventArgs e)
@@ -996,22 +1076,22 @@ namespace Menus
 
                 int noteId = Convert.ToInt32(tableLayoutPanel2.Tag);
 
-                var itemToRemove = ht2.TB_NOTA_STR.SingleOrDefault(x => x.NOTA_INT_ID == noteId);
+                var itemToRemove = ht2.TB_NOTA_STR.SingleOrDefault(x => x.STR_INT_ID == noteId);
 
-                var noteToRemove = ht2.TB_NOTA.SingleOrDefault(x => x.NOTA_INT_ID == noteId);
+                var noteToRemove = ht2.TB_NOTA.Where(x => x.STR_INT_ID == noteId).ToList();
 
                 if (itemToRemove != null && noteToRemove != null)
                 {
                     ht2.TB_NOTA_STR.Remove(itemToRemove);
-                    ht2.TB_NOTA.Remove(noteToRemove);
+                    for (int i = 0; i < noteToRemove.Count; i++){
+                        ht2.TB_NOTA.Remove(noteToRemove[i]);
+                    }
                     ht2.SaveChanges();
 
 
                     flowLayoutPanel2.Controls.Clear();
                     textBox5.Clear();
-                    label9.Text = "";
                     textBox6.Clear();
-                    label10.Text = "";
                     panel11.Visible = false;
                     GetNote(lbRecebeEmailMenu.Text);
                     MessageBox.Show("Nota Excluída com Sucesso");
@@ -1903,7 +1983,7 @@ namespace Menus
                             this.panel1.TabIndex = 0;
                             this.panel1.Tag = entryPoint[i].userIdentity;
                             this.panel1.Click += new EventHandler(this.shareActions_Click);
-
+                            panel1.Cursor = Cursors.Hand;
                             // 
                             // lbName
                             // 
@@ -1917,6 +1997,9 @@ namespace Menus
                             this.lbName.Size = new System.Drawing.Size(189, 25);
                             this.lbName.TabIndex = 1;
                             this.lbName.Text = entryPoint[i].userName;
+                            this.lbName.Tag = entryPoint[i].userIdentity;
+                            this.lbName.Click += new EventHandler(this.shareActionsLabel_Click);
+                            lbName.Cursor = Cursors.Hand;
                             // 
                             // lbFaculdade
                             // 
@@ -1930,6 +2013,9 @@ namespace Menus
                             this.lbFaculdade.Size = new System.Drawing.Size(166, 22);
                             this.lbFaculdade.TabIndex = 2;
                             this.lbFaculdade.Text = entryPoint[i].userFac;
+                            this.lbFaculdade.Tag = entryPoint[i].userIdentity;
+                            this.lbFaculdade.Click += new EventHandler(this.shareActionsLabel_Click);
+                            lbFaculdade.Cursor = Cursors.Hand;
                             // 
                             // lbEmail
                             // 
@@ -1943,6 +2029,9 @@ namespace Menus
                             this.lbEmail.Size = new System.Drawing.Size(166, 22);
                             this.lbEmail.TabIndex = 3;
                             this.lbEmail.Text = entryPoint[i].userEmail;
+                            this.lbEmail.Tag = entryPoint[i].userIdentity;
+                            this.lbEmail.Click += new EventHandler(this.shareActionsLabel_Click);
+                            lbEmail.Cursor = Cursors.Hand;
                             //this.lbEmail.Click += new System.EventHandler(this.label3_Click);
                             // 
                             // flowLayoutPanel2
@@ -1956,6 +2045,9 @@ namespace Menus
                             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
                             this.flowLayoutPanel2.Size = new System.Drawing.Size(426, 106);
                             this.flowLayoutPanel2.TabIndex = 4;
+                            this.flowLayoutPanel2.Tag = entryPoint[i].userIdentity;
+                            this.flowLayoutPanel2.Click += new EventHandler(this.shareActionsFlow_Click);
+                            flowLayoutPanel2.Cursor = Cursors.Hand;
                             // 
                             // pictureBox1
                             // 
@@ -1967,6 +2059,9 @@ namespace Menus
                             this.pictureBox1.TabStop = false;
                             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                             this.pictureBox1.InitialImage = global::Menus.Properties.Resources.User_icon_BLACK_01;
+                            this.pictureBox1.Tag = entryPoint[i].userIdentity;
+                            this.pictureBox1.Click += new EventHandler(this.shareActionsPic_Click);
+                            pictureBox1.Cursor = Cursors.Hand;
 
 
 
@@ -2006,6 +2101,104 @@ namespace Menus
             {
             }
         }
+        
+        private void shareActionsPic_Click(object sender, EventArgs e)
+        {
+            PictureBox panel = sender as PictureBox;
+            int s = Convert.ToInt32(panel.Tag);
+
+            int notaId = Convert.ToInt32(tableLayoutPanel2.Tag);
+            bancoMainEntities1 ht1 = new bancoMainEntities1();
+            var id = ht1.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+            var userId = id.USER_INT_ID;
+
+            int nota = Convert.ToInt32(notaId);
+            int user = Convert.ToInt32(userId);
+
+
+            MessageBox.Show("Esse é o ID do usuário " + s);
+
+            try
+            {
+                bancoMainEntities1 ht = new bancoMainEntities1();
+
+                ht.TB_SHARE.Add(new TB_SHARE() { NOTA_INT_ID = nota, RECIPIENT_INT_ID = s, SENDER_INT_ID = user });
+                ht.SaveChanges();
+
+                MessageBox.Show("Nota enviada para o usuário!");
+
+                ModalShare.SendToBack();
+            }
+            catch (Exception ex)
+            {
+                ErrorProvider error = new ErrorProvider();
+            }
+        }
+        private void shareActionsFlow_Click(object sender, EventArgs e)
+        {
+            FlowLayoutPanel panel = sender as FlowLayoutPanel;
+            int s = Convert.ToInt32(panel.Tag);
+
+            int notaId = Convert.ToInt32(tableLayoutPanel2.Tag);
+            bancoMainEntities1 ht1 = new bancoMainEntities1();
+            var id = ht1.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+            var userId = id.USER_INT_ID;
+
+            int nota = Convert.ToInt32(notaId);
+            int user = Convert.ToInt32(userId);
+
+
+            MessageBox.Show("Esse é o ID do usuário " + s);
+
+            try
+            {
+                bancoMainEntities1 ht = new bancoMainEntities1();
+
+                ht.TB_SHARE.Add(new TB_SHARE() { NOTA_INT_ID = nota, RECIPIENT_INT_ID = s, SENDER_INT_ID = user });
+                ht.SaveChanges();
+
+                MessageBox.Show("Nota enviada para o usuário!");
+
+                ModalShare.SendToBack();
+            }
+            catch (Exception ex)
+            {
+                ErrorProvider error = new ErrorProvider();
+            }
+        }
+        private void shareActionsLabel_Click(object sender, EventArgs e)
+        {
+            Label panel = sender as Label;
+            int s = Convert.ToInt32(panel.Tag);
+
+            int notaId = Convert.ToInt32(tableLayoutPanel2.Tag);
+            bancoMainEntities1 ht1 = new bancoMainEntities1();
+            var id = ht1.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+            var userId = id.USER_INT_ID;
+
+            int nota = Convert.ToInt32(notaId);
+            int user = Convert.ToInt32(userId);
+
+
+            MessageBox.Show("Esse é o ID do usuário " + s);
+
+            try
+            {
+                bancoMainEntities1 ht = new bancoMainEntities1();
+
+                ht.TB_SHARE.Add(new TB_SHARE() { NOTA_INT_ID = nota, RECIPIENT_INT_ID = s, SENDER_INT_ID = user });
+                ht.SaveChanges();
+
+                MessageBox.Show("Nota enviada para o usuário!");
+
+                ModalShare.SendToBack();
+            }
+            catch (Exception ex)
+            {
+                ErrorProvider error = new ErrorProvider();
+            }
+        }
+
         private void shareActions_Click(object sender, EventArgs e)
         {
             Panel panel = sender as Panel;
@@ -2106,7 +2299,7 @@ namespace Menus
                     var content = (from str in ht2.TB_SHARE
                                    join send in ht2.TB_USER on str.SENDER_INT_ID equals send.USER_INT_ID
                                    join recipient in ht2.TB_USER on str.RECIPIENT_INT_ID equals recipient.USER_INT_ID
-                                   join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                   join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.STR_INT_ID
                                    join notaChild in ht2.TB_NOTA_STR on nota.STR_INT_ID equals notaChild.STR_INT_ID
                                    where email == recipient.USER_INT_ID
                                    select new
@@ -2168,6 +2361,74 @@ namespace Menus
         private void button46_Click(object sender, EventArgs e)
         {
             confirmNote.SendToBack();
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel12_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            autoSizeTxt(textBox5);
+        }
+
+
+
+        private void autoSizeTxt(TextBox txt)
+        {
+            // get number of lines (first line is 0, so add 1)
+            int numLines = txt.GetLineFromCharIndex(txt.TextLength) + 2;
+            // set height (height of one line * number of lines + spacing)
+            txt.Height = txt.Font.Height * numLines;
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            autoSizeTxt(textBox6);
+
+
+            
+        }
+
+        private void textBox5_KeyUp(object sender, KeyEventArgs e)
+        {
+            assistant.TextChanged();
+        }
+
+        private void SearchTextBoxTimer_Tick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel44_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button28_Click_1(object sender, EventArgs e)
+        {
+            ModalShare.SendToBack();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+
+        }
+
+        private void textBox6_KeyUp(object sender, KeyEventArgs e)
+        {
+            assistant.TextChanged();
         }
     }
 }

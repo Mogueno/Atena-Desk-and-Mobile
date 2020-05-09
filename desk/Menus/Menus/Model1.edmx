@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="bancoMainModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="bancoMainModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TB_CURSO">
           <Key>
             <PropertyRef Name="CUR_INT_ID" />
@@ -61,9 +61,11 @@
             <PropertyRef Name="STR_INT_ID" />
           </Key>
           <Property Name="STR_INT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="STR_STR_PATH" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="STR_STR_PATH" Type="varchar(max)" Nullable="false" />
           <Property Name="NOTA_INT_ID" Type="int" />
-          <Property Name="STR_STR_TITLE" Type="varchar" MaxLength="50" />
+          <Property Name="STR_STR_TITLE" Type="varchar(max)" />
+          <Property Name="STR_INT_AUTHOR" Type="int" />
+          <Property Name="STR_INT_EDITED" Type="int" />
         </EntityType>
         <EntityType Name="TB_PICTURES">
           <Key>
@@ -120,6 +122,18 @@
           <Property Name="USER_INT_ID" Type="int" Nullable="false" />
           <Property Name="USER_MAT_TIME_HORA" Type="time" Precision="7" />
         </EntityType>
+        <Association Name="AUTHOR_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="0..1" />
+          <End Role="TB_NOTA_STR" Type="Self.TB_NOTA_STR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA_STR">
+              <PropertyRef Name="STR_INT_AUTHOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="CUR_USER_INT_ID_FK">
           <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
           <End Role="TB_CURSO" Type="Self.TB_CURSO" Multiplicity="*" />
@@ -143,6 +157,18 @@
             </Principal>
             <Dependent Role="TB_NOTA_DES">
               <PropertyRef Name="NOTA_INT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EDITED_INT_ID_FK">
+          <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="0..1" />
+          <End Role="TB_NOTA_STR" Type="Self.TB_NOTA_STR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA_STR">
+              <PropertyRef Name="STR_INT_EDITED" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -392,6 +418,10 @@
           <EntitySet Name="TB_USER_CUR" EntityType="Self.TB_USER_CUR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_USER_FAC" EntityType="Self.TB_USER_FAC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_USER_MAT" EntityType="Self.TB_USER_MAT" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="AUTHOR_INT_ID_FK" Association="Self.AUTHOR_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_NOTA_STR" EntitySet="TB_NOTA_STR" />
+          </AssociationSet>
           <AssociationSet Name="CUR_USER_INT_ID_FK" Association="Self.CUR_USER_INT_ID_FK">
             <End Role="TB_USER" EntitySet="TB_USER" />
             <End Role="TB_CURSO" EntitySet="TB_CURSO" />
@@ -399,6 +429,10 @@
           <AssociationSet Name="DES_USER_INT_ID" Association="Self.DES_USER_INT_ID">
             <End Role="TB_NOTA" EntitySet="TB_NOTA" />
             <End Role="TB_NOTA_DES" EntitySet="TB_NOTA_DES" />
+          </AssociationSet>
+          <AssociationSet Name="EDITED_INT_ID_FK" Association="Self.EDITED_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_NOTA_STR" EntitySet="TB_NOTA_STR" />
           </AssociationSet>
           <AssociationSet Name="FAC_USER_INT_ID_FK" Association="Self.FAC_USER_INT_ID_FK">
             <End Role="TB_USER" EntitySet="TB_USER" />
@@ -469,8 +503,7 @@
             <End Role="TB_USER_FAC" EntitySet="TB_USER_FAC" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bancoMainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -548,11 +581,15 @@
             <PropertyRef Name="STR_INT_ID" />
           </Key>
           <Property Name="STR_INT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="STR_STR_PATH" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="STR_STR_PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NOTA_INT_ID" Type="Int32" />
-          <Property Name="STR_STR_TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STR_STR_TITLE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TB_NOTA" Relationship="Self.STR_INT_ID" FromRole="TB_NOTA_STR" ToRole="TB_NOTA" />
           <NavigationProperty Name="TB_NOTA1" Relationship="Self.STR_USER_INT_ID" FromRole="TB_NOTA_STR" ToRole="TB_NOTA" />
+          <Property Name="STR_INT_AUTHOR" Type="Int32" />
+          <Property Name="STR_INT_EDITED" Type="Int32" />
+          <NavigationProperty Name="TB_USER" Relationship="bancoMainModel.AUTHOR_INT_ID_FK" FromRole="TB_NOTA_STR" ToRole="TB_USER" />
+          <NavigationProperty Name="TB_USER1" Relationship="bancoMainModel.EDITED_INT_ID_FK" FromRole="TB_NOTA_STR" ToRole="TB_USER" />
         </EntityType>
         <EntityType Name="TB_PICTURES">
           <Key>
@@ -595,6 +632,8 @@
           <NavigationProperty Name="TB_USER_CUR" Relationship="Self.USER_CUR_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_USER_CUR" />
           <NavigationProperty Name="TB_USER_MAT" Relationship="Self.USER_MAT_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_USER_MAT" />
           <NavigationProperty Name="TB_USER_FAC" Relationship="Self.USER_FAC_USER_INT_ID_FK" FromRole="TB_USER" ToRole="TB_USER_FAC" />
+          <NavigationProperty Name="TB_NOTA_STR" Relationship="bancoMainModel.AUTHOR_INT_ID_FK" FromRole="TB_USER" ToRole="TB_NOTA_STR" />
+          <NavigationProperty Name="TB_NOTA_STR1" Relationship="bancoMainModel.EDITED_INT_ID_FK" FromRole="TB_USER" ToRole="TB_NOTA_STR" />
         </EntityType>
         <EntityType Name="TB_USER_CUR">
           <Key>
@@ -975,7 +1014,39 @@
             <End Role="TB_USER" EntitySet="TB_USER" />
             <End Role="TB_USER_FAC" EntitySet="TB_USER_FAC" />
           </AssociationSet>
+          <AssociationSet Name="AUTHOR_INT_ID_FK" Association="bancoMainModel.AUTHOR_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_NOTA_STR" EntitySet="TB_NOTA_STR" />
+          </AssociationSet>
+          <AssociationSet Name="EDITED_INT_ID_FK" Association="bancoMainModel.EDITED_INT_ID_FK">
+            <End Role="TB_USER" EntitySet="TB_USER" />
+            <End Role="TB_NOTA_STR" EntitySet="TB_NOTA_STR" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="AUTHOR_INT_ID_FK">
+          <End Type="bancoMainModel.TB_USER" Role="TB_USER" Multiplicity="0..1" />
+          <End Type="bancoMainModel.TB_NOTA_STR" Role="TB_NOTA_STR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA_STR">
+              <PropertyRef Name="STR_INT_AUTHOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EDITED_INT_ID_FK">
+          <End Type="bancoMainModel.TB_USER" Role="TB_USER" Multiplicity="0..1" />
+          <End Type="bancoMainModel.TB_NOTA_STR" Role="TB_NOTA_STR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_USER">
+              <PropertyRef Name="USER_INT_ID" />
+            </Principal>
+            <Dependent Role="TB_NOTA_STR">
+              <PropertyRef Name="STR_INT_EDITED" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1042,6 +1113,8 @@
           <EntitySetMapping Name="TB_NOTA_STR">
             <EntityTypeMapping TypeName="bancoMainModel.TB_NOTA_STR">
               <MappingFragment StoreEntitySet="TB_NOTA_STR">
+                <ScalarProperty Name="STR_INT_EDITED" ColumnName="STR_INT_EDITED" />
+                <ScalarProperty Name="STR_INT_AUTHOR" ColumnName="STR_INT_AUTHOR" />
                 <ScalarProperty Name="STR_INT_ID" ColumnName="STR_INT_ID" />
                 <ScalarProperty Name="STR_STR_PATH" ColumnName="STR_STR_PATH" />
                 <ScalarProperty Name="NOTA_INT_ID" ColumnName="NOTA_INT_ID" />
