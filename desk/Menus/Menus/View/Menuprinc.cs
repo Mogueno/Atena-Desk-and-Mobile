@@ -12,15 +12,16 @@ using Menus.Model;
 
 namespace Menus
 {
-    
+
     public partial class Menuprinc : Form
     {
         TypeAssistant assistant;
+        EntityFrameworkFunc entFunc = new EntityFrameworkFunc();
         public Menuprinc(string texto)
         {
             InitializeComponent();
             lbRecebeEmailMenu.Text = texto;
-
+            Dados dataStrings = new Dados();
             assistant = new TypeAssistant();
             assistant.Idled += assistant_Idled;
         }
@@ -70,7 +71,7 @@ namespace Menus
                     System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
 
 
-                    t.Interval = 2000; // specify interval time as you want
+                    t.Interval = 2000;
                     t.Tick += new EventHandler(timer_Tick);
                     t.Start();
                 }
@@ -89,7 +90,7 @@ namespace Menus
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            Transition.run(label10, "Left", 800, new TransitionType_EaseInEaseOut(50));
+            Transition.run(label10, "Left", 5000, new TransitionType_EaseInEaseOut(50));
         }
 
 
@@ -110,10 +111,6 @@ namespace Menus
                         txtIdade.Text = da.GetValue(1).ToString();
                         txtSexo.Text = da.GetValue(2).ToString();
                     }
-
-
-
-
                     da.Close();
                     objConexao.Close();
 
@@ -149,6 +146,44 @@ namespace Menus
             }
         }
 
+        public void SelectNoteConfig(string emailRecebe)
+        {
+            using (SqlConnection objConexao = new SqlConnection(strConexao))
+            {
+                using (SqlCommand objCommand = new SqlCommand(strSelectNote, objConexao))
+                {
+                    objConexao.Open();
+
+                    objCommand.Parameters.AddWithValue("@USER_STR_EMAIL", emailRecebe);
+
+
+                    SqlDataReader da = objCommand.ExecuteReader();
+                    if (da.HasRows)
+                    {
+                        while (da.Read())
+                        {
+                            string shortFoo = da.GetString(0).Length > 25 ? da.GetString(0).Substring(0, 25) + "..." : da.GetString(0);
+                            Button button = new Button();
+                            button.Tag = da.GetInt32(2);
+                            button.Text = da.GetString(1) + "\n" + shortFoo;
+                            button.Width = flowLayoutPanel2.Width - 5;
+                            button.FlatStyle = FlatStyle.Flat;
+                            button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
+                            button.Cursor = Cursors.Hand;
+                            button.Height = 75;
+                            button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                            button.Click += new EventHandler(this.button_Click);
+                            flowLayoutPanel2.Controls.Add(button);
+                        }
+                    }
+                    da.Close();
+                    objConexao.Close();
+
+                }
+            }
+        }
+
 
         private void UpdateUser(string EmailVar, string nomevar, string idadevar, string sexovar)
         {
@@ -177,43 +212,6 @@ namespace Menus
             }
         }
 
-        public void SelectNoteConfig(string emailRecebe)
-        {
-            using (SqlConnection objConexao = new SqlConnection(strConexao))
-            {
-                using (SqlCommand objCommand = new SqlCommand(strSelectNote, objConexao))
-                {
-                    objConexao.Open();
-
-                    objCommand.Parameters.AddWithValue("@USER_STR_EMAIL", emailRecebe);
-
-
-                    SqlDataReader da = objCommand.ExecuteReader();
-                    if (da.HasRows)
-                    {
-                        while (da.Read())
-                        {
-                            string shortFoo = da.GetString(0).Length > 25 ? da.GetString(0).Substring(0, 25) + "..." : da.GetString(0);
-                            Button button = new Button();
-                            button.Tag = da.GetInt32(2);
-                            button.Text = da.GetString(1) + "\n" + shortFoo;
-                            button.Width = flowLayoutPanel2.Width -5;
-                            button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(33, 33, 33);
-                            button.ForeColor = Color.White;
-                            button.Cursor = Cursors.Hand;
-                            button.Height = 75;
-                            button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                            button.Click += new EventHandler(this.button_Click);
-                            flowLayoutPanel2.Controls.Add(button);
-                        }
-                    }
-                    da.Close();
-                    objConexao.Close();
-
-                }
-            }
-        }
 
 		private void Button2_Click(object sender, EventArgs e)
 		{
@@ -344,10 +342,6 @@ namespace Menus
             flowLayoutPanel7.VerticalScroll.Visible = false;
             flowLayoutPanel7.AutoScroll = true;
 
-            //autoSizeTxt(textBox5);
-            //autoSizeTxt(textBox6);
-
-
             GetUser(lbRecebeEmailMenu.Text);
             lbRecebeEmailConfig.Text = lbRecebeEmailMenu.Text;
             labelMateriaAccount.Text = Login.Materia;
@@ -405,22 +399,12 @@ namespace Menus
 
             try
             {
+                EntityFrameworkFunc teste = new EntityFrameworkFunc();
                 var id = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
                 var email = id.USER_INT_ID;
-                var content = (from str in ht2.TB_SHARE
-                                  join send in ht2.TB_USER on str.SENDER_INT_ID equals send.USER_INT_ID
-                                  join recipient in ht2.TB_USER on str.RECIPIENT_INT_ID equals recipient.USER_INT_ID
-                                  join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.STR_INT_ID
-                                  join notaChild in ht2.TB_NOTA_STR on nota.STR_INT_ID equals notaChild.STR_INT_ID
-                                  where email == recipient.USER_INT_ID
-                                  select new
-                                  {
-                                      shareId = str.SHARE_INT_ID,
-                                      senderName = send.USER_STR_NOME
-                                  }).ToList();
+                var content = teste.getSharedNotes(email);
                 if (content.Count != 0)
                 {
-                    MessageBox.Show("pois é amigo tem mensagem pra você");
                     flowLayoutPanel28.Controls.Clear();
 
                     button10.BackgroundImage = Properties.Resources.notification__4___1_;
@@ -443,12 +427,6 @@ namespace Menus
                         label30.Tag = content[i].shareId;
                         label30.Cursor = Cursors.Hand;
                         label30.Text = conteudo;
-
-                        //EventHandler CliqueNaNota = (s, evento) => MyMethod(content[i].notaTitle, content[i].notaContent, content[i].notaId, content[i].notaCur, content[i].notaFacul);
-
-                        //label30.Click += CliqueNaNota;//suscribe
-                        //MessageBox.Show("nota title " + content[i].notaTitle + " nota content " + content[i].notaContent + " nota id " + content[i].notaId + " nota cur " + content[i].notaCur + " nota facul " + content[i].notaFacul);
-
                         label30.Click += new EventHandler(this.showNote__click);
 
 
@@ -457,8 +435,6 @@ namespace Menus
                 }
                 else
                 {
-                    MessageBox.Show("NÃO TEM MENSAGEM AMIGÃO\n");
-
                     button10.BackgroundImage = Properties.Resources.notification__3___1_;
                 }
             }
@@ -476,30 +452,14 @@ namespace Menus
 
         private void showNote__click(object sender, EventArgs e)
         {
+            EntityFrameworkFunc teste = new EntityFrameworkFunc();
             MessageBox.Show("ola meninas");
             Label label = sender as Label;
             int s = Convert.ToInt32(label.Tag);
             btnconcluir.Tag = s;
             confirmNote.BringToFront();
-            bancoMainEntities1 ht2 = new bancoMainEntities1();
 
-            var content = (from str in ht2.TB_SHARE
-                           join send in ht2.TB_USER on str.SENDER_INT_ID equals send.USER_INT_ID
-                           join recipient in ht2.TB_USER on str.RECIPIENT_INT_ID equals recipient.USER_INT_ID
-                           join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.STR_INT_ID
-                           join notaChild in ht2.TB_NOTA_STR on nota.STR_INT_ID equals notaChild.STR_INT_ID
-                           where s == str.SHARE_INT_ID
-                           select new
-                           {
-                               notaId = nota.NOTA_INT_ID,
-                               notaChildId = nota.STR_INT_ID,
-                               notaTitle = notaChild.STR_STR_TITLE,
-                               notaContent = notaChild.STR_STR_PATH,
-                               notaFacul = nota.FAC_INT_ID,
-                               notaCur = nota.CUR_INT_ID,
-                               notaMat = nota.MAT_INT_ID,
-                               senderName = send.USER_STR_NOME
-                           }).SingleOrDefault();
+            var content = teste.getNoteData(s);
 
 
             label32.Text = content.notaTitle;
@@ -520,16 +480,6 @@ namespace Menus
             txtuniversidade.Text = s;
             txtuniversidade.Tag = a;
             Transition.run(flowLayoutPanel18, "Height", 0, new TransitionType_EaseInEaseOut(250));
-        }
-
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.Style |= 0x20000; // <--- use 0x20000
-                return cp;
-            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -667,77 +617,6 @@ namespace Menus
             searchButtonsMateria();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            if (!String.IsNullOrEmpty(textBox2.Text))
-            {
-                flowLayoutPanel9.Controls.Clear();
-                string searchContent = textBox2.Text;
-                try
-                {
-                    bancoMainEntities1 ht2 = new bancoMainEntities1();
-                    var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
-                    if (content.Count != 0)
-                    {
-                        for (int i = 0; i < content.Count; i++)
-                        {
-                            Button button = new Button();
-                            button.Tag = content[i].STR_INT_ID;
-                            button.Text = content[i].STR_STR_TITLE;
-                            button.Width = flowLayoutPanel7.Width - 5;
-                            button.Cursor = Cursors.Hand;
-                            flowLayoutPanel9.Controls.Add(button);
-                        }
-                    }
-                    else
-                    {
-                        TextBox txt = new TextBox();
-                        txt.Text = "Não foram encontrados resultados para a sua pesquisa";
-                        flowLayoutPanel9.Controls.Add(txt);
-                    }
-                }
-
-                catch (Exception ex)
-                {
-                    ErrorProvider error = new ErrorProvider();
-                }
-            }
-            else
-            {
-                flowLayoutPanel4.Controls.Clear();
-            }
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            panelCur.BringToFront();
-            try
-            {
-                bancoMainEntities1 ht3 = new bancoMainEntities1();
-                var content = ht3.TB_CURSO.ToList();
-                if (content.Count != 0)
-                {
-                    for (int i = 0; i < content.Count; i++)
-                    {
-                        Button button = new Button();
-                        button.Tag = content[i].CUR_INT_ID;
-                        button.Text = content[i].CUR_STR_NOME;
-                        button.Width = flowLayoutPanel9.Width - 5;
-                        button.Cursor = Cursors.Hand;
-                        flowLayoutPanel9.Controls.Add(button);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Não foram encontradas notas");
-                }
-            }
-            catch (Exception ex)
-            {
-                ErrorProvider error = new ErrorProvider();
-            }
-        }
-
         private void button21_Click(object sender, EventArgs e)
         {
             panelSearch.BringToFront();
@@ -798,11 +677,6 @@ namespace Menus
 
         public const string strSelectNota = "SELECT NOTA_INT_ID FROM ";
 
-
-        public const string strInsertNota1 = "INSERT INTO TB_NOTA OUTPUT INSERTED.NOTA_INT_ID VALUES (@FAC_INT_ID, @CUR_INT_ID, @MAT_INT_ID, @USER_INT_ID)";
-
-        public const string strInsertNota2 = "INSERT INTO TB_NOTA_STR VALUES (@STR_STR_PATH, @NOTA_INT_ID, @STR_STR_TITLE)";
-
         public const string strInsertNota3 = "INSERT INTO TB_NOTA_STR OUTPUT INSERTED.STR_INT_ID VALUES (@STR_STR_PATH, @STR_STR_TITLE, @STR_INT_AUTHOR, @STR_INT_EDITED)";
 
         public const string strInsertNota4 = "INSERT INTO TB_NOTA VALUES (@FAC_INT_ID, @CUR_INT_ID, @MAT_INT_ID, @USER_INT_ID, @STR_INT_ID)";
@@ -835,13 +709,8 @@ namespace Menus
 
                     using (SqlCommand objCommand2 = new SqlCommand(strInsertNota3, objConexao))
                     {
-                    //    objCommand2.Parameters.AddWithValue("@USER_INT_ID", userId);
-                    //    objCommand2.Parameters.AddWithValue("@FAC_INT_ID", faculdadeId);
-                    //    objCommand2.Parameters.AddWithValue("@CUR_INT_ID", cursoId);
-                    //    objCommand2.Parameters.AddWithValue("@MAT_INT_ID", materiaId);
 
                         objCommand2.Parameters.AddWithValue("@STR_STR_PATH", notaRecebe);
-                        //objCommand2.Parameters.AddWithValue("@NOTA_INT_ID", notaId);
                         objCommand2.Parameters.AddWithValue("@STR_STR_TITLE", notaTitulo);
                         bancoMainEntities1 ht = new bancoMainEntities1();
                         var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
@@ -856,10 +725,6 @@ namespace Menus
 
                         using (SqlCommand objCommand3 = new SqlCommand(strInsertNota4, objConexao))
                         {
-                            //objCommand3.Parameters.AddWithValue("@STR_STR_PATH", notaRecebe);
-                            //objCommand3.Parameters.AddWithValue("@NOTA_INT_ID", notaId);
-                            //objCommand3.Parameters.AddWithValue("@STR_STR_TITLE", notaTitulo);
-
                             objCommand3.Parameters.AddWithValue("@USER_INT_ID", userId);
                             objCommand3.Parameters.AddWithValue("@FAC_INT_ID", faculdadeId);
                             objCommand3.Parameters.AddWithValue("@CUR_INT_ID", cursoId);
@@ -985,52 +850,6 @@ namespace Menus
             this.WindowState = FormWindowState.Minimized;
         }
 
-
-        protected override void WndProc(ref Message m)
-        {
-            const int RESIZE_HANDLE_SIZE = 10;
-
-            switch (m.Msg)
-            {
-                case 0x0084/*NCHITTEST*/ :
-                    base.WndProc(ref m);
-
-                    if ((int)m.Result == 0x01/*HTCLIENT*/)
-                    {
-                        Point screenPoint = new Point(m.LParam.ToInt32());
-                        Point clientPoint = this.PointToClient(screenPoint);
-                        if (clientPoint.Y <= RESIZE_HANDLE_SIZE)
-                        {
-                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
-                                m.Result = (IntPtr)3/*HTTOPLEFT*/ ;
-                            else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
-                                m.Result = (IntPtr)2/*HTTOP*/ ;
-                            else
-                                m.Result = (IntPtr)4/*HTTOPRIGHT*/ ;
-                        }
-                        else if (clientPoint.Y <= (Size.Height - RESIZE_HANDLE_SIZE))
-                        {
-                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
-                                m.Result = (IntPtr)1/*HTLEFT*/ ;
-                            else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
-                                m.Result = (IntPtr)2/*HTCAPTION*/ ;
-                            else
-                                m.Result = (IntPtr)1/*HTRIGHT*/ ;
-                        }
-                        else
-                        {
-                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
-                                m.Result = (IntPtr)6/*HTBOTTOMLEFT*/ ;
-                            else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
-                                m.Result = (IntPtr)5/*HTBOTTOM*/ ;
-                            else
-                                m.Result = (IntPtr)7/*HTBOTTOMRIGHT*/ ;
-                        }
-                    }
-                    return;
-            }
-            base.WndProc(ref m);
-        }
 
         private void buttonSearchText_Click(object sender, EventArgs e)
         {
@@ -1268,11 +1087,6 @@ namespace Menus
                                           notaTitle = str.STR_STR_TITLE,
                                           notaId = str.STR_INT_ID,
                                       }).ToList();
-
-
-
-
-                    //var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
                     if (entryPoint.Count != 0)
                     {
                         for (int i = 0; i < entryPoint.Count; i++)
@@ -1367,23 +1181,12 @@ namespace Menus
             flowLayoutPanel16.Controls.Clear();
             try
             {
-                bancoMainEntities1 ht2 = new bancoMainEntities1();
+                
 
                 int facId = Convert.ToInt32(panel29.Tag);
 
-                var entryPoint = (from str in ht2.TB_NOTA_STR
-                                  join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
-                                  where facId == nota.CUR_INT_ID
-                                  select new
-                                  {
-                                      notaTitle = str.STR_STR_TITLE,
-                                      notaId = str.STR_INT_ID,
-                                  }).ToList();
+                var entryPoint = entFunc.getCurso(facId, "curso");
 
-
-
-
-                //var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
                 if (entryPoint.Count != 0)
                 {
                     for (int i = 0; i < entryPoint.Count; i++)
@@ -1423,17 +1226,12 @@ namespace Menus
             try
             {
                 bancoMainEntities1 ht2 = new bancoMainEntities1();
+                EntityFrameworkFunc entFunc = new EntityFrameworkFunc();
 
                 int facId = Convert.ToInt32(panel37.Tag);
 
-                var entryPoint = (from str in ht2.TB_NOTA_STR
-                                  join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
-                                  where facId == nota.MAT_INT_ID
-                                  select new
-                                  {
-                                      notaTitle = str.STR_STR_TITLE,
-                                      notaId = str.STR_INT_ID,
-                                  }).ToList();
+
+                var entryPoint = entFunc.getCurso(facId, "materia");
 
 
 
@@ -2324,7 +2122,6 @@ namespace Menus
                                    }).ToList();
                     if (content.Count != 0)
                     {
-                        MessageBox.Show("pois é amigo tem mensagem pra você");
                         flowLayoutPanel28.Controls.Clear();
 
                         button10.BackgroundImage = Properties.Resources.notification__4___1_;
