@@ -26,8 +26,8 @@ namespace Menus.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Pichau\\Documents\\ban" +
-            "coMain.mdf;Integrated Security=True;Connect Timeout=30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=CCSTECNO.DDNS.NET;Initial Catalog=Atena;User ID=AtenaAdm;Password=Mur" +
+            "ilo1234")]
         public string bancoMainConnectionString {
             get {
                 return ((string)(this["bancoMainConnectionString"]));

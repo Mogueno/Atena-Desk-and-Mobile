@@ -64,6 +64,15 @@ namespace Menus
                         roundPictureBox2.Image = pictureBox1.InitialImage;
                     }
                     label35.Text = username.userName;
+
+                    Transition.run(label10, "Left", 565, new TransitionType_EaseInEaseOut(50));
+
+                    System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
+
+
+                    t.Interval = 2000; // specify interval time as you want
+                    t.Tick += new EventHandler(timer_Tick);
+                    t.Start();
                 }
 
             }));
@@ -76,6 +85,12 @@ namespace Menus
         public const string strSelectUser2 = "SELECT USER_STR_NOME, USER_INT_IDADE, USER_STR_SEXO FROM TB_USER WHERE USER_STR_EMAIL = @USER_STR_EMAIL_VAR";
 
         public const string strUpdateUser = "UPDATE TB_USER SET USER_STR_NOME = @USER_STR_NOME, USER_INT_IDADE = @USER_INT_IDADE, USER_STR_SEXO = @USER_STR_SEXO WHERE USER_STR_EMAIL = @USER_STR_EMAIL";
+
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            Transition.run(label10, "Left", 800, new TransitionType_EaseInEaseOut(50));
+        }
 
 
         public void SelectUserConfig(string emailRecebe)
@@ -334,10 +349,10 @@ namespace Menus
 
 
             GetUser(lbRecebeEmailMenu.Text);
-            lbRecebeEmailConfig.Text = lbRecebeEmailMenu.Text; 
-            lbMateriaShow.Text = Login.Materia;
-            lbFaculShow.Text = facul3.faculName;
-            lbCursoShow.Text = curso3.cursoName;
+            lbRecebeEmailConfig.Text = lbRecebeEmailMenu.Text;
+            labelMateriaAccount.Text = Login.Materia;
+            labelFaculAccount.Text = facul3.faculName;
+            labelCursoAccount.Text = curso3.cursoName;
 
 
 
@@ -788,7 +803,7 @@ namespace Menus
 
         public const string strInsertNota2 = "INSERT INTO TB_NOTA_STR VALUES (@STR_STR_PATH, @NOTA_INT_ID, @STR_STR_TITLE)";
 
-        public const string strInsertNota3 = "INSERT INTO TB_NOTA_STR OUTPUT INSERTED.STR_INT_ID VALUES (@STR_STR_PATH, NULL, @STR_STR_TITLE, @STR_INT_AUTHOR, @STR_INT_EDITED)";
+        public const string strInsertNota3 = "INSERT INTO TB_NOTA_STR OUTPUT INSERTED.STR_INT_ID VALUES (@STR_STR_PATH, @STR_STR_TITLE, @STR_INT_AUTHOR, @STR_INT_EDITED)";
 
         public const string strInsertNota4 = "INSERT INTO TB_NOTA VALUES (@FAC_INT_ID, @CUR_INT_ID, @MAT_INT_ID, @USER_INT_ID, @STR_INT_ID)";
 
@@ -1196,7 +1211,7 @@ namespace Menus
                     int facId = Convert.ToInt32(panel21.Tag);
 
                     var entryPoint = (from str in ht2.TB_NOTA_STR
-                                      join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                      join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
                                       where facId == nota.FAC_INT_ID
                                       select new
                                       {
@@ -1246,7 +1261,7 @@ namespace Menus
                     int facId = Convert.ToInt32(panel21.Tag);
 
                     var entryPoint = (from str in ht2.TB_NOTA_STR
-                                      join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                      join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
                                       where facId == nota.FAC_INT_ID
                                       select new
                                       {
@@ -1302,7 +1317,7 @@ namespace Menus
                 int facId = Convert.ToInt32(panel21.Tag);
 
                 var entryPoint = (from str in ht2.TB_NOTA_STR
-                                  join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                  join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
                                   where facId == nota.FAC_INT_ID
                                   select new
                                   {
@@ -1357,7 +1372,7 @@ namespace Menus
                 int facId = Convert.ToInt32(panel29.Tag);
 
                 var entryPoint = (from str in ht2.TB_NOTA_STR
-                                  join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                  join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
                                   where facId == nota.CUR_INT_ID
                                   select new
                                   {
@@ -1412,7 +1427,7 @@ namespace Menus
                 int facId = Convert.ToInt32(panel37.Tag);
 
                 var entryPoint = (from str in ht2.TB_NOTA_STR
-                                  join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                  join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
                                   where facId == nota.MAT_INT_ID
                                   select new
                                   {
@@ -1581,7 +1596,7 @@ namespace Menus
                     int facId = Convert.ToInt32(panel29.Tag);
 
                     var entryPoint = (from str in ht2.TB_NOTA_STR
-                                      join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                      join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
                                       where facId == nota.CUR_INT_ID
                                       select new
                                       {
@@ -1631,7 +1646,7 @@ namespace Menus
                     int facId = Convert.ToInt32(panel29.Tag);
 
                     var entryPoint = (from str in ht2.TB_NOTA_STR
-                                      join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                      join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
                                       where facId == nota.CUR_INT_ID
                                       select new
                                       {
@@ -1754,7 +1769,7 @@ namespace Menus
                     int facId = Convert.ToInt32(panel37.Tag);
 
                     var entryPoint = (from str in ht2.TB_NOTA_STR
-                                      join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                      join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
                                       where facId == nota.MAT_INT_ID
                                       select new
                                       {
@@ -1804,7 +1819,7 @@ namespace Menus
                     int facId = Convert.ToInt32(panel37.Tag);
 
                     var entryPoint = (from str in ht2.TB_NOTA_STR
-                                      join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.NOTA_INT_ID
+                                      join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
                                       where facId == nota.MAT_INT_ID
                                       select new
                                       {
@@ -2429,6 +2444,25 @@ namespace Menus
         private void textBox6_KeyUp(object sender, KeyEventArgs e)
         {
             assistant.TextChanged();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button47_Click(object sender, EventArgs e)
+        {
+
+            if(this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            
         }
     }
 }

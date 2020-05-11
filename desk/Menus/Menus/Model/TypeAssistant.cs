@@ -13,7 +13,7 @@ namespace Menus.Model
         public int WaitingMilliSeconds { get; set; }
         System.Threading.Timer waitingTimer;
 
-        public TypeAssistant(int waitingMilliSeconds = 600)
+        public TypeAssistant(int waitingMilliSeconds = 1000)
         {
             WaitingMilliSeconds = waitingMilliSeconds;
             waitingTimer = new Timer(p =>

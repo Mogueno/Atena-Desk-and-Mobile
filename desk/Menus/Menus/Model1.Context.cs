@@ -29,8 +29,6 @@ namespace Menus
         public virtual DbSet<TB_FACULDADE> TB_FACULDADE { get; set; }
         public virtual DbSet<TB_MATERIA> TB_MATERIA { get; set; }
         public virtual DbSet<TB_NOTA> TB_NOTA { get; set; }
-        public virtual DbSet<TB_NOTA_DES> TB_NOTA_DES { get; set; }
-        public virtual DbSet<TB_NOTA_IMG> TB_NOTA_IMG { get; set; }
         public virtual DbSet<TB_NOTA_STR> TB_NOTA_STR { get; set; }
         public virtual DbSet<TB_PICTURES> TB_PICTURES { get; set; }
         public virtual DbSet<TB_SHARE> TB_SHARE { get; set; }
