@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileTCC.View.HomePage"
+             xmlns:local="clr-namespace:MobileTCC.View"
+             xmlns:controls1="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="Home"
+             Appearing="ContentPage_Appearing">
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Name="Compartilhar"  Order="Primary" Icon="ic_share_variant.png"  Text="Compartilhar" Priority="1"/>-->
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="ListaNotas" HasUnevenRows="True"
+					   Margin="15"
+					  ItemSelected="ListaNotas_ItemSelected"
+                      SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White" >
+                                <Frame.OutlineColor>
+                                    <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray"/>
+                                </Frame.OutlineColor>
+                                <Frame.Margin>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="7" iOS="7"/>
+                                </Frame.Margin>
+                                <Frame.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5"/>
+                                </Frame.Padding>
+                                <StackLayout Orientation="Horizontal">
+                                    <Grid VerticalOptions="CenterAndExpand" Padding="0" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="Start" >
+                                            <controls1:CircleImage Source="{Binding Imagem}" VerticalOptions="Start" HeightRequest="30" WidthRequest="30"></controls1:CircleImage>
+                                            <Label FontAttributes="None" Grid.Row="0"
+                                                   HorizontalTextAlignment="Start"
+                                                   VerticalTextAlignment="Center"
+                                                   FontSize="12"
+                                                   Text="{Binding Titulo , Mode = TwoWay}" TextColor="Gray" >
+                                            </Label>
+                                        </StackLayout>
+                                        <Grid Grid.Row="1">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label FontAttributes="None" Grid.Row="1"
+                                                       HorizontalTextAlignment="Start"
+                                                       VerticalTextAlignment="Start"
+                                                       FontSize="12" Text="{Binding Dados, Mode = TwoWay}" 
+                                                       TextColor="Black">
+                                                </Label>
+                                                <Image Source="{Binding  Imagem}"  Grid.Row="2"  WidthRequest="50" HeightRequest="50" HorizontalOptions="End" />
+                                            </StackLayout>
+                                        </Grid>
+                                        <Grid Grid.Row="4">
+                                            <StackLayout Orientation="Horizontal" Margin="0,0,0,0" Padding="0,0,0,0" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand">
+                                                <Button Text="Editar" x:Name="btnEditar" Clicked="BtnEditar_Clicked"></Button>
+                                                <Button Text="Excluir" x:Name="btnExcluir" Clicked="BtnExcluir_Clicked"></Button>
+                                            </StackLayout>
+                                        </Grid>
+
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
