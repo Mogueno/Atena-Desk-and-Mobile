@@ -108,6 +108,7 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "MobileTCC.Android.dll" comes first in this list. */
 		"MobileTCC.Android.dll",
 		"FormsViewGroup.dll",
+		"ImageCircle.Forms.Plugin.dll",
 		"MobileTCC.dll",
 		"Newtonsoft.Json.dll",
 		"SQLite-net.dll",

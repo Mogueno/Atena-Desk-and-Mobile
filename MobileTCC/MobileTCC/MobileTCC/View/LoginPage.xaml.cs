@@ -14,6 +14,12 @@ using Xamarin.Auth;
 using MobileTCC.Helpers;
 using System.Diagnostics;
 using Newtonsoft.Json;
+using System.Data;
+using System.Net.NetworkInformation;
+using System.ServiceModel;
+using static MobileTCC.Model.TableUsuario;
+using Xamarin.Essentials;
+using MobileTCC.Controller;
 
 namespace MobileTCC.View
 {
@@ -22,6 +28,8 @@ namespace MobileTCC.View
 	{
         Account account;
         AccountStore store;
+        UserController userController = new UserController();
+        FaculdadeController faculdadeController = new FaculdadeController();
 
         public LoginPage ()
 		{
@@ -37,13 +45,15 @@ namespace MobileTCC.View
 
         void BtnLogin_Clicked(object sender, EventArgs e)
         {
-            var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
-            var db = new SQLiteConnection(dbpath);
+            var db = new SQLiteConnection(App.Caminho);
+            db.CreateTable<TableUsuario>();
 
-            var myquery = db.Table<RegUserTable>().Where(u=>u.UserName.Equals(txbUserName.Text) && u.Password.Equals(txbPassword.Text)).FirstOrDefault();
+            var myquery = db.Table<TableUsuario>().Where(u=>u.Login.Equals(txbUserName.Text) && u.Senha.Equals(txbPassword.Text)).FirstOrDefault();
 
             if(myquery != null)
             {
+                Preferences.Set("userId", myquery.Id.ToString());
+
                 App.Current.MainPage = new NavigationPage(new MainPageApp());
             }
             else
@@ -134,22 +144,25 @@ namespace MobileTCC.View
 
                 await store.SaveAsync(account = e.Account, Constants.AppName);
 
-                
-                var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
-                var db = new SQLiteConnection(dbpath);
+                // Utilizar o mesmo arquivo de banco para essa operacao (app)
+                var db = new SQLiteConnection(App.Caminho);
 
-                db.CreateTable<RegUserTable>();
+                db.CreateTable<TableUsuario>();
 
-                var item = new RegUserTable()
+                var item = new TableUsuario()
                 {
                     Email = userdata.Email,
-                    gImage = userdata.Picture
+                    Login = userdata.Name,
+                    GImage = userdata.Picture,
+                    Senha = "1234",
+                    Sexo = userdata.Gender,
+                    GLogin = true,
                 };
 
                 db.Insert(item);
                 Device.BeginInvokeOnMainThread(async () =>
                 {
-                    var result = await this.DisplayAlert("Sucesso", "Cadastro Feito com Sucesso", "Yes", "Cancel");
+                    var result = await this.DisplayAlert("Sucesso", "Cadastro Feito com Sucesso. Altere sua senha registrada dentro de configurações.", "Yes", "Cancel");
                     if (result)
                         App.Current.MainPage = new NavigationPage(new MainPageApp());
                 });
@@ -168,6 +181,29 @@ namespace MobileTCC.View
             }
 
             Debug.WriteLine("Authentication error: " + e.Message);
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await this.DisplayAlert("Erro ao fazer login", "Por favor tente novamente mais tarde" , "Ok");
+            });
+
+        }
+
+        private async void BtnTeste_Clicked(object sender, EventArgs e)
+        {
+            //GET ALL USERS
+            //IEnumerable<TB_USER> result = await userController.GetAllUsers();
+
+            //POST A NEW USER
+            //var result = await userController.AddNewUser("testexamarin", 10, "xamarin", "emailxamarin@xamarin.com", "senhaxamarin", "0", "1");
+
+            //PATCH A CURRENT USER
+            //var result = await userController.PatchUser( 26 ,"patchxamarain", 10, "patch", "patch@xamarin.com", "patchxamarin", "0", "1");
+
+            //DELETE A USER
+            //var result = await userController.DeleteUser( 26 );
+
+            //GET ALL FACULDADES
+            //var result = await faculdadeController.GetAllFaculdades();
         }
     }
 }

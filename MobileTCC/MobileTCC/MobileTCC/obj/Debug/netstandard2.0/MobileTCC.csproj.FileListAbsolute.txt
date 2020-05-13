@@ -16,3 +16,4 @@ C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC\obj\Debug
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC\obj\Debug\netstandard2.0\MobileTCC.dll
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC\obj\Debug\netstandard2.0\MobileTCC.pdb
+C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC\obj\Debug\netstandard2.0\View\RegistrationPageNext.xaml.g.cs

@@ -9,9 +9,13 @@ namespace MobileTCC
 {
     public partial class App : Application
     {
-        public App()
+        public static String BancoDados;
+        public static String Caminho;
+        public App(string Caminho, string BancoDados)
         {
             InitializeComponent();
+            App.BancoDados = BancoDados;
+            App.Caminho = Caminho;
 
             MainPage = new NavigationPage(new LoginPage());
         }

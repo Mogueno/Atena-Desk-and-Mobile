@@ -21,7 +21,11 @@ namespace MobileTCC.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             global::Xamarin.Auth.Presenters.XamarinAndroid.AuthenticationConfiguration.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            string BancoNome = "dbBancoNovo.db3";
+            string Caminho = FileAccessHelper.GetLocalFilePath(BancoNome);
+
+            LoadApplication(new App(Caminho, BancoNome));
+
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
         {
