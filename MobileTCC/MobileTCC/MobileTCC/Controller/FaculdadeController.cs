@@ -26,5 +26,19 @@ namespace MobileTCC.Controller
             string result = await client.GetStringAsync(baseAPI + "/faculdades");
             return JsonConvert.DeserializeObject<IEnumerable<TB_FACULDADE>>(result);
         }
+
+        public async Task<IEnumerable<TB_CURSO>> GetAllCursos()
+        {
+            HttpClient client = GetClient();
+            string result = await client.GetStringAsync(baseAPI + "/cursos");
+            return JsonConvert.DeserializeObject<IEnumerable<TB_CURSO>>(result);
+        }
+
+        public async Task<IEnumerable<TB_MATERIA>> GetAllMaterias()
+        {
+            HttpClient client = GetClient();
+            string result = await client.GetStringAsync(baseAPI + "/materias");
+            return JsonConvert.DeserializeObject<IEnumerable<TB_MATERIA>>(result);
+        }
     }
 }

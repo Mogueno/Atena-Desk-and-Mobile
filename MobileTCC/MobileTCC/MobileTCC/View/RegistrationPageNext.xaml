@@ -20,29 +20,29 @@
                     </StackLayout>
 
                     <StackLayout Grid.Row="1">
-                        <Entry Placeholder="Curso" FontSize="16" x:Name="EntryUserCurso" />
+                        <Picker Title="Escolha um Curso" x:Name="CursosList" SelectedIndexChanged="CursosList_SelectedIndexChanged"/>
                     </StackLayout>
 
                     <StackLayout Grid.Row="2">
-                        <Entry Placeholder="Materia 1" FontSize="16" x:Name="EntryUserMateria1"/>
+                        <Picker Title="Escolha sua primeira matéria" x:Name="MateriasList1" SelectedIndexChanged="MateriasList1_SelectedIndexChanged"/>
                     </StackLayout>
 
                     <StackLayout Grid.Row="3">
-                        <Entry Placeholder="Materia 2" FontSize="16" x:Name="EntryUserMateria2"/>
+                        <Picker Title="Escolha sua segunda matéria" x:Name="MateriasList2" SelectedIndexChanged="MateriasList2_SelectedIndexChanged"/>
                     </StackLayout>
 
                     <StackLayout Grid.Row="4">
-                        <Entry Placeholder="Materia 3" FontSize="16" x:Name="EntryUserMateria3"/>
+                        <ActivityIndicator  IsRunning="{Binding isBusy}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></ActivityIndicator>
                     </StackLayout>
 
+
                     <StackLayout Grid.Row="5">
-                        <Entry Placeholder="Materia 4" FontSize="16" x:Name="EntryUserMateria4"/>
                     </StackLayout>
 
                     <StackLayout Grid.Row="6">
-                        <Button Text="Register" FontSize="16" x:Name="btnInsertFaculdade" />
+                        <Button Text="Register" FontSize="16" x:Name="btnInsertFaculdade" Clicked="BtnInsertFaculdade_Clicked"/>
                     </StackLayout>
-
+                    
                 </Grid>
             </StackLayout>
         </ScrollView>

@@ -17,20 +17,43 @@ namespace MobileTCC.View
         public RegistrationPageNext()
         {
             InitializeComponent();
-            PopulatePicker();
+            PopulatePickers();
+            this.BindingContext = this;
+            this.IsBusy = false;
         }
 
-        public async void PopulatePicker()
+        public async void PopulatePickers()
         {
+            this.IsBusy = true;
             FaculdadeController faculdadeController = new FaculdadeController();
-            var table = await faculdadeController.GetAllFaculdades();
-            var faculdadeList = new List<string>();
-            foreach (var item in table)
+            var tableFac = await faculdadeController.GetAllFaculdades();
+            List<string> faculdadeList = new List<string>();
+            foreach (var item in tableFac)
             {
                 faculdadeList.Add(item.FAC_STR_NOME);
             }
             FaculdadesList.ItemsSource = faculdadeList;
 
+            var tableCur = await faculdadeController.GetAllCursos();
+            List<string> cursoList = new List<string>();
+            foreach (var item in tableCur)
+            {
+                cursoList.Add(item.CUR_STR_NOME);
+            }
+            CursosList.ItemsSource = cursoList;
+
+            var tableMat = await faculdadeController.GetAllMaterias();
+            List<string> materiasList1 = new List<string>();
+            List<string> materiasList2 = new List<string>();
+            foreach (var item in tableMat)
+            {
+                materiasList1.Add(item.MAT_STR_NOME);
+                materiasList2.Add(item.MAT_STR_NOME);
+            }
+
+            MateriasList1.ItemsSource = materiasList1;
+            MateriasList2.ItemsSource = materiasList2;
+            this.IsBusy = false;
 
             //INSERIR ID FACULDADE NA TABELA TB_USER_FAC
             //Pegar ID faculdade depois de selecionada.
@@ -55,5 +78,32 @@ namespace MobileTCC.View
             Preferences.Set("facID", facID + 1);
         }
 
+        private void CursosList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MateriasList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MateriasList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnInsertFaculdade_Clicked(object sender, EventArgs e)
+        {
+            if ((MateriasList1.SelectedIndex != -1) && (MateriasList2.SelectedIndex != -1) && (CursosList.SelectedIndex != -1) && (FaculdadesList.SelectedIndex != -1))
+            {
+                // Insert na rota /facdata
+                DisplayAlert("Sucesso", "Seu cadastro foi concluido", "Ok");
+            }
+            else
+            {
+                DisplayAlert("Erro", "Selecione todos os campos antes de prosseguir", "Ok");
+            }
+        }
     }
 }

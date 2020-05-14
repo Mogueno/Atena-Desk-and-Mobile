@@ -43,8 +43,7 @@ namespace MobileTCC.View
             await Navigation.PushAsync(new RegistrationPage());
         }
 
-        void BtnLogin_Clicked(object sender, EventArgs e)
-        {
+-        {
             var db = new SQLiteConnection(App.Caminho);
             db.CreateTable<TableUsuario>();
 

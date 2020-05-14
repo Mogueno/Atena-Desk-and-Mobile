@@ -135,6 +135,16 @@ namespace MobileTCC.Model
         public int FAC_INT_ID;
         public string FAC_STR_NOME;
     }
+    public class TB_CURSO
+    {
+        public int CUR_INT_ID;
+        public string CUR_STR_NOME;
+    }
+    public class TB_MATERIA
+    {
+        public int MAT_INT_ID;
+        public string MAT_STR_NOME;
+    }
 
 
     //Todas as tables no mesmo arquivo -- o banco de dados inteiro em um model so
