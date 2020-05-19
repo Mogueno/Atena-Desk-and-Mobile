@@ -31,7 +31,7 @@ namespace Menus.Model
 
         public const string strSelectID = "SELECT USER_INT_ID FROM TB_USER WHERE USER_STR_EMAIL = @USER_STR_EMAIL_VAR";
 
-        public const string strInsertFacul = "INSERT INTO TB_FACULDADE VALUES (@FAC_STR_NOME, @USER_INT_ID)";
+        public const string strInsertFacul = "INSERT INTO TB_FACULDADE VALUES (@FAC_STR_NOME)";
 
         public const string strUpdateFacul = "UPDATE TB_FACULDADE SET = FAC_STR_NOME = @FAC_STR_NOME WHERE FAC_USER_INT_ID_FK = @FAC_USER_INT_ID_FK";
 
@@ -233,14 +233,6 @@ namespace Menus.Model
 
                             user.Modified = (int)objCommand2.ExecuteScalar();
 
-
-                            //var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == EmailVar).SingleOrDefault();
-                            //var email = id.USER_INT_ID;
-
-                            //ht.TB_USER_MAT.Add(new TB_USER_MAT() { MAT_INT_ID = modified, USER_INT_ID = email, USER_MAT_TIME_HORA = });
-                            //ht.SaveChanges();
-
-
                             using (SqlCommand objCommand3 = new SqlCommand(strInsertUserMater, objConexao))
                             {
                                 objCommand3.Parameters.AddWithValue("@MAT_INT_ID", user.Modified);
@@ -385,7 +377,6 @@ namespace Menus.Model
             {
                 using (SqlCommand objCommand = new SqlCommand(strInsertFacul, objConexao))
                 {
-                    objCommand.Parameters.AddWithValue("@USER_INT_ID", user.UserId);
                     objCommand.Parameters.AddWithValue("@FAC_STR_NOME", NomeFacul);
 
 

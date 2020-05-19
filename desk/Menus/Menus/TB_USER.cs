@@ -18,7 +18,6 @@ namespace Menus
         public TB_USER()
         {
             this.TB_CURSO = new HashSet<TB_CURSO>();
-            this.TB_FACULDADE = new HashSet<TB_FACULDADE>();
             this.TB_NOTA = new HashSet<TB_NOTA>();
             this.TB_NOTA_STR = new HashSet<TB_NOTA_STR>();
             this.TB_NOTA_STR1 = new HashSet<TB_NOTA_STR>();
@@ -26,8 +25,8 @@ namespace Menus
             this.TB_SHARE = new HashSet<TB_SHARE>();
             this.TB_SHARE1 = new HashSet<TB_SHARE>();
             this.TB_USER_CUR = new HashSet<TB_USER_CUR>();
-            this.TB_USER_MAT = new HashSet<TB_USER_MAT>();
             this.TB_USER_FAC = new HashSet<TB_USER_FAC>();
+            this.TB_USER_MAT = new HashSet<TB_USER_MAT>();
         }
     
         public int USER_INT_ID { get; set; }
@@ -41,8 +40,6 @@ namespace Menus
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_CURSO> TB_CURSO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TB_FACULDADE> TB_FACULDADE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_NOTA> TB_NOTA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -58,8 +55,8 @@ namespace Menus
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_USER_CUR> TB_USER_CUR { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TB_USER_MAT> TB_USER_MAT { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_USER_FAC> TB_USER_FAC { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_USER_MAT> TB_USER_MAT { get; set; }
     }
 }

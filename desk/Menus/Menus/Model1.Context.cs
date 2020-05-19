@@ -36,5 +36,6 @@ namespace Menus
         public virtual DbSet<TB_USER_CUR> TB_USER_CUR { get; set; }
         public virtual DbSet<TB_USER_FAC> TB_USER_FAC { get; set; }
         public virtual DbSet<TB_USER_MAT> TB_USER_MAT { get; set; }
+        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     }
 }

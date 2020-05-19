@@ -105,7 +105,7 @@ namespace Menus
 
         private void btnconcluir_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=CCSTECNO.DDNS.NET;Initial Catalog=Atena;User ID=AtenaAdm;Password=Murilo1234");
+            SqlConnection con = new SqlConnection(@"Data Source=atenaserver.database.windows.net;Initial Catalog=atenadatabase;Persist Security Info=True;User ID=atenaadmin;Password=mogueno1234!@#$");
             SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM TB_USER WHERE USER_STR_EMAIL='" + txtLogin3.Text + "'", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);

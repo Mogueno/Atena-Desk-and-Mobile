@@ -9,6 +9,7 @@ using System.Configuration;
 using System.IO;
 using Transitions;
 using Menus.Model;
+using System.Collections.Generic;
 
 namespace Menus
 {
@@ -17,6 +18,7 @@ namespace Menus
     {
         TypeAssistant assistant;
         EntityFrameworkFunc entFunc = new EntityFrameworkFunc();
+        bancoMainEntities1 ht = new bancoMainEntities1();
         public Menuprinc(string texto)
         {
             InitializeComponent();
@@ -93,6 +95,148 @@ namespace Menus
             Transition.run(label10, "Left", 5000, new TransitionType_EaseInEaseOut(50));
         }
 
+
+        private void appendMaterias(int matId, string matName, string matTime)
+        {
+            Panel panelDynamic = new Panel();
+            TextBox txtDynamic = new TextBox();
+            Label lbDynamic = new Label();
+            Label lbDynamic2 = new Label();
+            Button btnDynamic = new Button();
+            MaskedTextBox mtxtDynamic = new MaskedTextBox();
+            // 
+            // panelMateriaListFirst
+            // 
+            panelDynamic.AutoSize = true;
+            panelDynamic.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            panelDynamic.Controls.Add(txtDynamic);
+            panelDynamic.Controls.Add(lbDynamic);
+            panelDynamic.Controls.Add(lbDynamic2);
+            panelDynamic.Controls.Add(mtxtDynamic);
+            panelDynamic.Controls.Add(btnDynamic);
+            panelDynamic.Tag = matId;
+            panelDynamic.Dock = System.Windows.Forms.DockStyle.Top;
+            panelDynamic.Location = new System.Drawing.Point(0, 0);
+            panelDynamic.Size = new System.Drawing.Size(657, 32);
+            panelDynamic.TabIndex = 59;
+            // 
+            // textBox24
+            // 
+            txtDynamic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            txtDynamic.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            txtDynamic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            txtDynamic.Location = new System.Drawing.Point(105, 6);
+            txtDynamic.Size = new System.Drawing.Size(342, 22);
+            txtDynamic.TabIndex = 19;
+            txtDynamic.Text = matName;
+            txtDynamic.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label46
+            // 
+            lbDynamic.AutoSize = true;
+            lbDynamic.BackColor = System.Drawing.Color.Transparent;
+            lbDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            lbDynamic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            lbDynamic.Location = new System.Drawing.Point(12, 5);
+            lbDynamic.Size = new System.Drawing.Size(84, 25);
+            this.label46.TabIndex = 23;
+            this.label46.Text = "Matéria";
+            // 
+            // label47
+            // 
+            lbDynamic2.AutoSize = true;
+            lbDynamic2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            lbDynamic2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            lbDynamic2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            lbDynamic2.Location = new System.Drawing.Point(460, 5);
+            lbDynamic2.Size = new System.Drawing.Size(58, 25);
+            lbDynamic2.TabIndex = 25;
+            lbDynamic2.Text = "Hora";
+            // 
+            // maskedTextBox6
+            // 
+            mtxtDynamic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            mtxtDynamic.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            mtxtDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mtxtDynamic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            mtxtDynamic.Location = new System.Drawing.Point(524, 5);
+            mtxtDynamic.Mask = "00:00";
+            mtxtDynamic.Text = matTime;
+            mtxtDynamic.Size = new System.Drawing.Size(63, 24);
+            mtxtDynamic.TabIndex = 28;
+            mtxtDynamic.ValidatingType = typeof(System.DateTime);
+            // 
+            // button
+            //
+            btnDynamic.BackColor = System.Drawing.Color.Transparent;
+            btnDynamic.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnDynamic.Dock = System.Windows.Forms.DockStyle.Right;
+            btnDynamic.FlatAppearance.BorderSize = 0;
+            btnDynamic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnDynamic.ForeColor = System.Drawing.Color.White;
+            btnDynamic.Image = global::Menus.Properties.Resources.image1;
+            btnDynamic.Location = new System.Drawing.Point(598, 0);
+            btnDynamic.Size = new System.Drawing.Size(59, 32);
+            btnDynamic.TabIndex = 33;
+            btnDynamic.UseVisualStyleBackColor = false;
+            
+
+            this.panelMateriaList.Controls.Add(panelDynamic);
+        }
+
+        private void getMateria()
+        {
+            try
+            {
+                var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                var idUser = id.USER_INT_ID;
+                var content = (from str in ht.TB_USER_MAT
+                               join mat in ht.TB_MATERIA on str.MAT_INT_ID equals mat.MAT_INT_ID
+                               where str.USER_INT_ID == idUser
+                               select new
+                               {
+                                   matId = str.MAT_INT_ID,
+                                   matTime = str.USER_MAT_TIME_HORA,
+                                   matName = mat.MAT_STR_NOME
+                               }).ToList();
+
+
+                for (int i = 0; i < content.Count; i++) {
+                    string time = content[i].matTime.ToString();
+                    TimeSpan ts = TimeSpan.Parse(time);
+                    appendMaterias(content[i].matId, content[i].matName, ts.ToString(@"hh\:mm"));
+                }
+
+
+                //if (content.Count > 1)
+                //{
+                //    List<Control> myControls = new List<Control>();
+                //    foreach (Control control in panelMateriaList.Controls)
+                //    {
+                //        if (control.Visible == true)
+                //        {
+
+                //            foreach (Control control2 in control.Controls)
+                //            {
+                //                if (control2 is TextBox || control2 is MaskedTextBox)
+                //                {
+                //                    myControls.Add(control2);
+                //                }
+                //            }
+                //            MessageBox.Show(myControls[1].Text);
+                //            objDados.SelectMateria(EmailUser, myControls[0].Text, myControls[1].Text);
+                //            myControls.Clear();
+                //        }
+                //    }
+                //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Deu ruim" + ex);
+            }
+        }
 
         public void SelectUserConfig(string emailRecebe)
         {
@@ -184,7 +328,6 @@ namespace Menus
             }
         }
 
-
         private void UpdateUser(string EmailVar, string nomevar, string idadevar, string sexovar)
         {
 
@@ -212,6 +355,43 @@ namespace Menus
             }
         }
 
+        public void fetchSharedNoted(dynamic content)
+        {
+            if (content.Count != 0)
+            {
+                flowLayoutPanel28.Controls.Clear();
+
+                button10.BackgroundImage = Properties.Resources.notification__4___1_;
+                label28.Visible = true;
+                label28.Text = Convert.ToString(content.Count);
+
+                for (int i = 0; i < content.Count; i++)
+                {
+                    string conteudo = content[i].senderName + " enviou uma nota!";
+
+                    Label label30 = new Label();
+                    label30.AutoSize = true;
+                    label30.BackColor = System.Drawing.Color.Transparent;
+                    label30.Dock = System.Windows.Forms.DockStyle.Left;
+                    label30.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+                    label30.Location = new System.Drawing.Point(13, 10);
+                    label30.MaximumSize = new System.Drawing.Size(380, 0);
+                    label30.Size = new System.Drawing.Size(377, 87);
+                    label30.Tag = content[i].shareId;
+                    label30.Cursor = Cursors.Hand;
+                    label30.Text = conteudo;
+                    label30.Click += new EventHandler(this.showNote__click);
+
+
+                    flowLayoutPanel28.Controls.Add(label30);
+                }
+            }
+            else
+            {
+                button10.BackgroundImage = Properties.Resources.notification__3___1_;
+            }
+        }
 
 		private void Button2_Click(object sender, EventArgs e)
 		{
@@ -344,10 +524,10 @@ namespace Menus
 
             GetUser(lbRecebeEmailMenu.Text);
             lbRecebeEmailConfig.Text = lbRecebeEmailMenu.Text;
-            labelMateriaAccount.Text = Login.Materia;
             labelFaculAccount.Text = facul3.faculName;
             labelCursoAccount.Text = curso3.cursoName;
 
+            getMateria();
 
 
             try
@@ -399,44 +579,11 @@ namespace Menus
 
             try
             {
-                EntityFrameworkFunc teste = new EntityFrameworkFunc();
                 var id = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
                 var email = id.USER_INT_ID;
-                var content = teste.getSharedNotes(email);
-                if (content.Count != 0)
-                {
-                    flowLayoutPanel28.Controls.Clear();
+                var content = entFunc.getSharedNotes(email);
 
-                    button10.BackgroundImage = Properties.Resources.notification__4___1_;
-                    label28.Visible = true;
-                    label28.Text = Convert.ToString(content.Count);
-
-                    for (int i = 0; i < content.Count; i++)
-                    {
-                        string conteudo = content[i].senderName + " enviou uma nota!";
-
-                        Label label30 = new Label();
-                        label30.AutoSize = true;
-                        label30.BackColor = System.Drawing.Color.Transparent;
-                        label30.Dock = System.Windows.Forms.DockStyle.Left;
-                        label30.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                        label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-                        label30.Location = new System.Drawing.Point(13, 10);
-                        label30.MaximumSize = new System.Drawing.Size(380, 0);
-                        label30.Size = new System.Drawing.Size(377, 87);
-                        label30.Tag = content[i].shareId;
-                        label30.Cursor = Cursors.Hand;
-                        label30.Text = conteudo;
-                        label30.Click += new EventHandler(this.showNote__click);
-
-
-                        flowLayoutPanel28.Controls.Add(label30);
-                    }
-                }
-                else
-                {
-                    button10.BackgroundImage = Properties.Resources.notification__3___1_;
-                }
+                fetchSharedNoted(content);
             }
 
             catch (Exception ex)
@@ -452,14 +599,12 @@ namespace Menus
 
         private void showNote__click(object sender, EventArgs e)
         {
-            EntityFrameworkFunc teste = new EntityFrameworkFunc();
-            MessageBox.Show("ola meninas");
             Label label = sender as Label;
             int s = Convert.ToInt32(label.Tag);
             btnconcluir.Tag = s;
             confirmNote.BringToFront();
 
-            var content = teste.getNoteData(s);
+            var content = entFunc.getNoteData(s);
 
 
             label32.Text = content.notaTitle;
@@ -673,9 +818,8 @@ namespace Menus
 
         public string strConexao2 = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-        public const string strSelectUser = "SELECT U.USER_INT_ID, F.FAC_INT_ID, C.CUR_INT_ID, M.MAT_INT_ID FROM TB_USER AS U JOIN TB_USER_FAC AS F ON U.USER_INT_ID = F.USER_INT_ID JOIN TB_USER_CUR AS C ON U.USER_INT_ID = C.USER_INT_ID JOIN TB_MATERIA AS M ON U.USER_INT_ID = M.USER_INT_ID WHERE U.USER_STR_EMAIL = @USER_STR_EMAIL";
-
-        public const string strSelectNota = "SELECT NOTA_INT_ID FROM ";
+        public const string strSelectUser = "SELECT U.USER_INT_ID, F.FAC_INT_ID, C.CUR_INT_ID, M.MAT_INT_ID FROM TB_USER AS U JOIN TB_USER_FAC AS F ON U.USER_INT_ID = F.USER_INT_ID JOIN TB_USER_CUR AS C ON U.USER_INT_ID = C.USER_INT_ID JOIN TB_USER_MAT AS M ON U.USER_INT_ID = M.USER_INT_ID WHERE U.USER_STR_EMAIL = @USER_STR_EMAIL";
+        // O PROBLEMA ESTA NO MAT_INT_ID
 
         public const string strInsertNota3 = "INSERT INTO TB_NOTA_STR OUTPUT INSERTED.STR_INT_ID VALUES (@STR_STR_PATH, @STR_STR_TITLE, @STR_INT_AUTHOR, @STR_INT_EDITED)";
 
@@ -690,6 +834,8 @@ namespace Menus
                     objConexao.Open();
 
                     objCommand.Parameters.AddWithValue("@USER_STR_EMAIL", emailRecebe);
+
+                    
 
                     string userId = "";
                     string cursoId = "";
@@ -1185,7 +1331,7 @@ namespace Menus
 
                 int facId = Convert.ToInt32(panel29.Tag);
 
-                var entryPoint = entFunc.getCurso(facId, "curso");
+                var entryPoint = entFunc.getCurso(facId);
 
                 if (entryPoint.Count != 0)
                 {
@@ -1226,12 +1372,9 @@ namespace Menus
             try
             {
                 bancoMainEntities1 ht2 = new bancoMainEntities1();
-                EntityFrameworkFunc entFunc = new EntityFrameworkFunc();
 
                 int facId = Convert.ToInt32(panel37.Tag);
-
-
-                var entryPoint = entFunc.getCurso(facId, "materia");
+                var entryPoint = entFunc.getMateria(facId);
 
 
 
@@ -1750,11 +1893,6 @@ namespace Menus
                 var id = ht1.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
                 var userId = id.USER_INT_ID;
                 ModalShare.BringToFront();
-
-
-                MessageBox.Show("hello " + userId + ", nota número: " + notaId);
-
-                flowLayoutPanel23.Controls.Clear();
                 try
                 {
                     flowLayoutPanel23.Controls.Clear();
@@ -1770,134 +1908,175 @@ namespace Menus
                                           userFac = facul2.FAC_STR_NOME,
                                           userIdentity = str.USER_INT_ID,
                                       }).ToList();
+                    //foreach(var entries in entryPoint)
+                    //{
+                    //    MessageBox.Show(entries.userIdentity.ToString());
+                    //}
+
+                    var sharedNotes = (from str in ht3.TB_SHARE
+                                      select new
+                                      {
+                                          noteIdentity = str.NOTA_INT_ID,
+                                          userIdentity = str.RECIPIENT_INT_ID
+                                      }).ToList();
+                    var noteData = (from str in ht3.TB_NOTA
+                                       select new
+                                       {
+                                           noteIdentity = str.STR_INT_ID,
+                                           userIdentity = str.USER_INT_ID
+                                       }).ToList();
 
                     if (entryPoint.Count != 0)
                     {
                         for (int i = 0; i < entryPoint.Count; i++)
                         {
-                            panel1 = new System.Windows.Forms.Panel();
-                            lbName = new System.Windows.Forms.Label();
-                            lbFaculdade = new System.Windows.Forms.Label();
-                            lbEmail = new System.Windows.Forms.Label();
-                            flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-                            pictureBox1 = new System.Windows.Forms.PictureBox();
-                            //flowLayoutPanel1.SuspendLayout();
-                            //panel1.SuspendLayout();
-                            //this.flowLayoutPanel2.SuspendLayout();
+                            bool duplicate = false;
 
-                            //
-                            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                            this.panel1.Controls.Add(this.pictureBox1);
-                            this.panel1.Controls.Add(this.flowLayoutPanel2);
-                            this.panel1.Location = new System.Drawing.Point(13, 13);
-                            this.panel1.Name = "panel1";
-                            this.panel1.Padding = new System.Windows.Forms.Padding(5);
-                            this.panel1.Size = new System.Drawing.Size(548, 116);
-                            this.panel1.TabIndex = 0;
-                            this.panel1.Tag = entryPoint[i].userIdentity;
-                            this.panel1.Click += new EventHandler(this.shareActions_Click);
-                            panel1.Cursor = Cursors.Hand;
-                            // 
-                            // lbName
-                            // 
-                            this.lbName.AutoSize = true;
-                            this.lbName.BackColor = System.Drawing.Color.Transparent;
-                            this.lbName.Font = new System.Drawing.Font("Verdana", 15F);
-                            this.lbName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-                            this.lbName.Location = new System.Drawing.Point(3, 10);
-                            this.lbName.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-                            this.lbName.Name = "lbName";
-                            this.lbName.Size = new System.Drawing.Size(189, 25);
-                            this.lbName.TabIndex = 1;
-                            this.lbName.Text = entryPoint[i].userName;
-                            this.lbName.Tag = entryPoint[i].userIdentity;
-                            this.lbName.Click += new EventHandler(this.shareActionsLabel_Click);
-                            lbName.Cursor = Cursors.Hand;
-                            // 
-                            // lbFaculdade
-                            // 
-                            this.lbFaculdade.AutoSize = true;
-                            this.lbFaculdade.BackColor = System.Drawing.Color.Transparent;
-                            this.lbFaculdade.Font = new System.Drawing.Font("Verdana", 13F);
-                            this.lbFaculdade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-                            this.lbFaculdade.Location = new System.Drawing.Point(3, 77);
-                            this.lbFaculdade.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-                            this.lbFaculdade.Name = "lbFaculdade";
-                            this.lbFaculdade.Size = new System.Drawing.Size(166, 22);
-                            this.lbFaculdade.TabIndex = 2;
-                            this.lbFaculdade.Text = entryPoint[i].userFac;
-                            this.lbFaculdade.Tag = entryPoint[i].userIdentity;
-                            this.lbFaculdade.Click += new EventHandler(this.shareActionsLabel_Click);
-                            lbFaculdade.Cursor = Cursors.Hand;
-                            // 
-                            // lbEmail
-                            // 
-                            this.lbEmail.AutoSize = true;
-                            this.lbEmail.BackColor = System.Drawing.Color.Transparent;
-                            this.lbEmail.Font = new System.Drawing.Font("Verdana", 13F);
-                            this.lbEmail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-                            this.lbEmail.Location = new System.Drawing.Point(3, 45);
-                            this.lbEmail.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-                            this.lbEmail.Name = "lbEmail";
-                            this.lbEmail.Size = new System.Drawing.Size(166, 22);
-                            this.lbEmail.TabIndex = 3;
-                            this.lbEmail.Text = entryPoint[i].userEmail;
-                            this.lbEmail.Tag = entryPoint[i].userIdentity;
-                            this.lbEmail.Click += new EventHandler(this.shareActionsLabel_Click);
-                            lbEmail.Cursor = Cursors.Hand;
-                            //this.lbEmail.Click += new System.EventHandler(this.label3_Click);
-                            // 
-                            // flowLayoutPanel2
-                            // 
-                            this.flowLayoutPanel2.Controls.Add(this.lbName);
-                            this.flowLayoutPanel2.Controls.Add(this.lbEmail);
-                            this.flowLayoutPanel2.Controls.Add(this.lbFaculdade);
-                            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-                            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-                            this.flowLayoutPanel2.Location = new System.Drawing.Point(117, 5);
-                            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-                            this.flowLayoutPanel2.Size = new System.Drawing.Size(426, 106);
-                            this.flowLayoutPanel2.TabIndex = 4;
-                            this.flowLayoutPanel2.Tag = entryPoint[i].userIdentity;
-                            this.flowLayoutPanel2.Click += new EventHandler(this.shareActionsFlow_Click);
-                            flowLayoutPanel2.Cursor = Cursors.Hand;
-                            // 
-                            // pictureBox1
-                            // 
-                            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-                            this.pictureBox1.Location = new System.Drawing.Point(5, 5);
-                            this.pictureBox1.Name = "pictureBox1";
-                            this.pictureBox1.Size = new System.Drawing.Size(106, 106);
-                            this.pictureBox1.TabIndex = 5;
-                            this.pictureBox1.TabStop = false;
-                            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-                            this.pictureBox1.InitialImage = global::Menus.Properties.Resources.User_icon_BLACK_01;
-                            this.pictureBox1.Tag = entryPoint[i].userIdentity;
-                            this.pictureBox1.Click += new EventHandler(this.shareActionsPic_Click);
-                            pictureBox1.Cursor = Cursors.Hand;
-
-
-
-                            try
+                            foreach (var entries in sharedNotes)
                             {
-                                bancoMainEntities1 ht = new bancoMainEntities1();
-
-                                int idFinal = entryPoint[i].userIdentity;
-                                var item = ht.TB_PICTURES.Where(a => a.USER_INT_ID == idFinal).FirstOrDefault();
-                                byte[] arr = item.PIC_IMG_MAIN;
-                                MemoryStream ms1 = new MemoryStream(arr);
-                                pictureBox1.Image = Image.FromStream(ms1);
-                            }
-                            catch
-                            {
-                                pictureBox1.Image = pictureBox1.InitialImage;
+                                if (entries.userIdentity == entryPoint[i].userIdentity && entries.noteIdentity == notaId)
+                                {
+                                    duplicate = true;
+                                }
                             }
 
-                            flowLayoutPanel23.Controls.Add(panel1);
-                            this.TopMost = true;
-                            this.Focus();
-                            this.BringToFront();
-                            this.TopMost = false;
+                            foreach (var entries in noteData)
+                            {
+                                if (entries.userIdentity == entryPoint[i].userIdentity && entries.noteIdentity == notaId)
+                                {
+                                    duplicate = true;
+                                }
+                            }
+
+
+                            if (duplicate == false)
+                            {
+
+                                panel1 = new System.Windows.Forms.Panel();
+                                lbName = new System.Windows.Forms.Label();
+                                lbFaculdade = new System.Windows.Forms.Label();
+                                lbEmail = new System.Windows.Forms.Label();
+                                flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+                                pictureBox1 = new System.Windows.Forms.PictureBox();
+
+                                this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                                this.panel1.Controls.Add(this.pictureBox1);
+                                this.panel1.Controls.Add(this.flowLayoutPanel2);
+                                this.panel1.Location = new System.Drawing.Point(13, 13);
+                                this.panel1.Name = "panel1";
+                                this.panel1.Padding = new System.Windows.Forms.Padding(5);
+                                this.panel1.Size = new System.Drawing.Size(548, 116);
+                                this.panel1.TabIndex = 0;
+                                this.panel1.Tag = entryPoint[i].userIdentity;
+                                this.panel1.Click += new EventHandler(this.shareActions_Click);
+
+                                if (entryPoint[i].userIdentity == userId)
+                                {
+                                    panel1.Visible = false;
+                                }
+                                panel1.Cursor = Cursors.Hand;
+                                // 
+                                // lbName
+                                // 
+                                this.lbName.AutoSize = true;
+                                this.lbName.BackColor = System.Drawing.Color.Transparent;
+                                this.lbName.Font = new System.Drawing.Font("Verdana", 15F);
+                                this.lbName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+                                this.lbName.Location = new System.Drawing.Point(3, 10);
+                                this.lbName.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+                                this.lbName.Name = "lbName";
+                                this.lbName.Size = new System.Drawing.Size(189, 25);
+                                this.lbName.TabIndex = 1;
+                                this.lbName.Text = entryPoint[i].userName;
+                                this.lbName.Tag = entryPoint[i].userIdentity;
+                                this.lbName.Click += new EventHandler(this.shareActionsLabel_Click);
+                                lbName.Cursor = Cursors.Hand;
+                                // 
+                                // lbFaculdade
+                                // 
+                                this.lbFaculdade.AutoSize = true;
+                                this.lbFaculdade.BackColor = System.Drawing.Color.Transparent;
+                                this.lbFaculdade.Font = new System.Drawing.Font("Verdana", 13F);
+                                this.lbFaculdade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+                                this.lbFaculdade.Location = new System.Drawing.Point(3, 77);
+                                this.lbFaculdade.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+                                this.lbFaculdade.Name = "lbFaculdade";
+                                this.lbFaculdade.Size = new System.Drawing.Size(166, 22);
+                                this.lbFaculdade.TabIndex = 2;
+                                this.lbFaculdade.Text = entryPoint[i].userFac;
+                                this.lbFaculdade.Tag = entryPoint[i].userIdentity;
+                                this.lbFaculdade.Click += new EventHandler(this.shareActionsLabel_Click);
+                                lbFaculdade.Cursor = Cursors.Hand;
+                                // 
+                                // lbEmail
+                                // 
+                                this.lbEmail.AutoSize = true;
+                                this.lbEmail.BackColor = System.Drawing.Color.Transparent;
+                                this.lbEmail.Font = new System.Drawing.Font("Verdana", 13F);
+                                this.lbEmail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+                                this.lbEmail.Location = new System.Drawing.Point(3, 45);
+                                this.lbEmail.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+                                this.lbEmail.Name = "lbEmail";
+                                this.lbEmail.Size = new System.Drawing.Size(166, 22);
+                                this.lbEmail.TabIndex = 3;
+                                this.lbEmail.Text = entryPoint[i].userEmail;
+                                this.lbEmail.Tag = entryPoint[i].userIdentity;
+                                this.lbEmail.Click += new EventHandler(this.shareActionsLabel_Click);
+                                lbEmail.Cursor = Cursors.Hand;
+                                //this.lbEmail.Click += new System.EventHandler(this.label3_Click);
+                                // 
+                                // flowLayoutPanel2
+                                // 
+                                this.flowLayoutPanel2.Controls.Add(this.lbName);
+                                this.flowLayoutPanel2.Controls.Add(this.lbEmail);
+                                this.flowLayoutPanel2.Controls.Add(this.lbFaculdade);
+                                this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Right;
+                                this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+                                this.flowLayoutPanel2.Location = new System.Drawing.Point(117, 5);
+                                this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+                                this.flowLayoutPanel2.Size = new System.Drawing.Size(426, 106);
+                                this.flowLayoutPanel2.TabIndex = 4;
+                                this.flowLayoutPanel2.Tag = entryPoint[i].userIdentity;
+                                this.flowLayoutPanel2.Click += new EventHandler(this.shareActionsFlow_Click);
+                                flowLayoutPanel2.Cursor = Cursors.Hand;
+                                // 
+                                // pictureBox1
+                                // 
+                                this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+                                this.pictureBox1.Location = new System.Drawing.Point(5, 5);
+                                this.pictureBox1.Name = "pictureBox1";
+                                this.pictureBox1.Size = new System.Drawing.Size(106, 106);
+                                this.pictureBox1.TabIndex = 5;
+                                this.pictureBox1.TabStop = false;
+                                this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                                this.pictureBox1.InitialImage = global::Menus.Properties.Resources.User_icon_BLACK_01;
+                                this.pictureBox1.Tag = entryPoint[i].userIdentity;
+                                this.pictureBox1.Click += new EventHandler(this.shareActionsPic_Click);
+                                pictureBox1.Cursor = Cursors.Hand;
+
+
+
+                                try
+                                {
+                                    bancoMainEntities1 ht = new bancoMainEntities1();
+
+                                    int idFinal = entryPoint[i].userIdentity;
+                                    var item = ht.TB_PICTURES.Where(a => a.USER_INT_ID == idFinal).FirstOrDefault();
+                                    byte[] arr = item.PIC_IMG_MAIN;
+                                    MemoryStream ms1 = new MemoryStream(arr);
+                                    pictureBox1.Image = Image.FromStream(ms1);
+                                }
+                                catch
+                                {
+                                    pictureBox1.Image = pictureBox1.InitialImage;
+                                }
+
+                                flowLayoutPanel23.Controls.Add(panel1);
+                                this.TopMost = true;
+                                this.Focus();
+                                this.BringToFront();
+                                this.TopMost = false;
+                            }
                         }
                     }
                     else
@@ -2120,43 +2299,8 @@ namespace Menus
                                        shareId = str.SHARE_INT_ID,
                                        senderName = send.USER_STR_NOME
                                    }).ToList();
-                    if (content.Count != 0)
-                    {
-                        flowLayoutPanel28.Controls.Clear();
 
-                        button10.BackgroundImage = Properties.Resources.notification__4___1_;
-                        label28.Visible = true;
-                        label28.Text = Convert.ToString(content.Count);
-
-                        for (int i = 0; i < content.Count; i++)
-                        {
-                            string conteudo = content[i].senderName + " enviou uma nota!";
-
-                            Label label30 = new Label();
-                            label30.AutoSize = true;
-                            label30.BackColor = System.Drawing.Color.Transparent;
-                            label30.Dock = System.Windows.Forms.DockStyle.Left;
-                            label30.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                            label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-                            label30.Location = new System.Drawing.Point(13, 10);
-                            label30.MaximumSize = new System.Drawing.Size(380, 0);
-                            label30.Size = new System.Drawing.Size(377, 87);
-                            label30.Tag = content[i].shareId;
-                            label30.Cursor = Cursors.Hand;
-                            label30.Text = conteudo;
-
-                            label30.Click += new EventHandler(this.showNote__click);
-
-
-                            flowLayoutPanel28.Controls.Add(label30);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("NÃO TEM MENSAGEM AMIGÃO\n");
-
-                        button10.BackgroundImage = Properties.Resources.notification__3___1_;
-                    }
+                    fetchSharedNoted(content);
                 }
 
                 catch (Exception ex)
@@ -2166,6 +2310,7 @@ namespace Menus
             }
 
 
+            flowLayoutPanel2.Controls.Clear();
             confirmNote.SendToBack();
             GetNote(lbRecebeEmailMenu.Text);
         }

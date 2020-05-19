@@ -26,8 +26,8 @@ namespace Menus.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=CCSTECNO.DDNS.NET;Initial Catalog=Atena;User ID=AtenaAdm;Password=Mur" +
-            "ilo1234")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=atenaserver.database.windows.net;Initial Catalog=atenadatabase;Persis" +
+            "t Security Info=True;User ID=atenaadmin;Password=mogueno1234!@#$")]
         public string bancoMainConnectionString {
             get {
                 return ((string)(this["bancoMainConnectionString"]));

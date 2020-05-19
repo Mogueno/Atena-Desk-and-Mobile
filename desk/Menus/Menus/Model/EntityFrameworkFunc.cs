@@ -45,43 +45,35 @@ namespace Menus.Model
                                notaCur = nota.CUR_INT_ID,
                                notaMat = nota.MAT_INT_ID,
                                senderName = send.USER_STR_NOME
-                           }).SingleOrDefault();
+                           }).FirstOrDefault();
 
             return content;
         }
 
-        public List<dynamic> getCurso(int facId, string option)
+        public List<dynamic> getCurso(int curId)
         {
-            List<dynamic> entryPoint;
-            switch (option)
-            {
-                case "curso":
-                    entryPoint = (from str in ht2.TB_NOTA_STR
+            List<dynamic> entryPoint = (from str in ht2.TB_NOTA_STR
                                       join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
-                                      where facId == nota.CUR_INT_ID
+                                      where curId == nota.CUR_INT_ID
                                       select new
                                       {
                                           notaTitle = str.STR_STR_TITLE,
                                           notaId = str.STR_INT_ID,
                                       }).ToList<dynamic>();
-                    return entryPoint;
-                case "materia":
-                    entryPoint = (from str in ht2.TB_NOTA_STR
-                                      join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
-                                      where facId == nota.MAT_INT_ID
-                                      select new
-                                      {
-                                          notaTitle = str.STR_STR_TITLE,
-                                          notaId = str.STR_INT_ID,
-                                      }).ToList<dynamic>();
-                    return entryPoint;
-            }
-            return null;
+                    return entryPoint;    
+        }
+        public List<dynamic> getMateria(int matId)
+        {
+            List<dynamic> entryPoint = (from str in ht2.TB_NOTA_STR
+                          join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
+                          where matId == nota.MAT_INT_ID
+                          select new
+                          {
+                              notaTitle = str.STR_STR_TITLE,
+                              notaId = str.STR_INT_ID,
+                          }).ToList<dynamic>();
 
-
-
-
-            
+            return entryPoint;
         }
     }
 }

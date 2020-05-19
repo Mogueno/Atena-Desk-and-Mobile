@@ -91,11 +91,42 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtNota = new System.Windows.Forms.TextBox();
             this.panelMinhaConta = new System.Windows.Forms.Panel();
+            this.panelMateriaList = new System.Windows.Forms.Panel();
+            this.panel59 = new System.Windows.Forms.Panel();
+            this.button30 = new System.Windows.Forms.Button();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.maskedTextBox10 = new System.Windows.Forms.MaskedTextBox();
+            this.panel58 = new System.Windows.Forms.Panel();
+            this.button22 = new System.Windows.Forms.Button();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
+            this.panel57 = new System.Windows.Forms.Panel();
+            this.button21 = new System.Windows.Forms.Button();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.maskedTextBox8 = new System.Windows.Forms.MaskedTextBox();
+            this.panel56 = new System.Windows.Forms.Panel();
+            this.button18 = new System.Windows.Forms.Button();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.maskedTextBox7 = new System.Windows.Forms.MaskedTextBox();
+            this.panelMateriaListFirst = new System.Windows.Forms.Panel();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -105,9 +136,7 @@
             this.txtIdade = new System.Windows.Forms.TextBox();
             this.labelFaculAccount = new System.Windows.Forms.Label();
             this.labelCursoAccount = new System.Windows.Forms.Label();
-            this.labelMateriaAccount = new System.Windows.Forms.Label();
             this.button26 = new System.Windows.Forms.Button();
-            this.roundPictureBox1 = new Menus.RoundPictureBox();
             this.lbDados = new System.Windows.Forms.Label();
             this.button25 = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -121,7 +150,6 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label35 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.roundPictureBox2 = new Menus.RoundPictureBox();
             this.button27 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.panelFacul__Search = new System.Windows.Forms.Panel();
@@ -244,6 +272,8 @@
             this.btnconcluir = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
+            this.roundPictureBox2 = new Menus.RoundPictureBox();
+            this.roundPictureBox1 = new Menus.RoundPictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -265,14 +295,19 @@
             this.panel50.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelMinhaConta.SuspendLayout();
+            this.panelMateriaList.SuspendLayout();
+            this.panel59.SuspendLayout();
+            this.panel58.SuspendLayout();
+            this.panel57.SuspendLayout();
+            this.panel56.SuspendLayout();
+            this.panelMateriaListFirst.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.panelHome.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox2)).BeginInit();
             this.panelFacul__Search.SuspendLayout();
             this.panel20.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -326,6 +361,8 @@
             this.panel47.SuspendLayout();
             this.panel49.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbRecebeEmailMenu
@@ -1293,6 +1330,8 @@
             // 
             this.panelMinhaConta.AutoScroll = true;
             this.panelMinhaConta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.panelMinhaConta.Controls.Add(this.panelMateriaList);
+            this.panelMinhaConta.Controls.Add(this.tableLayoutPanel8);
             this.panelMinhaConta.Controls.Add(this.tableLayoutPanel9);
             this.panelMinhaConta.Controls.Add(this.roundPictureBox1);
             this.panelMinhaConta.Controls.Add(this.lbDados);
@@ -1303,6 +1342,443 @@
             this.panelMinhaConta.Padding = new System.Windows.Forms.Padding(0, 0, 0, 30);
             this.panelMinhaConta.Size = new System.Drawing.Size(1031, 687);
             this.panelMinhaConta.TabIndex = 26;
+            // 
+            // panelMateriaList
+            // 
+            this.panelMateriaList.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelMateriaList.AutoScroll = true;
+            this.panelMateriaList.AutoSize = true;
+            this.panelMateriaList.Controls.Add(this.panel59);
+            this.panelMateriaList.Controls.Add(this.panel58);
+            this.panelMateriaList.Controls.Add(this.panel57);
+            this.panelMateriaList.Controls.Add(this.panel56);
+            this.panelMateriaList.Controls.Add(this.panelMateriaListFirst);
+            this.panelMateriaList.Location = new System.Drawing.Point(185, 845);
+            this.panelMateriaList.Name = "panelMateriaList";
+            this.panelMateriaList.Size = new System.Drawing.Size(657, 160);
+            this.panelMateriaList.TabIndex = 63;
+            // 
+            // panel59
+            // 
+            this.panel59.AutoSize = true;
+            this.panel59.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel59.Controls.Add(this.button30);
+            this.panel59.Controls.Add(this.textBox28);
+            this.panel59.Controls.Add(this.label54);
+            this.panel59.Controls.Add(this.label55);
+            this.panel59.Controls.Add(this.maskedTextBox10);
+            this.panel59.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel59.Location = new System.Drawing.Point(0, 128);
+            this.panel59.Name = "panel59";
+            this.panel59.Size = new System.Drawing.Size(657, 32);
+            this.panel59.TabIndex = 63;
+            this.panel59.Visible = false;
+            // 
+            // button30
+            // 
+            this.button30.BackColor = System.Drawing.Color.Transparent;
+            this.button30.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button30.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button30.FlatAppearance.BorderSize = 0;
+            this.button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button30.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button30.ForeColor = System.Drawing.Color.White;
+            this.button30.Image = global::Menus.Properties.Resources.image1;
+            this.button30.Location = new System.Drawing.Point(598, 0);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(59, 32);
+            this.button30.TabIndex = 33;
+            this.button30.UseVisualStyleBackColor = false;
+            // 
+            // textBox28
+            // 
+            this.textBox28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.textBox28.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox28.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBox28.Location = new System.Drawing.Point(105, 6);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(342, 22);
+            this.textBox28.TabIndex = 19;
+            this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.BackColor = System.Drawing.Color.Transparent;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label54.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label54.Location = new System.Drawing.Point(12, 5);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(84, 25);
+            this.label54.TabIndex = 23;
+            this.label54.Text = "Matéria";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label55.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label55.Location = new System.Drawing.Point(460, 5);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(58, 25);
+            this.label55.TabIndex = 25;
+            this.label55.Text = "Hora";
+            // 
+            // maskedTextBox10
+            // 
+            this.maskedTextBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.maskedTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.maskedTextBox10.Location = new System.Drawing.Point(524, 5);
+            this.maskedTextBox10.Mask = "00:00";
+            this.maskedTextBox10.Name = "maskedTextBox10";
+            this.maskedTextBox10.Size = new System.Drawing.Size(63, 24);
+            this.maskedTextBox10.TabIndex = 28;
+            this.maskedTextBox10.ValidatingType = typeof(System.DateTime);
+            // 
+            // panel58
+            // 
+            this.panel58.AutoSize = true;
+            this.panel58.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel58.Controls.Add(this.button22);
+            this.panel58.Controls.Add(this.textBox27);
+            this.panel58.Controls.Add(this.label52);
+            this.panel58.Controls.Add(this.label53);
+            this.panel58.Controls.Add(this.maskedTextBox9);
+            this.panel58.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel58.Location = new System.Drawing.Point(0, 96);
+            this.panel58.Name = "panel58";
+            this.panel58.Size = new System.Drawing.Size(657, 32);
+            this.panel58.TabIndex = 62;
+            this.panel58.Visible = false;
+            // 
+            // button22
+            // 
+            this.button22.BackColor = System.Drawing.Color.Transparent;
+            this.button22.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button22.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button22.FlatAppearance.BorderSize = 0;
+            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button22.ForeColor = System.Drawing.Color.White;
+            this.button22.Image = global::Menus.Properties.Resources.image1;
+            this.button22.Location = new System.Drawing.Point(598, 0);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(59, 32);
+            this.button22.TabIndex = 33;
+            this.button22.UseVisualStyleBackColor = false;
+            // 
+            // textBox27
+            // 
+            this.textBox27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.textBox27.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox27.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBox27.Location = new System.Drawing.Point(105, 6);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Size = new System.Drawing.Size(342, 22);
+            this.textBox27.TabIndex = 19;
+            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.BackColor = System.Drawing.Color.Transparent;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label52.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label52.Location = new System.Drawing.Point(12, 5);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(84, 25);
+            this.label52.TabIndex = 23;
+            this.label52.Text = "Matéria";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label53.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label53.Location = new System.Drawing.Point(460, 5);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(58, 25);
+            this.label53.TabIndex = 25;
+            this.label53.Text = "Hora";
+            // 
+            // maskedTextBox9
+            // 
+            this.maskedTextBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.maskedTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.maskedTextBox9.Location = new System.Drawing.Point(524, 5);
+            this.maskedTextBox9.Mask = "00:00";
+            this.maskedTextBox9.Name = "maskedTextBox9";
+            this.maskedTextBox9.Size = new System.Drawing.Size(63, 24);
+            this.maskedTextBox9.TabIndex = 28;
+            this.maskedTextBox9.ValidatingType = typeof(System.DateTime);
+            // 
+            // panel57
+            // 
+            this.panel57.AutoSize = true;
+            this.panel57.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel57.Controls.Add(this.button21);
+            this.panel57.Controls.Add(this.textBox26);
+            this.panel57.Controls.Add(this.label50);
+            this.panel57.Controls.Add(this.label51);
+            this.panel57.Controls.Add(this.maskedTextBox8);
+            this.panel57.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel57.Location = new System.Drawing.Point(0, 64);
+            this.panel57.Name = "panel57";
+            this.panel57.Size = new System.Drawing.Size(657, 32);
+            this.panel57.TabIndex = 61;
+            this.panel57.Visible = false;
+            // 
+            // button21
+            // 
+            this.button21.BackColor = System.Drawing.Color.Transparent;
+            this.button21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button21.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button21.FlatAppearance.BorderSize = 0;
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.ForeColor = System.Drawing.Color.White;
+            this.button21.Image = global::Menus.Properties.Resources.image1;
+            this.button21.Location = new System.Drawing.Point(598, 0);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(59, 32);
+            this.button21.TabIndex = 33;
+            this.button21.UseVisualStyleBackColor = false;
+            // 
+            // textBox26
+            // 
+            this.textBox26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.textBox26.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBox26.Location = new System.Drawing.Point(105, 6);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(342, 22);
+            this.textBox26.TabIndex = 19;
+            this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.BackColor = System.Drawing.Color.Transparent;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label50.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label50.Location = new System.Drawing.Point(12, 5);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(84, 25);
+            this.label50.TabIndex = 23;
+            this.label50.Text = "Matéria";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label51.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label51.Location = new System.Drawing.Point(460, 5);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(58, 25);
+            this.label51.TabIndex = 25;
+            this.label51.Text = "Hora";
+            // 
+            // maskedTextBox8
+            // 
+            this.maskedTextBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.maskedTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.maskedTextBox8.Location = new System.Drawing.Point(524, 5);
+            this.maskedTextBox8.Mask = "00:00";
+            this.maskedTextBox8.Name = "maskedTextBox8";
+            this.maskedTextBox8.Size = new System.Drawing.Size(63, 24);
+            this.maskedTextBox8.TabIndex = 28;
+            this.maskedTextBox8.ValidatingType = typeof(System.DateTime);
+            // 
+            // panel56
+            // 
+            this.panel56.AutoSize = true;
+            this.panel56.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel56.Controls.Add(this.button18);
+            this.panel56.Controls.Add(this.textBox25);
+            this.panel56.Controls.Add(this.label48);
+            this.panel56.Controls.Add(this.label49);
+            this.panel56.Controls.Add(this.maskedTextBox7);
+            this.panel56.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel56.Location = new System.Drawing.Point(0, 32);
+            this.panel56.Name = "panel56";
+            this.panel56.Size = new System.Drawing.Size(657, 32);
+            this.panel56.TabIndex = 60;
+            this.panel56.Visible = false;
+            // 
+            // button18
+            // 
+            this.button18.BackColor = System.Drawing.Color.Transparent;
+            this.button18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button18.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button18.FlatAppearance.BorderSize = 0;
+            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button18.ForeColor = System.Drawing.Color.White;
+            this.button18.Image = global::Menus.Properties.Resources.image1;
+            this.button18.Location = new System.Drawing.Point(598, 0);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(59, 32);
+            this.button18.TabIndex = 33;
+            this.button18.UseVisualStyleBackColor = false;
+            // 
+            // textBox25
+            // 
+            this.textBox25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.textBox25.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox25.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBox25.Location = new System.Drawing.Point(105, 6);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(342, 22);
+            this.textBox25.TabIndex = 19;
+            this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.BackColor = System.Drawing.Color.Transparent;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label48.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label48.Location = new System.Drawing.Point(12, 5);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(84, 25);
+            this.label48.TabIndex = 23;
+            this.label48.Text = "Matéria";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label49.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label49.Location = new System.Drawing.Point(460, 5);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(58, 25);
+            this.label49.TabIndex = 25;
+            this.label49.Text = "Hora";
+            // 
+            // maskedTextBox7
+            // 
+            this.maskedTextBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.maskedTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.maskedTextBox7.Location = new System.Drawing.Point(524, 5);
+            this.maskedTextBox7.Mask = "00:00";
+            this.maskedTextBox7.Name = "maskedTextBox7";
+            this.maskedTextBox7.Size = new System.Drawing.Size(63, 24);
+            this.maskedTextBox7.TabIndex = 28;
+            this.maskedTextBox7.ValidatingType = typeof(System.DateTime);
+            // 
+            // panelMateriaListFirst
+            // 
+            this.panelMateriaListFirst.AutoSize = true;
+            this.panelMateriaListFirst.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelMateriaListFirst.Controls.Add(this.textBox24);
+            this.panelMateriaListFirst.Controls.Add(this.label46);
+            this.panelMateriaListFirst.Controls.Add(this.label47);
+            this.panelMateriaListFirst.Controls.Add(this.maskedTextBox6);
+            this.panelMateriaListFirst.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMateriaListFirst.Location = new System.Drawing.Point(0, 0);
+            this.panelMateriaListFirst.Name = "panelMateriaListFirst";
+            this.panelMateriaListFirst.Size = new System.Drawing.Size(657, 32);
+            this.panelMateriaListFirst.TabIndex = 59;
+            this.panelMateriaListFirst.Visible = false;
+            // 
+            // textBox24
+            // 
+            this.textBox24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.textBox24.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBox24.Location = new System.Drawing.Point(105, 6);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(342, 22);
+            this.textBox24.TabIndex = 19;
+            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.BackColor = System.Drawing.Color.Transparent;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label46.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label46.Location = new System.Drawing.Point(12, 5);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(84, 25);
+            this.label46.TabIndex = 23;
+            this.label46.Text = "Matéria";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label47.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label47.Location = new System.Drawing.Point(460, 5);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(58, 25);
+            this.label47.TabIndex = 25;
+            this.label47.Text = "Hora";
+            // 
+            // maskedTextBox6
+            // 
+            this.maskedTextBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.maskedTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.maskedTextBox6.Location = new System.Drawing.Point(524, 5);
+            this.maskedTextBox6.Mask = "00:00";
+            this.maskedTextBox6.Name = "maskedTextBox6";
+            this.maskedTextBox6.Size = new System.Drawing.Size(63, 24);
+            this.maskedTextBox6.TabIndex = 28;
+            this.maskedTextBox6.ValidatingType = typeof(System.DateTime);
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tableLayoutPanel8.AutoSize = true;
+            this.tableLayoutPanel8.ColumnCount = 1;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(185, 764);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(657, 57);
+            this.tableLayoutPanel8.TabIndex = 62;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label6.Location = new System.Drawing.Point(243, 10);
+            this.label6.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(170, 37);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "Matéria (s)";
             // 
             // tableLayoutPanel9
             // 
@@ -1315,7 +1791,6 @@
             this.tableLayoutPanel9.Controls.Add(this.label4, 0, 5);
             this.tableLayoutPanel9.Controls.Add(this.label5, 0, 7);
             this.tableLayoutPanel9.Controls.Add(this.label3, 0, 3);
-            this.tableLayoutPanel9.Controls.Add(this.label6, 0, 13);
             this.tableLayoutPanel9.Controls.Add(this.label7, 0, 11);
             this.tableLayoutPanel9.Controls.Add(this.label8, 0, 9);
             this.tableLayoutPanel9.Controls.Add(this.label2, 0, 1);
@@ -1325,9 +1800,8 @@
             this.tableLayoutPanel9.Controls.Add(this.txtIdade, 1, 7);
             this.tableLayoutPanel9.Controls.Add(this.labelFaculAccount, 1, 9);
             this.tableLayoutPanel9.Controls.Add(this.labelCursoAccount, 1, 11);
-            this.tableLayoutPanel9.Controls.Add(this.labelMateriaAccount, 1, 13);
             this.tableLayoutPanel9.Controls.Add(this.button26, 1, 15);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(60, 274);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(54, 265);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 16;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1393,21 +1867,6 @@
             this.label3.Size = new System.Drawing.Size(107, 37);
             this.label3.TabIndex = 51;
             this.label3.Text = "E-mail";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label6.Location = new System.Drawing.Point(3, 352);
-            this.label6.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 37);
-            this.label6.TabIndex = 56;
-            this.label6.Text = "Matéria";
             // 
             // label7
             // 
@@ -1530,19 +1989,6 @@
             this.labelCursoAccount.Size = new System.Drawing.Size(900, 33);
             this.labelCursoAccount.TabIndex = 58;
             // 
-            // labelMateriaAccount
-            // 
-            this.labelMateriaAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelMateriaAccount.AutoSize = true;
-            this.labelMateriaAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.labelMateriaAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMateriaAccount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelMateriaAccount.Location = new System.Drawing.Point(176, 354);
-            this.labelMateriaAccount.MinimumSize = new System.Drawing.Size(900, 0);
-            this.labelMateriaAccount.Name = "labelMateriaAccount";
-            this.labelMateriaAccount.Size = new System.Drawing.Size(900, 33);
-            this.labelMateriaAccount.TabIndex = 59;
-            // 
             // button26
             // 
             this.button26.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1554,7 +2000,7 @@
             this.button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button26.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button26.Location = new System.Drawing.Point(418, 414);
+            this.button26.Location = new System.Drawing.Point(418, 385);
             this.button26.Margin = new System.Windows.Forms.Padding(0, 15, 0, 15);
             this.button26.Name = "button26";
             this.button26.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -1565,17 +2011,6 @@
             this.button26.UseVisualStyleBackColor = false;
             this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
-            // roundPictureBox1
-            // 
-            this.roundPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.roundPictureBox1.Location = new System.Drawing.Point(439, 95);
-            this.roundPictureBox1.Name = "roundPictureBox1";
-            this.roundPictureBox1.Size = new System.Drawing.Size(160, 160);
-            this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.roundPictureBox1.TabIndex = 48;
-            this.roundPictureBox1.TabStop = false;
-            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
-            // 
             // lbDados
             // 
             this.lbDados.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1584,7 +2019,7 @@
             this.lbDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbDados.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbDados.Location = new System.Drawing.Point(371, 25);
+            this.lbDados.Location = new System.Drawing.Point(357, 25);
             this.lbDados.Name = "lbDados";
             this.lbDados.Size = new System.Drawing.Size(297, 55);
             this.lbDados.TabIndex = 37;
@@ -1601,7 +2036,7 @@
             this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button25.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button25.Image = global::Menus.Properties.Resources.back__1_;
-            this.button25.Location = new System.Drawing.Point(2, 1);
+            this.button25.Location = new System.Drawing.Point(-4, 1);
             this.button25.Margin = new System.Windows.Forms.Padding(5);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(62, 34);
@@ -1784,17 +2219,6 @@
             this.label9.Text = "Editado pela última vez por:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // roundPictureBox2
-            // 
-            this.roundPictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.roundPictureBox2.InitialImage = global::Menus.Properties.Resources.User_icon_BLACK_01;
-            this.roundPictureBox2.Location = new System.Drawing.Point(749, 5);
-            this.roundPictureBox2.Name = "roundPictureBox2";
-            this.roundPictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.roundPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.roundPictureBox2.TabIndex = 11;
-            this.roundPictureBox2.TabStop = false;
             // 
             // button27
             // 
@@ -3193,7 +3617,9 @@
             // 
             // Wrapper
             // 
+            this.Wrapper.Controls.Add(this.panelMinhaConta);
             this.Wrapper.Controls.Add(this.panelHome);
+            this.Wrapper.Controls.Add(this.panelNovaNota);
             this.Wrapper.Controls.Add(this.panelMateria);
             this.Wrapper.Controls.Add(this.panelCurso2);
             this.Wrapper.Controls.Add(this.panelCurso2__Search);
@@ -3201,10 +3627,8 @@
             this.Wrapper.Controls.Add(this.panelFacul__Search);
             this.Wrapper.Controls.Add(this.panelFacul);
             this.Wrapper.Controls.Add(this.panelMateria__Search);
-            this.Wrapper.Controls.Add(this.panelMinhaConta);
             this.Wrapper.Controls.Add(this.panelCurso);
             this.Wrapper.Controls.Add(this.panelSearch);
-            this.Wrapper.Controls.Add(this.panelNovaNota);
             this.Wrapper.Controls.Add(this.panel1);
             this.Wrapper.Controls.Add(this.panel2);
             this.Wrapper.Controls.Add(this.webBrowser1);
@@ -3259,6 +3683,7 @@
             // panel48
             // 
             this.panel48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.panel48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel48.Controls.Add(this.label33);
             this.panel48.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel48.Location = new System.Drawing.Point(0, 217);
@@ -3273,7 +3698,7 @@
             this.label33.BackColor = System.Drawing.Color.Transparent;
             this.label33.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label33.Location = new System.Drawing.Point(233, 8);
+            this.label33.Location = new System.Drawing.Point(233, 7);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(140, 29);
             this.label33.TabIndex = 2;
@@ -3390,6 +3815,28 @@
             this.label30.Text = "Confirmar Nota";
             this.label30.Click += new System.EventHandler(this.label30_Click);
             // 
+            // roundPictureBox2
+            // 
+            this.roundPictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.roundPictureBox2.InitialImage = global::Menus.Properties.Resources.User_icon_BLACK_01;
+            this.roundPictureBox2.Location = new System.Drawing.Point(749, 5);
+            this.roundPictureBox2.Name = "roundPictureBox2";
+            this.roundPictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.roundPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.roundPictureBox2.TabIndex = 11;
+            this.roundPictureBox2.TabStop = false;
+            // 
+            // roundPictureBox1
+            // 
+            this.roundPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.roundPictureBox1.Location = new System.Drawing.Point(425, 86);
+            this.roundPictureBox1.Name = "roundPictureBox1";
+            this.roundPictureBox1.Size = new System.Drawing.Size(160, 160);
+            this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.roundPictureBox1.TabIndex = 48;
+            this.roundPictureBox1.TabStop = false;
+            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
+            // 
             // Menuprinc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3397,9 +3844,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1286, 729);
             this.Controls.Add(this.Wrapper);
-            this.Controls.Add(this.modalNotify);
-            this.Controls.Add(this.confirmNote);
             this.Controls.Add(this.ModalShare);
+            this.Controls.Add(this.confirmNote);
+            this.Controls.Add(this.modalNotify);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -3440,9 +3887,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelMinhaConta.ResumeLayout(false);
             this.panelMinhaConta.PerformLayout();
+            this.panelMateriaList.ResumeLayout(false);
+            this.panelMateriaList.PerformLayout();
+            this.panel59.ResumeLayout(false);
+            this.panel59.PerformLayout();
+            this.panel58.ResumeLayout(false);
+            this.panel58.PerformLayout();
+            this.panel57.ResumeLayout(false);
+            this.panel57.PerformLayout();
+            this.panel56.ResumeLayout(false);
+            this.panel56.PerformLayout();
+            this.panelMateriaListFirst.ResumeLayout(false);
+            this.panelMateriaListFirst.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panelHome.ResumeLayout(false);
@@ -3452,7 +3912,6 @@
             this.panel11.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox2)).EndInit();
             this.panelFacul__Search.ResumeLayout(false);
             this.panelFacul__Search.PerformLayout();
             this.panel20.ResumeLayout(false);
@@ -3534,6 +3993,8 @@
             this.panel49.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3747,7 +4208,6 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button47;
-        private System.Windows.Forms.Label labelMateriaAccount;
         private System.Windows.Forms.Label labelCursoAccount;
         private System.Windows.Forms.Label labelFaculAccount;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
@@ -3755,5 +4215,36 @@
         private System.Windows.Forms.Label lbRecebeEmailConfig;
         private System.Windows.Forms.TextBox txtIdade;
         private System.Windows.Forms.Panel panel50;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.Panel panelMateriaList;
+        private System.Windows.Forms.Panel panel59;
+        private System.Windows.Forms.Button button30;
+        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox10;
+        private System.Windows.Forms.Panel panel58;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox9;
+        private System.Windows.Forms.Panel panel57;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox8;
+        private System.Windows.Forms.Panel panel56;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox7;
+        private System.Windows.Forms.Panel panelMateriaListFirst;
+        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
     }
 }

@@ -40,7 +40,7 @@ namespace Menus
 
         public string strConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-        public const string strSelectData = "SELECT FAC_STR_NOME, CUR_STR_NOME, MAT_STR_NOME FROM TB_USER AS U JOIN TB_FACULDADE AS F ON U.USER_INT_ID = F.USER_INT_ID JOIN TB_CURSO AS C ON U.USER_INT_ID = C.USER_INT_ID JOIN TB_MATERIA AS M ON U.USER_INT_ID = M.USER_INT_ID WHERE U.USER_STR_EMAIL = @USER_STR_EMAIL";
+        public const string strSelectData = "SELECT FAC_STR_NOME, CUR_STR_NOME, MAT_STR_NOME FROM TB_USER AS U JOIN TB_USER_FAC AS F ON U.USER_INT_ID = F.USER_INT_ID JOIN TB_FACULDADE AS F2 ON F2.FAC_INT_ID = F.FAC_INT_ID  JOIN TB_CURSO AS C ON U.USER_INT_ID = C.USER_INT_ID JOIN TB_MATERIA AS M ON U.USER_INT_ID = M.USER_INT_ID WHERE U.USER_STR_EMAIL = @USER_STR_EMAIL";
 
 
         public void SelectUserConfig(string emailRecebe)
@@ -74,7 +74,7 @@ namespace Menus
 
         private void btnentrar_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=CCSTECNO.DDNS.NET;Initial Catalog=Atena;User ID=AtenaAdm;Password=Murilo1234");
+            SqlConnection con = new SqlConnection(@"Data Source=atenaserver.database.windows.net;Initial Catalog=atenadatabase;Persist Security Info=True;User ID=atenaadmin;Password=mogueno1234!@#$");
             SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM TB_USER WHERE USER_STR_EMAIL='" + txtusuario.Text + "' AND USER_STR_SENHA='" + txtsenha.Text + "'", con);
             DataTable dt = new DataTable(); 
             sda.Fill(dt);
