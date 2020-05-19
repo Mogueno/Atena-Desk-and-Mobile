@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileTCC.View.RegistrationPageNext">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid HorizontalOptions="CenterAndExpand"  Margin="20,0,20,0"  VerticalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout Grid.Row="0">
+                        <Picker Title="Escolha uma faculdade" x:Name="FaculdadesList" SelectedIndexChanged="OnPickerSelectedIndexChanged"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1">
+                        <Entry Placeholder="Curso" FontSize="16" x:Name="EntryUserCurso" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="2">
+                        <Entry Placeholder="Materia 1" FontSize="16" x:Name="EntryUserMateria1"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="3">
+                        <Entry Placeholder="Materia 2" FontSize="16" x:Name="EntryUserMateria2"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="4">
+                        <Entry Placeholder="Materia 3" FontSize="16" x:Name="EntryUserMateria3"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="5">
+                        <Entry Placeholder="Materia 4" FontSize="16" x:Name="EntryUserMateria4"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="6">
+                        <Button Text="Register" FontSize="16" x:Name="btnInsertFaculdade" />
+                    </StackLayout>
+
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileTCC.View.LoginPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid VerticalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Entry Placeholder="User" x:Name="txbUserName" Grid.Row="0" FontSize="Default"/>
+                    <Entry Placeholder="Password" IsPassword="true" x:Name="txbPassword" Grid.Row="1"/>
+                    <Button Text="Login" x:Name="btnLogin" Grid.Row="2" BackgroundColor="#0077be" TextColor="White" Clicked="BtnLogin_Clicked"/>
+                    <Button Text="Register" x:Name="btnRegister" Grid.Row="3" Clicked="BtnRegister_Clicked"/>
+                    <Button Text="Login with Google" x:Name="btnGoogle" Grid.Row="4" Clicked="BtnGoogle_Clicked"/>
+                    <Button Text="SQL testet" x:Name="btnTeste" Grid.Row="5" Clicked="BtnTeste_Clicked"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
