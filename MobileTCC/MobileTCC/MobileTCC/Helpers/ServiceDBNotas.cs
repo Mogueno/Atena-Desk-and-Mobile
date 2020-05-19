@@ -16,7 +16,7 @@ namespace MobileTCC.Helpers
         {
 
             if (Caminho == "")
-                Caminho = App.Caminho;
+                Caminho = Application.Caminho;
 
             conn = new SQLiteConnection(Caminho); // Define o banco
             conn.CreateTable<TableNotas>(); // Cria a tabela

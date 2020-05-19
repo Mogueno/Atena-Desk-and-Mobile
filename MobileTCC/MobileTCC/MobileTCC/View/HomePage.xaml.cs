@@ -23,7 +23,7 @@ namespace MobileTCC.View
 
         public void AtualizaLista()
         {
-            ServiceDBNotas dbNotas = new ServiceDBNotas(App.Caminho);
+            ServiceDBNotas dbNotas = new ServiceDBNotas(Application.Caminho);
             ListaNotas.ItemsSource = dbNotas.ListarNota();
         }
 

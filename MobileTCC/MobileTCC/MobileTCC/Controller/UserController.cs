@@ -76,5 +76,13 @@ namespace MobileTCC.Controller
             return JsonConvert.DeserializeObject<TB_USER>(await response.Content.ReadAsStringAsync());
         }
 
+        //Busca usuario existente
+        public async Task<IList<TB_USERReturn>> GetExistentUser(string userEmail, string userSenha)
+        {
+            HttpClient client = GetClient();
+            string result = await client.GetStringAsync(baseAPI + "/login/" + userEmail + "-" + userSenha);
+            return JsonConvert.DeserializeObject<IList<TB_USERReturn>>(result);
+        }
+
     }
 }

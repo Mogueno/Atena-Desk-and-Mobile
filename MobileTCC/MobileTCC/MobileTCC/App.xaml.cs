@@ -7,15 +7,15 @@ using Xamarin.Forms.Xaml;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MobileTCC
 {
-    public partial class App : Application
+    public partial class Application : Xamarin.Forms.Application
     {
         public static String BancoDados;
         public static String Caminho;
-        public App(string Caminho, string BancoDados)
+        public Application(string Caminho, string BancoDados)
         {
             InitializeComponent();
-            App.BancoDados = BancoDados;
-            App.Caminho = Caminho;
+            Application.BancoDados = BancoDados;
+            Application.Caminho = Caminho;
 
             MainPage = new NavigationPage(new LoginPage());
         }

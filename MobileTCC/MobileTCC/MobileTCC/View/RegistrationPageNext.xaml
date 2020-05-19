@@ -32,7 +32,7 @@
                     </StackLayout>
 
                     <StackLayout Grid.Row="4">
-                        <ActivityIndicator  IsRunning="{Binding isBusy}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></ActivityIndicator>
+                        <ActivityIndicator  IsRunning="{Binding isBusy}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Black"/>
                     </StackLayout>
 
 

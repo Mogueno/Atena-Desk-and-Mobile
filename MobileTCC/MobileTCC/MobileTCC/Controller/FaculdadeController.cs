@@ -20,6 +20,7 @@ namespace MobileTCC.Controller
             return client;
         }
 
+        //Busca todas as faculdades
         public async Task<IEnumerable<TB_FACULDADE>> GetAllFaculdades()
         {
             HttpClient client = GetClient();
@@ -27,6 +28,7 @@ namespace MobileTCC.Controller
             return JsonConvert.DeserializeObject<IEnumerable<TB_FACULDADE>>(result);
         }
 
+        //Busca todos os cursos
         public async Task<IEnumerable<TB_CURSO>> GetAllCursos()
         {
             HttpClient client = GetClient();
@@ -34,11 +36,30 @@ namespace MobileTCC.Controller
             return JsonConvert.DeserializeObject<IEnumerable<TB_CURSO>>(result);
         }
 
+        //Busca todas as materias
         public async Task<IEnumerable<TB_MATERIA>> GetAllMaterias()
         {
             HttpClient client = GetClient();
             string result = await client.GetStringAsync(baseAPI + "/materias");
             return JsonConvert.DeserializeObject<IEnumerable<TB_MATERIA>>(result);
+        }
+
+        //Adiciona um novo usuario
+        public async Task<TB_FACULDADEReq> FacData(int userID, int facData, int curID, int matID1, int matID2)
+        {
+            TB_FACULDADEReq user = new TB_FACULDADEReq
+            {
+                userID = userID,
+                facData = facData,
+                curID = curID,
+                matID1 = matID1,
+                matID2 = matID2
+            };
+            HttpClient client = GetClient();
+            var response = await client.PostAsync(baseAPI + "/facdata",
+                new StringContent(
+                    JsonConvert.SerializeObject(user, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), Encoding.UTF8, "application/json"));
+            return await JsonConvert.DeserializeObject<Task<TB_FACULDADEReq>>(await response.Content.ReadAsStringAsync());
         }
     }
 }

@@ -19,12 +19,12 @@ namespace MobileTCC.View
             InitializeComponent();
             PopulatePickers();
             this.BindingContext = this;
-            this.IsBusy = false;
+            IsBusy = false;
         }
 
         public async void PopulatePickers()
         {
-            this.IsBusy = true;
+            IsBusy = true;
             FaculdadeController faculdadeController = new FaculdadeController();
             var tableFac = await faculdadeController.GetAllFaculdades();
             List<string> faculdadeList = new List<string>();
@@ -53,7 +53,7 @@ namespace MobileTCC.View
 
             MateriasList1.ItemsSource = materiasList1;
             MateriasList2.ItemsSource = materiasList2;
-            this.IsBusy = false;
+            IsBusy = false;
 
             //INSERIR ID FACULDADE NA TABELA TB_USER_FAC
             //Pegar ID faculdade depois de selecionada.
@@ -80,29 +80,47 @@ namespace MobileTCC.View
 
         private void CursosList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            var picker = (Picker)sender;
+            int curID = picker.SelectedIndex;
+            Preferences.Set("curID", curID + 1);
         }
 
         private void MateriasList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            var picker = (Picker)sender;
+            int matID1 = picker.SelectedIndex;
+            Preferences.Set("matID1", matID1 + 1);
         }
 
         private void MateriasList2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            var picker = (Picker)sender;
+            int matID2 = picker.SelectedIndex;
+            Preferences.Set("matID2", matID2 + 1);
         }
 
-        private void BtnInsertFaculdade_Clicked(object sender, EventArgs e)
+        private async void BtnInsertFaculdade_Clicked(object sender, EventArgs e)
         {
             if ((MateriasList1.SelectedIndex != -1) && (MateriasList2.SelectedIndex != -1) && (CursosList.SelectedIndex != -1) && (FaculdadesList.SelectedIndex != -1))
             {
                 // Insert na rota /facdata
-                DisplayAlert("Sucesso", "Seu cadastro foi concluido", "Ok");
+                FaculdadeController faculdadeController = new FaculdadeController();
+                var facdata = faculdadeController.FacData(Preferences.Get("userID", 99999), Preferences.Get("facID", 99999), Preferences.Get("curID", 99999), Preferences.Get("matID1", 99999), Preferences.Get("matID2", 99999));
+
+                if(facdata == null)
+                {
+                    await DisplayAlert("Sucesso", "Seu cadastro foi concluido", "Ok");
+                    await Navigation.PushAsync(new LoginPage());
+                }
+                else
+                {
+                    await DisplayAlert("Erro", "Ocorreu um erro na criação do seu usuário, por favor tente novamente mais tarde", "Ok");
+                }
+                
             }
             else
             {
-                DisplayAlert("Erro", "Selecione todos os campos antes de prosseguir", "Ok");
+                await DisplayAlert("Erro", "Selecione todos os campos antes de prosseguir", "Ok");
             }
         }
     }

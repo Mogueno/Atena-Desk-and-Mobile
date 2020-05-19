@@ -23,7 +23,7 @@ namespace MobileTCC.View
 
         public void GetUserData()
         {
-            ServiceDBUserData dbUser = new ServiceDBUserData(App.Caminho);
+            ServiceDBUserData dbUser = new ServiceDBUserData(Application.Caminho);
             var userData = dbUser.ListarUsuario();
             EntryUserName.Text = userData[0].Login;
             EntryUserPassword.Text = userData[0].Senha;

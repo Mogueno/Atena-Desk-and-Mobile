@@ -43,32 +43,20 @@ namespace MobileTCC.View
             await Navigation.PushAsync(new RegistrationPage());
         }
 
--        {
-            var db = new SQLiteConnection(App.Caminho);
-            db.CreateTable<TableUsuario>();
+        async void BtnLogin_Clicked(object sender, EventArgs e){
 
-            var myquery = db.Table<TableUsuario>().Where(u=>u.Login.Equals(txbUserName.Text) && u.Senha.Equals(txbPassword.Text)).FirstOrDefault();
-
-            if(myquery != null)
+            //Busca se o usuario ja existe
+            IList<TB_USERReturn> verificaLogin = await userController.GetExistentUser(txbUserName.Text, txbPassword.Text);
+            if (verificaLogin.Count != 0)
             {
-                Preferences.Set("userId", myquery.Id.ToString());
-
-                App.Current.MainPage = new NavigationPage(new MainPageApp());
+                Preferences.Set("userId", verificaLogin[0].USER_INT_ID);
+                //Corrigir esse cara
+                //Application.Current.MainPage = new NavigationPage(new MainPageApp());
             }
             else
             {
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    var result = await this.DisplayAlert("Erro", "Usuario nao encontrado, tente novamente", "Yes", "Cancel");
+                await DisplayAlert("Erro", "Usuario nao encontrado, tente novamente", "Ok");
 
-                    if (result)
-                        await Navigation.PushAsync(new LoginPage());
-                    else
-                    {
-                        await Navigation.PushAsync(new LoginPage());
-                    }
-
-                });
             }
 
         }
@@ -144,7 +132,7 @@ namespace MobileTCC.View
                 await store.SaveAsync(account = e.Account, Constants.AppName);
 
                 // Utilizar o mesmo arquivo de banco para essa operacao (app)
-                var db = new SQLiteConnection(App.Caminho);
+                var db = new SQLiteConnection(Application.Caminho);
 
                 db.CreateTable<TableUsuario>();
 
@@ -163,7 +151,7 @@ namespace MobileTCC.View
                 {
                     var result = await this.DisplayAlert("Sucesso", "Cadastro Feito com Sucesso. Altere sua senha registrada dentro de configurações.", "Yes", "Cancel");
                     if (result)
-                        App.Current.MainPage = new NavigationPage(new MainPageApp());
+                        Application.Current.MainPage = new NavigationPage(new MainPageApp());
                 });
                 
 

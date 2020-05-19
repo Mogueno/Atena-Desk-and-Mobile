@@ -24,7 +24,7 @@ namespace MobileTCC.Droid
             string BancoNome = "dbBancoNovo.db3";
             string Caminho = FileAccessHelper.GetLocalFilePath(BancoNome);
 
-            LoadApplication(new App(Caminho, BancoNome));
+            LoadApplication(new Application(Caminho, BancoNome));
 
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)

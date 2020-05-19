@@ -130,6 +130,15 @@ namespace MobileTCC.Model
         }
     }
 
+    public class TB_FACULDADEReq
+    {
+        public int userID { get; set; }
+        public int facData { get; set; }
+        public int curID { get; set; }
+        public int matID1 { get; set; }
+        public int matID2 { get; set; }
+    }
+
     public class TB_FACULDADE
     {
         public int FAC_INT_ID;

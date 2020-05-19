@@ -14,7 +14,7 @@ namespace MobileTCC.Helpers
         public ServiceDBUserData(string Caminho)
         {
             if (Caminho == "")
-                Caminho = App.Caminho;
+                Caminho = Application.Caminho;
 
             conn = new SQLiteConnection(Caminho); // Define o banco
             conn.CreateTable<TableUsuario>(); // Cria a tabela

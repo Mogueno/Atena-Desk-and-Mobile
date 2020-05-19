@@ -37,7 +37,7 @@ namespace MobileTCC.View
 
         private async void BtExcluir_Clicked(object sender, EventArgs e)
         {
-            ServiceDBNotas dbNotas = new ServiceDBNotas(App.Caminho);
+            ServiceDBNotas dbNotas = new ServiceDBNotas(Application.Caminho);
             var resp = await DisplayAlert("Excluir", "Deseja realmente excluir?", "Sim", "Não");
             if (resp == true)
             {
@@ -57,7 +57,7 @@ namespace MobileTCC.View
                 TableNotas nota = new TableNotas();
                 nota.Titulo = txtTitulo.Text;
                 nota.Dados = txtDados.Text;
-                ServiceDBNotas dbNotas = new ServiceDBNotas(App.Caminho);
+                ServiceDBNotas dbNotas = new ServiceDBNotas(Application.Caminho);
                 if (btSalvar.Text == "Inserir")
                 {
                     dbNotas.InserirNota(nota);
