@@ -46,14 +46,22 @@ namespace MobileTCC.View
 
                     userIdade = Convert.ToInt32(EntryUserIdade.Text);
 
-                    IEnumerable<TB_USERReturn> query = await UserController.AddNewUser(userName, userIdade, userSexo, userEmail, userPassword, 0, 0);
-                    Preferences.Set("userId", query.First().USER_INT_ID);
-                    await this.DisplayAlert("Sucesso", "Cadastro Feito com Sucesso, agora vamos cadastrar suas materias!", "Ok");
-                    await Navigation.PushAsync( new RegistrationPageNext() );
+                    TB_USERReturn query = await UserController.AddNewUser(userName, userIdade, userSexo, userEmail, userPassword, 0, 0);
+                    if (query.newUser == false)
+                    {
+                        await this.DisplayAlert("Erro", "Email já encontrado!", "Ok");
+                    }
+                    else
+                    {
+                        Preferences.Set("userID", query.USER_INT_ID);
+                        await this.DisplayAlert("Sucesso", "Cadastro Feito com Sucesso, agora vamos cadastrar suas materias!", "Ok");
+                        await Navigation.PushAsync(new RegistrationPageNext());
+                    }
+                    
                 }
                 else
                 {
-                    await this.DisplayAlert("Erro", "Por favor, complete todos os campos","Ok");
+                    await DisplayAlert("Erro", "Por favor, complete todos os campos","Ok");
                 }
             });
         }

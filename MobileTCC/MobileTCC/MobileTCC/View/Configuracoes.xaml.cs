@@ -25,13 +25,13 @@ namespace MobileTCC.View
         {
             ServiceDBUserData dbUser = new ServiceDBUserData(Application.Caminho);
             var userData = dbUser.ListarUsuario();
-            EntryUserName.Text = userData[0].Login;
-            EntryUserPassword.Text = userData[0].Senha;
-            EntryUserEmail.Text = userData[0].Email;
-            EntryUserCurso.Text = userData[0].Curso;
-            EntryUserFaculdade.Text = userData[0].Faculdade;
-            EntryUserMateria.Text = userData[0].Materia;
-            EntryUserSexo.Text = userData[0].Sexo;
+            //EntryUserName.Text = userData[0].Login;
+            //EntryUserPassword.Text = userData[0].Senha;
+            //EntryUserEmail.Text = userData[0].Email;
+            //EntryUserCurso.Text = userData[0].Curso;
+            //EntryUserFaculdade.Text = userData[0].Faculdade;
+            //EntryUserMateria.Text = userData[0].Materia;
+            //EntryUserSexo.Text = userData[0].Sexo;
         }
 
     }

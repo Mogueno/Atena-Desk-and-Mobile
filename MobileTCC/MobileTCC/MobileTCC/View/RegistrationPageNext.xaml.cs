@@ -105,12 +105,12 @@ namespace MobileTCC.View
             {
                 // Insert na rota /facdata
                 FaculdadeController faculdadeController = new FaculdadeController();
-                var facdata = faculdadeController.FacData(Preferences.Get("userID", 99999), Preferences.Get("facID", 99999), Preferences.Get("curID", 99999), Preferences.Get("matID1", 99999), Preferences.Get("matID2", 99999));
+                TB_FACULDADEReturn facdata = new TB_FACULDADEReturn();
+                facdata = await faculdadeController.FacData(Preferences.Get("userID", 99999), Preferences.Get("facID", 99999), Preferences.Get("curID", 99999), Preferences.Get("matID1", 99999), Preferences.Get("matID2", 99999));
 
-                if(facdata == null)
+                if (facdata.insertCompleted == true)
                 {
-                    await DisplayAlert("Sucesso", "Seu cadastro foi concluido", "Ok");
-                    await Navigation.PushAsync(new LoginPage());
+                    await DisplayAlert("Sucesso", "Seu cadastro foi concluido, volte para a tela incial e realize o login.", "Ok");
                 }
                 else
                 {

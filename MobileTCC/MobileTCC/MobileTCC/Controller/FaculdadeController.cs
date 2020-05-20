@@ -45,12 +45,12 @@ namespace MobileTCC.Controller
         }
 
         //Adiciona um novo usuario
-        public async Task<TB_FACULDADEReq> FacData(int userID, int facData, int curID, int matID1, int matID2)
+        public async Task<TB_FACULDADEReturn> FacData(int userID, int facID, int curID, int matID1, int matID2)
         {
             TB_FACULDADEReq user = new TB_FACULDADEReq
             {
                 userID = userID,
-                facData = facData,
+                facID = facID,
                 curID = curID,
                 matID1 = matID1,
                 matID2 = matID2
@@ -59,7 +59,7 @@ namespace MobileTCC.Controller
             var response = await client.PostAsync(baseAPI + "/facdata",
                 new StringContent(
                     JsonConvert.SerializeObject(user, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), Encoding.UTF8, "application/json"));
-            return await JsonConvert.DeserializeObject<Task<TB_FACULDADEReq>>(await response.Content.ReadAsStringAsync());
+            return JsonConvert.DeserializeObject<TB_FACULDADEReturn>( await response.Content.ReadAsStringAsync());
         }
     }
 }

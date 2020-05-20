@@ -16,7 +16,13 @@ namespace MobileTCC.View
         public MainPageApp()
         {
             InitializeComponent();
+            Preferences.Set("userID", 0);
+            if (Preferences.Get("userID", 0) == 0)
+            {
+                Navigation.PushAsync(new LoginPage());
+            }
+
         }
-       
+
     }
 }

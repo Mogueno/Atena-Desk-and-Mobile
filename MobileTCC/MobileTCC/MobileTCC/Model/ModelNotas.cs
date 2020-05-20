@@ -121,23 +121,34 @@ namespace MobileTCC.Model
     }
     public class TB_USERReturn
     {
+
         public int USER_INT_ID { get; set; }
+        public bool newUser { get; set; }
 
 
         public TB_USERReturn()
         {
             USER_INT_ID = 0;
+            newUser = false;
         }
     }
 
     public class TB_FACULDADEReq
     {
         public int userID { get; set; }
-        public int facData { get; set; }
+        public int facID { get; set; }
         public int curID { get; set; }
         public int matID1 { get; set; }
         public int matID2 { get; set; }
     }
+
+    [JsonObject]
+    public class TB_FACULDADEReturn
+    {
+        public bool insertCompleted { get; set; }
+        public string err { get; set; }
+    }
+
 
     public class TB_FACULDADE
     {

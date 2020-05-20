@@ -17,7 +17,7 @@ namespace MobileTCC
             Application.BancoDados = BancoDados;
             Application.Caminho = Caminho;
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new NavigationPage(new MainPageApp());
         }
 
         protected override void OnStart()

@@ -1,6 +1,5 @@
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\MobileTCC.Android.nuget.stamp
-C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\MobileTCC.Android.csprojAssemblyReference.cache
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\_VerifyXamarinAndroidSupportVersions.stamp
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\bin\Debug\MobileTCC.Android.dll
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\bin\Debug\MobileTCC.Android.pdb
@@ -8,6 +7,7 @@ C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\b
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\bin\Debug\tccMobile.tccMobile-Signed.apk
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\bin\Debug\MobileTCC.dll
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\bin\Debug\MobileTCC.pdb
+C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\MobileTCC.Android.csprojAssemblyReference.cache
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\libraryimports.cache.stamp
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\res.flag
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\MobileTCC.Android.csproj.CoreCompileInputs.cache

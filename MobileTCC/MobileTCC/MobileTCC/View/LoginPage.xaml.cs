@@ -49,9 +49,8 @@ namespace MobileTCC.View
             IList<TB_USERReturn> verificaLogin = await userController.GetExistentUser(txbUserName.Text, txbPassword.Text);
             if (verificaLogin.Count != 0)
             {
-                Preferences.Set("userId", verificaLogin[0].USER_INT_ID);
-                //Corrigir esse cara
-                //Application.Current.MainPage = new NavigationPage(new MainPageApp());
+                Preferences.Set("userID", verificaLogin[0].USER_INT_ID);
+                await Navigation.PopAsync();
             }
             else
             {
@@ -131,30 +130,21 @@ namespace MobileTCC.View
 
                 await store.SaveAsync(account = e.Account, Constants.AppName);
 
-                // Utilizar o mesmo arquivo de banco para essa operacao (app)
-                var db = new SQLiteConnection(Application.Caminho);
+                TB_USERReturn query = await UserController.AddNewUser(userdata.Name, 0, userdata.Gender, userdata.Email, "1234" ,0 ,1);
 
-                db.CreateTable<TableUsuario>();
-
-                var item = new TableUsuario()
+                if (query.newUser == false)
                 {
-                    Email = userdata.Email,
-                    Login = userdata.Name,
-                    GImage = userdata.Picture,
-                    Senha = "1234",
-                    Sexo = userdata.Gender,
-                    GLogin = true,
-                };
-
-                db.Insert(item);
-                Device.BeginInvokeOnMainThread(async () =>
+                    Application.Current.MainPage = new NavigationPage(new MainPageApp());
+                    await DisplayAlert("Erro", "Email já encontrado!", "Ok");
+                }
+                else
                 {
-                    var result = await this.DisplayAlert("Sucesso", "Cadastro Feito com Sucesso. Altere sua senha registrada dentro de configurações.", "Yes", "Cancel");
-                    if (result)
-                        Application.Current.MainPage = new NavigationPage(new MainPageApp());
-                });
-                
-
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
+                        await DisplayAlert("Sucesso", "Cadastro Feito com Sucesso. Confira seus dados na aba Configuracoes!", "Yes");
+                        await Navigation.PopAsync();
+                    });
+                }
             }
         }
 

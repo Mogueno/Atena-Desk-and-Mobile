@@ -28,7 +28,7 @@ namespace MobileTCC.Controller
         }
 
         //Adiciona um novo usuario
-        public static async Task<IEnumerable<TB_USERReturn>> AddNewUser(string name, int idade, string sexo, string email, string senha, int userF, int userG)
+        public static async Task<TB_USERReturn> AddNewUser(string name, int idade, string sexo, string email, string senha, int userF, int userG)
         {
             TB_USER user = new TB_USER
             {
@@ -44,7 +44,8 @@ namespace MobileTCC.Controller
             var response = await client.PostAsync(baseAPI + "/usuario",
                 new StringContent(
                     JsonConvert.SerializeObject(user, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), Encoding.UTF8, "application/json"));
-            return JsonConvert.DeserializeObject<IEnumerable<TB_USERReturn>>(await response.Content.ReadAsStringAsync());
+
+            return JsonConvert.DeserializeObject<TB_USERReturn>(await response.Content.ReadAsStringAsync());
         }
         
         //Atualiza o registro do usuario
