@@ -17,6 +17,7 @@ namespace Menus
     public partial class Menuprinc : Form
     {
         TypeAssistant assistant;
+        TypeAssistant accountUpdate;
         EntityFrameworkFunc entFunc = new EntityFrameworkFunc();
         bancoMainEntities1 ht = new bancoMainEntities1();
         public Menuprinc(string texto)
@@ -26,6 +27,44 @@ namespace Menus
             Dados dataStrings = new Dados();
             assistant = new TypeAssistant();
             assistant.Idled += assistant_Idled;
+
+            accountUpdate = new TypeAssistant();
+            accountUpdate.Idled += accountUpdate_Idled;
+        }
+
+        // Insere dados se usuário ficar x tempo sem digitar ------> My Account - Seção de dados pessoais
+        void accountUpdate_Idled(object sender, EventArgs e)
+        {
+            this.Invoke(
+            new MethodInvoker(() =>
+            {
+
+                try
+                {
+                    var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                    var email = id.USER_INT_ID;
+                    var result = ht.TB_USER.SingleOrDefault(a => a.USER_INT_ID == email);
+                    if (result != null)
+                    {
+                        result.USER_STR_NOME = txtNome.Text;
+                        result.USER_INT_IDADE = Convert.ToInt32(txtIdade.Text);
+                        ht.SaveChanges();
+
+                        label10.BringToFront();
+                        Transition.run(label10, "Left", 565, new TransitionType_EaseInEaseOut(50));
+
+                        System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
+
+                        t.Interval = 2000;
+                        t.Tick += new EventHandler(timer_Tick);
+                        t.Start();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro\n\n\n\n" + ex.Message);
+                }
+            }));
         }
 
         // Insere dados se usuário ficar x tempo sem digitar
@@ -67,7 +106,7 @@ namespace Menus
                         roundPictureBox2.Image = pictureBox1.InitialImage;
                     }
                     label35.Text = username.userName;
-
+                    label10.BringToFront();
                     Transition.run(label10, "Left", 565, new TransitionType_EaseInEaseOut(50));
 
                     System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
@@ -116,9 +155,10 @@ namespace Menus
             panelDynamic.Controls.Add(btnDynamic);
             panelDynamic.Tag = matId;
             panelDynamic.Dock = System.Windows.Forms.DockStyle.Top;
-            panelDynamic.Location = new System.Drawing.Point(0, 0);
-            panelDynamic.Size = new System.Drawing.Size(657, 32);
-            panelDynamic.TabIndex = 59;
+            panelDynamic.Location = new System.Drawing.Point(0, 64);
+            panelDynamic.Name = "panel57";
+            panelDynamic.Size = new System.Drawing.Size(409, 31);
+            panelDynamic.TabIndex = 62;
             // 
             // textBox24
             // 
@@ -126,22 +166,11 @@ namespace Menus
             txtDynamic.BorderStyle = System.Windows.Forms.BorderStyle.None;
             txtDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             txtDynamic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            txtDynamic.Location = new System.Drawing.Point(105, 6);
-            txtDynamic.Size = new System.Drawing.Size(342, 22);
+            txtDynamic.Location = new System.Drawing.Point(7, 5);
+            txtDynamic.Size = new System.Drawing.Size(199, 22);
             txtDynamic.TabIndex = 19;
-            txtDynamic.Text = matName;
             txtDynamic.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label46
-            // 
-            lbDynamic.AutoSize = true;
-            lbDynamic.BackColor = System.Drawing.Color.Transparent;
-            lbDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            lbDynamic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            lbDynamic.Location = new System.Drawing.Point(12, 5);
-            lbDynamic.Size = new System.Drawing.Size(84, 25);
-            this.label46.TabIndex = 23;
-            this.label46.Text = "Matéria";
+            txtDynamic.Text = matName;
             // 
             // label47
             // 
@@ -149,7 +178,8 @@ namespace Menus
             lbDynamic2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             lbDynamic2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             lbDynamic2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            lbDynamic2.Location = new System.Drawing.Point(460, 5);
+            lbDynamic2.Location = new System.Drawing.Point(212, 4);
+            lbDynamic2.Name = "label7";
             lbDynamic2.Size = new System.Drawing.Size(58, 25);
             lbDynamic2.TabIndex = 25;
             lbDynamic2.Text = "Hora";
@@ -160,7 +190,7 @@ namespace Menus
             mtxtDynamic.BorderStyle = System.Windows.Forms.BorderStyle.None;
             mtxtDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             mtxtDynamic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            mtxtDynamic.Location = new System.Drawing.Point(524, 5);
+            mtxtDynamic.Location = new System.Drawing.Point(276, 4);
             mtxtDynamic.Mask = "00:00";
             mtxtDynamic.Text = matTime;
             mtxtDynamic.Size = new System.Drawing.Size(63, 24);
@@ -177,17 +207,43 @@ namespace Menus
             btnDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnDynamic.ForeColor = System.Drawing.Color.White;
             btnDynamic.Image = global::Menus.Properties.Resources.image1;
-            btnDynamic.Location = new System.Drawing.Point(598, 0);
-            btnDynamic.Size = new System.Drawing.Size(59, 32);
+            btnDynamic.Location = new System.Drawing.Point(350, 0);
+            btnDynamic.Name = "btnDynamic";
+            btnDynamic.Size = new System.Drawing.Size(59, 31);
             btnDynamic.TabIndex = 33;
             btnDynamic.UseVisualStyleBackColor = false;
-            
+            btnDynamic.Tag = matId;
+            btnDynamic.Click += new EventHandler(this.removeMateria_Click);
+
 
             this.panelMateriaList.Controls.Add(panelDynamic);
         }
 
+        private void removeMateria_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int materiaId = Convert.ToInt32(btn.Tag);
+            try
+            {
+                var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                var userId = id.USER_INT_ID;
+
+                var itemToRemove = ht.TB_USER_MAT.SingleOrDefault(x => x.USER_INT_ID == userId && x.MAT_INT_ID == materiaId);
+
+                ht.TB_USER_MAT.Remove(itemToRemove);
+                ht.SaveChanges();
+
+                getMateria();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Deu ruim" + ex);
+            }
+        }
+
         private void getMateria()
         {
+            panelMateriaList.Controls.Clear();
             try
             {
                 var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
@@ -208,29 +264,6 @@ namespace Menus
                     TimeSpan ts = TimeSpan.Parse(time);
                     appendMaterias(content[i].matId, content[i].matName, ts.ToString(@"hh\:mm"));
                 }
-
-
-                //if (content.Count > 1)
-                //{
-                //    List<Control> myControls = new List<Control>();
-                //    foreach (Control control in panelMateriaList.Controls)
-                //    {
-                //        if (control.Visible == true)
-                //        {
-
-                //            foreach (Control control2 in control.Controls)
-                //            {
-                //                if (control2 is TextBox || control2 is MaskedTextBox)
-                //                {
-                //                    myControls.Add(control2);
-                //                }
-                //            }
-                //            MessageBox.Show(myControls[1].Text);
-                //            objDados.SelectMateria(EmailUser, myControls[0].Text, myControls[1].Text);
-                //            myControls.Clear();
-                //        }
-                //    }
-                //}
             }
             catch (Exception ex)
             {
@@ -253,7 +286,15 @@ namespace Menus
                     {
                         txtNome.Text = da.GetValue(0).ToString();
                         txtIdade.Text = da.GetValue(1).ToString();
-                        txtSexo.Text = da.GetValue(2).ToString();
+                        
+                        if(da.GetValue(2).ToString() == "Masculino")
+                        {
+                            radioMasculino.Checked = true;
+                        }
+                        else
+                        {
+                            radioFeminino.Checked = true;
+                        }
                     }
                     da.Close();
                     objConexao.Close();
@@ -935,48 +976,49 @@ namespace Menus
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(lbRecebeEmailMenu.Text) && !String.IsNullOrEmpty(txtNome.Text) && !String.IsNullOrEmpty(txtIdade.Text) && !String.IsNullOrEmpty(txtSexo.Text))
+            if (!String.IsNullOrEmpty(lbRecebeEmailMenu.Text) && !String.IsNullOrEmpty(txtNome.Text) && !String.IsNullOrEmpty(txtIdade.Text))
             {
-                UpdateUser(lbRecebeEmailMenu.Text, txtNome.Text, txtIdade.Text, txtSexo.Text);
+
+                UpdateUser(lbRecebeEmailMenu.Text, txtNome.Text, txtIdade.Text, "masculino");
             }
         }
 
         private void roundPictureBox1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog opendlg = new OpenFileDialog();
-            if (opendlg.ShowDialog() == DialogResult.OK)
-            {
+            //OpenFileDialog opendlg = new OpenFileDialog();
+            //if (opendlg.ShowDialog() == DialogResult.OK)
+            //{
 
-                Image img = Image.FromFile(opendlg.FileName);
-                MemoryStream ms = new MemoryStream();
-                img.Save(ms, img.RawFormat);
-                bancoMainEntities1 ht = new bancoMainEntities1();
-                var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
-                var email = id.USER_INT_ID;
-                var result = ht.TB_PICTURES.SingleOrDefault(a => a.USER_INT_ID == email);
-                if (result != null)
-                {
-                    result.PIC_IMG_MAIN = ms.ToArray();
-                    ht.SaveChanges();
-                }
-                else
-                {
-                    ht.TB_PICTURES.Add(new TB_PICTURES() { PIC_IMG_MAIN = ms.ToArray(), USER_INT_ID = email });
-                    ht.SaveChanges();
-                }
-                var item = ht.TB_PICTURES.Where(a => a.USER_INT_ID == email).FirstOrDefault();
-                byte[] arr = item.PIC_IMG_MAIN;
-                MemoryStream ms1 = new MemoryStream(arr);
-                roundPictureBox1.Image = Image.FromStream(ms1);
-                pictureBox1.Image = Image.FromStream(ms1);
-            }
+            //    Image img = Image.FromFile(opendlg.FileName);
+            //    MemoryStream ms = new MemoryStream();
+            //    img.Save(ms, img.RawFormat);
+            //    bancoMainEntities1 ht = new bancoMainEntities1();
+            //    var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+            //    var email = id.USER_INT_ID;
+            //    var result = ht.TB_PICTURES.SingleOrDefault(a => a.USER_INT_ID == email);
+            //    if (result != null)
+            //    {
+            //        result.PIC_IMG_MAIN = ms.ToArray();
+            //        ht.SaveChanges();
+            //    }
+            //    else
+            //    {
+            //        ht.TB_PICTURES.Add(new TB_PICTURES() { PIC_IMG_MAIN = ms.ToArray(), USER_INT_ID = email });
+            //        ht.SaveChanges();
+            //    }
+            //    var item = ht.TB_PICTURES.Where(a => a.USER_INT_ID == email).FirstOrDefault();
+            //    byte[] arr = item.PIC_IMG_MAIN;
+            //    MemoryStream ms1 = new MemoryStream(arr);
+            //    roundPictureBox1.Image = Image.FromStream(ms1);
+            //    pictureBox1.Image = Image.FromStream(ms1);
+            //}
         }
 
         private void button26_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(lbRecebeEmailMenu.Text) && !String.IsNullOrEmpty(txtNome.Text) && !String.IsNullOrEmpty(txtIdade.Text) && !String.IsNullOrEmpty(txtSexo.Text))
+            if (!String.IsNullOrEmpty(lbRecebeEmailMenu.Text) && !String.IsNullOrEmpty(txtNome.Text) && !String.IsNullOrEmpty(txtIdade.Text))
             {
-                UpdateUser(lbRecebeEmailMenu.Text, txtNome.Text, txtIdade.Text, txtSexo.Text);
+                UpdateUser(lbRecebeEmailMenu.Text, txtNome.Text, txtIdade.Text, "Masculino");
             }
         }
 
@@ -1908,10 +1950,6 @@ namespace Menus
                                           userFac = facul2.FAC_STR_NOME,
                                           userIdentity = str.USER_INT_ID,
                                       }).ToList();
-                    //foreach(var entries in entryPoint)
-                    //{
-                    //    MessageBox.Show(entries.userIdentity.ToString());
-                    //}
 
                     var sharedNotes = (from str in ht3.TB_SHARE
                                       select new
@@ -1947,7 +1985,6 @@ namespace Menus
                                     duplicate = true;
                                 }
                             }
-
 
                             if (duplicate == false)
                             {
@@ -2405,6 +2442,76 @@ namespace Menus
                 this.WindowState = FormWindowState.Maximized;
             }
             
+        }
+
+        private void panelMinhaConta_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button13_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog opendlg = new OpenFileDialog();
+            if (opendlg.ShowDialog() == DialogResult.OK)
+            {
+
+                Image img = Image.FromFile(opendlg.FileName);
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, img.RawFormat);
+                bancoMainEntities1 ht = new bancoMainEntities1();
+                var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                var email = id.USER_INT_ID;
+                var result = ht.TB_PICTURES.SingleOrDefault(a => a.USER_INT_ID == email);
+                if (result != null)
+                {
+                    result.PIC_IMG_MAIN = ms.ToArray();
+                    ht.SaveChanges();
+                }
+                else
+                {
+                    ht.TB_PICTURES.Add(new TB_PICTURES() { PIC_IMG_MAIN = ms.ToArray(), USER_INT_ID = email });
+                    ht.SaveChanges();
+                }
+                var item = ht.TB_PICTURES.Where(a => a.USER_INT_ID == email).FirstOrDefault();
+                byte[] arr = item.PIC_IMG_MAIN;
+                MemoryStream ms1 = new MemoryStream(arr);
+                roundPictureBox1.Image = Image.FromStream(ms1);
+                pictureBox1.Image = Image.FromStream(ms1);
+            }
+        }
+
+        private void txtNome_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!String.IsNullOrEmpty(lbRecebeEmailMenu.Text) && !String.IsNullOrEmpty(txtNome.Text) && !String.IsNullOrEmpty(txtIdade.Text))
+            {
+                accountUpdate.TextChanged();
+            }
+            else
+            {
+                MessageBox.Show("Um ou mais campos estão vazios!");
+            }
+        }
+
+        private void panel51_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void radioMasculino_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radio = sender as RadioButton;
+            string text = radio.Text;
+
+            
+            var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+            var email = id.USER_INT_ID;
+            var result = ht.TB_USER.SingleOrDefault(a => a.USER_INT_ID == email);
+            if (result != null)
+            {
+                result.USER_STR_SEXO = text;
+                ht.SaveChanges();
+            }
+        
         }
     }
 }
