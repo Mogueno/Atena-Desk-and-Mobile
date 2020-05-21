@@ -15,7 +15,7 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
+
 
                 </Grid.RowDefinitions>
                 <StackLayout Grid.Row="0">
@@ -26,31 +26,23 @@
                 </StackLayout>
 
                 <StackLayout Grid.Row="2">
-                    <Entry Placeholder="Password" FontSize="16" IsPassword="True" x:Name="EntryUserPassword"/>
+                    <Entry Placeholder="User" FontSize="16" x:Name="EntryUserIdade"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="3">
-                    <Entry Placeholder="Email" FontSize="16" x:Name="EntryUserEmail"/>
+                    <Entry Placeholder="Password" FontSize="16" IsPassword="True" x:Name="EntryUserPassword"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="4">
-                    <Entry Placeholder="Sexo" FontSize="16" x:Name="EntryUserSexo"/>
+                    <Entry Placeholder="Email" FontSize="16" x:Name="EntryUserEmail" IsReadOnly="True"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="5">
-                    <Entry Placeholder="Faculdade" FontSize="16" x:Name="EntryUserFaculdade"/>
+                    <Entry Placeholder="Sexo" FontSize="16" x:Name="EntryUserSexo"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="6">
-                    <Entry Placeholder="Curso" FontSize="16" x:Name="EntryUserCurso"/>
-                </StackLayout>
-
-                <StackLayout Grid.Row="7">
-                    <Entry Placeholder="Materia" FontSize="16" x:Name="EntryUserMateria"/>
-                </StackLayout>
-
-                <StackLayout Grid.Row="8">
-                    <Button Text="Update" HorizontalOptions="CenterAndExpand" TextColor="White" BackgroundColor="Blue" WidthRequest="100" ></Button>
+                    <Button Text="Update" HorizontalOptions="CenterAndExpand" TextColor="White" BackgroundColor="Blue" WidthRequest="100" Clicked="Button_Clicked"></Button>
                 </StackLayout>
 
             </Grid>

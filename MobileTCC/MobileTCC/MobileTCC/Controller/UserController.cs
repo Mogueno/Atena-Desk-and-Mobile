@@ -20,17 +20,24 @@ namespace MobileTCC.Controller
         }
         
         //Busca todos os usuarios
-        public async Task<IEnumerable<TB_USER>> GetAllUsers()
+        public async Task<IEnumerable<TB_USER_DATA>> GetAllUsers()
         {
             HttpClient client = GetClient();
             string result = await client.GetStringAsync(baseAPI + "/usuarios");
-            return JsonConvert.DeserializeObject<IEnumerable<TB_USER>>(result);
+            return JsonConvert.DeserializeObject<IEnumerable<TB_USER_DATA>>(result);
+        }
+        //Busca dados do usuario
+        public async Task<IList<TB_USER_DATA2>> GetUserData(int userID)
+        {
+            HttpClient client = GetClient();
+            var result = await client.GetAsync(baseAPI + "/usuario/" + userID);
+            return JsonConvert.DeserializeObject <IList<TB_USER_DATA2>>(await result.Content.ReadAsStringAsync());
         }
 
         //Adiciona um novo usuario
         public static async Task<TB_USERReturn> AddNewUser(string name, int idade, string sexo, string email, string senha, int userF, int userG)
         {
-            TB_USER user = new TB_USER
+            TB_USER_DATA user = new TB_USER_DATA
             {
                 userName = name,
                 userIdade = idade,
@@ -49,9 +56,9 @@ namespace MobileTCC.Controller
         }
         
         //Atualiza o registro do usuario
-        public async Task<TB_USER> PatchUser(int userID, string name, int idade, string sexo, string email, string senha, int userF, int userG)
+        public async Task<TB_USER_DATA> PatchUser(int userID, string name, int idade, string sexo, string email, string senha, int userF, int userG)
         {
-            TB_USER user = new TB_USER
+            TB_USER_DATA user = new TB_USER_DATA
             {
                 userName = name,
                 userIdade = idade,
@@ -66,15 +73,15 @@ namespace MobileTCC.Controller
             HttpContent httpContent = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await client.PatchAsync(new Uri(baseAPI + "/usuario/" + userID) , httpContent);
 
-            return JsonConvert.DeserializeObject<TB_USER>(await response.Content.ReadAsStringAsync());
+            return JsonConvert.DeserializeObject<TB_USER_DATA>(await response.Content.ReadAsStringAsync());
         }
 
         //Deleta o registro do usuario
-        public async Task<TB_USER> DeleteUser(int userID)
+        public async Task<TB_USER_DATA> DeleteUser(int userID)
         { 
             HttpClient client = GetClient();
             var response = await client.DeleteAsync(new Uri(baseAPI + "/usuario/" + userID));
-            return JsonConvert.DeserializeObject<TB_USER>(await response.Content.ReadAsStringAsync());
+            return JsonConvert.DeserializeObject<TB_USER_DATA>(await response.Content.ReadAsStringAsync());
         }
 
         //Busca usuario existente

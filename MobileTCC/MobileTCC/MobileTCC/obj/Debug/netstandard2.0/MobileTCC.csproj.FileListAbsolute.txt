@@ -16,3 +16,6 @@ C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC\bin\Debug
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC\obj\Debug\netstandard2.0\MobileTCC.dll
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC\obj\Debug\netstandard2.0\MobileTCC.pdb
+C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC\obj\Debug\netstandard2.0\MobileTCC.csprojAssemblyReference.cache
+C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC\obj\Debug\netstandard2.0\View\Features.xaml.g.cs
+C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC\obj\Debug\netstandard2.0\View\GoogleSchollar.xaml.g.cs

@@ -1,5 +1,6 @@
 ﻿using MobileTCC.View;
 using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,7 +17,6 @@ namespace MobileTCC
             InitializeComponent();
             Application.BancoDados = BancoDados;
             Application.Caminho = Caminho;
-
             MainPage = new NavigationPage(new MainPageApp());
         }
 

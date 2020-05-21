@@ -89,7 +89,29 @@ namespace MobileTCC.Model
         }
 
     [JsonObject]
-    public class TB_USER
+    public class TB_USER_DATA2
+    {
+        [DefaultValue("")]
+        public string USER_STR_NOME { get; set; }
+        [DefaultValue(0)]
+        public int USER_INT_IDADE { get; set; }
+        [DefaultValue("")]
+        public string USER_STR_SEXO { get; set; }
+        [DefaultValue("")]
+        public string USER_STR_EMAIL { get; set; }
+        [DefaultValue("")]
+        public string USER_STR_SENHA { get; set; }
+        [DefaultValue("")]
+        public int FAC_INT_ID { get; set; }
+        [DefaultValue("")]
+        public int CUR_INT_ID { get; set; }
+        [DefaultValue("")]
+        public int MAT_INT_ID { get; set; }
+
+    }
+
+    [JsonObject]
+    public class TB_USER_DATA
     {
         public int userID { get; set; }
         [DefaultValue("")]
@@ -106,7 +128,7 @@ namespace MobileTCC.Model
         [DefaultValue("")]
         public int userG { get; set; }
 
-        public TB_USER()
+        public TB_USER_DATA()
         {
             this.userID = 0;
             this.userName ="";

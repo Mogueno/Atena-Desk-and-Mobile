@@ -49,7 +49,20 @@ namespace MobileTCC.View
             IList<TB_USERReturn> verificaLogin = await userController.GetExistentUser(txbUserName.Text, txbPassword.Text);
             if (verificaLogin.Count != 0)
             {
+                //Join na req do getUserID pra trazer Fac, cur e mat
                 Preferences.Set("userID", verificaLogin[0].USER_INT_ID);
+                //Preferences.Set("facID", verificaLogin[0].USER_FAC_ID);
+                //Preferences.Set("curID", verificaLogin[0].USER_CUR_ID);
+                //Preferences.Set("matID1", verificaLogin[0].USER_MAT_ID);
+                //Preferences.Set("matID2", verificaLogin[0].USER_MAT_ID);
+                /*SELECT* FROM TB_USER
+                JOIN TB_USER_FAC ON TB_USER.USER_INT_ID = TB_USER_FAC.USER_INT_ID
+
+                JOIN TB_USER_CUR ON TB_USER.USER_INT_ID = TB_USER_CUR.USER_INT_ID
+
+                JOIN TB_USER_MAT ON TB_USER.USER_INT_ID = TB_USER_MAT.USER_INT_ID
+                WHERE TB_USER.USER_INT_ID =*/
+
                 await Navigation.PopAsync();
             }
             else

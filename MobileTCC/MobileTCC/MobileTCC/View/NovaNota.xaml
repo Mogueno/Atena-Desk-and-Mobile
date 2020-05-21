@@ -20,7 +20,6 @@
 						 Margin="5">
                 <Button x:Name="btSalvar" Text="Inserir" FontSize ="Small" Clicked="BtSalvar_Clicked_1"/>
                 <Button x:Name="btExcluir" Text="Excluir" FontSize ="Small" IsVisible="False"/>
-                <ActivityIndicator x:Name="activityIndicator" IsRunning="{Binding isBusy}" VerticalOptions="CenterAndExpand" Color="Blue"></ActivityIndicator>
             </StackLayout>
 
         </StackLayout>
