@@ -18,6 +18,7 @@ namespace Menus
     {
         TypeAssistant assistant;
         TypeAssistant accountUpdate;
+        TypeAssistant materiaUpdate;
         EntityFrameworkFunc entFunc = new EntityFrameworkFunc();
         bancoMainEntities1 ht = new bancoMainEntities1();
         public Menuprinc(string texto)
@@ -30,6 +31,32 @@ namespace Menus
 
             accountUpdate = new TypeAssistant();
             accountUpdate.Idled += accountUpdate_Idled;
+
+            materiaUpdate = new TypeAssistant();
+            materiaUpdate.Idled += materiaUpdate_Idled;
+        }
+
+        // Insere dados se usuário ficar x tempo sem digitar ------> My Account - Matérias
+        void materiaUpdate_Idled(object sender, EventArgs e)
+        {
+            this.Invoke(
+            new MethodInvoker(() =>
+            {
+                try
+                {
+                    //Dados objDados = new Dados();
+
+                
+
+                    MessageBox.Show(UpdateAssistant.MatId + "    oi");
+
+                    //objDados.SelectMateria(EmailUser, myControls[0].Text, myControls[1].Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro\n\n\n\n" + ex.Message);
+                }
+            }));
         }
 
         // Insere dados se usuário ficar x tempo sem digitar ------> My Account - Seção de dados pessoais
@@ -140,7 +167,7 @@ namespace Menus
             Panel panelDynamic = new Panel();
             TextBox txtDynamic = new TextBox();
             Label lbDynamic = new Label();
-            Label lbDynamic2 = new Label();
+            //Label lbDynamic2 = new Label();
             Button btnDynamic = new Button();
             MaskedTextBox mtxtDynamic = new MaskedTextBox();
             // 
@@ -150,14 +177,13 @@ namespace Menus
             panelDynamic.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             panelDynamic.Controls.Add(txtDynamic);
             panelDynamic.Controls.Add(lbDynamic);
-            panelDynamic.Controls.Add(lbDynamic2);
             panelDynamic.Controls.Add(mtxtDynamic);
             panelDynamic.Controls.Add(btnDynamic);
             panelDynamic.Tag = matId;
             panelDynamic.Dock = System.Windows.Forms.DockStyle.Top;
-            panelDynamic.Location = new System.Drawing.Point(0, 64);
+            panelDynamic.Location = new System.Drawing.Point(0, 0);
             panelDynamic.Name = "panel57";
-            panelDynamic.Size = new System.Drawing.Size(409, 31);
+            panelDynamic.Size = new System.Drawing.Size(396, 31);
             panelDynamic.TabIndex = 62;
             // 
             // textBox24
@@ -166,36 +192,39 @@ namespace Menus
             txtDynamic.BorderStyle = System.Windows.Forms.BorderStyle.None;
             txtDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             txtDynamic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            txtDynamic.Location = new System.Drawing.Point(7, 5);
-            txtDynamic.Size = new System.Drawing.Size(199, 22);
+            txtDynamic.Location = new System.Drawing.Point(-2, 5);
+            txtDynamic.Size = new System.Drawing.Size(208, 22);
             txtDynamic.TabIndex = 19;
             txtDynamic.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             txtDynamic.Text = matName;
+            txtDynamic.Tag = matId;
+            txtDynamic.Click += new EventHandler(this.updateMateriaEvent);
             // 
             // label47
             // 
-            lbDynamic2.AutoSize = true;
-            lbDynamic2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
-            lbDynamic2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            lbDynamic2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            lbDynamic2.Location = new System.Drawing.Point(212, 4);
-            lbDynamic2.Name = "label7";
-            lbDynamic2.Size = new System.Drawing.Size(58, 25);
-            lbDynamic2.TabIndex = 25;
-            lbDynamic2.Text = "Hora";
+            lbDynamic.AutoSize = true;
+            lbDynamic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            lbDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            lbDynamic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            lbDynamic.Location = new System.Drawing.Point(212, 4);
+            lbDynamic.Name = "label7";
+            lbDynamic.Size = new System.Drawing.Size(58, 25);
+            lbDynamic.TabIndex = 25;
+            lbDynamic.Text = "Hora";
             // 
             // maskedTextBox6
             // 
-            mtxtDynamic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            mtxtDynamic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             mtxtDynamic.BorderStyle = System.Windows.Forms.BorderStyle.None;
             mtxtDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             mtxtDynamic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             mtxtDynamic.Location = new System.Drawing.Point(276, 4);
             mtxtDynamic.Mask = "00:00";
-            mtxtDynamic.Text = matTime;
+            mtxtDynamic.Name = "maskedTextBox2";
             mtxtDynamic.Size = new System.Drawing.Size(63, 24);
             mtxtDynamic.TabIndex = 28;
             mtxtDynamic.ValidatingType = typeof(System.DateTime);
+            mtxtDynamic.Text = matTime;
             // 
             // button
             //
@@ -2370,6 +2399,15 @@ namespace Menus
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
             autoSizeTxt(textBox5);
+        }
+
+        private void updateMateriaEvent(object sender, EventArgs e)
+        {
+            TextBox txt = sender as TextBox;
+            int s = Convert.ToInt32(txt.Tag);
+
+            UpdateAssistant.MatId = s;
+            materiaUpdate.TextChanged();
         }
 
 

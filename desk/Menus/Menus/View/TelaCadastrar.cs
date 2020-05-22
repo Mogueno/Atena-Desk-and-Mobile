@@ -195,7 +195,7 @@ namespace Menus
 
         private void btnfinalizar_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(txtuniversidade.Text))
+            if (!String.IsNullOrEmpty(txtuniversidade.Text) && !String.IsNullOrEmpty(txtcurso.Text))
             {
                 Login.Materia = txtmateria1.Text;
                 Login.Curso = txtcurso.Text;

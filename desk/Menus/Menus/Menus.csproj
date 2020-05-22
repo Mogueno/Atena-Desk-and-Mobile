@@ -141,6 +141,7 @@
     <Compile Include="Model\EntityFrameworkFunc.cs" />
     <Compile Include="Model\NoteData.cs" />
     <Compile Include="Model\TypeAssistant.cs" />
+    <Compile Include="Model\UpdateAssistant.cs" />
     <Compile Include="RoundPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -323,12 +324,12 @@
   <ItemGroup>
     <PublishFile Include="Resources\MargemRounded-Medium.otf">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
