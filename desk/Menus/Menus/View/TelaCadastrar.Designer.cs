@@ -865,8 +865,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(675, 496);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
             this.Name = "TelaCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela de Cadastro";

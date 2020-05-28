@@ -140,6 +140,7 @@
     <Compile Include="Model\Dados.cs" />
     <Compile Include="Model\EntityFrameworkFunc.cs" />
     <Compile Include="Model\NoteData.cs" />
+    <Compile Include="Model\TypeAssistantLong.cs" />
     <Compile Include="Model\TypeAssistant.cs" />
     <Compile Include="Model\UpdateAssistant.cs" />
     <Compile Include="RoundPictureBox.cs">

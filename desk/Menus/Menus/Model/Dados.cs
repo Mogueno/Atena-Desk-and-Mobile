@@ -259,6 +259,75 @@ namespace Menus.Model
             }
         }
 
+        public void SelectMateria(string EmailVar, string NomeMateria, string HoraMateria, bool isUpdate)
+        {
+            if (isUpdate)
+            {
+                bancoMainEntities1 ht = new bancoMainEntities1();
+
+                var resultado = (from str in ht.TB_MATERIA
+                                 select new
+                                 {
+                                     materiaTitle = str.MAT_STR_NOME,
+                                     materiaId = str.MAT_INT_ID
+                                 }).Where(a => a.materiaTitle == NomeMateria).ToList();
+
+                if (resultado.Count == 0)
+                {
+                    using (SqlConnection objConexao = new SqlConnection(strConexao))
+                    {
+                        using (SqlCommand objCommand = new SqlCommand(strSelectUser, objConexao))
+                        {
+                            objCommand.Parameters.AddWithValue("@USER_STR_EMAIL_VAR", EmailVar);
+
+                            objConexao.Open();
+
+                            user.UserId = (Int32)objCommand.ExecuteScalar();
+
+                            using (SqlCommand objCommand2 = new SqlCommand(strInsertMateria, objConexao))
+                            {
+                                objCommand2.Parameters.AddWithValue("@USER_INT_ID", user.UserId);
+                                objCommand2.Parameters.AddWithValue("@MAT_STR_NOME", NomeMateria);
+
+
+                                user.Modified = (int)objCommand2.ExecuteScalar();
+
+                                bancoMainEntities1 ht1 = new bancoMainEntities1();
+
+                                var result = ht1.TB_USER_MAT.SingleOrDefault(a => a.USER_MAT_ID == UpdateAssistant.MatId);
+                                Console.WriteLine(result);
+                                if (result != null)
+                                {
+                                    Console.WriteLine(result);
+
+                                    TimeSpan ts = TimeSpan.Parse(HoraMateria);
+
+                                    result.MAT_INT_ID = user.Modified;
+                                    result.USER_MAT_TIME_HORA = ts;
+                                    ht1.SaveChanges();
+                                }
+                            }
+
+                            objConexao.Close();
+                        }
+                    }
+                }
+                else
+                {
+                    bancoMainEntities1 ht1 = new bancoMainEntities1();
+                    var result = ht1.TB_USER_MAT.SingleOrDefault(a => a.USER_MAT_ID == UpdateAssistant.MatId);
+                    if (result != null)
+                    {
+                        TimeSpan ts = TimeSpan.Parse(HoraMateria);
+
+                        result.MAT_INT_ID = resultado[0].materiaId;
+                        result.USER_MAT_TIME_HORA = ts;
+                        ht1.SaveChanges();
+                    }
+                }
+            }
+        }
+
         public Cadastro SelectNota(string EmailVar, string NotaContent)
         {
             using (SqlConnection objConexao = new SqlConnection(strConexao))

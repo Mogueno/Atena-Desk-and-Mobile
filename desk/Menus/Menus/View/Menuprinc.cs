@@ -18,7 +18,7 @@ namespace Menus
     {
         TypeAssistant assistant;
         TypeAssistant accountUpdate;
-        TypeAssistant materiaUpdate;
+        TypeAssistantLong materiaUpdate;
         EntityFrameworkFunc entFunc = new EntityFrameworkFunc();
         bancoMainEntities1 ht = new bancoMainEntities1();
         public Menuprinc(string texto)
@@ -32,7 +32,7 @@ namespace Menus
             accountUpdate = new TypeAssistant();
             accountUpdate.Idled += accountUpdate_Idled;
 
-            materiaUpdate = new TypeAssistant();
+            materiaUpdate = new TypeAssistantLong();
             materiaUpdate.Idled += materiaUpdate_Idled;
         }
 
@@ -44,13 +44,26 @@ namespace Menus
             {
                 try
                 {
-                    //Dados objDados = new Dados();
+                    Dados objDados = new Dados();
 
-                
+                    if (!String.IsNullOrEmpty(UpdateAssistant.MatTime) && !String.IsNullOrEmpty(UpdateAssistant.MatText))
+                    {
 
-                    MessageBox.Show(UpdateAssistant.MatId + "    oi");
+                        objDados.SelectMateria(lbRecebeEmailMenu.Text, UpdateAssistant.MatText, UpdateAssistant.MatTime, true);
 
-                    //objDados.SelectMateria(EmailUser, myControls[0].Text, myControls[1].Text);
+
+                        Transition.run(label4, "Left", 565, new TransitionType_EaseInEaseOut(50));
+
+                        System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
+
+                        t.Interval = 2000;
+                        t.Tick += new EventHandler(timer_TickAccount);
+                        t.Start();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Um ou mais campos estão vazios!");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -77,13 +90,12 @@ namespace Menus
                         result.USER_INT_IDADE = Convert.ToInt32(txtIdade.Text);
                         ht.SaveChanges();
 
-                        label10.BringToFront();
-                        Transition.run(label10, "Left", 565, new TransitionType_EaseInEaseOut(50));
+                        Transition.run(label4, "Left", 565, new TransitionType_EaseInEaseOut(50));
 
                         System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
 
                         t.Interval = 2000;
-                        t.Tick += new EventHandler(timer_Tick);
+                        t.Tick += new EventHandler(timer_TickAccount);
                         t.Start();
                     }
                 }
@@ -161,8 +173,13 @@ namespace Menus
             Transition.run(label10, "Left", 5000, new TransitionType_EaseInEaseOut(50));
         }
 
+        private void timer_TickAccount(object sender, EventArgs e)
+        {
+            Transition.run(label4, "Left", 5000, new TransitionType_EaseInEaseOut(50));
+        }
 
-        private void appendMaterias(int matId, string matName, string matTime)
+
+        private void appendMaterias(int matId, string matName, string matTime, int itemsQty)
         {
             Panel panelDynamic = new Panel();
             TextBox txtDynamic = new TextBox();
@@ -178,7 +195,7 @@ namespace Menus
             panelDynamic.Controls.Add(txtDynamic);
             panelDynamic.Controls.Add(lbDynamic);
             panelDynamic.Controls.Add(mtxtDynamic);
-            panelDynamic.Controls.Add(btnDynamic);
+            if(itemsQty > 1) panelDynamic.Controls.Add(btnDynamic);
             panelDynamic.Tag = matId;
             panelDynamic.Dock = System.Windows.Forms.DockStyle.Top;
             panelDynamic.Location = new System.Drawing.Point(0, 0);
@@ -198,7 +215,7 @@ namespace Menus
             txtDynamic.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             txtDynamic.Text = matName;
             txtDynamic.Tag = matId;
-            txtDynamic.Click += new EventHandler(this.updateMateriaEvent);
+            txtDynamic.KeyUp += new KeyEventHandler(this.updateMateriaEvent);
             // 
             // label47
             // 
@@ -225,9 +242,12 @@ namespace Menus
             mtxtDynamic.TabIndex = 28;
             mtxtDynamic.ValidatingType = typeof(System.DateTime);
             mtxtDynamic.Text = matTime;
+            mtxtDynamic.Tag = matId;
+            mtxtDynamic.KeyUp += new KeyEventHandler(this.updateMateriaEvent);
             // 
             // button
             //
+
             btnDynamic.BackColor = System.Drawing.Color.Transparent;
             btnDynamic.Cursor = System.Windows.Forms.Cursors.Hand;
             btnDynamic.Dock = System.Windows.Forms.DockStyle.Right;
@@ -254,10 +274,7 @@ namespace Menus
             int materiaId = Convert.ToInt32(btn.Tag);
             try
             {
-                var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
-                var userId = id.USER_INT_ID;
-
-                var itemToRemove = ht.TB_USER_MAT.SingleOrDefault(x => x.USER_INT_ID == userId && x.MAT_INT_ID == materiaId);
+                var itemToRemove = ht.TB_USER_MAT.SingleOrDefault(x => x.USER_MAT_ID == materiaId);
 
                 ht.TB_USER_MAT.Remove(itemToRemove);
                 ht.SaveChanges();
@@ -282,16 +299,25 @@ namespace Menus
                                where str.USER_INT_ID == idUser
                                select new
                                {
-                                   matId = str.MAT_INT_ID,
+                                   matId = str.USER_MAT_ID,
                                    matTime = str.USER_MAT_TIME_HORA,
                                    matName = mat.MAT_STR_NOME
                                }).ToList();
+
+                if (content.Count == 5)
+                {
+                    button14.Visible = false;
+                }
+                else
+                {
+                    button14.Visible = true;
+                }
 
 
                 for (int i = 0; i < content.Count; i++) {
                     string time = content[i].matTime.ToString();
                     TimeSpan ts = TimeSpan.Parse(time);
-                    appendMaterias(content[i].matId, content[i].matName, ts.ToString(@"hh\:mm"));
+                    appendMaterias(content[i].matId, content[i].matName, ts.ToString(@"hh\:mm"), content.Count);
                 }
             }
             catch (Exception ex)
@@ -599,6 +625,8 @@ namespace Menus
 
             getMateria();
 
+
+            autoSizeTxtMateria(textBox2);
 
             try
             {
@@ -1014,33 +1042,6 @@ namespace Menus
 
         private void roundPictureBox1_Click(object sender, EventArgs e)
         {
-            //OpenFileDialog opendlg = new OpenFileDialog();
-            //if (opendlg.ShowDialog() == DialogResult.OK)
-            //{
-
-            //    Image img = Image.FromFile(opendlg.FileName);
-            //    MemoryStream ms = new MemoryStream();
-            //    img.Save(ms, img.RawFormat);
-            //    bancoMainEntities1 ht = new bancoMainEntities1();
-            //    var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
-            //    var email = id.USER_INT_ID;
-            //    var result = ht.TB_PICTURES.SingleOrDefault(a => a.USER_INT_ID == email);
-            //    if (result != null)
-            //    {
-            //        result.PIC_IMG_MAIN = ms.ToArray();
-            //        ht.SaveChanges();
-            //    }
-            //    else
-            //    {
-            //        ht.TB_PICTURES.Add(new TB_PICTURES() { PIC_IMG_MAIN = ms.ToArray(), USER_INT_ID = email });
-            //        ht.SaveChanges();
-            //    }
-            //    var item = ht.TB_PICTURES.Where(a => a.USER_INT_ID == email).FirstOrDefault();
-            //    byte[] arr = item.PIC_IMG_MAIN;
-            //    MemoryStream ms1 = new MemoryStream(arr);
-            //    roundPictureBox1.Image = Image.FromStream(ms1);
-            //    pictureBox1.Image = Image.FromStream(ms1);
-            //}
         }
 
         private void button26_Click(object sender, EventArgs e)
@@ -2403,14 +2404,43 @@ namespace Menus
 
         private void updateMateriaEvent(object sender, EventArgs e)
         {
-            TextBox txt = sender as TextBox;
+
+            Control txt = sender as Control;
+
             int s = Convert.ToInt32(txt.Tag);
 
+            var parent = txt.Parent;
+
+            if (!String.IsNullOrEmpty(txt.Text))
+                foreach (Control control in parent.Controls)
+                {
+                    if (control is TextBox)
+                    {
+                        if (!String.IsNullOrEmpty(control.Text)) { UpdateAssistant.MatText = control.Text; }
+                        else { UpdateAssistant.MatText = ""; }
+
+                    } else if (control is MaskedTextBox)
+                    {
+                        MaskedTextBox mask = control as MaskedTextBox;
+
+                        if (mask.MaskFull) { UpdateAssistant.MatTime = control.Text; }
+                        else { UpdateAssistant.MatTime = ""; }
+                    }
+                }
+
             UpdateAssistant.MatId = s;
+
+
             materiaUpdate.TextChanged();
         }
 
-
+        private void autoSizeTxtMateria(TextBox txt)
+        {
+            // get number of lines (first line is 0, so add 1)
+            int numLines = txt.GetLineFromCharIndex(txt.TextLength) + 1;
+            // set height (height of one line * number of lines + spacing)
+            txt.Height = txt.Font.Height * numLines;
+        }
 
         private void autoSizeTxt(TextBox txt)
         {
@@ -2550,6 +2580,47 @@ namespace Menus
                 ht.SaveChanges();
             }
         
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            textBox2.Clear();
+            maskedTextBox3.Clear();
+
+            modalNovaMateria.BringToFront();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            autoSizeTxtMateria(textBox2);
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            modalNovaMateria.SendToBack();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(textBox2.Text) && maskedTextBox3.MaskFull) {
+                Dados objDados = new Dados();
+                objDados.SelectMateria(lbRecebeEmailMenu.Text, textBox2.Text, maskedTextBox3.Text);
+                modalNovaMateria.SendToBack();
+
+                getMateria();
+
+                Transition.run(label4, "Left", 795, new TransitionType_EaseInEaseOut(50));
+
+                System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
+
+                t.Interval = 2000;
+                t.Tick += new EventHandler(timer_TickAccount);
+                t.Start();
+            }
+            else
+            {
+                MessageBox.Show("Um ou mais campos estão vazios!");
+            }
         }
     }
 }
