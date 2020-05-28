@@ -11,8 +11,9 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="ListaNotas" HasUnevenRows="True"
-					   Margin="15"
+            <ListView HasUnevenRows="True"
+                      x:Name="ListaNotas"
+                      Margin="15"
 					  ItemSelected="ListaNotas_ItemSelected"
                       SelectionMode="None">
                 <ListView.ItemTemplate>
@@ -37,12 +38,12 @@
                                             <RowDefinition Height="*"/>
                                         </Grid.RowDefinitions>
                                         <StackLayout Orientation="Horizontal" VerticalOptions="Start" >
-                                            <controls1:CircleImage Source="{Binding Imagem}" VerticalOptions="Start" HeightRequest="30" WidthRequest="30"></controls1:CircleImage>
+                                            <Label Text="{Binding notaID}" IsVisible="True" FontSize="20" TextColor="LightBlue"></Label>
                                             <Label FontAttributes="None" Grid.Row="0"
                                                    HorizontalTextAlignment="Start"
                                                    VerticalTextAlignment="Center"
                                                    FontSize="12"
-                                                   Text="{Binding Titulo , Mode = TwoWay}" TextColor="Gray" >
+                                                   Text="{Binding titulo , Mode = TwoWay}" TextColor="Gray" >
                                             </Label>
                                         </StackLayout>
                                         <Grid Grid.Row="1">
@@ -50,7 +51,7 @@
                                                 <Label FontAttributes="None" Grid.Row="1"
                                                        HorizontalTextAlignment="Start"
                                                        VerticalTextAlignment="Start"
-                                                       FontSize="12" Text="{Binding Dados, Mode = TwoWay}" 
+                                                       FontSize="12" Text="{Binding conteudo, Mode = TwoWay}" 
                                                        TextColor="Black">
                                                 </Label>
                                                 <Image Source="{Binding  Imagem}"  Grid.Row="2"  WidthRequest="50" HeightRequest="50" HorizontalOptions="End" />

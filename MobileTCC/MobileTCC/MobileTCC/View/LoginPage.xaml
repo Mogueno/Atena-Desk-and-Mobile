@@ -18,7 +18,7 @@
                     <Button Text="Login" x:Name="btnLogin" Grid.Row="2" BackgroundColor="#0077be" TextColor="White" Clicked="BtnLogin_Clicked"/>
                     <Button Text="Register" x:Name="btnRegister" Grid.Row="3" Clicked="BtnRegister_Clicked"/>
                     <Button Text="Login with Google" x:Name="btnGoogle" Grid.Row="4" Clicked="BtnGoogle_Clicked"/>
-                    <Button Text="SQL testet" x:Name="btnTeste" Grid.Row="5" Clicked="BtnTeste_Clicked" IsVisible="False"/>
+                    <Button Text="SQL testet" x:Name="btnTeste" Grid.Row="5" Clicked="BtnTeste_Clicked" IsVisible="True"/>
                 </Grid>
             </StackLayout>
         </ScrollView>

@@ -30,6 +30,7 @@ namespace MobileTCC.View
         AccountStore store;
         UserController userController = new UserController();
         FaculdadeController faculdadeController = new FaculdadeController();
+        NotaController notaController = new NotaController();
 
         public LoginPage ()
 		{
@@ -194,6 +195,9 @@ namespace MobileTCC.View
 
             //GET ALL FACULDADES
             //var result = await faculdadeController.GetAllFaculdades();
+
+            //GET ALL NOTAS FROM USERID X
+            //var result = await notaController.GetAllNotas(1);
         }
     }
 }

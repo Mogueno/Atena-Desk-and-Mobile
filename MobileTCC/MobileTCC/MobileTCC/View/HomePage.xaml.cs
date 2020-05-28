@@ -8,6 +8,10 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MobileTCC.Helpers;
 using MobileTCC.Model;
+using MobileTCC.Controller;
+using Xamarin.Essentials;
+using System.Collections;
+using System.Collections.ObjectModel;
 
 namespace MobileTCC.View
 {
@@ -17,21 +21,21 @@ namespace MobileTCC.View
 		public HomePage ()
 		{
 			InitializeComponent ();
-            AtualizaLista();
+            this.BindingContext = this;
+            ListaNotas.ItemsSource = new ObservableCollection<RootObject>();
 
         }
 
-        public void AtualizaLista()
+        public async void ListaItems()
         {
-            ServiceDBNotas dbNotas = new ServiceDBNotas(Application.Caminho);
-            ListaNotas.ItemsSource = dbNotas.ListarNota();
+            NotaController notaController = new NotaController();
+            // Pega as notas com o userID
+            RootObject result = await notaController.GetAllNotas(Preferences.Get("userID", 99999));
+            ListaNotas.ItemsSource = result.reqSendData.ToList();
         }
-
         private void ListaNotas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            TableNotas nota = (TableNotas)
-            ListaNotas.SelectedItem;
-            // chamada da pagina cadastrar
+
         }
 
         private async void BtnEditar_Clicked(object sender, EventArgs e)
@@ -47,7 +51,7 @@ namespace MobileTCC.View
 
         private void ContentPage_Appearing(object sender, EventArgs e)
         {
-            AtualizaLista();
+            ListaItems();
         }
     }
 }

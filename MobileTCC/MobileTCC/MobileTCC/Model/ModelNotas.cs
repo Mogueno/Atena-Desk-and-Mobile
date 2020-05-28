@@ -1,28 +1,32 @@
 ﻿using Newtonsoft.Json;
 using SQLite;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
 namespace MobileTCC.Model
 {
-    [Table("TB_NOTAS")]
-    public class TableNotas
-    {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-        [NotNull]
-        public String Titulo { get; set; }
-        [NotNull]
-        public String Dados { get; set; }
 
-        public TableNotas()
-        {
-            this.Id = 0;
-            this.Dados = "";
-            this.Titulo = "";
-        }
+    [JsonObject]
+    public class RootObject 
+    {
+        public IList<TB_NOTASUSER2> reqSendData { get; set; }
+    }
+
+    [JsonObject]
+    public class TB_NOTASUSER2
+    {
+        [DefaultValue("")]
+        public string titulo { get; set; }
+        [DefaultValue("")]
+        public string conteudo { get; set; }
+        [DefaultValue("")]
+        public int notaID { get; set; }
+        [DefaultValue("")]
+        public int matID { get; set; }
+
     }
 
     [Table("TB_USUARIO")]
