@@ -8,8 +8,8 @@
             <Entry x:Name="txtCodigo" IsVisible="False" IsEnabled="False"/>
             <Entry x:Name="txtTitulo" Keyboard="Plain" Placeholder="Título da Nota" />
             <StackLayout Orientation="Horizontal" >
-                <Label Text="Nota Favorita:" FontSize="Medium"/>
-                <Switch x:Name="swFavorito" HorizontalOptions="Start" />
+                <Label x:Name="lbMatId" FontSize="Medium" IsVisible="False"/>
+                <Label x:Name="lbNotaId" FontSize="Medium" IsVisible="False"/>
             </StackLayout>
             <Editor x:Name="txtDados" Keyboard="Plain" Placeholder="Dados da Nota" 
 					VerticalOptions="FillAndExpand"

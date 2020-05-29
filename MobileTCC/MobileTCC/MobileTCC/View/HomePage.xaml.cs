@@ -33,15 +33,8 @@ namespace MobileTCC.View
             RootObject result = await notaController.GetAllNotas(Preferences.Get("userID", 99999));
             ListaNotas.ItemsSource = result.reqSendData.ToList();
         }
-        private void ListaNotas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
 
-        }
-
-        private async void BtnEditar_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new NovaNota());
-        }
+       
 
         private void BtnExcluir_Clicked(object sender, EventArgs e)
         {
@@ -52,6 +45,12 @@ namespace MobileTCC.View
         private void ContentPage_Appearing(object sender, EventArgs e)
         {
             ListaItems();
+        }
+
+        private async void  ListaNotas_ItemTapped_1(object sender, ItemTappedEventArgs e)
+        {
+            var data = e.Item as TB_NOTASUSER2;
+            await Navigation.PushAsync(new NovaNota(data.titulo, data.conteudo, data.matID, data.notaID));
         }
     }
 }

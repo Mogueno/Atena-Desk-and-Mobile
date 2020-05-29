@@ -8,6 +8,12 @@ using System.Text;
 
 namespace MobileTCC.Model
 {
+    public class SingleNotaData
+    {
+        public string titulo { get; set; }
+        public string conteudo { get; set; }
+        public int matID { get; set; }
+    }
 
     [JsonObject]
     public class RootObject 
@@ -142,6 +148,51 @@ namespace MobileTCC.Model
             this.userSenha = "";
             this.userF = 0;
             this.userG = 0;
+        }
+
+    }
+
+    [JsonObject]
+    public class TB_NOTA_DATAReturn
+    {
+        public bool inserted { get; set; }
+    }
+
+    [JsonObject]
+    public class TB_NOTA_DATAPATCHReturn
+    {
+        public bool patched { get; set; }
+    }
+
+    [JsonObject]
+    public class TB_NOTA_DATA_NEW
+    {
+        public int userID { get; set; }
+        public int facID { get; set; }
+        public int matID { get; set; }
+        public int curID { get; set; }
+        [DefaultValue("")]
+        public string titulo { get; set; }
+        [DefaultValue("")]
+        public string conteudo { get; set; }
+    }
+
+    [JsonObject]
+    public class TB_NOTA_DATA
+    {
+        public int userID { get; set; }
+        public int notaID{ get; set; }
+        [DefaultValue("")]
+        public String titulo { get; set; }
+        [DefaultValue("")]
+        public String conteudo { get; set; }
+
+        public TB_NOTA_DATA()
+        {
+            this.userID = 0;
+            this.notaID = 0;
+            this.titulo = "";
+            this.conteudo = "";
         }
 
     }
