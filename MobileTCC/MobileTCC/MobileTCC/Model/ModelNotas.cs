@@ -226,6 +226,13 @@ namespace MobileTCC.Model
         public string err { get; set; }
     }
 
+    [JsonObject]
+    public class TB_NOTA_DELETEReturn
+    {
+        public bool deleted { get; set; }
+    }
+
+
 
     public class TB_FACULDADE
     {

@@ -48,7 +48,7 @@ namespace MobileTCC.Controller
             HttpClient client = GetClient();
             string json = JsonConvert.SerializeObject(nota, Formatting.Indented, new JsonSerializerSettings { DefaultValueHandling = DefaultValueHandling.Ignore });
             HttpContent httpContent = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await client.PatchAsync(new Uri(baseAPI + "/notapatch/" + userID + "-" + notaID), httpContent);
+            var response = await client.PatchAsync(new Uri(baseAPI + "/notapatch/"), httpContent);
 
             return JsonConvert.DeserializeObject<TB_NOTA_DATAPATCHReturn>(await response.Content.ReadAsStringAsync());
         }
@@ -72,6 +72,14 @@ namespace MobileTCC.Controller
                     JsonConvert.SerializeObject(user, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), Encoding.UTF8, "application/json"));
 
             return JsonConvert.DeserializeObject<TB_NOTA_DATAReturn>(await response.Content.ReadAsStringAsync());
+        }
+
+        //Deleta uma nota existente
+        public async Task<TB_NOTA_DELETEReturn> DeleteNota(int notaID)
+        {
+            HttpClient client = GetClient();
+            var response = await client.DeleteAsync(baseAPI + "/notadelete/" + notaID);
+            return JsonConvert.DeserializeObject<TB_NOTA_DELETEReturn>(await response.Content.ReadAsStringAsync());
         }
     }
 }

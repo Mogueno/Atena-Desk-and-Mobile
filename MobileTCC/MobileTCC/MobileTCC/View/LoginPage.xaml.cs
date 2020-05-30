@@ -145,11 +145,15 @@ namespace MobileTCC.View
                 await store.SaveAsync(account = e.Account, Constants.AppName);
 
                 TB_USERReturn query = await UserController.AddNewUser(userdata.Name, 0, userdata.Gender, userdata.Email, "1234" ,0 ,1);
-
+                Preferences.Set("userID", query.USER_INT_ID);
+                // Insert na rota /facdata
+                FaculdadeController faculdadeController = new FaculdadeController();
+                TB_FACULDADEReturn facdata = new TB_FACULDADEReturn();
+                await faculdadeController.FacData(Preferences.Get("userID", 99999), 1 , 1 , 1 , 2);
                 if (query.newUser == false)
                 {
                     Application.Current.MainPage = new NavigationPage(new MainPageApp());
-                    await DisplayAlert("Erro", "Email já encontrado!", "Ok");
+                    await DisplayAlert("Sucesso", "Email ja encontrado, faca seu login.", "Ok");
                 }
                 else
                 {

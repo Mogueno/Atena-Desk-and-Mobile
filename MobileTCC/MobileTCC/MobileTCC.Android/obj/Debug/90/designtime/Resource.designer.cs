@@ -8406,6 +8406,9 @@ namespace MobileTCC.Droid
 			// aapt resource value: 0x7F090056
 			public const int avd_show_password = 2131296342;
 			
+			// aapt resource value: 0x7F010002
+			public const int browser = 2130771970;
+			
 			// aapt resource value: 0x7F090057
 			public const int design_bottom_navigation_item_background = 2131296343;
 			
@@ -8424,14 +8427,20 @@ namespace MobileTCC.Droid
 			// aapt resource value: 0x7F09005C
 			public const int design_snackbar_background = 2131296348;
 			
-			// aapt resource value: 0x7F010002
-			public const int google = 2130771970;
-			
 			// aapt resource value: 0x7F010003
-			public const int home = 2130771971;
+			public const int favorite = 2130771971;
 			
-			// aapt resource value: 0x7F010319
-			public const int ic_arrow_back = 2130772761;
+			// aapt resource value: 0x7F010004
+			public const int gear = 2130771972;
+			
+			// aapt resource value: 0x7F010005
+			public const int google = 2130771973;
+			
+			// aapt resource value: 0x7F010006
+			public const int googlelogo = 2130771974;
+			
+			// aapt resource value: 0x7F010324
+			public const int ic_arrow_back = 2130772772;
 			
 			// aapt resource value: 0x7F090055
 			public const int ic_audiotrack_dark = 2131296341;
@@ -8973,6 +8982,9 @@ namespace MobileTCC.Droid
 			// aapt resource value: 0x7F090105
 			public const int ic_vol_type_tv_light = 2131296517;
 			
+			// aapt resource value: 0x7F010007
+			public const int logo = 2130771975;
+			
 			// aapt resource value: 0x7F090106
 			public const int mr_button_connected_dark = 2131296518;
 			
@@ -9078,20 +9090,23 @@ namespace MobileTCC.Droid
 			// aapt resource value: 0x7F09000C
 			public const int notify_panel_notification_icon_bg = 2131296268;
 			
-			// aapt resource value: 0x7F010004
-			public const int notvisible = 2130771972;
-			
-			// aapt resource value: 0x7F010005
-			public const int novanota = 2130771973;
-			
-			// aapt resource value: 0x7F010006
-			public const int Scc = 2130771974;
-			
-			// aapt resource value: 0x7F010007
-			public const int search = 2130771975;
-			
 			// aapt resource value: 0x7F010008
-			public const int settings = 2130771976;
+			public const int notvisible = 2130771976;
+			
+			// aapt resource value: 0x7F010009
+			public const int novanota = 2130771977;
+			
+			// aapt resource value: 0x7F010010
+			public const int pencil = 2130771984;
+			
+			// aapt resource value: 0x7F010011
+			public const int Scc = 2130771985;
+			
+			// aapt resource value: 0x7F010012
+			public const int search = 2130771986;
+			
+			// aapt resource value: 0x7F010013
+			public const int settings = 2130771987;
 			
 			// aapt resource value: 0x7F09006F
 			public const int tooltip_frame_dark = 2131296367;
@@ -9099,8 +9114,8 @@ namespace MobileTCC.Droid
 			// aapt resource value: 0x7F090070
 			public const int tooltip_frame_light = 2131296368;
 			
-			// aapt resource value: 0x7F010009
-			public const int visible = 2130771977;
+			// aapt resource value: 0x7F010014
+			public const int visible = 2130771988;
 			
 			static Drawable()
 			{

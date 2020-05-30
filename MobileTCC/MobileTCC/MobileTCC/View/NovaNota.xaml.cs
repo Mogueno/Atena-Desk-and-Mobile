@@ -39,7 +39,17 @@ namespace MobileTCC.View
             var resp = await DisplayAlert("Excluir", "Deseja realmente excluir?", "Sim", "Não");
             if (resp == true)
             {
-                await DisplayAlert("Resultado da operação ", "Deletado" , "OK");
+                NotaController notaController = new NotaController();
+                var result = await notaController.DeleteNota(Convert.ToInt16(lbNotaId.Text));
+                if (result.deleted)
+                {
+                    await DisplayAlert("Sucesso", "Nota apagada", "OK");
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Erro", "Erro em apagar a nota, por favor tente novamente mais tarde.", "OK");
+                }
             }
         }
 

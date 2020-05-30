@@ -21,6 +21,8 @@ namespace MobileTCC.View
 		public RegistrationPage ()
 		{
             InitializeComponent ();
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#0083c9");
+
         }
 
 

@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileTCC.View.Configuracoes"
-             Title="CONFIGURAÇÕES">
+             IconImageSource="gear.png"
+             >
     <ContentPage.Content>
         <StackLayout>
 
@@ -19,10 +20,10 @@
 
                 </Grid.RowDefinitions>
                 <StackLayout Grid.Row="0">
-                    <!--<Image Source="Scc.png" /> -->
+                    <Label Text="Aqui você pode atualizar seus dados..." FontSize="25" TextColor="#0083c9" HorizontalOptions="StartAndExpand"/>
                 </StackLayout>
                 <StackLayout Grid.Row="1">
-                    <Entry Placeholder="User" FontSize="16" x:Name="EntryUserName"/>
+                    <Entry Placeholder="User" FontSize="16" x:Name="EntryUserName" />
                 </StackLayout>
 
                 <StackLayout Grid.Row="2">
@@ -42,7 +43,7 @@
                 </StackLayout>
 
                 <StackLayout Grid.Row="6">
-                    <Button Text="Update" HorizontalOptions="CenterAndExpand" TextColor="White" BackgroundColor="Blue" WidthRequest="100" Clicked="Button_Clicked"></Button>
+                    <Button Text="Atualizar Dados" HorizontalOptions="CenterAndExpand" TextColor="White" BackgroundColor="#0083c9"  Clicked="Button_Clicked"></Button>
                 </StackLayout>
 
             </Grid>

@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileTCC.View.NovaNota"
-             Title="NOVA NOTA">
+             IconImageSource="pencil.png"
+             >
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="txtCodigo" IsVisible="False" IsEnabled="False"/>
@@ -18,8 +19,8 @@
 								  HorizontalOptions="CenterAndExpand"
                                   Orientation="Horizontal"
 						 Margin="5">
-                <Button x:Name="btSalvar" Text="Inserir" FontSize ="Small" Clicked="BtSalvar_Clicked_1"/>
-                <Button x:Name="btExcluir" Text="Excluir" FontSize ="Small" IsVisible="False"/>
+                <Button x:Name="btSalvar" Text="Inserir" FontSize ="Small" TextColor="White" BackgroundColor="#0083c9" Clicked="BtSalvar_Clicked_1"/>
+                <Button x:Name="btExcluir" Text="Excluir" FontSize ="Small" IsVisible="False" TextColor="White" BackgroundColor="#0083c9" Clicked="BtExcluir_Clicked"/>
             </StackLayout>
 
         </StackLayout>

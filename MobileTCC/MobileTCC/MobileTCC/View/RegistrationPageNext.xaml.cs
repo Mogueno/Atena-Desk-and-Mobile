@@ -20,6 +20,7 @@ namespace MobileTCC.View
             PopulatePickers();
             this.BindingContext = this;
             IsBusy = false;
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#0083c9");
         }
 
         public async void PopulatePickers()

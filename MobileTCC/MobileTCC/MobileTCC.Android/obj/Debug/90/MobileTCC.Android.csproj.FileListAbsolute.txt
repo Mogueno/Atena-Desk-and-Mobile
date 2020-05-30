@@ -33,7 +33,6 @@ C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\o
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\res\mipmap-xxxhdpi\icon.png
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\res\mipmap-xxxhdpi\launcher_foreground.png
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\res\drawable\novanota.png
-C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\res\drawable\home.png
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\res\drawable\search.png
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\res\drawable\settings.png
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\res\drawable\google.png
@@ -123,6 +122,12 @@ C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\o
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\res\drawable\logo.png
+C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\res\drawable\pencil.png
+C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\res\drawable\googlelogo.png
+C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\res\drawable\favorite.png
+C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\res\drawable\gear.png
+C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\res\drawable\browser.png
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC\bin\Debug\netstandard2.0\MobileTCC.dll
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\bin\Debug\MobileTCC.dll.mdb
 C:\Users\MoG\Desktop\tcc\tcc_code\mobile\MobileTCC\MobileTCC\MobileTCC.Android\obj\Debug\90\linksrc\MobileTCC.dll.mdb
