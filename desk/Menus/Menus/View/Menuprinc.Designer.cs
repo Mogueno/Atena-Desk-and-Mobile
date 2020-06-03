@@ -1028,6 +1028,7 @@
             this.panelTexto.Controls.Add(this.panel13);
             this.panelTexto.Controls.Add(this.flowLayoutPanel6);
             this.panelTexto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTexto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelTexto.Location = new System.Drawing.Point(255, 42);
             this.panelTexto.Name = "panelTexto";
             this.panelTexto.Size = new System.Drawing.Size(1031, 687);
@@ -1039,6 +1040,7 @@
             this.panel14.Controls.Add(this.tableLayoutPanel3);
             this.panel14.Controls.Add(this.panel15);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel14.Location = new System.Drawing.Point(245, 83);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(786, 604);
@@ -1064,19 +1066,20 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(786, 183);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(786, 189);
             this.tableLayoutPanel3.TabIndex = 21;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 64);
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label11.Location = new System.Drawing.Point(3, 65);
             this.label11.Margin = new System.Windows.Forms.Padding(3);
             this.label11.MaximumSize = new System.Drawing.Size(786, 0);
             this.label11.MinimumSize = new System.Drawing.Size(786, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(786, 25);
+            this.label11.Size = new System.Drawing.Size(786, 24);
             this.label11.TabIndex = 23;
             // 
             // textBox3
@@ -1084,13 +1087,13 @@
             this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.textBox3.Location = new System.Drawing.Point(3, 156);
+            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBox3.Location = new System.Drawing.Point(3, 160);
             this.textBox3.MaximumSize = new System.Drawing.Size(737, 0);
             this.textBox3.MaxLength = 999999999;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(715, 24);
+            this.textBox3.Size = new System.Drawing.Size(715, 26);
             this.textBox3.TabIndex = 20;
             this.textBox3.Visible = false;
             // 
@@ -1098,13 +1101,13 @@
             // 
             this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox4.Location = new System.Drawing.Point(3, 95);
             this.textBox4.MaximumSize = new System.Drawing.Size(737, 0);
             this.textBox4.MaxLength = 999999999;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(715, 55);
+            this.textBox4.Size = new System.Drawing.Size(715, 59);
             this.textBox4.TabIndex = 21;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox4.Visible = false;
@@ -1112,13 +1115,14 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label12.Location = new System.Drawing.Point(3, 3);
             this.label12.Margin = new System.Windows.Forms.Padding(3);
             this.label12.MaximumSize = new System.Drawing.Size(786, 0);
             this.label12.MinimumSize = new System.Drawing.Size(786, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(786, 55);
+            this.label12.Size = new System.Drawing.Size(786, 56);
             this.label12.TabIndex = 22;
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1135,6 +1139,7 @@
             // 
             this.flowLayoutPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.flowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.flowLayoutPanel7.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
             this.flowLayoutPanel7.Size = new System.Drawing.Size(245, 604);
@@ -1174,7 +1179,7 @@
             // 
             // button19
             // 
-            this.button19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.button19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button19.Dock = System.Windows.Forms.DockStyle.Left;
@@ -1183,7 +1188,7 @@
             this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button19.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button19.Image = global::Menus.Properties.Resources.back__1_;
+            this.button19.Image = global::Menus.Properties.Resources.image__7_;
             this.button19.Location = new System.Drawing.Point(0, 0);
             this.button19.Margin = new System.Windows.Forms.Padding(5);
             this.button19.Name = "button19";
@@ -2350,7 +2355,6 @@
             // 
             // flowLayoutPanel10
             // 
-            this.flowLayoutPanel10.AutoScroll = true;
             this.flowLayoutPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.flowLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel10.Location = new System.Drawing.Point(0, 83);
@@ -2786,7 +2790,6 @@
             // 
             // flowLayoutPanel16
             // 
-            this.flowLayoutPanel16.AutoScroll = true;
             this.flowLayoutPanel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.flowLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -3099,13 +3102,13 @@
             // 
             // flowLayoutPanel21
             // 
-            this.flowLayoutPanel21.AutoScroll = true;
             this.flowLayoutPanel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.flowLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel21.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel21.Name = "flowLayoutPanel21";
             this.flowLayoutPanel21.Size = new System.Drawing.Size(245, 604);
             this.flowLayoutPanel21.TabIndex = 21;
+            this.flowLayoutPanel21.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel21_Paint);
             // 
             // panel39
             // 
@@ -3591,16 +3594,16 @@
             // Wrapper
             // 
             this.Wrapper.Controls.Add(this.panelHome);
+            this.Wrapper.Controls.Add(this.panelTexto);
+            this.Wrapper.Controls.Add(this.panelFacul__Search);
+            this.Wrapper.Controls.Add(this.panelSearch);
+            this.Wrapper.Controls.Add(this.panelMateria__Search);
             this.Wrapper.Controls.Add(this.panelCurso2__Search);
             this.Wrapper.Controls.Add(this.panelNovaNota);
             this.Wrapper.Controls.Add(this.panelMinhaConta);
-            this.Wrapper.Controls.Add(this.panelMateria__Search);
             this.Wrapper.Controls.Add(this.panelMateria);
-            this.Wrapper.Controls.Add(this.panelFacul__Search);
             this.Wrapper.Controls.Add(this.panelFacul);
             this.Wrapper.Controls.Add(this.panelCurso2);
-            this.Wrapper.Controls.Add(this.panelSearch);
-            this.Wrapper.Controls.Add(this.panelTexto);
             this.Wrapper.Controls.Add(this.panelCurso);
             this.Wrapper.Controls.Add(this.panel1);
             this.Wrapper.Controls.Add(this.panel2);

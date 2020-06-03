@@ -666,18 +666,26 @@ namespace Menus
             }
         }
 
+        private void disableHorizontalScroll(FlowLayoutPanel panel)
+        {
+            panel.HorizontalScroll.Maximum = 0;
+            panel.AutoScroll = false;
+            panel.VerticalScroll.Visible = false;
+            panel.AutoScroll = true;
+        }
+
+        private void setScroll()
+        {
+            disableHorizontalScroll(flowLayoutPanel2);
+            disableHorizontalScroll(flowLayoutPanel7);
+            disableHorizontalScroll(flowLayoutPanel10);
+            disableHorizontalScroll(flowLayoutPanel16);
+            disableHorizontalScroll(flowLayoutPanel21);
+        }
+
         private void Menuprinc_Load(object sender, EventArgs e)
         {
-            flowLayoutPanel2.HorizontalScroll.Maximum = 0;
-            flowLayoutPanel2.AutoScroll = false;
-            flowLayoutPanel2.VerticalScroll.Visible = false;
-            flowLayoutPanel2.AutoScroll = true;
-
-            flowLayoutPanel7.HorizontalScroll.Maximum = 0;
-            flowLayoutPanel7.AutoScroll = false;
-            flowLayoutPanel7.VerticalScroll.Visible = false;
-            flowLayoutPanel7.AutoScroll = true;
-
+            setScroll();
             GetNote(lbRecebeEmailMenu.Text);
             bancoMainEntities1 ht2 = new bancoMainEntities1();
             var name = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
@@ -865,9 +873,9 @@ namespace Menus
                             Button button = new Button();
                             button.Tag = content[i].STR_INT_ID;
                             button.Text = content[i].STR_STR_TITLE;
-                            button.Width = flowLayoutPanel7.Width - 5;
+                            button.Width = 240;
                             button.FlatStyle = FlatStyle.Flat;
-                                                        button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.BackColor = Color.FromArgb(33, 33, 33);
                             button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
@@ -876,6 +884,15 @@ namespace Menus
                             button.Cursor = Cursors.Hand;
                             button.Click += new EventHandler(this.buttonSearchText_Click);
                             flowLayoutPanel7.Controls.Add(button);
+
+                            if (flowLayoutPanel7.VerticalScroll.Visible)
+                            {
+                                flowLayoutPanel7.Width = 270;
+                            }
+                            else
+                            {
+                                flowLayoutPanel7.Width = 245;
+                            }
                         }
                     }
                     else
@@ -1326,7 +1343,7 @@ namespace Menus
                             Button button = new Button();
                             button.Tag = entryPoint[i].notaId;
                             button.Text = entryPoint[i].notaTitle;
-                            button.Width = flowLayoutPanel10.Width - 5;
+                            button.Width = 240;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
                             button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
@@ -1337,6 +1354,16 @@ namespace Menus
                             button.Cursor = Cursors.Hand;
                             button.Click += new EventHandler(this.buttonSearchFacul_Click);
                             flowLayoutPanel10.Controls.Add(button);
+
+                            if (flowLayoutPanel10.VerticalScroll.Visible)
+                            {
+                                flowLayoutPanel10.Width = 270;
+                            }
+                            else
+                            {
+                                flowLayoutPanel10.Width = 245;
+                            }
+
                         }
                     }
                     else
@@ -1370,7 +1397,7 @@ namespace Menus
                             Button button = new Button();
                             button.Tag = entryPoint[i].notaId;
                             button.Text = entryPoint[i].notaTitle;
-                            button.Width = flowLayoutPanel10.Width - 5;
+                            button.Width = 240;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
                             button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
@@ -1381,6 +1408,15 @@ namespace Menus
                             button.Cursor = Cursors.Hand;
                             button.Click += new EventHandler(this.buttonSearchFacul_Click);
                             flowLayoutPanel10.Controls.Add(button);
+
+                            if (flowLayoutPanel10.VerticalScroll.Visible)
+                            {
+                                flowLayoutPanel10.Width = 270;
+                            }
+                            else
+                            {
+                                flowLayoutPanel10.Width = 245;
+                            }
                         }
                     }
                     else
@@ -1417,7 +1453,7 @@ namespace Menus
                         Button button = new Button();
                         button.Tag = entryPoint[i].notaId;
                         button.Text = entryPoint[i].notaTitle;
-                        button.Width = flowLayoutPanel10.Width - 5;
+                        button.Width = 240;
                         button.FlatStyle = FlatStyle.Flat;
                         button.BackColor = Color.FromArgb(33, 33, 33);
                         button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
@@ -1428,6 +1464,15 @@ namespace Menus
                         button.Cursor = Cursors.Hand;
                         button.Click += new EventHandler(this.buttonSearchFacul_Click);
                         flowLayoutPanel10.Controls.Add(button);
+
+                        if (flowLayoutPanel10.VerticalScroll.Visible)
+                        {
+                            flowLayoutPanel10.Width = 270;
+                        }
+                        else
+                        {
+                            flowLayoutPanel10.Width = 245;
+                        }
                     }
                 }
                 else
@@ -1463,7 +1508,7 @@ namespace Menus
                         Button button = new Button();
                         button.Tag = entryPoint[i].notaId;
                         button.Text = entryPoint[i].notaTitle;
-                        button.Width = flowLayoutPanel16.Width - 5;
+                        button.Width = 240;
                         button.FlatStyle = FlatStyle.Flat;
                         button.BackColor = Color.FromArgb(33, 33, 33);
                         button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
@@ -1474,6 +1519,15 @@ namespace Menus
                         button.Cursor = Cursors.Hand;
                         button.Click += new EventHandler(this.buttonSearchCurso_Click);
                         flowLayoutPanel16.Controls.Add(button);
+
+                        if (flowLayoutPanel16.VerticalScroll.Visible)
+                        {
+                            flowLayoutPanel16.Width = 270;
+                        }
+                        else
+                        {
+                            flowLayoutPanel16.Width = 245;
+                        }
                     }
                 }
                 else
@@ -1509,7 +1563,7 @@ namespace Menus
                         Button button = new Button();
                         button.Tag = entryPoint[i].notaId;
                         button.Text = entryPoint[i].notaTitle;
-                        button.Width = flowLayoutPanel21.Width - 5;
+                        button.Width = 240;
                         button.FlatStyle = FlatStyle.Flat;
                         button.BackColor = Color.FromArgb(33, 33, 33);
                         button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
@@ -1520,6 +1574,15 @@ namespace Menus
                         button.Cursor = Cursors.Hand;
                         button.Click += new EventHandler(this.buttonSearchMateria_Click);
                         flowLayoutPanel21.Controls.Add(button);
+
+                        if (flowLayoutPanel21.VerticalScroll.Visible)
+                        {
+                            flowLayoutPanel21.Width = 270;
+                        }
+                        else
+                        {
+                            flowLayoutPanel21.Width = 245;
+                        }
                     }
                 }
                 else
@@ -1673,7 +1736,7 @@ namespace Menus
                             Button button = new Button();
                             button.Tag = entryPoint[i].notaId;
                             button.Text = entryPoint[i].notaTitle;
-                            button.Width = flowLayoutPanel16.Width - 5;
+                            button.Width = 240;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
                             button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
@@ -1684,6 +1747,15 @@ namespace Menus
                             button.Cursor = Cursors.Hand;
                             button.Click += new EventHandler(this.buttonSearchCurso_Click);
                             flowLayoutPanel16.Controls.Add(button);
+
+                            if (flowLayoutPanel16.VerticalScroll.Visible)
+                            {
+                                flowLayoutPanel16.Width = 270;
+                            }
+                            else
+                            {
+                                flowLayoutPanel16.Width = 245;
+                            }
                         }
                     }
                     else
@@ -1802,7 +1874,7 @@ namespace Menus
                             Button button = new Button();
                             button.Tag = entryPoint[i].notaId;
                             button.Text = entryPoint[i].notaTitle;
-                            button.Width = flowLayoutPanel21.Width - 5;
+                            button.Width = 240;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
                             button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
@@ -1813,6 +1885,15 @@ namespace Menus
                             button.Cursor = Cursors.Hand;
                             button.Click += new EventHandler(this.buttonSearchMateria_Click);
                             flowLayoutPanel21.Controls.Add(button);
+
+                            if (flowLayoutPanel21.VerticalScroll.Visible)
+                            {
+                                flowLayoutPanel21.Width = 270;
+                            }
+                            else
+                            {
+                                flowLayoutPanel21.Width = 245;
+                            }
                         }
                     }
                     else
@@ -2789,6 +2870,11 @@ namespace Menus
             {
                 MessageBox.Show("Digite algo para que seja salvo");
             }
+        }
+
+        private void flowLayoutPanel21_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
