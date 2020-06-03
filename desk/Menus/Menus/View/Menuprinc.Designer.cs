@@ -2435,9 +2435,9 @@
             this.panelCurso.Controls.Add(this.panel26);
             this.panelCurso.Controls.Add(this.flowLayoutPanel13);
             this.panelCurso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCurso.Location = new System.Drawing.Point(255, 42);
+            this.panelCurso.Location = new System.Drawing.Point(0, 42);
             this.panelCurso.Name = "panelCurso";
-            this.panelCurso.Size = new System.Drawing.Size(1031, 687);
+            this.panelCurso.Size = new System.Drawing.Size(1286, 687);
             this.panelCurso.TabIndex = 28;
             // 
             // flowLayoutPanel12
@@ -2448,7 +2448,7 @@
             this.flowLayoutPanel12.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
             this.flowLayoutPanel12.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel12.Size = new System.Drawing.Size(1031, 604);
+            this.flowLayoutPanel12.Size = new System.Drawing.Size(1286, 604);
             this.flowLayoutPanel12.TabIndex = 25;
             // 
             // panel24
@@ -2457,7 +2457,7 @@
             this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel24.Location = new System.Drawing.Point(0, 42);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(1031, 41);
+            this.panel24.Size = new System.Drawing.Size(1286, 41);
             this.panel24.TabIndex = 26;
             // 
             // textBox11
@@ -2469,7 +2469,7 @@
             this.textBox11.MinimumSize = new System.Drawing.Size(4, 4);
             this.textBox11.Multiline = true;
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(1031, 41);
+            this.textBox11.Size = new System.Drawing.Size(1286, 41);
             this.textBox11.TabIndex = 19;
             // 
             // panel25
@@ -2479,7 +2479,7 @@
             this.panel25.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel25.Location = new System.Drawing.Point(0, 0);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(1031, 42);
+            this.panel25.Size = new System.Drawing.Size(1286, 42);
             this.panel25.TabIndex = 27;
             // 
             // button35
@@ -2509,7 +2509,7 @@
             this.panel26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel26.Location = new System.Drawing.Point(0, 0);
             this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(1031, 687);
+            this.panel26.Size = new System.Drawing.Size(1286, 687);
             this.panel26.TabIndex = 24;
             // 
             // panel27
@@ -2519,7 +2519,7 @@
             this.panel27.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel27.Location = new System.Drawing.Point(0, 0);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(1031, 42);
+            this.panel27.Size = new System.Drawing.Size(1286, 42);
             this.panel27.TabIndex = 22;
             // 
             // button36
@@ -2533,7 +2533,7 @@
             this.button36.FlatAppearance.BorderSize = 0;
             this.button36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button36.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button36.Location = new System.Drawing.Point(988, 0);
+            this.button36.Location = new System.Drawing.Point(1243, 0);
             this.button36.Name = "button36";
             this.button36.Size = new System.Drawing.Size(43, 42);
             this.button36.TabIndex = 9;
@@ -2939,6 +2939,7 @@
             this.button41.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button41.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button41.UseVisualStyleBackColor = false;
+            this.button41.Click += new System.EventHandler(this.return_Click);
             // 
             // panel35
             // 
@@ -3593,6 +3594,8 @@
             // 
             // Wrapper
             // 
+            this.Wrapper.Controls.Add(this.panelCurso2);
+            this.Wrapper.Controls.Add(this.panelMateria);
             this.Wrapper.Controls.Add(this.panelHome);
             this.Wrapper.Controls.Add(this.panelTexto);
             this.Wrapper.Controls.Add(this.panelFacul__Search);
@@ -3601,11 +3604,9 @@
             this.Wrapper.Controls.Add(this.panelCurso2__Search);
             this.Wrapper.Controls.Add(this.panelNovaNota);
             this.Wrapper.Controls.Add(this.panelMinhaConta);
-            this.Wrapper.Controls.Add(this.panelMateria);
             this.Wrapper.Controls.Add(this.panelFacul);
-            this.Wrapper.Controls.Add(this.panelCurso2);
-            this.Wrapper.Controls.Add(this.panelCurso);
             this.Wrapper.Controls.Add(this.panel1);
+            this.Wrapper.Controls.Add(this.panelCurso);
             this.Wrapper.Controls.Add(this.panel2);
             this.Wrapper.Controls.Add(this.webBrowser1);
             this.Wrapper.Dock = System.Windows.Forms.DockStyle.Fill;
