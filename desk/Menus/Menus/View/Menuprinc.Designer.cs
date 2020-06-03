@@ -3594,9 +3594,9 @@
             // 
             // Wrapper
             // 
-            this.Wrapper.Controls.Add(this.panelCurso2);
-            this.Wrapper.Controls.Add(this.panelMateria);
             this.Wrapper.Controls.Add(this.panelHome);
+            this.Wrapper.Controls.Add(this.panelMateria);
+            this.Wrapper.Controls.Add(this.panelCurso2);
             this.Wrapper.Controls.Add(this.panelTexto);
             this.Wrapper.Controls.Add(this.panelFacul__Search);
             this.Wrapper.Controls.Add(this.panelSearch);

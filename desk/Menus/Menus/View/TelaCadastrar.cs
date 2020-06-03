@@ -146,6 +146,7 @@ namespace Menus
                         button.Margin = new Padding(5);
                         button.ForeColor = Color.White;
                         button.Cursor = Cursors.Hand;
+                        button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                         button.Height = 40;
                         button.Width = 397;
                         button.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
