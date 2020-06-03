@@ -305,6 +305,7 @@ namespace Menus
                         button.Text = content[i].MAT_STR_NOME;
                         button.FlatStyle = FlatStyle.Flat;
                                                     button.BackColor = Color.FromArgb(33, 33, 33);
+                        button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                         button.ForeColor = Color.White;
                         button.Cursor = Cursors.Hand;
                         button.Height = 195;
@@ -361,7 +362,7 @@ namespace Menus
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Deu ruim" + ex);
+                MessageBox.Show("Erro " + ex);
             }
         }
 
@@ -393,6 +394,7 @@ namespace Menus
                         button.FlatStyle = FlatStyle.Flat;
                         button.UseVisualStyleBackColor = false;
                         button.BackColor = Color.FromArgb(32, 32, 32);
+                        button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                         button.Margin = new Padding(5);
                         button.ForeColor = Color.White;
                         button.Cursor = Cursors.Hand;
@@ -493,9 +495,11 @@ namespace Menus
                         {
                             string shortFoo = da.GetString(0).Length > 25 ? da.GetString(0).Substring(0, 25) + "..." : da.GetString(0);
                             Button button = new Button();
+                            button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.Tag = da.GetInt32(2);
+
                             button.Text = da.GetString(1) + "\n" + shortFoo;
-                            button.Width = flowLayoutPanel2.Width - 5;
+                            button.Width = 240;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
                             button.ForeColor = Color.White;
@@ -504,6 +508,15 @@ namespace Menus
                             button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                             button.Click += new EventHandler(this.button_Click);
                             flowLayoutPanel2.Controls.Add(button);
+
+                            if (flowLayoutPanel2.VerticalScroll.Visible)
+                            {
+                                flowLayoutPanel2.Width = 270;
+                            }
+                            else
+                            {
+                                flowLayoutPanel2.Width = 245;
+                            }
                         }
                     }
                     da.Close();
@@ -558,7 +571,7 @@ namespace Menus
                     label30.AutoSize = true;
                     label30.BackColor = System.Drawing.Color.Transparent;
                     label30.Dock = System.Windows.Forms.DockStyle.Left;
-                    label30.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    label30.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
                     label30.Location = new System.Drawing.Point(13, 10);
                     label30.MaximumSize = new System.Drawing.Size(380, 0);
@@ -575,6 +588,7 @@ namespace Menus
             else
             {
                 button10.BackgroundImage = Properties.Resources.notification__3___1_;
+                label28.Visible = false;
             }
         }
 
@@ -648,12 +662,22 @@ namespace Menus
 
             catch (Exception ex)
             {
-                MessageBox.Show("Deu ruim" + ex);
+                MessageBox.Show("Erro " + ex);
             }
         }
 
         private void Menuprinc_Load(object sender, EventArgs e)
         {
+            flowLayoutPanel2.HorizontalScroll.Maximum = 0;
+            flowLayoutPanel2.AutoScroll = false;
+            flowLayoutPanel2.VerticalScroll.Visible = false;
+            flowLayoutPanel2.AutoScroll = true;
+
+            flowLayoutPanel7.HorizontalScroll.Maximum = 0;
+            flowLayoutPanel7.AutoScroll = false;
+            flowLayoutPanel7.VerticalScroll.Visible = false;
+            flowLayoutPanel7.AutoScroll = true;
+
             GetNote(lbRecebeEmailMenu.Text);
             bancoMainEntities1 ht2 = new bancoMainEntities1();
             var name = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
@@ -697,15 +721,7 @@ namespace Menus
                 pictureBox1.Image = pictureBox1.InitialImage;
                 roundPictureBox1.Image = pictureBox1.InitialImage;
             }
-            flowLayoutPanel2.HorizontalScroll.Maximum = 0;
-            flowLayoutPanel2.AutoScroll = false;
-            flowLayoutPanel2.VerticalScroll.Visible = false;
-            flowLayoutPanel2.AutoScroll = true;
 
-            flowLayoutPanel7.HorizontalScroll.Maximum = 0;
-            flowLayoutPanel7.AutoScroll = false;
-            flowLayoutPanel7.VerticalScroll.Visible = false;
-            flowLayoutPanel7.AutoScroll = true;
 
             GetUser(lbRecebeEmailMenu.Text);
             lbRecebeEmailConfig.Text = lbRecebeEmailMenu.Text;
@@ -791,6 +807,7 @@ namespace Menus
                         button.Tag = content[i].FAC_INT_ID;
                         button.Text = content[i].FAC_STR_NOME;
                         button.FlatStyle = FlatStyle.Flat;
+                        button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                         button.BackColor = Color.FromArgb(33, 33, 33);
                         button.ForeColor = Color.White;
                         button.Cursor = Cursors.Hand;
@@ -851,6 +868,7 @@ namespace Menus
                             button.Width = flowLayoutPanel7.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
                                                         button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
@@ -935,6 +953,7 @@ namespace Menus
                         button.Text = content[i].CUR_STR_NOME;
                         button.FlatStyle = FlatStyle.Flat;
                         button.BackColor = Color.FromArgb(33, 33, 33);
+                        button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                         button.ForeColor = Color.White;
                         button.Cursor = Cursors.Hand;
                         button.Height = 195;
@@ -1055,7 +1074,7 @@ namespace Menus
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Deu ruim" + ex);
+                MessageBox.Show("Erro " + ex);
             }
         }
 
@@ -1199,7 +1218,7 @@ namespace Menus
 
             catch(Exception ex)
             {
-                MessageBox.Show("Deu ruim" + ex);
+                MessageBox.Show("Erro " + ex);
             }
         }
 
@@ -1223,6 +1242,7 @@ namespace Menus
                             button.Text = content[i].FAC_STR_NOME;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 195;
@@ -1262,6 +1282,7 @@ namespace Menus
                             button.Text = content[i].FAC_STR_NOME;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 195;
@@ -1308,6 +1329,7 @@ namespace Menus
                             button.Width = flowLayoutPanel10.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
@@ -1351,6 +1373,7 @@ namespace Menus
                             button.Width = flowLayoutPanel10.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
@@ -1397,6 +1420,7 @@ namespace Menus
                         button.Width = flowLayoutPanel10.Width - 5;
                         button.FlatStyle = FlatStyle.Flat;
                         button.BackColor = Color.FromArgb(33, 33, 33);
+                        button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                         button.ForeColor = Color.White;
                         button.Cursor = Cursors.Hand;
                         button.Height = 75;
@@ -1442,6 +1466,7 @@ namespace Menus
                         button.Width = flowLayoutPanel16.Width - 5;
                         button.FlatStyle = FlatStyle.Flat;
                         button.BackColor = Color.FromArgb(33, 33, 33);
+                        button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                         button.ForeColor = Color.White;
                         button.Cursor = Cursors.Hand;
                         button.Height = 75;
@@ -1487,6 +1512,7 @@ namespace Menus
                         button.Width = flowLayoutPanel21.Width - 5;
                         button.FlatStyle = FlatStyle.Flat;
                         button.BackColor = Color.FromArgb(33, 33, 33);
+                        button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                         button.ForeColor = Color.White;
                         button.Cursor = Cursors.Hand;
                         button.Height = 75;
@@ -1563,6 +1589,7 @@ namespace Menus
                             button.Text = content[i].CUR_STR_NOME;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 195;
@@ -1602,6 +1629,7 @@ namespace Menus
                             button.Text = content[i].CUR_STR_NOME;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 195;
@@ -1648,6 +1676,7 @@ namespace Menus
                             button.Width = flowLayoutPanel16.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
@@ -1691,6 +1720,7 @@ namespace Menus
                             button.Width = flowLayoutPanel16.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
@@ -1775,6 +1805,7 @@ namespace Menus
                             button.Width = flowLayoutPanel21.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
@@ -1818,6 +1849,7 @@ namespace Menus
                             button.Width = flowLayoutPanel21.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
@@ -1862,6 +1894,7 @@ namespace Menus
                             button.Text = content[i].MAT_STR_NOME;
                             button.FlatStyle = FlatStyle.Flat;
                             button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 195;
@@ -1901,6 +1934,7 @@ namespace Menus
                             button.Text = content[i].MAT_STR_NOME;
                             button.FlatStyle = FlatStyle.Flat;
                                                         button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.FlatAppearance.BorderColor = Color.FromArgb(100, 100, 100);
                             button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 195;
@@ -2014,7 +2048,7 @@ namespace Menus
                                 // 
                                 this.lbName.AutoSize = true;
                                 this.lbName.BackColor = System.Drawing.Color.Transparent;
-                                this.lbName.Font = new System.Drawing.Font("Verdana", 15F);
+                                this.lbName.Font = new System.Drawing.Font("Century Gothic", 15F);
                                 this.lbName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
                                 this.lbName.Location = new System.Drawing.Point(3, 10);
                                 this.lbName.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
@@ -2030,7 +2064,7 @@ namespace Menus
                                 // 
                                 this.lbFaculdade.AutoSize = true;
                                 this.lbFaculdade.BackColor = System.Drawing.Color.Transparent;
-                                this.lbFaculdade.Font = new System.Drawing.Font("Verdana", 13F);
+                                this.lbFaculdade.Font = new System.Drawing.Font("Century Gothic", 13F);
                                 this.lbFaculdade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
                                 this.lbFaculdade.Location = new System.Drawing.Point(3, 77);
                                 this.lbFaculdade.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
@@ -2046,7 +2080,7 @@ namespace Menus
                                 // 
                                 this.lbEmail.AutoSize = true;
                                 this.lbEmail.BackColor = System.Drawing.Color.Transparent;
-                                this.lbEmail.Font = new System.Drawing.Font("Verdana", 13F);
+                                this.lbEmail.Font = new System.Drawing.Font("Century Gothic", 13F);
                                 this.lbEmail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
                                 this.lbEmail.Location = new System.Drawing.Point(3, 45);
                                 this.lbEmail.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
@@ -2310,17 +2344,7 @@ namespace Menus
                     bancoMainEntities1 ht2 = new bancoMainEntities1();
                     var id2 = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
                     var email = id2.USER_INT_ID;
-                    var content = (from str in ht2.TB_SHARE
-                                   join send in ht2.TB_USER on str.SENDER_INT_ID equals send.USER_INT_ID
-                                   join recipient in ht2.TB_USER on str.RECIPIENT_INT_ID equals recipient.USER_INT_ID
-                                   join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.STR_INT_ID
-                                   join notaChild in ht2.TB_NOTA_STR on nota.STR_INT_ID equals notaChild.STR_INT_ID
-                                   where email == recipient.USER_INT_ID
-                                   select new
-                                   {
-                                       shareId = str.SHARE_INT_ID,
-                                       senderName = send.USER_STR_NOME
-                                   }).ToList();
+                    var content = entFunc.getSharedNotes(email);
 
                     fetchSharedNoted(content);
                 }
@@ -2737,6 +2761,33 @@ namespace Menus
             else
             {
                 MessageBox.Show("Um ou mais campos estão vazios!");
+            }
+        }
+
+        private void pictureBox7_MouseHover(object sender, EventArgs e)
+        {
+            //pictureBox7.BackColor = Color.FromArgb(33, 33, 33);
+        }
+
+        private void pictureBox7_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox7.BackColor = Color.FromArgb(33, 33, 33);
+        }
+
+        private void pictureBox7_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox7.BackColor = Color.FromArgb(21, 21, 21);
+        }
+
+        private void roundedButton6_Click_1(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtNota.Text) && !String.IsNullOrEmpty(txtTitle.Text) && txtuniversidade.Text != "Selecione a Matéria")
+            {
+                GravarNota(lbRecebeEmailMenu.Text, txtNota.Text, txtTitle.Text, Convert.ToInt32(txtuniversidade.Tag));
+            }
+            else
+            {
+                MessageBox.Show("Digite algo para que seja salvo");
             }
         }
     }

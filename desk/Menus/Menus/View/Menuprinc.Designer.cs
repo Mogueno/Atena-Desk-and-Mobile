@@ -84,10 +84,10 @@
             this.panelNovaNota = new System.Windows.Forms.Panel();
             this.button23 = new System.Windows.Forms.Button();
             this.panel50 = new System.Windows.Forms.Panel();
+            this.roundedButton6 = new Menus.RoundedButton();
             this.flowLayoutPanel18 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtuniversidade = new System.Windows.Forms.TextBox();
-            this.button24 = new System.Windows.Forms.Button();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtNota = new System.Windows.Forms.TextBox();
             this.panelMinhaConta = new System.Windows.Forms.Panel();
@@ -99,7 +99,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.roundedButton1 = new Menus.RoundedButton();
             this.button13 = new System.Windows.Forms.Button();
+            this.roundPictureBox1 = new Menus.RoundPictureBox();
             this.panel55 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.button14 = new System.Windows.Forms.Button();
@@ -141,6 +143,7 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label35 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.roundPictureBox2 = new Menus.RoundPictureBox();
             this.button27 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.panelFacul__Search = new System.Windows.Forms.Panel();
@@ -258,6 +261,8 @@
             this.panel47 = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
             this.panel49 = new System.Windows.Forms.Panel();
+            this.roundedButton3 = new Menus.RoundedButton();
+            this.roundedButton2 = new Menus.RoundedButton();
             this.button46 = new System.Windows.Forms.Button();
             this.btnconcluir = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -272,17 +277,12 @@
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.panel59 = new System.Windows.Forms.Panel();
+            this.roundedButton5 = new Menus.RoundedButton();
+            this.roundedButton4 = new Menus.RoundedButton();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.panel60 = new System.Windows.Forms.Panel();
             this.label40 = new System.Windows.Forms.Label();
-            this.roundedButton3 = new Menus.RoundedButton();
-            this.roundedButton2 = new Menus.RoundedButton();
-            this.roundedButton1 = new Menus.RoundedButton();
-            this.roundPictureBox1 = new Menus.RoundPictureBox();
-            this.roundPictureBox2 = new Menus.RoundPictureBox();
-            this.roundedButton4 = new Menus.RoundedButton();
-            this.roundedButton5 = new Menus.RoundedButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -307,6 +307,7 @@
             this.panelMinhaConta.SuspendLayout();
             this.panel51.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
             this.panel55.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.panelMateriaList.SuspendLayout();
@@ -320,6 +321,7 @@
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox2)).BeginInit();
             this.panelFacul__Search.SuspendLayout();
             this.panel20.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -378,8 +380,6 @@
             this.panel58.SuspendLayout();
             this.panel59.SuspendLayout();
             this.panel60.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lbRecebeEmailMenu
@@ -644,6 +644,8 @@
             this.button10.Dock = System.Windows.Forms.DockStyle.Left;
             this.button10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button10.Location = new System.Drawing.Point(101, 0);
@@ -665,16 +667,21 @@
             this.pictureBox7.TabIndex = 15;
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            this.pictureBox7.MouseEnter += new System.EventHandler(this.pictureBox7_MouseEnter);
+            this.pictureBox7.MouseLeave += new System.EventHandler(this.pictureBox7_MouseLeave);
+            this.pictureBox7.MouseHover += new System.EventHandler(this.pictureBox7_MouseHover);
             // 
             // btnSair
             // 
             this.btnSair.BackColor = System.Drawing.Color.Transparent;
-            this.btnSair.BackgroundImage = global::Menus.Properties.Resources.signs__3___1_;
+            this.btnSair.BackgroundImage = global::Menus.Properties.Resources.logout__2___1_;
             this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSair.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSair.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSair.Location = new System.Drawing.Point(1114, 0);
@@ -687,12 +694,14 @@
             // button29
             // 
             this.button29.BackColor = System.Drawing.Color.Transparent;
-            this.button29.BackgroundImage = global::Menus.Properties.Resources.interface__1_;
+            this.button29.BackgroundImage = global::Menus.Properties.Resources.minus__2___1_;
             this.button29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button29.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button29.Dock = System.Windows.Forms.DockStyle.Right;
             this.button29.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button29.FlatAppearance.BorderSize = 0;
+            this.button29.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.button29.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button29.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button29.Location = new System.Drawing.Point(1157, 0);
@@ -705,12 +714,14 @@
             // button47
             // 
             this.button47.BackColor = System.Drawing.Color.Transparent;
-            this.button47.BackgroundImage = global::Menus.Properties.Resources.shapes_and_symbols__2___1_;
+            this.button47.BackgroundImage = global::Menus.Properties.Resources.times_square__1_;
             this.button47.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button47.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button47.Dock = System.Windows.Forms.DockStyle.Right;
             this.button47.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button47.FlatAppearance.BorderSize = 0;
+            this.button47.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.button47.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.button47.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button47.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button47.Location = new System.Drawing.Point(1200, 0);
@@ -723,12 +734,14 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::Menus.Properties.Resources.signs__2___1_;
+            this.button5.BackgroundImage = global::Menus.Properties.Resources.close__3___1_;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Dock = System.Windows.Forms.DockStyle.Right;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button5.Location = new System.Drawing.Point(1243, 0);
@@ -752,7 +765,7 @@
             // 
             // button12
             // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(2)))), ((int)(((byte)(9)))));
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button12.FlatAppearance.BorderColor = System.Drawing.Color.BlanchedAlmond;
@@ -760,7 +773,7 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button12.Image = global::Menus.Properties.Resources.back__1_;
+            this.button12.Image = global::Menus.Properties.Resources.image__7_;
             this.button12.Location = new System.Drawing.Point(0, 0);
             this.button12.Margin = new System.Windows.Forms.Padding(5);
             this.button12.Name = "button12";
@@ -789,12 +802,12 @@
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.button6.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gainsboro;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button6.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button6.Image = global::Menus.Properties.Resources.font1;
             this.button6.Location = new System.Drawing.Point(5, 5);
@@ -813,12 +826,12 @@
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.button7.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gainsboro;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button7.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button7.Image = global::Menus.Properties.Resources.school1;
             this.button7.Location = new System.Drawing.Point(215, 5);
@@ -837,12 +850,12 @@
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.button8.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gainsboro;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button8.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button8.Image = global::Menus.Properties.Resources.course1;
             this.button8.Location = new System.Drawing.Point(425, 5);
@@ -861,12 +874,12 @@
             this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.button9.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gainsboro;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button9.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button9.Image = global::Menus.Properties.Resources.book1;
             this.button9.Location = new System.Drawing.Point(635, 5);
@@ -882,6 +895,7 @@
             // 
             // panelFacul
             // 
+            this.panelFacul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.panelFacul.Controls.Add(this.flowLayoutPanel4);
             this.panelFacul.Controls.Add(this.panel17);
             this.panelFacul.Controls.Add(this.panel18);
@@ -939,7 +953,7 @@
             // 
             // button31
             // 
-            this.button31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(2)))), ((int)(((byte)(9)))));
+            this.button31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.button31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button31.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button31.Dock = System.Windows.Forms.DockStyle.Left;
@@ -948,7 +962,7 @@
             this.button31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button31.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button31.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button31.Image = global::Menus.Properties.Resources.back__1_;
+            this.button31.Image = global::Menus.Properties.Resources.image__7_;
             this.button31.Location = new System.Drawing.Point(0, 0);
             this.button31.Margin = new System.Windows.Forms.Padding(5);
             this.button31.Name = "button31";
@@ -1007,6 +1021,7 @@
             // 
             // panelTexto
             // 
+            this.panelTexto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.panelTexto.Controls.Add(this.panel14);
             this.panelTexto.Controls.Add(this.flowLayoutPanel7);
             this.panelTexto.Controls.Add(this.panel8);
@@ -1212,7 +1227,7 @@
             // 
             // button23
             // 
-            this.button23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.button23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button23.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button23.FlatAppearance.BorderColor = System.Drawing.Color.BlanchedAlmond;
@@ -1220,7 +1235,7 @@
             this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button23.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button23.Image = global::Menus.Properties.Resources.back__1_;
+            this.button23.Image = global::Menus.Properties.Resources.image__7_;
             this.button23.Location = new System.Drawing.Point(0, 0);
             this.button23.Margin = new System.Windows.Forms.Padding(5);
             this.button23.Name = "button23";
@@ -1236,16 +1251,40 @@
             this.panel50.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel50.Controls.Add(this.roundedButton6);
             this.panel50.Controls.Add(this.flowLayoutPanel18);
             this.panel50.Controls.Add(this.pictureBox2);
             this.panel50.Controls.Add(this.txtuniversidade);
-            this.panel50.Controls.Add(this.button24);
             this.panel50.Controls.Add(this.txtTitle);
             this.panel50.Controls.Add(this.txtNota);
             this.panel50.Location = new System.Drawing.Point(64, 44);
             this.panel50.Name = "panel50";
             this.panel50.Size = new System.Drawing.Size(924, 609);
             this.panel50.TabIndex = 34;
+            // 
+            // roundedButton6
+            // 
+            this.roundedButton6.BackColor = System.Drawing.Color.Transparent;
+            this.roundedButton6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.roundedButton6.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.roundedButton6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedButton6.FlatAppearance.BorderSize = 0;
+            this.roundedButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton6.ForeColor = System.Drawing.Color.White;
+            this.roundedButton6.Location = new System.Drawing.Point(325, 525);
+            this.roundedButton6.Name = "roundedButton6";
+            this.roundedButton6.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.roundedButton6.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.roundedButton6.OnHoverTextColor = System.Drawing.Color.White;
+            this.roundedButton6.Size = new System.Drawing.Size(266, 55);
+            this.roundedButton6.TabIndex = 75;
+            this.roundedButton6.Text = "Adicionar Nota";
+            this.roundedButton6.TextColor = System.Drawing.Color.White;
+            this.roundedButton6.UseVisualStyleBackColor = false;
+            this.roundedButton6.Click += new System.EventHandler(this.roundedButton6_Click_1);
             // 
             // flowLayoutPanel18
             // 
@@ -1275,40 +1314,17 @@
             this.txtuniversidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.txtuniversidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtuniversidade.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtuniversidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtuniversidade.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtuniversidade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtuniversidade.Location = new System.Drawing.Point(13, 54);
             this.txtuniversidade.Name = "txtuniversidade";
             this.txtuniversidade.ReadOnly = true;
-            this.txtuniversidade.Size = new System.Drawing.Size(399, 29);
+            this.txtuniversidade.Size = new System.Drawing.Size(399, 31);
             this.txtuniversidade.TabIndex = 33;
             this.txtuniversidade.Text = "Selecione a Matéria";
             this.txtuniversidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtuniversidade.Click += new System.EventHandler(this.txtuniversidade_Click);
             this.txtuniversidade.TextChanged += new System.EventHandler(this.txtuniversidade_TextChanged);
-            // 
-            // button24
-            // 
-            this.button24.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button24.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button24.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button24.FlatAppearance.BorderSize = 0;
-            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button24.Location = new System.Drawing.Point(331, 530);
-            this.button24.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.button24.Name = "button24";
-            this.button24.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button24.Size = new System.Drawing.Size(255, 50);
-            this.button24.TabIndex = 26;
-            this.button24.Text = "Adicionar Nota";
-            this.button24.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button24.UseVisualStyleBackColor = false;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // txtTitle
             // 
@@ -1449,6 +1465,30 @@
             this.panel5.Size = new System.Drawing.Size(281, 232);
             this.panel5.TabIndex = 65;
             // 
+            // roundedButton1
+            // 
+            this.roundedButton1.BackColor = System.Drawing.Color.Transparent;
+            this.roundedButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.roundedButton1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.roundedButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedButton1.FlatAppearance.BorderSize = 0;
+            this.roundedButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton1.ForeColor = System.Drawing.Color.White;
+            this.roundedButton1.Location = new System.Drawing.Point(7, 178);
+            this.roundedButton1.Name = "roundedButton1";
+            this.roundedButton1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.roundedButton1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.roundedButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.roundedButton1.Size = new System.Drawing.Size(266, 49);
+            this.roundedButton1.TabIndex = 74;
+            this.roundedButton1.Text = "Alterar Foto";
+            this.roundedButton1.TextColor = System.Drawing.Color.White;
+            this.roundedButton1.UseVisualStyleBackColor = false;
+            this.roundedButton1.Click += new System.EventHandler(this.roundedButton1_Click);
+            // 
             // button13
             // 
             this.button13.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1470,6 +1510,17 @@
             this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click_1);
+            // 
+            // roundPictureBox1
+            // 
+            this.roundPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.roundPictureBox1.Location = new System.Drawing.Point(60, 3);
+            this.roundPictureBox1.Name = "roundPictureBox1";
+            this.roundPictureBox1.Size = new System.Drawing.Size(160, 160);
+            this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.roundPictureBox1.TabIndex = 48;
+            this.roundPictureBox1.TabStop = false;
+            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
             // 
             // panel55
             // 
@@ -2040,6 +2091,7 @@
             // 
             // panelHome
             // 
+            this.panelHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.panelHome.Controls.Add(this.panel12);
             this.panelHome.Controls.Add(this.flowLayoutPanel2);
             this.panelHome.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2135,10 +2187,21 @@
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // roundPictureBox2
+            // 
+            this.roundPictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.roundPictureBox2.InitialImage = global::Menus.Properties.Resources.User_icon_BLACK_01;
+            this.roundPictureBox2.Location = new System.Drawing.Point(749, 5);
+            this.roundPictureBox2.Name = "roundPictureBox2";
+            this.roundPictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.roundPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.roundPictureBox2.TabIndex = 11;
+            this.roundPictureBox2.TabStop = false;
+            // 
             // button27
             // 
             this.button27.BackColor = System.Drawing.Color.Transparent;
-            this.button27.BackgroundImage = global::Menus.Properties.Resources.share__1_;
+            this.button27.BackgroundImage = global::Menus.Properties.Resources.share__1_1;
             this.button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button27.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button27.Dock = System.Windows.Forms.DockStyle.Left;
@@ -2156,7 +2219,7 @@
             // button20
             // 
             this.button20.BackColor = System.Drawing.Color.Transparent;
-            this.button20.BackgroundImage = global::Menus.Properties.Resources.trash__1_;
+            this.button20.BackgroundImage = global::Menus.Properties.Resources.trash__1_1;
             this.button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button20.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button20.Dock = System.Windows.Forms.DockStyle.Left;
@@ -2173,6 +2236,7 @@
             // 
             // panelFacul__Search
             // 
+            this.panelFacul__Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.panelFacul__Search.Controls.Add(this.panel20);
             this.panelFacul__Search.Controls.Add(this.flowLayoutPanel10);
             this.panelFacul__Search.Controls.Add(this.panel22);
@@ -2215,19 +2279,20 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(786, 183);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(786, 189);
             this.tableLayoutPanel4.TabIndex = 21;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(3, 64);
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label13.Location = new System.Drawing.Point(3, 65);
             this.label13.Margin = new System.Windows.Forms.Padding(3);
             this.label13.MaximumSize = new System.Drawing.Size(786, 0);
             this.label13.MinimumSize = new System.Drawing.Size(786, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(786, 25);
+            this.label13.Size = new System.Drawing.Size(786, 24);
             this.label13.TabIndex = 23;
             // 
             // textBox7
@@ -2235,13 +2300,13 @@
             this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox7.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.textBox7.Location = new System.Drawing.Point(3, 156);
+            this.textBox7.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBox7.Location = new System.Drawing.Point(3, 160);
             this.textBox7.MaximumSize = new System.Drawing.Size(737, 0);
             this.textBox7.MaxLength = 999999999;
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(715, 24);
+            this.textBox7.Size = new System.Drawing.Size(715, 26);
             this.textBox7.TabIndex = 20;
             this.textBox7.Visible = false;
             // 
@@ -2249,13 +2314,13 @@
             // 
             this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textBox8.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox8.Location = new System.Drawing.Point(3, 95);
             this.textBox8.MaximumSize = new System.Drawing.Size(737, 0);
             this.textBox8.MaxLength = 999999999;
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(715, 55);
+            this.textBox8.Size = new System.Drawing.Size(715, 59);
             this.textBox8.TabIndex = 21;
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox8.Visible = false;
@@ -2263,13 +2328,14 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label14.Location = new System.Drawing.Point(3, 3);
             this.label14.Margin = new System.Windows.Forms.Padding(3);
             this.label14.MaximumSize = new System.Drawing.Size(786, 0);
             this.label14.MinimumSize = new System.Drawing.Size(786, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(786, 55);
+            this.label14.Size = new System.Drawing.Size(786, 56);
             this.label14.TabIndex = 22;
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2326,7 +2392,7 @@
             // 
             // button33
             // 
-            this.button33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(2)))), ((int)(((byte)(9)))));
+            this.button33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.button33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button33.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button33.Dock = System.Windows.Forms.DockStyle.Left;
@@ -2335,7 +2401,7 @@
             this.button33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button33.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button33.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button33.Image = global::Menus.Properties.Resources.back__1_;
+            this.button33.Image = global::Menus.Properties.Resources.image__7_;
             this.button33.Location = new System.Drawing.Point(0, 0);
             this.button33.Margin = new System.Windows.Forms.Padding(5);
             this.button33.Name = "button33";
@@ -2358,6 +2424,7 @@
             // 
             // panelCurso
             // 
+            this.panelCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.panelCurso.Controls.Add(this.flowLayoutPanel12);
             this.panelCurso.Controls.Add(this.panel24);
             this.panelCurso.Controls.Add(this.panel25);
@@ -2480,6 +2547,7 @@
             // 
             // panelCurso2
             // 
+            this.panelCurso2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.panelCurso2.Controls.Add(this.flowLayoutPanel14);
             this.panelCurso2.Controls.Add(this.panel7);
             this.panelCurso2.Controls.Add(this.panel10);
@@ -2536,7 +2604,7 @@
             // 
             // button37
             // 
-            this.button37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.button37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.button37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button37.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button37.Dock = System.Windows.Forms.DockStyle.Left;
@@ -2545,7 +2613,7 @@
             this.button37.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button37.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button37.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button37.Image = global::Menus.Properties.Resources.back__1_;
+            this.button37.Image = global::Menus.Properties.Resources.image__7_;
             this.button37.Location = new System.Drawing.Point(0, 0);
             this.button37.Margin = new System.Windows.Forms.Padding(5);
             this.button37.Name = "button37";
@@ -2604,6 +2672,7 @@
             // 
             // panelCurso2__Search
             // 
+            this.panelCurso2__Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.panelCurso2__Search.Controls.Add(this.panel29);
             this.panelCurso2__Search.Controls.Add(this.flowLayoutPanel16);
             this.panelCurso2__Search.Controls.Add(this.panel31);
@@ -2646,19 +2715,20 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(786, 183);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(786, 189);
             this.tableLayoutPanel5.TabIndex = 21;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(3, 64);
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label15.Location = new System.Drawing.Point(3, 65);
             this.label15.Margin = new System.Windows.Forms.Padding(3);
             this.label15.MaximumSize = new System.Drawing.Size(786, 0);
             this.label15.MinimumSize = new System.Drawing.Size(786, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(786, 25);
+            this.label15.Size = new System.Drawing.Size(786, 24);
             this.label15.TabIndex = 23;
             // 
             // textBox13
@@ -2666,13 +2736,13 @@
             this.textBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox13.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.textBox13.Location = new System.Drawing.Point(3, 156);
+            this.textBox13.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBox13.Location = new System.Drawing.Point(3, 160);
             this.textBox13.MaximumSize = new System.Drawing.Size(737, 0);
             this.textBox13.MaxLength = 999999999;
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(715, 24);
+            this.textBox13.Size = new System.Drawing.Size(715, 26);
             this.textBox13.TabIndex = 20;
             this.textBox13.Visible = false;
             // 
@@ -2680,13 +2750,13 @@
             // 
             this.textBox14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textBox14.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox14.Location = new System.Drawing.Point(3, 95);
             this.textBox14.MaximumSize = new System.Drawing.Size(737, 0);
             this.textBox14.MaxLength = 999999999;
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(715, 55);
+            this.textBox14.Size = new System.Drawing.Size(715, 59);
             this.textBox14.TabIndex = 21;
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox14.Visible = false;
@@ -2694,13 +2764,14 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label16.Location = new System.Drawing.Point(3, 3);
             this.label16.Margin = new System.Windows.Forms.Padding(3);
             this.label16.MaximumSize = new System.Drawing.Size(786, 0);
             this.label16.MinimumSize = new System.Drawing.Size(786, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(786, 55);
+            this.label16.Size = new System.Drawing.Size(786, 56);
             this.label16.TabIndex = 22;
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2718,6 +2789,7 @@
             this.flowLayoutPanel16.AutoScroll = true;
             this.flowLayoutPanel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.flowLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.flowLayoutPanel16.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel16.Name = "flowLayoutPanel16";
             this.flowLayoutPanel16.Size = new System.Drawing.Size(245, 604);
@@ -2757,7 +2829,7 @@
             // 
             // button40
             // 
-            this.button40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.button40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.button40.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button40.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button40.Dock = System.Windows.Forms.DockStyle.Left;
@@ -2766,7 +2838,7 @@
             this.button40.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button40.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button40.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button40.Image = global::Menus.Properties.Resources.back__1_;
+            this.button40.Image = global::Menus.Properties.Resources.image__7_;
             this.button40.Location = new System.Drawing.Point(0, 0);
             this.button40.Margin = new System.Windows.Forms.Padding(5);
             this.button40.Name = "button40";
@@ -2789,6 +2861,7 @@
             // 
             // panelMateria
             // 
+            this.panelMateria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.panelMateria.Controls.Add(this.flowLayoutPanel19);
             this.panelMateria.Controls.Add(this.panel33);
             this.panelMateria.Controls.Add(this.panel34);
@@ -2845,7 +2918,7 @@
             // 
             // button41
             // 
-            this.button41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(2)))), ((int)(((byte)(9)))));
+            this.button41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.button41.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button41.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button41.Dock = System.Windows.Forms.DockStyle.Left;
@@ -2854,7 +2927,7 @@
             this.button41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button41.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button41.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button41.Image = global::Menus.Properties.Resources.back__1_;
+            this.button41.Image = global::Menus.Properties.Resources.image__7_;
             this.button41.Location = new System.Drawing.Point(0, 0);
             this.button41.Margin = new System.Windows.Forms.Padding(5);
             this.button41.Name = "button41";
@@ -2912,6 +2985,7 @@
             // 
             // panelMateria__Search
             // 
+            this.panelMateria__Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.panelMateria__Search.Controls.Add(this.panel37);
             this.panelMateria__Search.Controls.Add(this.flowLayoutPanel21);
             this.panelMateria__Search.Controls.Add(this.panel39);
@@ -2954,19 +3028,20 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(786, 183);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(786, 189);
             this.tableLayoutPanel6.TabIndex = 21;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(3, 64);
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label17.Location = new System.Drawing.Point(3, 65);
             this.label17.Margin = new System.Windows.Forms.Padding(3);
             this.label17.MaximumSize = new System.Drawing.Size(786, 0);
             this.label17.MinimumSize = new System.Drawing.Size(786, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(786, 25);
+            this.label17.Size = new System.Drawing.Size(786, 24);
             this.label17.TabIndex = 23;
             // 
             // textBox17
@@ -2974,13 +3049,13 @@
             this.textBox17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.textBox17.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox17.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.textBox17.Location = new System.Drawing.Point(3, 156);
+            this.textBox17.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBox17.Location = new System.Drawing.Point(3, 160);
             this.textBox17.MaximumSize = new System.Drawing.Size(737, 0);
             this.textBox17.MaxLength = 999999999;
             this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(715, 24);
+            this.textBox17.Size = new System.Drawing.Size(715, 26);
             this.textBox17.TabIndex = 20;
             this.textBox17.Visible = false;
             // 
@@ -2988,13 +3063,13 @@
             // 
             this.textBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.textBox18.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textBox18.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox18.Location = new System.Drawing.Point(3, 95);
             this.textBox18.MaximumSize = new System.Drawing.Size(737, 0);
             this.textBox18.MaxLength = 999999999;
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(715, 55);
+            this.textBox18.Size = new System.Drawing.Size(715, 59);
             this.textBox18.TabIndex = 21;
             this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox18.Visible = false;
@@ -3002,13 +3077,14 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label18.Location = new System.Drawing.Point(3, 3);
             this.label18.Margin = new System.Windows.Forms.Padding(3);
             this.label18.MaximumSize = new System.Drawing.Size(786, 0);
             this.label18.MinimumSize = new System.Drawing.Size(786, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(786, 55);
+            this.label18.Size = new System.Drawing.Size(786, 56);
             this.label18.TabIndex = 22;
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -3065,7 +3141,7 @@
             // 
             // button44
             // 
-            this.button44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.button44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.button44.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button44.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button44.Dock = System.Windows.Forms.DockStyle.Left;
@@ -3074,7 +3150,7 @@
             this.button44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button44.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button44.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button44.Image = global::Menus.Properties.Resources.back__1_;
+            this.button44.Image = global::Menus.Properties.Resources.image__7_;
             this.button44.Location = new System.Drawing.Point(0, 0);
             this.button44.Margin = new System.Windows.Forms.Padding(5);
             this.button44.Name = "button44";
@@ -3514,18 +3590,18 @@
             // 
             // Wrapper
             // 
-            this.Wrapper.Controls.Add(this.panelMinhaConta);
             this.Wrapper.Controls.Add(this.panelHome);
-            this.Wrapper.Controls.Add(this.panelMateria__Search);
-            this.Wrapper.Controls.Add(this.panelTexto);
             this.Wrapper.Controls.Add(this.panelCurso2__Search);
-            this.Wrapper.Controls.Add(this.panelFacul__Search);
-            this.Wrapper.Controls.Add(this.panelCurso2);
             this.Wrapper.Controls.Add(this.panelNovaNota);
+            this.Wrapper.Controls.Add(this.panelMinhaConta);
+            this.Wrapper.Controls.Add(this.panelMateria__Search);
             this.Wrapper.Controls.Add(this.panelMateria);
+            this.Wrapper.Controls.Add(this.panelFacul__Search);
             this.Wrapper.Controls.Add(this.panelFacul);
-            this.Wrapper.Controls.Add(this.panelCurso);
+            this.Wrapper.Controls.Add(this.panelCurso2);
             this.Wrapper.Controls.Add(this.panelSearch);
+            this.Wrapper.Controls.Add(this.panelTexto);
+            this.Wrapper.Controls.Add(this.panelCurso);
             this.Wrapper.Controls.Add(this.panel1);
             this.Wrapper.Controls.Add(this.panel2);
             this.Wrapper.Controls.Add(this.webBrowser1);
@@ -3655,6 +3731,54 @@
             this.panel49.Padding = new System.Windows.Forms.Padding(10);
             this.panel49.Size = new System.Drawing.Size(604, 58);
             this.panel49.TabIndex = 22;
+            // 
+            // roundedButton3
+            // 
+            this.roundedButton3.BackColor = System.Drawing.Color.Transparent;
+            this.roundedButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.roundedButton3.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.roundedButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedButton3.FlatAppearance.BorderSize = 0;
+            this.roundedButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.roundedButton3.Location = new System.Drawing.Point(10, 6);
+            this.roundedButton3.Name = "roundedButton3";
+            this.roundedButton3.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.roundedButton3.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.roundedButton3.OnHoverTextColor = System.Drawing.Color.White;
+            this.roundedButton3.Size = new System.Drawing.Size(202, 46);
+            this.roundedButton3.TabIndex = 76;
+            this.roundedButton3.Text = "Excluir";
+            this.roundedButton3.TextColor = System.Drawing.Color.White;
+            this.roundedButton3.UseVisualStyleBackColor = false;
+            this.roundedButton3.Click += new System.EventHandler(this.roundedButton3_Click);
+            // 
+            // roundedButton2
+            // 
+            this.roundedButton2.BackColor = System.Drawing.Color.Transparent;
+            this.roundedButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.roundedButton2.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.roundedButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedButton2.FlatAppearance.BorderSize = 0;
+            this.roundedButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton2.ForeColor = System.Drawing.Color.White;
+            this.roundedButton2.Location = new System.Drawing.Point(395, 6);
+            this.roundedButton2.Name = "roundedButton2";
+            this.roundedButton2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.roundedButton2.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.roundedButton2.OnHoverTextColor = System.Drawing.Color.White;
+            this.roundedButton2.Size = new System.Drawing.Size(203, 44);
+            this.roundedButton2.TabIndex = 75;
+            this.roundedButton2.Text = "Inserir";
+            this.roundedButton2.TextColor = System.Drawing.Color.White;
+            this.roundedButton2.UseVisualStyleBackColor = false;
+            this.roundedButton2.Click += new System.EventHandler(this.roundedButton2_Click);
             // 
             // button46
             // 
@@ -3846,6 +3970,54 @@
             this.panel59.Size = new System.Drawing.Size(604, 58);
             this.panel59.TabIndex = 22;
             // 
+            // roundedButton5
+            // 
+            this.roundedButton5.BackColor = System.Drawing.Color.Transparent;
+            this.roundedButton5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.roundedButton5.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.roundedButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedButton5.FlatAppearance.BorderSize = 0;
+            this.roundedButton5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.roundedButton5.Location = new System.Drawing.Point(10, 5);
+            this.roundedButton5.Name = "roundedButton5";
+            this.roundedButton5.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.roundedButton5.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.roundedButton5.OnHoverTextColor = System.Drawing.Color.White;
+            this.roundedButton5.Size = new System.Drawing.Size(202, 46);
+            this.roundedButton5.TabIndex = 77;
+            this.roundedButton5.Text = "Cancelar";
+            this.roundedButton5.TextColor = System.Drawing.Color.White;
+            this.roundedButton5.UseVisualStyleBackColor = false;
+            this.roundedButton5.Click += new System.EventHandler(this.roundedButton5_Click);
+            // 
+            // roundedButton4
+            // 
+            this.roundedButton4.BackColor = System.Drawing.Color.Transparent;
+            this.roundedButton4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.roundedButton4.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.roundedButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedButton4.FlatAppearance.BorderSize = 0;
+            this.roundedButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton4.ForeColor = System.Drawing.Color.White;
+            this.roundedButton4.Location = new System.Drawing.Point(394, 7);
+            this.roundedButton4.Name = "roundedButton4";
+            this.roundedButton4.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.roundedButton4.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.roundedButton4.OnHoverTextColor = System.Drawing.Color.White;
+            this.roundedButton4.Size = new System.Drawing.Size(206, 42);
+            this.roundedButton4.TabIndex = 75;
+            this.roundedButton4.Text = "Inserir";
+            this.roundedButton4.TextColor = System.Drawing.Color.White;
+            this.roundedButton4.UseVisualStyleBackColor = false;
+            this.roundedButton4.Click += new System.EventHandler(this.roundedButton4_Click);
+            // 
             // button16
             // 
             this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
@@ -3903,156 +4075,14 @@
             this.label40.TabIndex = 2;
             this.label40.Text = "Inserir Matéria";
             // 
-            // roundedButton3
-            // 
-            this.roundedButton3.BackColor = System.Drawing.Color.Transparent;
-            this.roundedButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.roundedButton3.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.roundedButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.roundedButton3.FlatAppearance.BorderSize = 0;
-            this.roundedButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.roundedButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.roundedButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButton3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.roundedButton3.Location = new System.Drawing.Point(10, 6);
-            this.roundedButton3.Name = "roundedButton3";
-            this.roundedButton3.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
-            this.roundedButton3.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
-            this.roundedButton3.OnHoverTextColor = System.Drawing.Color.White;
-            this.roundedButton3.Size = new System.Drawing.Size(202, 46);
-            this.roundedButton3.TabIndex = 76;
-            this.roundedButton3.Text = "Excluir";
-            this.roundedButton3.TextColor = System.Drawing.Color.White;
-            this.roundedButton3.UseVisualStyleBackColor = false;
-            this.roundedButton3.Click += new System.EventHandler(this.roundedButton3_Click);
-            // 
-            // roundedButton2
-            // 
-            this.roundedButton2.BackColor = System.Drawing.Color.Transparent;
-            this.roundedButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.roundedButton2.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.roundedButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.roundedButton2.FlatAppearance.BorderSize = 0;
-            this.roundedButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.roundedButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.roundedButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButton2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButton2.ForeColor = System.Drawing.Color.White;
-            this.roundedButton2.Location = new System.Drawing.Point(395, 6);
-            this.roundedButton2.Name = "roundedButton2";
-            this.roundedButton2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.roundedButton2.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.roundedButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.roundedButton2.Size = new System.Drawing.Size(203, 44);
-            this.roundedButton2.TabIndex = 75;
-            this.roundedButton2.Text = "Inserir";
-            this.roundedButton2.TextColor = System.Drawing.Color.White;
-            this.roundedButton2.UseVisualStyleBackColor = false;
-            this.roundedButton2.Click += new System.EventHandler(this.roundedButton2_Click);
-            // 
-            // roundedButton1
-            // 
-            this.roundedButton1.BackColor = System.Drawing.Color.Transparent;
-            this.roundedButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.roundedButton1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.roundedButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.roundedButton1.FlatAppearance.BorderSize = 0;
-            this.roundedButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.roundedButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButton1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButton1.ForeColor = System.Drawing.Color.White;
-            this.roundedButton1.Location = new System.Drawing.Point(7, 178);
-            this.roundedButton1.Name = "roundedButton1";
-            this.roundedButton1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.roundedButton1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.roundedButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.roundedButton1.Size = new System.Drawing.Size(266, 49);
-            this.roundedButton1.TabIndex = 74;
-            this.roundedButton1.Text = "Alterar Foto";
-            this.roundedButton1.TextColor = System.Drawing.Color.White;
-            this.roundedButton1.UseVisualStyleBackColor = false;
-            this.roundedButton1.Click += new System.EventHandler(this.roundedButton1_Click);
-            // 
-            // roundPictureBox1
-            // 
-            this.roundPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.roundPictureBox1.Location = new System.Drawing.Point(60, 3);
-            this.roundPictureBox1.Name = "roundPictureBox1";
-            this.roundPictureBox1.Size = new System.Drawing.Size(160, 160);
-            this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.roundPictureBox1.TabIndex = 48;
-            this.roundPictureBox1.TabStop = false;
-            this.roundPictureBox1.Click += new System.EventHandler(this.roundPictureBox1_Click);
-            // 
-            // roundPictureBox2
-            // 
-            this.roundPictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.roundPictureBox2.InitialImage = global::Menus.Properties.Resources.User_icon_BLACK_01;
-            this.roundPictureBox2.Location = new System.Drawing.Point(749, 5);
-            this.roundPictureBox2.Name = "roundPictureBox2";
-            this.roundPictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.roundPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.roundPictureBox2.TabIndex = 11;
-            this.roundPictureBox2.TabStop = false;
-            // 
-            // roundedButton4
-            // 
-            this.roundedButton4.BackColor = System.Drawing.Color.Transparent;
-            this.roundedButton4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.roundedButton4.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.roundedButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.roundedButton4.FlatAppearance.BorderSize = 0;
-            this.roundedButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.roundedButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.roundedButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButton4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButton4.ForeColor = System.Drawing.Color.White;
-            this.roundedButton4.Location = new System.Drawing.Point(394, 7);
-            this.roundedButton4.Name = "roundedButton4";
-            this.roundedButton4.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.roundedButton4.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.roundedButton4.OnHoverTextColor = System.Drawing.Color.White;
-            this.roundedButton4.Size = new System.Drawing.Size(206, 42);
-            this.roundedButton4.TabIndex = 75;
-            this.roundedButton4.Text = "Inserir";
-            this.roundedButton4.TextColor = System.Drawing.Color.White;
-            this.roundedButton4.UseVisualStyleBackColor = false;
-            this.roundedButton4.Click += new System.EventHandler(this.roundedButton4_Click);
-            // 
-            // roundedButton5
-            // 
-            this.roundedButton5.BackColor = System.Drawing.Color.Transparent;
-            this.roundedButton5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.roundedButton5.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.roundedButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.roundedButton5.FlatAppearance.BorderSize = 0;
-            this.roundedButton5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.roundedButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.roundedButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButton5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.roundedButton5.Location = new System.Drawing.Point(10, 5);
-            this.roundedButton5.Name = "roundedButton5";
-            this.roundedButton5.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
-            this.roundedButton5.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
-            this.roundedButton5.OnHoverTextColor = System.Drawing.Color.White;
-            this.roundedButton5.Size = new System.Drawing.Size(202, 46);
-            this.roundedButton5.TabIndex = 77;
-            this.roundedButton5.Text = "Cancelar";
-            this.roundedButton5.TextColor = System.Drawing.Color.White;
-            this.roundedButton5.UseVisualStyleBackColor = false;
-            this.roundedButton5.Click += new System.EventHandler(this.roundedButton5_Click);
-            // 
             // Menuprinc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1286, 729);
-            this.Controls.Add(this.ModalShare);
             this.Controls.Add(this.Wrapper);
+            this.Controls.Add(this.ModalShare);
             this.Controls.Add(this.modalNotify);
             this.Controls.Add(this.modalNovaMateria);
             this.Controls.Add(this.confirmNote);
@@ -4100,6 +4130,7 @@
             this.panel51.ResumeLayout(false);
             this.panel51.PerformLayout();
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
             this.panel55.ResumeLayout(false);
             this.panel55.PerformLayout();
             this.tableLayoutPanel11.ResumeLayout(false);
@@ -4125,6 +4156,7 @@
             this.panel11.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox2)).EndInit();
             this.panelFacul__Search.ResumeLayout(false);
             this.panelFacul__Search.PerformLayout();
             this.panel20.ResumeLayout(false);
@@ -4215,8 +4247,6 @@
             this.panel59.ResumeLayout(false);
             this.panel60.ResumeLayout(false);
             this.panel60.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4258,7 +4288,6 @@
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.TextBox txtNota;
-        private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Panel panelMinhaConta;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Label lbDados;
@@ -4477,5 +4506,6 @@
         private RoundedButton roundedButton3;
         private RoundedButton roundedButton5;
         private RoundedButton roundedButton4;
+        private RoundedButton roundedButton6;
     }
 }

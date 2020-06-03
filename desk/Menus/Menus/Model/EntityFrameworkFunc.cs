@@ -17,11 +17,12 @@ namespace Menus.Model
                            join recipient in ht2.TB_USER on str.RECIPIENT_INT_ID equals recipient.USER_INT_ID
                            join nota in ht2.TB_NOTA on str.NOTA_INT_ID equals nota.STR_INT_ID
                            join notaChild in ht2.TB_NOTA_STR on nota.STR_INT_ID equals notaChild.STR_INT_ID
-                           where userId == recipient.USER_INT_ID
+                           group nota by new { str.SHARE_INT_ID, send.USER_STR_NOME, recipient.USER_INT_ID } into g
+                           where userId == g.Key.USER_INT_ID
                            select new
                            {
-                               shareId = str.SHARE_INT_ID,
-                               senderName = send.USER_STR_NOME
+                               shareId = g.Key.SHARE_INT_ID,
+                               senderName = g.Key.USER_STR_NOME
                            });
 
             return content.ToList<dynamic>();
