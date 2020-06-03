@@ -44,7 +44,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label28 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
             this.button47 = new System.Windows.Forms.Button();
@@ -92,6 +92,10 @@
             this.txtNota = new System.Windows.Forms.TextBox();
             this.panelMinhaConta = new System.Windows.Forms.Panel();
             this.panel51 = new System.Windows.Forms.Panel();
+            this.panel63 = new System.Windows.Forms.Panel();
+            this.panel62 = new System.Windows.Forms.Panel();
+            this.panel61 = new System.Windows.Forms.Panel();
+            this.panel53 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -147,7 +151,6 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.button32 = new System.Windows.Forms.Button();
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -273,13 +276,19 @@
             this.button17 = new System.Windows.Forms.Button();
             this.panel60 = new System.Windows.Forms.Panel();
             this.label40 = new System.Windows.Forms.Label();
+            this.roundedButton3 = new Menus.RoundedButton();
+            this.roundedButton2 = new Menus.RoundedButton();
+            this.roundedButton1 = new Menus.RoundedButton();
             this.roundPictureBox1 = new Menus.RoundPictureBox();
             this.roundPictureBox2 = new Menus.RoundPictureBox();
+            this.roundedButton4 = new Menus.RoundedButton();
+            this.roundedButton5 = new Menus.RoundedButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panelSearch.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panelFacul.SuspendLayout();
@@ -314,7 +323,6 @@
             this.panelFacul__Search.SuspendLayout();
             this.panel20.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.panel21.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panelCurso.SuspendLayout();
@@ -382,7 +390,7 @@
             this.lbRecebeEmailMenu.AutoSize = true;
             this.lbRecebeEmailMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.lbRecebeEmailMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbRecebeEmailMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.lbRecebeEmailMenu.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRecebeEmailMenu.ForeColor = System.Drawing.Color.White;
             this.lbRecebeEmailMenu.Location = new System.Drawing.Point(8, 75);
             this.lbRecebeEmailMenu.Name = "lbRecebeEmailMenu";
@@ -409,7 +417,7 @@
             this.lbNomeMenu.AutoSize = true;
             this.lbNomeMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.lbNomeMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbNomeMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lbNomeMenu.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNomeMenu.ForeColor = System.Drawing.Color.White;
             this.lbNomeMenu.Location = new System.Drawing.Point(8, 5);
             this.lbNomeMenu.MaximumSize = new System.Drawing.Size(250, 0);
@@ -426,7 +434,7 @@
             this.lbFacul.AutoSize = true;
             this.lbFacul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.lbFacul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbFacul.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lbFacul.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFacul.ForeColor = System.Drawing.Color.White;
             this.lbFacul.Location = new System.Drawing.Point(8, 40);
             this.lbFacul.Name = "lbFacul";
@@ -602,7 +610,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.panel2.Controls.Add(this.label28);
             this.panel2.Controls.Add(this.button10);
-            this.panel2.Controls.Add(this.button34);
+            this.panel2.Controls.Add(this.pictureBox7);
             this.panel2.Controls.Add(this.btnSair);
             this.panel2.Controls.Add(this.button29);
             this.panel2.Controls.Add(this.button47);
@@ -619,7 +627,7 @@
             this.label28.BackColor = System.Drawing.Color.White;
             this.label28.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(66, 5);
+            this.label28.Location = new System.Drawing.Point(123, 5);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(13, 13);
             this.label28.TabIndex = 13;
@@ -638,30 +646,25 @@
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button10.Location = new System.Drawing.Point(43, 0);
+            this.button10.Location = new System.Drawing.Point(101, 0);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(43, 42);
             this.button10.TabIndex = 12;
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // button34
+            // pictureBox7
             // 
-            this.button34.BackColor = System.Drawing.Color.Transparent;
-            this.button34.BackgroundImage = global::Menus.Properties.Resources.sydney_opera_house__1_1;
-            this.button34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button34.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button34.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button34.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button34.FlatAppearance.BorderSize = 0;
-            this.button34.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button34.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button34.Location = new System.Drawing.Point(0, 0);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(43, 42);
-            this.button34.TabIndex = 11;
-            this.button34.UseVisualStyleBackColor = false;
-            this.button34.Click += new System.EventHandler(this.button34_Click);
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox7.Image = global::Menus.Properties.Resources.logo;
+            this.pictureBox7.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(101, 42);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 15;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // btnSair
             // 
@@ -1352,6 +1355,10 @@
             // panel51
             // 
             this.panel51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.panel51.Controls.Add(this.panel63);
+            this.panel51.Controls.Add(this.panel62);
+            this.panel51.Controls.Add(this.panel61);
+            this.panel51.Controls.Add(this.panel53);
             this.panel51.Controls.Add(this.label4);
             this.panel51.Controls.Add(this.label37);
             this.panel51.Controls.Add(this.panel5);
@@ -1362,12 +1369,49 @@
             this.panel51.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel51.Location = new System.Drawing.Point(0, 92);
             this.panel51.Name = "panel51";
-            this.panel51.Size = new System.Drawing.Size(1014, 720);
+            this.panel51.Size = new System.Drawing.Size(1014, 879);
             this.panel51.TabIndex = 68;
             this.panel51.Paint += new System.Windows.Forms.PaintEventHandler(this.panel51_Paint);
             // 
+            // panel63
+            // 
+            this.panel63.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel63.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.panel63.Location = new System.Drawing.Point(57, 17);
+            this.panel63.Name = "panel63";
+            this.panel63.Size = new System.Drawing.Size(900, 2);
+            this.panel63.TabIndex = 74;
+            // 
+            // panel62
+            // 
+            this.panel62.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel62.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.panel62.Location = new System.Drawing.Point(57, 356);
+            this.panel62.Name = "panel62";
+            this.panel62.Size = new System.Drawing.Size(900, 2);
+            this.panel62.TabIndex = 73;
+            // 
+            // panel61
+            // 
+            this.panel61.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.panel61.Location = new System.Drawing.Point(172, 137);
+            this.panel61.Name = "panel61";
+            this.panel61.Size = new System.Drawing.Size(450, 1);
+            this.panel61.TabIndex = 72;
+            // 
+            // panel53
+            // 
+            this.panel53.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.panel53.Location = new System.Drawing.Point(171, 253);
+            this.panel53.Name = "panel53";
+            this.panel53.Size = new System.Drawing.Size(55, 1);
+            this.panel53.TabIndex = 71;
+            // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label4.ForeColor = System.Drawing.Color.LimeGreen;
@@ -1385,18 +1429,19 @@
             this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label37.AutoSize = true;
             this.label37.BackColor = System.Drawing.Color.Transparent;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.label37.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label37.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label37.Location = new System.Drawing.Point(43, 350);
+            this.label37.Location = new System.Drawing.Point(362, 374);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(294, 37);
+            this.label37.Size = new System.Drawing.Size(322, 38);
             this.label37.TabIndex = 66;
             this.label37.Text = "Dados Acadêmicos";
             // 
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel5.Controls.Add(this.roundedButton1);
             this.panel5.Controls.Add(this.button13);
             this.panel5.Controls.Add(this.roundPictureBox1);
             this.panel5.Location = new System.Drawing.Point(690, 84);
@@ -1430,12 +1475,12 @@
             // 
             this.panel55.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel55.AutoSize = true;
-            this.panel55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.panel55.Controls.Add(this.tableLayoutPanel11);
-            this.panel55.Location = new System.Drawing.Point(43, 401);
+            this.panel55.Location = new System.Drawing.Point(43, 425);
             this.panel55.Name = "panel55";
             this.panel55.Padding = new System.Windows.Forms.Padding(5, 5, 10, 5);
-            this.panel55.Size = new System.Drawing.Size(590, 223);
+            this.panel55.Size = new System.Drawing.Size(623, 230);
             this.panel55.TabIndex = 67;
             // 
             // tableLayoutPanel11
@@ -1470,7 +1515,7 @@
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(575, 213);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(608, 220);
             this.tableLayoutPanel11.TabIndex = 61;
             // 
             // button14
@@ -1479,11 +1524,11 @@
             this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button14.FlatAppearance.BorderSize = 0;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(3, 174);
+            this.button14.Location = new System.Drawing.Point(3, 181);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(128, 36);
+            this.button14.Size = new System.Drawing.Size(135, 36);
             this.button14.TabIndex = 64;
             this.button14.Text = "+ Matéria";
             this.button14.UseVisualStyleBackColor = false;
@@ -1494,55 +1539,55 @@
             this.label41.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label41.AutoSize = true;
             this.label41.BackColor = System.Drawing.Color.Transparent;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label41.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label41.Location = new System.Drawing.Point(3, 67);
+            this.label41.Location = new System.Drawing.Point(3, 69);
             this.label41.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(103, 37);
+            this.label41.Size = new System.Drawing.Size(114, 39);
             this.label41.TabIndex = 55;
-            this.label41.Text = "Curso";
+            this.label41.Text = "Curso:";
             // 
             // label42
             // 
             this.label42.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label42.AutoSize = true;
             this.label42.BackColor = System.Drawing.Color.Transparent;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label42.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label42.Location = new System.Drawing.Point(3, 10);
             this.label42.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(167, 37);
+            this.label42.Size = new System.Drawing.Size(197, 39);
             this.label42.TabIndex = 54;
-            this.label42.Text = "Faculdade";
+            this.label42.Text = "Faculdade:";
             // 
             // labelFaculAccount
             // 
             this.labelFaculAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFaculAccount.AutoSize = true;
-            this.labelFaculAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.labelFaculAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFaculAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.labelFaculAccount.Font = new System.Drawing.Font("Century Gothic", 18F);
             this.labelFaculAccount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelFaculAccount.Location = new System.Drawing.Point(176, 12);
+            this.labelFaculAccount.Location = new System.Drawing.Point(206, 14);
             this.labelFaculAccount.MinimumSize = new System.Drawing.Size(355, 0);
             this.labelFaculAccount.Name = "labelFaculAccount";
-            this.labelFaculAccount.Size = new System.Drawing.Size(396, 33);
+            this.labelFaculAccount.Size = new System.Drawing.Size(399, 30);
             this.labelFaculAccount.TabIndex = 57;
             // 
             // labelCursoAccount
             // 
             this.labelCursoAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCursoAccount.AutoSize = true;
-            this.labelCursoAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.labelCursoAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCursoAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.labelCursoAccount.Font = new System.Drawing.Font("Century Gothic", 18F);
             this.labelCursoAccount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelCursoAccount.Location = new System.Drawing.Point(176, 69);
+            this.labelCursoAccount.Location = new System.Drawing.Point(206, 73);
             this.labelCursoAccount.MinimumSize = new System.Drawing.Size(355, 0);
             this.labelCursoAccount.Name = "labelCursoAccount";
-            this.labelCursoAccount.Size = new System.Drawing.Size(396, 33);
+            this.labelCursoAccount.Size = new System.Drawing.Size(399, 30);
             this.labelCursoAccount.TabIndex = 58;
             // 
             // label51
@@ -1550,15 +1595,15 @@
             this.label51.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label51.AutoSize = true;
             this.label51.BackColor = System.Drawing.Color.Transparent;
-            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label51.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label51.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label51.Location = new System.Drawing.Point(3, 124);
+            this.label51.Location = new System.Drawing.Point(3, 128);
             this.label51.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(139, 37);
+            this.label51.Size = new System.Drawing.Size(159, 39);
             this.label51.TabIndex = 59;
-            this.label51.Text = "Matérias";
+            this.label51.Text = "Matérias:";
             // 
             // panelMateriaList
             // 
@@ -1568,10 +1613,10 @@
             this.panelMateriaList.AutoSize = true;
             this.panelMateriaList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelMateriaList.Controls.Add(this.panel57);
-            this.panelMateriaList.Location = new System.Drawing.Point(176, 127);
+            this.panelMateriaList.Location = new System.Drawing.Point(206, 131);
             this.panelMateriaList.Margin = new System.Windows.Forms.Padding(3, 13, 3, 10);
             this.panelMateriaList.Name = "panelMateriaList";
-            this.panelMateriaList.Size = new System.Drawing.Size(396, 31);
+            this.panelMateriaList.Size = new System.Drawing.Size(399, 37);
             this.panelMateriaList.TabIndex = 63;
             // 
             // panel57
@@ -1585,7 +1630,7 @@
             this.panel57.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel57.Location = new System.Drawing.Point(0, 0);
             this.panel57.Name = "panel57";
-            this.panel57.Size = new System.Drawing.Size(396, 31);
+            this.panel57.Size = new System.Drawing.Size(399, 37);
             this.panel57.TabIndex = 62;
             this.panel57.Visible = false;
             // 
@@ -1599,21 +1644,21 @@
             this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button15.ForeColor = System.Drawing.Color.White;
             this.button15.Image = global::Menus.Properties.Resources.image1;
-            this.button15.Location = new System.Drawing.Point(337, 0);
+            this.button15.Location = new System.Drawing.Point(340, 0);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(59, 31);
+            this.button15.Size = new System.Drawing.Size(59, 37);
             this.button15.TabIndex = 33;
             this.button15.UseVisualStyleBackColor = false;
             // 
             // textBox20
             // 
             this.textBox20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.textBox20.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox20.Location = new System.Drawing.Point(-2, 5);
+            this.textBox20.Location = new System.Drawing.Point(2, 5);
             this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(208, 22);
+            this.textBox20.Size = new System.Drawing.Size(208, 29);
             this.textBox20.TabIndex = 19;
             this.textBox20.Text = "123123";
             this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1639,7 +1684,7 @@
             this.maskedTextBox2.Location = new System.Drawing.Point(276, 4);
             this.maskedTextBox2.Mask = "00:00";
             this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(63, 24);
+            this.maskedTextBox2.Size = new System.Drawing.Size(56, 24);
             this.maskedTextBox2.TabIndex = 28;
             this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
             // 
@@ -1648,12 +1693,12 @@
             this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label36.AutoSize = true;
             this.label36.BackColor = System.Drawing.Color.Transparent;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.label36.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label36.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label36.Location = new System.Drawing.Point(43, 33);
+            this.label36.Location = new System.Drawing.Point(397, 33);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(248, 37);
+            this.label36.Size = new System.Drawing.Size(253, 38);
             this.label36.TabIndex = 66;
             this.label36.Text = "Dados Pessoais";
             // 
@@ -1661,14 +1706,15 @@
             // 
             this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.panel9.Controls.Add(this.tableLayoutPanel12);
             this.panel9.Controls.Add(this.tableLayoutPanel9);
             this.panel9.Location = new System.Drawing.Point(43, 84);
             this.panel9.Name = "panel9";
-            this.panel9.Padding = new System.Windows.Forms.Padding(5, 5, 10, 5);
-            this.panel9.Size = new System.Drawing.Size(590, 231);
+            this.panel9.Padding = new System.Windows.Forms.Padding(5, 5, 10, 10);
+            this.panel9.Size = new System.Drawing.Size(590, 251);
             this.panel9.TabIndex = 67;
+            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // tableLayoutPanel12
             // 
@@ -1682,7 +1728,7 @@
             this.tableLayoutPanel12.Controls.Add(this.radioMasculino, 2, 5);
             this.tableLayoutPanel12.Controls.Add(this.radioFeminino, 1, 5);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(5, 165);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(5, 182);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 13;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1698,7 +1744,7 @@
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(575, 61);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(575, 59);
             this.tableLayoutPanel12.TabIndex = 73;
             // 
             // label8
@@ -1706,27 +1752,27 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label8.Location = new System.Drawing.Point(3, 12);
-            this.label8.Margin = new System.Windows.Forms.Padding(3, 10, 22, 10);
+            this.label8.Location = new System.Drawing.Point(3, 10);
+            this.label8.Margin = new System.Windows.Forms.Padding(3, 10, 26, 10);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 37);
+            this.label8.Size = new System.Drawing.Size(99, 39);
             this.label8.TabIndex = 52;
-            this.label8.Text = "Sexo";
+            this.label8.Text = "Sexo:";
             // 
             // radioMasculino
             // 
             this.radioMasculino.AutoSize = true;
             this.radioMasculino.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioMasculino.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.radioMasculino.Font = new System.Drawing.Font("Century Gothic", 18F);
             this.radioMasculino.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioMasculino.Location = new System.Drawing.Point(288, 10);
-            this.radioMasculino.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.radioMasculino.Location = new System.Drawing.Point(277, 15);
+            this.radioMasculino.Margin = new System.Windows.Forms.Padding(3, 15, 3, 10);
             this.radioMasculino.Name = "radioMasculino";
-            this.radioMasculino.Size = new System.Drawing.Size(178, 41);
+            this.radioMasculino.Size = new System.Drawing.Size(153, 34);
             this.radioMasculino.TabIndex = 68;
             this.radioMasculino.Text = "Masculino";
             this.radioMasculino.UseVisualStyleBackColor = true;
@@ -1737,12 +1783,12 @@
             this.radioFeminino.AutoSize = true;
             this.radioFeminino.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioFeminino.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioFeminino.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.radioFeminino.Font = new System.Drawing.Font("Century Gothic", 18F);
             this.radioFeminino.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioFeminino.Location = new System.Drawing.Point(116, 10);
-            this.radioFeminino.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.radioFeminino.Location = new System.Drawing.Point(131, 15);
+            this.radioFeminino.Margin = new System.Windows.Forms.Padding(3, 15, 3, 10);
             this.radioFeminino.Name = "radioFeminino";
-            this.radioFeminino.Size = new System.Drawing.Size(166, 41);
+            this.radioFeminino.Size = new System.Drawing.Size(140, 34);
             this.radioFeminino.TabIndex = 70;
             this.radioFeminino.Text = "Feminino";
             this.radioFeminino.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -1779,7 +1825,7 @@
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(575, 221);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(575, 236);
             this.tableLayoutPanel9.TabIndex = 61;
             // 
             // label5
@@ -1787,56 +1833,56 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label5.Location = new System.Drawing.Point(3, 124);
+            this.label5.Location = new System.Drawing.Point(3, 128);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 37);
+            this.label5.Size = new System.Drawing.Size(121, 39);
             this.label5.TabIndex = 53;
-            this.label5.Text = "Idade";
+            this.label5.Text = "Idade:";
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label3.Location = new System.Drawing.Point(3, 67);
+            this.label3.Location = new System.Drawing.Point(3, 69);
             this.label3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 37);
+            this.label3.Size = new System.Drawing.Size(119, 39);
             this.label3.TabIndex = 51;
-            this.label3.Text = "E-mail";
+            this.label3.Text = "E-mail:";
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label2.Location = new System.Drawing.Point(3, 10);
             this.label2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 37);
+            this.label2.Size = new System.Drawing.Size(122, 39);
             this.label2.TabIndex = 50;
-            this.label2.Text = "Nome";
+            this.label2.Text = "Nome:";
             // 
             // txtNome
             // 
             this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Font = new System.Drawing.Font("Century Gothic", 18F);
             this.txtNome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtNome.Location = new System.Drawing.Point(116, 12);
+            this.txtNome.Location = new System.Drawing.Point(131, 14);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(469, 33);
+            this.txtNome.Size = new System.Drawing.Size(469, 30);
             this.txtNome.TabIndex = 0;
             this.txtNome.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyUp);
             // 
@@ -1844,26 +1890,27 @@
             // 
             this.lbRecebeEmailConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbRecebeEmailConfig.AutoSize = true;
-            this.lbRecebeEmailConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.lbRecebeEmailConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRecebeEmailConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.lbRecebeEmailConfig.Font = new System.Drawing.Font("Century Gothic", 18F);
             this.lbRecebeEmailConfig.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbRecebeEmailConfig.Location = new System.Drawing.Point(116, 69);
+            this.lbRecebeEmailConfig.Location = new System.Drawing.Point(128, 73);
+            this.lbRecebeEmailConfig.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.lbRecebeEmailConfig.MinimumSize = new System.Drawing.Size(355, 0);
             this.lbRecebeEmailConfig.Name = "lbRecebeEmailConfig";
-            this.lbRecebeEmailConfig.Size = new System.Drawing.Size(469, 33);
+            this.lbRecebeEmailConfig.Size = new System.Drawing.Size(472, 30);
             this.lbRecebeEmailConfig.TabIndex = 30;
             // 
             // txtIdade
             // 
             this.txtIdade.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIdade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.txtIdade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.txtIdade.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdade.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdade.Font = new System.Drawing.Font("Century Gothic", 18F);
             this.txtIdade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtIdade.Location = new System.Drawing.Point(116, 126);
+            this.txtIdade.Location = new System.Drawing.Point(131, 132);
             this.txtIdade.MaxLength = 3;
             this.txtIdade.Name = "txtIdade";
-            this.txtIdade.Size = new System.Drawing.Size(55, 33);
+            this.txtIdade.Size = new System.Drawing.Size(55, 30);
             this.txtIdade.TabIndex = 2;
             this.txtIdade.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyUp);
             // 
@@ -1877,10 +1924,11 @@
             this.panel52.Name = "panel52";
             this.panel52.Size = new System.Drawing.Size(1014, 92);
             this.panel52.TabIndex = 69;
+            this.panel52.Paint += new System.Windows.Forms.PaintEventHandler(this.panel52_Paint);
             // 
             // button25
             // 
-            this.button25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(2)))), ((int)(((byte)(9)))));
+            this.button25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button25.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button25.FlatAppearance.BorderColor = System.Drawing.Color.BlanchedAlmond;
@@ -1888,7 +1936,7 @@
             this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button25.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button25.Image = global::Menus.Properties.Resources.back__1_;
+            this.button25.Image = global::Menus.Properties.Resources.image__7_;
             this.button25.Location = new System.Drawing.Point(0, 0);
             this.button25.Margin = new System.Windows.Forms.Padding(5);
             this.button25.Name = "button25";
@@ -1904,12 +1952,12 @@
             this.lbDados.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbDados.AutoSize = true;
             this.lbDados.BackColor = System.Drawing.Color.Transparent;
-            this.lbDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDados.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbDados.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lbDados.Location = new System.Drawing.Point(358, 17);
             this.lbDados.Name = "lbDados";
-            this.lbDados.Size = new System.Drawing.Size(297, 55);
+            this.lbDados.Size = new System.Drawing.Size(330, 58);
             this.lbDados.TabIndex = 37;
             this.lbDados.Text = "Minha Conta";
             // 
@@ -1956,7 +2004,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox5.ForeColor = System.Drawing.Color.White;
             this.textBox5.HideSelection = false;
             this.textBox5.Location = new System.Drawing.Point(18, 18);
@@ -1976,7 +2024,7 @@
             this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox6.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textBox6.ForeColor = System.Drawing.Color.White;
             this.textBox6.HideSelection = false;
             this.textBox6.Location = new System.Drawing.Point(18, 64);
@@ -2228,29 +2276,11 @@
             // panel21
             // 
             this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.panel21.Controls.Add(this.button32);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel21.Location = new System.Drawing.Point(0, 0);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(786, 42);
             this.panel21.TabIndex = 22;
-            // 
-            // button32
-            // 
-            this.button32.BackColor = System.Drawing.Color.Transparent;
-            this.button32.BackgroundImage = global::Menus.Properties.Resources.download__1_;
-            this.button32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button32.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button32.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button32.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button32.FlatAppearance.BorderSize = 0;
-            this.button32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button32.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button32.Location = new System.Drawing.Point(743, 0);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(43, 42);
-            this.button32.TabIndex = 9;
-            this.button32.UseVisualStyleBackColor = false;
             // 
             // flowLayoutPanel10
             // 
@@ -3100,11 +3130,11 @@
             this.lbTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTitle.AutoSize = true;
             this.lbTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lbTitle.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbTitle.Location = new System.Drawing.Point(184, 17);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(223, 29);
+            this.lbTitle.Size = new System.Drawing.Size(220, 30);
             this.lbTitle.TabIndex = 2;
             this.lbTitle.Text = "Escolha o usuário";
             // 
@@ -3432,7 +3462,7 @@
             this.modalNotify.Controls.Add(this.button45);
             this.modalNotify.Controls.Add(this.label29);
             this.modalNotify.Controls.Add(this.flowLayoutPanel28);
-            this.modalNotify.Location = new System.Drawing.Point(44, 42);
+            this.modalNotify.Location = new System.Drawing.Point(103, 42);
             this.modalNotify.Name = "modalNotify";
             this.modalNotify.Size = new System.Drawing.Size(431, 382);
             this.modalNotify.TabIndex = 34;
@@ -3461,11 +3491,11 @@
             this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label29.Location = new System.Drawing.Point(8, 9);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(157, 29);
+            this.label29.Size = new System.Drawing.Size(165, 30);
             this.label29.TabIndex = 2;
             this.label29.Text = "Notificações";
             // 
@@ -3484,16 +3514,16 @@
             // 
             // Wrapper
             // 
-            this.Wrapper.Controls.Add(this.panelCurso2);
-            this.Wrapper.Controls.Add(this.panelCurso2__Search);
-            this.Wrapper.Controls.Add(this.panelHome);
-            this.Wrapper.Controls.Add(this.panelNovaNota);
             this.Wrapper.Controls.Add(this.panelMinhaConta);
-            this.Wrapper.Controls.Add(this.panelMateria);
-            this.Wrapper.Controls.Add(this.panelTexto);
-            this.Wrapper.Controls.Add(this.panelFacul__Search);
-            this.Wrapper.Controls.Add(this.panelFacul);
+            this.Wrapper.Controls.Add(this.panelHome);
             this.Wrapper.Controls.Add(this.panelMateria__Search);
+            this.Wrapper.Controls.Add(this.panelTexto);
+            this.Wrapper.Controls.Add(this.panelCurso2__Search);
+            this.Wrapper.Controls.Add(this.panelFacul__Search);
+            this.Wrapper.Controls.Add(this.panelCurso2);
+            this.Wrapper.Controls.Add(this.panelNovaNota);
+            this.Wrapper.Controls.Add(this.panelMateria);
+            this.Wrapper.Controls.Add(this.panelFacul);
             this.Wrapper.Controls.Add(this.panelCurso);
             this.Wrapper.Controls.Add(this.panelSearch);
             this.Wrapper.Controls.Add(this.panel1);
@@ -3536,13 +3566,13 @@
             this.label34.AutoSize = true;
             this.label34.BackColor = System.Drawing.Color.Transparent;
             this.label34.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label34.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label34.Location = new System.Drawing.Point(0, 259);
+            this.label34.Location = new System.Drawing.Point(0, 264);
             this.label34.MaximumSize = new System.Drawing.Size(585, 0);
             this.label34.Name = "label34";
             this.label34.Padding = new System.Windows.Forms.Padding(15);
-            this.label34.Size = new System.Drawing.Size(585, 233);
+            this.label34.Size = new System.Drawing.Size(564, 240);
             this.label34.TabIndex = 23;
             this.label34.Text = resources.GetString("label34.Text");
             this.label34.Click += new System.EventHandler(this.label34_Click);
@@ -3553,7 +3583,7 @@
             this.panel48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel48.Controls.Add(this.label33);
             this.panel48.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel48.Location = new System.Drawing.Point(0, 217);
+            this.panel48.Location = new System.Drawing.Point(0, 222);
             this.panel48.Name = "panel48";
             this.panel48.Size = new System.Drawing.Size(587, 42);
             this.panel48.TabIndex = 22;
@@ -3563,11 +3593,11 @@
             this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label33.AutoSize = true;
             this.label33.BackColor = System.Drawing.Color.Transparent;
-            this.label33.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label33.Location = new System.Drawing.Point(233, 7);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(140, 29);
+            this.label33.Size = new System.Drawing.Size(127, 28);
             this.label33.TabIndex = 2;
             this.label33.Text = "Conteúdo";
             // 
@@ -3576,13 +3606,13 @@
             this.label32.AutoSize = true;
             this.label32.BackColor = System.Drawing.Color.Transparent;
             this.label32.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label32.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label32.Location = new System.Drawing.Point(0, 42);
             this.label32.MaximumSize = new System.Drawing.Size(585, 0);
             this.label32.Name = "label32";
             this.label32.Padding = new System.Windows.Forms.Padding(15);
-            this.label32.Size = new System.Drawing.Size(585, 175);
+            this.label32.Size = new System.Drawing.Size(564, 180);
             this.label32.TabIndex = 2;
             this.label32.Text = "Título doadoiajd foas fjoisadjf osiadfj sadoifj asiofjoaisdfjoidasj fasoifj asofj" +
     " dasoif jasoipfj oaijfoiasjfoipasfoij asoidf j]ASDADASDADAS MD ASKJFOKSAJF IOASJ" +
@@ -3604,17 +3634,19 @@
             this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label31.AutoSize = true;
             this.label31.BackColor = System.Drawing.Color.Transparent;
-            this.label31.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label31.Location = new System.Drawing.Point(259, 7);
+            this.label31.Location = new System.Drawing.Point(258, 7);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(89, 29);
+            this.label31.Size = new System.Drawing.Size(70, 28);
             this.label31.TabIndex = 2;
             this.label31.Text = "Título";
             // 
             // panel49
             // 
             this.panel49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.panel49.Controls.Add(this.roundedButton3);
+            this.panel49.Controls.Add(this.roundedButton2);
             this.panel49.Controls.Add(this.button46);
             this.panel49.Controls.Add(this.btnconcluir);
             this.panel49.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -3673,11 +3705,11 @@
             this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label30.AutoSize = true;
             this.label30.BackColor = System.Drawing.Color.Transparent;
-            this.label30.Font = new System.Drawing.Font("Verdana", 22F);
+            this.label30.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label30.Location = new System.Drawing.Point(180, 10);
+            this.label30.Location = new System.Drawing.Point(184, 10);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(247, 36);
+            this.label30.Size = new System.Drawing.Size(236, 36);
             this.label30.TabIndex = 2;
             this.label30.Text = "Confirmar Nota";
             this.label30.Click += new System.EventHandler(this.label30_Click);
@@ -3691,7 +3723,7 @@
             this.modalNovaMateria.Controls.Add(this.panel60);
             this.modalNovaMateria.Location = new System.Drawing.Point(340, 248);
             this.modalNovaMateria.Name = "modalNovaMateria";
-            this.modalNovaMateria.Size = new System.Drawing.Size(606, 274);
+            this.modalNovaMateria.Size = new System.Drawing.Size(606, 276);
             this.modalNovaMateria.TabIndex = 36;
             // 
             // panel54
@@ -3705,7 +3737,7 @@
             this.panel54.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel54.Location = new System.Drawing.Point(0, 58);
             this.panel54.Name = "panel54";
-            this.panel54.Size = new System.Drawing.Size(604, 156);
+            this.panel54.Size = new System.Drawing.Size(604, 158);
             this.panel54.TabIndex = 21;
             // 
             // maskedTextBox3
@@ -3713,12 +3745,12 @@
             this.maskedTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.maskedTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maskedTextBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.maskedTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
+            this.maskedTextBox3.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.maskedTextBox3.Location = new System.Drawing.Point(0, 122);
             this.maskedTextBox3.Mask = "00:00";
             this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(604, 33);
+            this.maskedTextBox3.Size = new System.Drawing.Size(604, 36);
             this.maskedTextBox3.TabIndex = 29;
             this.maskedTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
@@ -3739,11 +3771,11 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(188, 7);
+            this.label6.Location = new System.Drawing.Point(201, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(228, 29);
+            this.label6.Size = new System.Drawing.Size(203, 28);
             this.label6.TabIndex = 2;
             this.label6.Text = "Hora da Matéria";
             // 
@@ -3752,7 +3784,7 @@
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox2.Location = new System.Drawing.Point(0, 42);
             this.textBox2.Multiline = true;
@@ -3792,21 +3824,23 @@
             this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label39.AutoSize = true;
             this.label39.BackColor = System.Drawing.Color.Transparent;
-            this.label39.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label39.Location = new System.Drawing.Point(182, 7);
+            this.label39.Location = new System.Drawing.Point(193, 7);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(241, 29);
+            this.label39.Size = new System.Drawing.Size(219, 28);
             this.label39.TabIndex = 2;
             this.label39.Text = "Nome da Matéria";
             // 
             // panel59
             // 
             this.panel59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.panel59.Controls.Add(this.roundedButton5);
+            this.panel59.Controls.Add(this.roundedButton4);
             this.panel59.Controls.Add(this.button16);
             this.panel59.Controls.Add(this.button17);
             this.panel59.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel59.Location = new System.Drawing.Point(0, 214);
+            this.panel59.Location = new System.Drawing.Point(0, 216);
             this.panel59.Name = "panel59";
             this.panel59.Padding = new System.Windows.Forms.Padding(10);
             this.panel59.Size = new System.Drawing.Size(604, 58);
@@ -3861,13 +3895,85 @@
             this.label40.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label40.AutoSize = true;
             this.label40.BackColor = System.Drawing.Color.Transparent;
-            this.label40.Font = new System.Drawing.Font("Verdana", 22F);
+            this.label40.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label40.Location = new System.Drawing.Point(182, 10);
+            this.label40.Location = new System.Drawing.Point(193, 10);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(240, 36);
+            this.label40.Size = new System.Drawing.Size(218, 36);
             this.label40.TabIndex = 2;
             this.label40.Text = "Inserir Matéria";
+            // 
+            // roundedButton3
+            // 
+            this.roundedButton3.BackColor = System.Drawing.Color.Transparent;
+            this.roundedButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.roundedButton3.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.roundedButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedButton3.FlatAppearance.BorderSize = 0;
+            this.roundedButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.roundedButton3.Location = new System.Drawing.Point(10, 6);
+            this.roundedButton3.Name = "roundedButton3";
+            this.roundedButton3.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.roundedButton3.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.roundedButton3.OnHoverTextColor = System.Drawing.Color.White;
+            this.roundedButton3.Size = new System.Drawing.Size(202, 46);
+            this.roundedButton3.TabIndex = 76;
+            this.roundedButton3.Text = "Excluir";
+            this.roundedButton3.TextColor = System.Drawing.Color.White;
+            this.roundedButton3.UseVisualStyleBackColor = false;
+            this.roundedButton3.Click += new System.EventHandler(this.roundedButton3_Click);
+            // 
+            // roundedButton2
+            // 
+            this.roundedButton2.BackColor = System.Drawing.Color.Transparent;
+            this.roundedButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.roundedButton2.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.roundedButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedButton2.FlatAppearance.BorderSize = 0;
+            this.roundedButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton2.ForeColor = System.Drawing.Color.White;
+            this.roundedButton2.Location = new System.Drawing.Point(395, 6);
+            this.roundedButton2.Name = "roundedButton2";
+            this.roundedButton2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.roundedButton2.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.roundedButton2.OnHoverTextColor = System.Drawing.Color.White;
+            this.roundedButton2.Size = new System.Drawing.Size(203, 44);
+            this.roundedButton2.TabIndex = 75;
+            this.roundedButton2.Text = "Inserir";
+            this.roundedButton2.TextColor = System.Drawing.Color.White;
+            this.roundedButton2.UseVisualStyleBackColor = false;
+            this.roundedButton2.Click += new System.EventHandler(this.roundedButton2_Click);
+            // 
+            // roundedButton1
+            // 
+            this.roundedButton1.BackColor = System.Drawing.Color.Transparent;
+            this.roundedButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.roundedButton1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.roundedButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedButton1.FlatAppearance.BorderSize = 0;
+            this.roundedButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton1.ForeColor = System.Drawing.Color.White;
+            this.roundedButton1.Location = new System.Drawing.Point(7, 178);
+            this.roundedButton1.Name = "roundedButton1";
+            this.roundedButton1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.roundedButton1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.roundedButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.roundedButton1.Size = new System.Drawing.Size(266, 49);
+            this.roundedButton1.TabIndex = 74;
+            this.roundedButton1.Text = "Alterar Foto";
+            this.roundedButton1.TextColor = System.Drawing.Color.White;
+            this.roundedButton1.UseVisualStyleBackColor = false;
+            this.roundedButton1.Click += new System.EventHandler(this.roundedButton1_Click);
             // 
             // roundPictureBox1
             // 
@@ -3891,20 +3997,69 @@
             this.roundPictureBox2.TabIndex = 11;
             this.roundPictureBox2.TabStop = false;
             // 
+            // roundedButton4
+            // 
+            this.roundedButton4.BackColor = System.Drawing.Color.Transparent;
+            this.roundedButton4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.roundedButton4.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.roundedButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedButton4.FlatAppearance.BorderSize = 0;
+            this.roundedButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton4.ForeColor = System.Drawing.Color.White;
+            this.roundedButton4.Location = new System.Drawing.Point(394, 7);
+            this.roundedButton4.Name = "roundedButton4";
+            this.roundedButton4.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.roundedButton4.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.roundedButton4.OnHoverTextColor = System.Drawing.Color.White;
+            this.roundedButton4.Size = new System.Drawing.Size(206, 42);
+            this.roundedButton4.TabIndex = 75;
+            this.roundedButton4.Text = "Inserir";
+            this.roundedButton4.TextColor = System.Drawing.Color.White;
+            this.roundedButton4.UseVisualStyleBackColor = false;
+            this.roundedButton4.Click += new System.EventHandler(this.roundedButton4_Click);
+            // 
+            // roundedButton5
+            // 
+            this.roundedButton5.BackColor = System.Drawing.Color.Transparent;
+            this.roundedButton5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.roundedButton5.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.roundedButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedButton5.FlatAppearance.BorderSize = 0;
+            this.roundedButton5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.roundedButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButton5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.roundedButton5.Location = new System.Drawing.Point(10, 5);
+            this.roundedButton5.Name = "roundedButton5";
+            this.roundedButton5.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.roundedButton5.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.roundedButton5.OnHoverTextColor = System.Drawing.Color.White;
+            this.roundedButton5.Size = new System.Drawing.Size(202, 46);
+            this.roundedButton5.TabIndex = 77;
+            this.roundedButton5.Text = "Cancelar";
+            this.roundedButton5.TextColor = System.Drawing.Color.White;
+            this.roundedButton5.UseVisualStyleBackColor = false;
+            this.roundedButton5.Click += new System.EventHandler(this.roundedButton5_Click);
+            // 
             // Menuprinc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1286, 729);
-            this.Controls.Add(this.Wrapper);
-            this.Controls.Add(this.confirmNote);
-            this.Controls.Add(this.modalNovaMateria);
             this.Controls.Add(this.ModalShare);
+            this.Controls.Add(this.Wrapper);
             this.Controls.Add(this.modalNotify);
+            this.Controls.Add(this.modalNovaMateria);
+            this.Controls.Add(this.confirmNote);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "Menuprinc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -3918,6 +4073,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panelSearch.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.panelFacul.ResumeLayout(false);
@@ -3975,7 +4131,6 @@
             this.panel20.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.panel21.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel22.PerformLayout();
             this.panel23.ResumeLayout(false);
@@ -4146,14 +4301,12 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Button button32;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel10;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Button button33;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
-        private System.Windows.Forms.Button button34;
         private System.Windows.Forms.Panel panelCurso;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel12;
         private System.Windows.Forms.Panel panel24;
@@ -4314,5 +4467,15 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.MaskedTextBox maskedTextBox3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Panel panel61;
+        private System.Windows.Forms.Panel panel53;
+        private System.Windows.Forms.Panel panel62;
+        private RoundedButton roundedButton1;
+        private System.Windows.Forms.Panel panel63;
+        private RoundedButton roundedButton2;
+        private RoundedButton roundedButton3;
+        private RoundedButton roundedButton5;
+        private RoundedButton roundedButton4;
     }
 }

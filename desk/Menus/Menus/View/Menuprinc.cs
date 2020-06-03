@@ -51,6 +51,7 @@ namespace Menus
 
                         objDados.SelectMateria(lbRecebeEmailMenu.Text, UpdateAssistant.MatText, UpdateAssistant.MatTime, true);
 
+                        fillMateriaDropdown();
 
                         Transition.run(label4, "Left", 565, new TransitionType_EaseInEaseOut(50));
 
@@ -205,11 +206,11 @@ namespace Menus
             // 
             // textBox24
             // 
-            txtDynamic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            txtDynamic.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            txtDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            txtDynamic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            txtDynamic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txtDynamic.Font = new System.Drawing.Font("Century Gothic", 14.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             txtDynamic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            txtDynamic.Location = new System.Drawing.Point(-2, 5);
+            txtDynamic.Location = new System.Drawing.Point(2, 5);
             txtDynamic.Size = new System.Drawing.Size(208, 22);
             txtDynamic.TabIndex = 19;
             txtDynamic.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -220,10 +221,10 @@ namespace Menus
             // label47
             // 
             lbDynamic.AutoSize = true;
-            lbDynamic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            lbDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            lbDynamic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            lbDynamic.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lbDynamic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            lbDynamic.Location = new System.Drawing.Point(212, 4);
+            lbDynamic.Location = new System.Drawing.Point(216, 4);
             lbDynamic.Name = "label7";
             lbDynamic.Size = new System.Drawing.Size(58, 25);
             lbDynamic.TabIndex = 25;
@@ -231,11 +232,11 @@ namespace Menus
             // 
             // maskedTextBox6
             // 
-            mtxtDynamic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            mtxtDynamic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             mtxtDynamic.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            mtxtDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mtxtDynamic.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             mtxtDynamic.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            mtxtDynamic.Location = new System.Drawing.Point(276, 4);
+            mtxtDynamic.Location = new System.Drawing.Point(280, 4);
             mtxtDynamic.Mask = "00:00";
             mtxtDynamic.Name = "maskedTextBox2";
             mtxtDynamic.Size = new System.Drawing.Size(63, 24);
@@ -253,12 +254,12 @@ namespace Menus
             btnDynamic.Dock = System.Windows.Forms.DockStyle.Right;
             btnDynamic.FlatAppearance.BorderSize = 0;
             btnDynamic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnDynamic.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnDynamic.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnDynamic.ForeColor = System.Drawing.Color.White;
             btnDynamic.Image = global::Menus.Properties.Resources.image1;
-            btnDynamic.Location = new System.Drawing.Point(350, 0);
+            btnDynamic.Location = new System.Drawing.Point(354, 0);
             btnDynamic.Name = "btnDynamic";
-            btnDynamic.Size = new System.Drawing.Size(59, 31);
+            btnDynamic.Size = new System.Drawing.Size(50, 31);
             btnDynamic.TabIndex = 33;
             btnDynamic.UseVisualStyleBackColor = false;
             btnDynamic.Tag = matId;
@@ -279,11 +280,49 @@ namespace Menus
                 ht.TB_USER_MAT.Remove(itemToRemove);
                 ht.SaveChanges();
 
+                fillMateriaDropdown();
                 getMateria();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Deu ruim" + ex);
+                MessageBox.Show("Erro " + ex);
+            }
+        }
+
+        private void fillMateriaSearchPanel()
+        {
+            try
+            {
+                flowLayoutPanel19.Controls.Clear();
+                bancoMainEntities1 ht3 = new bancoMainEntities1();
+                var content = ht3.TB_MATERIA.ToList();
+                if (content.Count != 0)
+                {
+                    for (int i = 0; i < content.Count; i++)
+                    {
+                        Button button = new Button();
+                        button.Tag = content[i].MAT_INT_ID;
+                        button.Text = content[i].MAT_STR_NOME;
+                        button.FlatStyle = FlatStyle.Flat;
+                                                    button.BackColor = Color.FromArgb(33, 33, 33);
+                        button.ForeColor = Color.White;
+                        button.Cursor = Cursors.Hand;
+                        button.Height = 195;
+                        button.Width = 195;
+                        button.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        button.Cursor = Cursors.Hand;
+                        button.Click += new EventHandler(this.buttonMatSearch_Click);
+                        flowLayoutPanel19.Controls.Add(button);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não foram encontradas notas");
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorProvider error = new ErrorProvider();
             }
         }
 
@@ -323,6 +362,56 @@ namespace Menus
             catch (Exception ex)
             {
                 MessageBox.Show("Deu ruim" + ex);
+            }
+        }
+
+        private void fillMateriaDropdown()
+        {
+            flowLayoutPanel18.Controls.Clear();
+            try
+            {
+                var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                var email = id.USER_INT_ID;
+
+                var matList = (from mat in ht.TB_USER_MAT
+                               join matfull in ht.TB_MATERIA on mat.MAT_INT_ID equals matfull.MAT_INT_ID
+                               where email == mat.USER_INT_ID
+                               select new
+                               {
+                                   matTitle = matfull.MAT_STR_NOME,
+                                   matId = mat.MAT_INT_ID
+                               }).ToList();
+
+
+                if (matList.Count != 0)
+                {
+                    for (int i = 0; i < matList.Count; i++)
+                    {
+                        Button button = new Button();
+                        button.Tag = matList[i].matId;
+                        button.Text = matList[i].matTitle;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.UseVisualStyleBackColor = false;
+                        button.BackColor = Color.FromArgb(32, 32, 32);
+                        button.Margin = new Padding(5);
+                        button.ForeColor = Color.White;
+                        button.Cursor = Cursors.Hand;
+                        button.Height = 40;
+                        button.Width = 371;
+                        button.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        button.Cursor = Cursors.Hand;
+                        button.Click += new EventHandler(this.buttonDrop_Click);
+                        flowLayoutPanel18.Controls.Add(button);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não foram encontradas notas");
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorProvider error = new ErrorProvider();
             }
         }
 
@@ -377,7 +466,7 @@ namespace Menus
 
                     if (retorno == 1)
                     {
-                        MessageBox.Show("Deu certo");
+                        MessageBox.Show("Dados Atualizados");
                     }
 
                     objConexao.Close();
@@ -434,7 +523,7 @@ namespace Menus
 
             catch (Exception ex)
             {
-                MessageBox.Show("Deu ruim" + ex.Message);
+                MessageBox.Show("Erro" + ex.Message);
             }
         }
         private void GetUser(string EmailVar)
@@ -447,7 +536,7 @@ namespace Menus
 
             catch (Exception ex)
             {
-                MessageBox.Show("Deu ruim" + ex);
+                MessageBox.Show("Erro" + ex);
             }
         }
 
@@ -628,52 +717,7 @@ namespace Menus
 
             autoSizeTxtMateria(textBox2);
 
-            try
-            {
-
-                var id = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
-                var email = id.USER_INT_ID;
-
-                var matList = (from mat in ht2.TB_USER_MAT
-                                  join matfull in ht2.TB_MATERIA on mat.MAT_INT_ID equals matfull.MAT_INT_ID
-                                  where email == mat.USER_INT_ID
-                                  select new
-                                  {
-                                      matTitle = matfull.MAT_STR_NOME,
-                                      matId = mat.MAT_INT_ID
-                                  }).ToList();
-
-
-                if (matList.Count != 0)
-                {
-                    for (int i = 0; i < matList.Count; i++)
-                    {
-                        Button button = new Button();
-                        button.Tag = matList[i].matId;
-                        button.Text = matList[i].matTitle;
-                        button.FlatStyle = FlatStyle.Flat;
-                        button.UseVisualStyleBackColor = false;
-                        button.BackColor = Color.FromArgb(32, 32, 32);
-                        button.Margin = new Padding(5);
-                        button.ForeColor = Color.White;
-                        button.Cursor = Cursors.Hand;
-                        button.Height = 40;
-                        button.Width = 371;
-                        button.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                        button.Cursor = Cursors.Hand;
-                        button.Click += new EventHandler(this.buttonDrop_Click);
-                        flowLayoutPanel18.Controls.Add(button);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Não foram encontradas notas");
-                }
-            }
-            catch (Exception ex)
-            {
-                ErrorProvider error = new ErrorProvider();
-            }
+            fillMateriaDropdown();
 
             try
             {
@@ -699,7 +743,7 @@ namespace Menus
         {
             Label label = sender as Label;
             int s = Convert.ToInt32(label.Tag);
-            btnconcluir.Tag = s;
+            roundedButton2.Tag = s;
             confirmNote.BringToFront();
 
             var content = entFunc.getNoteData(s);
@@ -747,7 +791,8 @@ namespace Menus
                         button.Tag = content[i].FAC_INT_ID;
                         button.Text = content[i].FAC_STR_NOME;
                         button.FlatStyle = FlatStyle.Flat;
-                        button.BackColor = Color.FromArgb(11, 7, 17);
+                        button.BackColor = Color.FromArgb(33, 33, 33);
+                        button.ForeColor = Color.White;
                         button.Cursor = Cursors.Hand;
                         button.Height = 195;
                         button.Width = 195;
@@ -805,7 +850,8 @@ namespace Menus
                             button.Text = content[i].STR_STR_TITLE;
                             button.Width = flowLayoutPanel7.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(11, 7, 17);
+                                                        button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
                             button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -877,7 +923,7 @@ namespace Menus
 
             try
             {
-                flowLayoutPanel4.Controls.Clear();
+                flowLayoutPanel14.Controls.Clear();
                 bancoMainEntities1 ht3 = new bancoMainEntities1();
                 var content = ht3.TB_CURSO.ToList();
                 if (content.Count != 0)
@@ -888,7 +934,8 @@ namespace Menus
                         button.Tag = content[i].CUR_INT_ID;
                         button.Text = content[i].CUR_STR_NOME;
                         button.FlatStyle = FlatStyle.Flat;
-                        button.BackColor = Color.FromArgb(11, 7, 17);
+                        button.BackColor = Color.FromArgb(33, 33, 33);
+                        button.ForeColor = Color.White;
                         button.Cursor = Cursors.Hand;
                         button.Height = 195;
                         button.Width = 195;
@@ -1175,7 +1222,8 @@ namespace Menus
                             button.Tag = content[i].FAC_INT_ID;
                             button.Text = content[i].FAC_STR_NOME;
                             button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 195;
                             button.Width = 195;
@@ -1213,7 +1261,8 @@ namespace Menus
                             button.Tag = content[i].FAC_INT_ID;
                             button.Text = content[i].FAC_STR_NOME;
                             button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 195;
                             button.Width = 195;
@@ -1247,15 +1296,7 @@ namespace Menus
 
                     int facId = Convert.ToInt32(panel21.Tag);
 
-                    var entryPoint = (from str in ht2.TB_NOTA_STR
-                                      join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
-                                      where facId == nota.FAC_INT_ID
-                                      select new
-                                      {
-                                          notaTitle = str.STR_STR_TITLE,
-                                          notaId = str.STR_INT_ID
-                                      }).Where(c => c.notaTitle.Contains(searchContent)).ToList();
-
+                    var entryPoint = entFunc.getFaculdade(facId, searchContent);
 
                     if (entryPoint.Count != 0)
                     {
@@ -1266,7 +1307,8 @@ namespace Menus
                             button.Text = entryPoint[i].notaTitle;
                             button.Width = flowLayoutPanel10.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
                             button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1297,14 +1339,8 @@ namespace Menus
 
                     int facId = Convert.ToInt32(panel21.Tag);
 
-                    var entryPoint = (from str in ht2.TB_NOTA_STR
-                                      join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
-                                      where facId == nota.FAC_INT_ID
-                                      select new
-                                      {
-                                          notaTitle = str.STR_STR_TITLE,
-                                          notaId = str.STR_INT_ID,
-                                      }).ToList();
+                    var entryPoint = entFunc.getFaculdade(facId);
+
                     if (entryPoint.Count != 0)
                     {
                         for (int i = 0; i < entryPoint.Count; i++)
@@ -1314,7 +1350,8 @@ namespace Menus
                             button.Text = entryPoint[i].notaTitle;
                             button.Width = flowLayoutPanel10.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
                             button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1348,19 +1385,8 @@ namespace Menus
 
                 int facId = Convert.ToInt32(panel21.Tag);
 
-                var entryPoint = (from str in ht2.TB_NOTA_STR
-                                  join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
-                                  where facId == nota.FAC_INT_ID
-                                  select new
-                                  {
-                                      notaTitle = str.STR_STR_TITLE,
-                                      notaId = str.STR_INT_ID,
-                                  }).ToList();
+                var entryPoint = entFunc.getFaculdade(facId);
 
-
-
-
-                //var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
                 if (entryPoint.Count != 0)
                 {
                     for (int i = 0; i < entryPoint.Count; i++)
@@ -1370,7 +1396,8 @@ namespace Menus
                         button.Text = entryPoint[i].notaTitle;
                         button.Width = flowLayoutPanel10.Width - 5;
                         button.FlatStyle = FlatStyle.Flat;
-                        button.BackColor = Color.FromArgb(11, 7, 17);
+                        button.BackColor = Color.FromArgb(33, 33, 33);
+                        button.ForeColor = Color.White;
                         button.Cursor = Cursors.Hand;
                         button.Height = 75;
                         button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1414,7 +1441,8 @@ namespace Menus
                         button.Text = entryPoint[i].notaTitle;
                         button.Width = flowLayoutPanel16.Width - 5;
                         button.FlatStyle = FlatStyle.Flat;
-                        button.BackColor = Color.FromArgb(11, 7, 17);
+                        button.BackColor = Color.FromArgb(33, 33, 33);
+                        button.ForeColor = Color.White;
                         button.Cursor = Cursors.Hand;
                         button.Height = 75;
                         button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1446,12 +1474,9 @@ namespace Menus
                 bancoMainEntities1 ht2 = new bancoMainEntities1();
 
                 int facId = Convert.ToInt32(panel37.Tag);
+
                 var entryPoint = entFunc.getMateria(facId);
 
-
-
-
-                //var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
                 if (entryPoint.Count != 0)
                 {
                     for (int i = 0; i < entryPoint.Count; i++)
@@ -1461,7 +1486,8 @@ namespace Menus
                         button.Text = entryPoint[i].notaTitle;
                         button.Width = flowLayoutPanel21.Width - 5;
                         button.FlatStyle = FlatStyle.Flat;
-                        button.BackColor = Color.FromArgb(11, 7, 17);
+                        button.BackColor = Color.FromArgb(33, 33, 33);
+                        button.ForeColor = Color.White;
                         button.Cursor = Cursors.Hand;
                         button.Height = 75;
                         button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1536,7 +1562,8 @@ namespace Menus
                             button.Tag = content[i].CUR_INT_ID;
                             button.Text = content[i].CUR_STR_NOME;
                             button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 195;
                             button.Width = 195;
@@ -1574,7 +1601,8 @@ namespace Menus
                             button.Tag = content[i].CUR_INT_ID;
                             button.Text = content[i].CUR_STR_NOME;
                             button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 195;
                             button.Width = 195;
@@ -1608,15 +1636,7 @@ namespace Menus
 
                     int facId = Convert.ToInt32(panel29.Tag);
 
-                    var entryPoint = (from str in ht2.TB_NOTA_STR
-                                      join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
-                                      where facId == nota.CUR_INT_ID
-                                      select new
-                                      {
-                                          notaTitle = str.STR_STR_TITLE,
-                                          notaId = str.STR_INT_ID
-                                      }).Where(c => c.notaTitle.Contains(searchContent)).ToList();
-
+                    var entryPoint = entFunc.getCurso(facId, searchContent);
 
                     if (entryPoint.Count != 0)
                     {
@@ -1627,7 +1647,8 @@ namespace Menus
                             button.Text = entryPoint[i].notaTitle;
                             button.Width = flowLayoutPanel16.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
                             button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1658,19 +1679,8 @@ namespace Menus
 
                     int facId = Convert.ToInt32(panel29.Tag);
 
-                    var entryPoint = (from str in ht2.TB_NOTA_STR
-                                      join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
-                                      where facId == nota.CUR_INT_ID
-                                      select new
-                                      {
-                                          notaTitle = str.STR_STR_TITLE,
-                                          notaId = str.STR_INT_ID,
-                                      }).ToList();
+                    var entryPoint = entFunc.getCurso(facId);
 
-
-
-
-                    //var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
                     if (entryPoint.Count != 0)
                     {
                         for (int i = 0; i < entryPoint.Count; i++)
@@ -1680,7 +1690,8 @@ namespace Menus
                             button.Text = entryPoint[i].notaTitle;
                             button.Width = flowLayoutPanel16.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
                             button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1728,45 +1739,16 @@ namespace Menus
 
         private void button9_Click(object sender, EventArgs e)
         {
+            fillMateriaSearchPanel();
             panelMateria.BringToFront();
 
-            try
-            {
-                flowLayoutPanel19.Controls.Clear();
-                bancoMainEntities1 ht3 = new bancoMainEntities1();
-                var content = ht3.TB_MATERIA.ToList();
-                if (content.Count != 0)
-                {
-                    for (int i = 0; i < content.Count; i++)
-                    {
-                        Button button = new Button();
-                        button.Tag = content[i].MAT_INT_ID;
-                        button.Text = content[i].MAT_STR_NOME;
-                        button.FlatStyle = FlatStyle.Flat;
-                        button.BackColor = Color.FromArgb(11, 7, 17);
-                        button.Cursor = Cursors.Hand;
-                        button.Height = 195;
-                        button.Width = 195;
-                        button.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                        button.Cursor = Cursors.Hand;
-                        button.Click += new EventHandler(this.buttonMatSearch_Click);
-                        flowLayoutPanel19.Controls.Add(button);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Não foram encontradas notas");
-                }
-            }
-            catch (Exception ex)
-            {
-                ErrorProvider error = new ErrorProvider();
-            }
         }
 
         private void button44_Click(object sender, EventArgs e)
         {
+            fillMateriaSearchPanel();
             panelMateria.BringToFront();
+
         }
 
         private void textBox19_TextChanged(object sender, EventArgs e)
@@ -1781,15 +1763,7 @@ namespace Menus
 
                     int facId = Convert.ToInt32(panel37.Tag);
 
-                    var entryPoint = (from str in ht2.TB_NOTA_STR
-                                      join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
-                                      where facId == nota.MAT_INT_ID
-                                      select new
-                                      {
-                                          notaTitle = str.STR_STR_TITLE,
-                                          notaId = str.STR_INT_ID
-                                      }).Where(c => c.notaTitle.Contains(searchContent)).ToList();
-
+                    var entryPoint = entFunc.getMateria(facId, searchContent);
 
                     if (entryPoint.Count != 0)
                     {
@@ -1800,7 +1774,8 @@ namespace Menus
                             button.Text = entryPoint[i].notaTitle;
                             button.Width = flowLayoutPanel21.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
                             button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1831,19 +1806,8 @@ namespace Menus
 
                     int facId = Convert.ToInt32(panel37.Tag);
 
-                    var entryPoint = (from str in ht2.TB_NOTA_STR
-                                      join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
-                                      where facId == nota.MAT_INT_ID
-                                      select new
-                                      {
-                                          notaTitle = str.STR_STR_TITLE,
-                                          notaId = str.STR_INT_ID,
-                                      }).ToList();
+                    var entryPoint = entFunc.getMateria(facId);
 
-
-
-
-                    //var content = ht2.TB_NOTA_STR.Where(b => b.STR_STR_PATH.Contains(searchContent) || b.STR_STR_TITLE.Contains(searchContent)).ToList();
                     if (entryPoint.Count != 0)
                     {
                         for (int i = 0; i < entryPoint.Count; i++)
@@ -1853,7 +1817,8 @@ namespace Menus
                             button.Text = entryPoint[i].notaTitle;
                             button.Width = flowLayoutPanel21.Width - 5;
                             button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 75;
                             button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1896,7 +1861,8 @@ namespace Menus
                             button.Tag = content[i].MAT_INT_ID;
                             button.Text = content[i].MAT_STR_NOME;
                             button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(11, 7, 17);
+                            button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 195;
                             button.Width = 195;
@@ -1934,7 +1900,8 @@ namespace Menus
                             button.Tag = content[i].MAT_INT_ID;
                             button.Text = content[i].MAT_STR_NOME;
                             button.FlatStyle = FlatStyle.Flat;
-                            button.BackColor = Color.FromArgb(11, 7, 17);
+                                                        button.BackColor = Color.FromArgb(33, 33, 33);
+                            button.ForeColor = Color.White;
                             button.Cursor = Cursors.Hand;
                             button.Height = 195;
                             button.Width = 195;
@@ -2174,9 +2141,6 @@ namespace Menus
             int nota = Convert.ToInt32(notaId);
             int user = Convert.ToInt32(userId);
 
-
-            MessageBox.Show("Esse é o ID do usuário " + s);
-
             try
             {
                 bancoMainEntities1 ht = new bancoMainEntities1();
@@ -2205,9 +2169,6 @@ namespace Menus
 
             int nota = Convert.ToInt32(notaId);
             int user = Convert.ToInt32(userId);
-
-
-            MessageBox.Show("Esse é o ID do usuário " + s);
 
             try
             {
@@ -2239,8 +2200,6 @@ namespace Menus
             int user = Convert.ToInt32(userId);
 
 
-            MessageBox.Show("Esse é o ID do usuário " + s);
-
             try
             {
                 bancoMainEntities1 ht = new bancoMainEntities1();
@@ -2270,9 +2229,6 @@ namespace Menus
 
             int nota = Convert.ToInt32(notaId);
             int user = Convert.ToInt32(userId);
-
-
-            MessageBox.Show("Esse é o ID do usuário " + s);
 
             try
             {
@@ -2333,7 +2289,6 @@ namespace Menus
             var id = ht1.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
             var userId = id.USER_INT_ID;
 
-            MessageBox.Show("ta ai " + NoteData.FacId+ " " + NoteData.CurId + " " + NoteData.MatId);
 
             ht1.TB_NOTA.Add(new TB_NOTA() { FAC_INT_ID = NoteData.FacId, CUR_INT_ID = NoteData.CurId, MAT_INT_ID = NoteData.MatId, USER_INT_ID = userId, STR_INT_ID = NoteData.Noteid });
             ht1.SaveChanges();
@@ -2606,6 +2561,168 @@ namespace Menus
                 Dados objDados = new Dados();
                 objDados.SelectMateria(lbRecebeEmailMenu.Text, textBox2.Text, maskedTextBox3.Text);
                 modalNovaMateria.SendToBack();
+
+                fillMateriaDropdown();
+
+                getMateria();
+
+                Transition.run(label4, "Left", 795, new TransitionType_EaseInEaseOut(50));
+
+                System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
+
+                t.Interval = 2000;
+                t.Tick += new EventHandler(timer_TickAccount);
+                t.Start();
+            }
+            else
+            {
+                MessageBox.Show("Um ou mais campos estão vazios!");
+            }
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            panelHome.BringToFront();
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void roundedButton1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opendlg = new OpenFileDialog();
+            if (opendlg.ShowDialog() == DialogResult.OK)
+            {
+
+                Image img = Image.FromFile(opendlg.FileName);
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, img.RawFormat);
+                bancoMainEntities1 ht = new bancoMainEntities1();
+                var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                var email = id.USER_INT_ID;
+                var result = ht.TB_PICTURES.SingleOrDefault(a => a.USER_INT_ID == email);
+                if (result != null)
+                {
+                    result.PIC_IMG_MAIN = ms.ToArray();
+                    ht.SaveChanges();
+                }
+                else
+                {
+                    ht.TB_PICTURES.Add(new TB_PICTURES() { PIC_IMG_MAIN = ms.ToArray(), USER_INT_ID = email });
+                    ht.SaveChanges();
+                }
+                var item = ht.TB_PICTURES.Where(a => a.USER_INT_ID == email).FirstOrDefault();
+                byte[] arr = item.PIC_IMG_MAIN;
+                MemoryStream ms1 = new MemoryStream(arr);
+                roundPictureBox1.Image = Image.FromStream(ms1);
+                pictureBox1.Image = Image.FromStream(ms1);
+            }
+        }
+
+        private void panel52_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void roundedButton2_Click(object sender, EventArgs e)
+        {
+            bancoMainEntities1 ht1 = new bancoMainEntities1();
+            var id = ht1.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+            var userId = id.USER_INT_ID;
+
+
+            ht1.TB_NOTA.Add(new TB_NOTA() { FAC_INT_ID = NoteData.FacId, CUR_INT_ID = NoteData.CurId, MAT_INT_ID = NoteData.MatId, USER_INT_ID = userId, STR_INT_ID = NoteData.Noteid });
+            ht1.SaveChanges();
+
+            int shareId = Convert.ToInt32(roundedButton2.Tag);
+
+
+            var notificationToRemove = ht1.TB_SHARE.SingleOrDefault(x => x.SHARE_INT_ID == shareId);
+
+            if (notificationToRemove != null)
+            {
+                ht1.TB_SHARE.Remove(notificationToRemove);
+                ht1.SaveChanges();
+
+
+                flowLayoutPanel28.Controls.Clear();
+                try
+                {
+                    bancoMainEntities1 ht2 = new bancoMainEntities1();
+                    var id2 = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                    var email = id2.USER_INT_ID;
+                    var content = entFunc.getSharedNotes(email);
+
+                    fetchSharedNoted(content);
+                }
+
+                catch (Exception ex)
+                {
+                    ErrorProvider error = new ErrorProvider();
+                }
+            }
+
+
+            flowLayoutPanel2.Controls.Clear();
+            confirmNote.SendToBack();
+            GetNote(lbRecebeEmailMenu.Text);
+        }
+
+        private void roundedButton3_Click(object sender, EventArgs e)
+        {
+            bancoMainEntities1 ht1 = new bancoMainEntities1();
+            var id = ht1.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+            var userId = id.USER_INT_ID;
+
+            int shareId = Convert.ToInt32(roundedButton2.Tag);
+
+
+            var notificationToRemove = ht1.TB_SHARE.SingleOrDefault(x => x.SHARE_INT_ID == shareId);
+
+            if (notificationToRemove != null)
+            {
+                ht1.TB_SHARE.Remove(notificationToRemove);
+                ht1.SaveChanges();
+
+
+                flowLayoutPanel28.Controls.Clear();
+                try
+                {
+                    bancoMainEntities1 ht2 = new bancoMainEntities1();
+                    var id2 = ht2.TB_USER.Where(a => a.USER_STR_EMAIL == lbRecebeEmailMenu.Text).SingleOrDefault();
+                    var email = id2.USER_INT_ID;
+                    var content = entFunc.getSharedNotes(email);
+
+                    fetchSharedNoted(content);
+                }
+
+                catch (Exception ex)
+                {
+                    ErrorProvider error = new ErrorProvider();
+                }
+            }
+
+            flowLayoutPanel2.Controls.Clear();
+            confirmNote.SendToBack();
+            GetNote(lbRecebeEmailMenu.Text);
+        }
+
+        private void roundedButton5_Click(object sender, EventArgs e)
+        {
+            modalNovaMateria.SendToBack();
+        }
+
+        private void roundedButton4_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(textBox2.Text) && maskedTextBox3.MaskFull)
+            {
+                Dados objDados = new Dados();
+                objDados.SelectMateria(lbRecebeEmailMenu.Text, textBox2.Text, maskedTextBox3.Text);
+                modalNovaMateria.SendToBack();
+
+                fillMateriaDropdown();
 
                 getMateria();
 

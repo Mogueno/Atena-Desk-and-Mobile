@@ -113,5 +113,51 @@ namespace Menus
 
         }
 
+        private void roundedButton1_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=atenaserver.database.windows.net;Initial Catalog=atenadatabase;Persist Security Info=True;User ID=atenaadmin;Password=mogueno1234!@#$");
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM TB_USER WHERE USER_STR_EMAIL='" + txtusuario.Text + "' AND USER_STR_SENHA='" + txtsenha.Text + "'", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+
+                Login.Usuario = txtusuario.Text;
+
+                SelectUserConfig(txtusuario.Text);
+                this.Hide();
+                new Menuprinc(txtusuario.Text).Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou senha incorretos");
+            }
+        }
+
+        private void roundedButton2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new TelaCadastrar().Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbusuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

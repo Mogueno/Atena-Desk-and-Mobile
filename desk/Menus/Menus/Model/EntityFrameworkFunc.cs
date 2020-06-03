@@ -53,26 +53,87 @@ namespace Menus.Model
         public List<dynamic> getCurso(int curId)
         {
             List<dynamic> entryPoint = (from str in ht2.TB_NOTA_STR
-                                      join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
-                                      where curId == nota.CUR_INT_ID
-                                      select new
-                                      {
-                                          notaTitle = str.STR_STR_TITLE,
-                                          notaId = str.STR_INT_ID,
-                                      }).ToList<dynamic>();
-                    return entryPoint;    
+                                        join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
+                                        where curId == nota.CUR_INT_ID
+                                        group nota by new { nota.STR_INT_ID, str.STR_STR_TITLE } into g
+
+                                        select new
+                                        {
+                                            notaTitle = g.Key.STR_STR_TITLE,
+                                            notaId = g.Key.STR_INT_ID,
+                                        }).ToList<dynamic>();
+            return entryPoint;    
         }
+
+        public List<dynamic> getCurso(int curId, string searchContent)
+        {
+            List<dynamic> entryPoint = (from str in ht2.TB_NOTA_STR
+                                        join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
+                                        where curId == nota.CUR_INT_ID
+                                        group nota by new { nota.STR_INT_ID, str.STR_STR_TITLE } into g
+
+                                        select new
+                                        {
+                                            notaTitle = g.Key.STR_STR_TITLE,
+                                            notaId = g.Key.STR_INT_ID,
+                                        }).Where(c => c.notaTitle.Contains(searchContent)).ToList<dynamic>();
+            return entryPoint;
+        }
+
         public List<dynamic> getMateria(int matId)
         {
             List<dynamic> entryPoint = (from str in ht2.TB_NOTA_STR
                           join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
                           where matId == nota.MAT_INT_ID
+                          group nota by new { nota.STR_INT_ID, str.STR_STR_TITLE } into g
                           select new
                           {
-                              notaTitle = str.STR_STR_TITLE,
-                              notaId = str.STR_INT_ID,
+                              notaTitle = g.Key.STR_STR_TITLE,
+                              notaId = g.Key.STR_INT_ID,
                           }).ToList<dynamic>();
 
+            return entryPoint;
+        }
+
+        public List<dynamic> getMateria(int matId, string searchContent)
+        {
+            List<dynamic> entryPoint = (from str in ht2.TB_NOTA_STR
+                                        join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
+                                        where matId == nota.MAT_INT_ID
+                                        group nota by new { nota.STR_INT_ID, str.STR_STR_TITLE } into g
+                                        select new
+                                        {
+                                            notaTitle = g.Key.STR_STR_TITLE,
+                                            notaId = g.Key.STR_INT_ID,
+                                        }).Where(c => c.notaTitle.Contains(searchContent)).ToList<dynamic>();
+
+            return entryPoint;
+        }
+
+        public List<dynamic> getFaculdade(int facId)
+        {
+            List<dynamic> entryPoint = (from str in ht2.TB_NOTA_STR
+                                        join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
+                                        where facId == nota.FAC_INT_ID
+                                        group nota by new { nota.STR_INT_ID, str.STR_STR_TITLE } into g
+                                        select new
+                                        {
+                                            notaTitle = g.Key.STR_STR_TITLE,
+                                            notaId = g.Key.STR_INT_ID,
+                                        }).ToList<dynamic>();
+            return entryPoint;
+        }
+        public List<dynamic> getFaculdade(int facId, string searchContent)
+        {
+            List<dynamic> entryPoint = (from str in ht2.TB_NOTA_STR
+                                        join nota in ht2.TB_NOTA on str.STR_INT_ID equals nota.STR_INT_ID
+                                        where facId == nota.FAC_INT_ID
+                                        group nota by new { nota.STR_INT_ID, str.STR_STR_TITLE } into g
+                                        select new
+                                        {
+                                            notaTitle = g.Key.STR_STR_TITLE,
+                                            notaId = g.Key.STR_INT_ID,
+                                        }).Where(c => c.notaTitle.Contains(searchContent)).ToList<dynamic>();
             return entryPoint;
         }
     }

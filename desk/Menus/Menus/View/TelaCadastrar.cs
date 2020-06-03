@@ -57,7 +57,6 @@ namespace Menus
                                 myControls.Add(control2);
                             }
                         }
-                        MessageBox.Show(myControls[1].Text);
                         objDados.SelectMateria(EmailUser, myControls[0].Text, myControls[1].Text);
                         myControls.Clear();
                     }
@@ -67,7 +66,7 @@ namespace Menus
 
             catch (Exception ex)
             {
-                MessageBox.Show("Deu ruim" + ex.Message);
+                MessageBox.Show("Erro " + ex.Message);
             }
         }
 
@@ -83,7 +82,7 @@ namespace Menus
 
             catch (Exception ex)
             {
-                MessageBox.Show("Deu ruim" + ex);
+                MessageBox.Show("Erro " + ex);
             }
         }
 
@@ -99,7 +98,7 @@ namespace Menus
 
             catch (Exception ex)
             {
-                MessageBox.Show("Deu ruim" + ex);
+                MessageBox.Show("Erro " + ex);
             }
         }
 
@@ -227,7 +226,7 @@ namespace Menus
 
             else
             {
-                MessageBox.Show("um ou mais campos estão vazios");
+                MessageBox.Show("Um ou mais campos estão vazios");
             }
 
         }
@@ -284,5 +283,82 @@ namespace Menus
 
         }
 
+        private void txtcurso_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roundedButton1_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=atenaserver.database.windows.net;Initial Catalog=atenadatabase;Persist Security Info=True;User ID=atenaadmin;Password=mogueno1234!@#$");
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM TB_USER WHERE USER_STR_EMAIL='" + txtLogin3.Text + "'", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                MessageBox.Show("ERRO\n\n Usuário já existente");
+            }
+            else
+            {
+                if (!String.IsNullOrEmpty(txtNome3.Text) && !String.IsNullOrEmpty(txtIdade3.Text) && !String.IsNullOrEmpty(txtSexo3.Text) && !String.IsNullOrEmpty(txtLogin3.Text) && !String.IsNullOrEmpty(txtSenha3.Text))
+                {
+                    panel7.BringToFront();
+                }
+
+                else
+                {
+                    MessageBox.Show("Um ou mais campos estão em branco");
+                }
+            }
+        }
+
+        private void roundedButton2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new TelaLogin().Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void roundedButton3_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtuniversidade.Text) && !String.IsNullOrEmpty(txtcurso.Text))
+            {
+                Login.Materia = txtmateria1.Text;
+                Login.Curso = txtcurso.Text;
+                Login.Facul = txtuniversidade.Text;
+                Login.Usuario = txtLogin3.Text;
+
+                int s = Convert.ToInt32(txtuniversidade.Tag);
+
+
+
+                GravarUser(txtNome3.Text, txtIdade3.Text, txtSexo3.Text, txtLogin3.Text, txtSenha3.Text, "0", "0");
+
+
+                bancoMainEntities1 ht = new bancoMainEntities1();
+                var id = ht.TB_USER.Where(a => a.USER_STR_EMAIL == txtLogin3.Text).SingleOrDefault();
+
+                ht.TB_USER_FAC.Add(new TB_USER_FAC() { FAC_INT_ID = s, USER_INT_ID = id.USER_INT_ID });
+                ht.SaveChanges();
+
+                emailMain = retorna();
+
+                SelectUser(retorna());
+
+                GravarFacul(txtLogin3.Text, txtuniversidade.Text, txtcurso.Text, txtmateria1.Text, txthora1.Text);
+
+                this.Hide();
+                new Menuprinc(txtLogin3.Text).Show();
+            }
+
+            else
+            {
+                MessageBox.Show("Um ou mais campos estão vazios");
+            }
+        }
     }
 }
