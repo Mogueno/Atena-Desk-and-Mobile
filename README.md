@@ -41,7 +41,6 @@ We use [SemVer](http://semver.org/) for versioning.
 
  **Murilo Preccaro** - *Project developer* - [Github](https://github.com/Mogueno)
   **Flavio Odas** - *Project developer* - [Github](https://github.com/flavioodas)
-   **Gabriel Ferreira** - *Project developer/ Manager*
 
 ## License
 
